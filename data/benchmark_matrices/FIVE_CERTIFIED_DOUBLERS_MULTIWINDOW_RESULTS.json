@@ -1,0 +1,592 @@
+{
+  "Strategy_1_HyperScalp": {
+    "name": "Gold_Micro_HyperScalp_EA",
+    "archetype": "Micro-Account CPR Compression + SMC Asian Sweep + Volume Surge Scalper",
+    "windows": {
+      "January_2024": {
+        "$1000": {
+          "id": "Strategy_1_HyperScalp",
+          "name": "Gold_Micro_HyperScalp_EA",
+          "deposit": 1000,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 19,
+          "net": 356.93,
+          "roi_pct": 35.69,
+          "pf": "1.17",
+          "win_rate": "6 (31.58%)",
+          "max_dd": "1 221.77 (54.42%)"
+        },
+        "$20": {
+          "id": "Strategy_1_HyperScalp",
+          "name": "Gold_Micro_HyperScalp_EA",
+          "deposit": 20,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 19,
+          "net": 9.98,
+          "roi_pct": 49.9,
+          "pf": "1.29",
+          "win_rate": "6 (31.58%)",
+          "max_dd": "19.28 (44.53%)"
+        }
+      },
+      "March_2024": {
+        "$1000": {
+          "id": "Strategy_1_HyperScalp",
+          "name": "Gold_Micro_HyperScalp_EA",
+          "deposit": 1000,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 17,
+          "net": 528.48,
+          "roi_pct": 52.85,
+          "pf": "1.16",
+          "win_rate": "6 (35.29%)",
+          "max_dd": "1 628.00 (57.47%)"
+        },
+        "$20": {
+          "id": "Strategy_1_HyperScalp",
+          "name": "Gold_Micro_HyperScalp_EA",
+          "deposit": 20,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 17,
+          "net": 16.9,
+          "roi_pct": 84.5,
+          "pf": "1.34",
+          "win_rate": "6 (35.29%)",
+          "max_dd": "22.29 (37.66%)"
+        }
+      },
+      "August_2024": {
+        "$1000": {
+          "id": "Strategy_1_HyperScalp",
+          "name": "Gold_Micro_HyperScalp_EA",
+          "deposit": 1000,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 21,
+          "net": -901.78,
+          "roi_pct": -90.18,
+          "pf": "0.36",
+          "win_rate": "2 (9.52%)",
+          "max_dd": "1 053.68 (91.47%)"
+        },
+        "$20": {
+          "id": "Strategy_1_HyperScalp",
+          "name": "Gold_Micro_HyperScalp_EA",
+          "deposit": 20,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 14,
+          "net": -15.51,
+          "roi_pct": -77.55,
+          "pf": "0.43",
+          "win_rate": "2 (14.29%)",
+          "max_dd": "18.72 (80.65%)"
+        }
+      },
+      "October_2024": {
+        "$1000": {
+          "id": "Strategy_1_HyperScalp",
+          "name": "Gold_Micro_HyperScalp_EA",
+          "deposit": 1000,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 16,
+          "net": 1508.17,
+          "roi_pct": 150.82,
+          "pf": "1.74",
+          "win_rate": "7 (43.75%)",
+          "max_dd": "697.42 (21.76%)"
+        },
+        "$20": {
+          "id": "Strategy_1_HyperScalp",
+          "name": "Gold_Micro_HyperScalp_EA",
+          "deposit": 20,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 16,
+          "net": 38.4,
+          "roi_pct": 192.0,
+          "pf": "2.07",
+          "win_rate": "7 (43.75%)",
+          "max_dd": "11.37 (16.30%)"
+        }
+      }
+    }
+  },
+  "Strategy_2_DodgysDD": {
+    "name": "DodgysDD_EA",
+    "archetype": "Institutional Macro News Judas Manipulation + Order Block Invalidation",
+    "windows": {
+      "January_2024": {
+        "$1000": {
+          "id": "Strategy_2_DodgysDD",
+          "name": "DodgysDD_EA",
+          "deposit": 1000,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 50,
+          "net": -694.44,
+          "roi_pct": -69.44,
+          "pf": "0.69",
+          "win_rate": "11 (22.00%)",
+          "max_dd": "955.08 (82.71%)"
+        },
+        "$20": {
+          "id": "Strategy_2_DodgysDD",
+          "name": "DodgysDD_EA",
+          "deposit": 20,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 35,
+          "net": -15.12,
+          "roi_pct": -75.6,
+          "pf": "0.70",
+          "win_rate": "7 (20.00%)",
+          "max_dd": "20.88 (81.06%)"
+        }
+      },
+      "March_2024": {
+        "$1000": {
+          "id": "Strategy_2_DodgysDD",
+          "name": "DodgysDD_EA",
+          "deposit": 1000,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 45,
+          "net": -808.2,
+          "roi_pct": -80.82,
+          "pf": "0.40",
+          "win_rate": "8 (17.78%)",
+          "max_dd": "824.40 (82.44%)"
+        },
+        "$20": {
+          "id": "Strategy_2_DodgysDD",
+          "name": "DodgysDD_EA",
+          "deposit": 20,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 9,
+          "net": -16.2,
+          "roi_pct": -81.0,
+          "pf": "0.00",
+          "win_rate": "0 (0.00%)",
+          "max_dd": "16.20 (81.00%)"
+        }
+      },
+      "August_2024": {
+        "$1000": {
+          "id": "Strategy_2_DodgysDD",
+          "name": "DodgysDD_EA",
+          "deposit": 1000,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 53,
+          "net": -762.84,
+          "roi_pct": -76.28,
+          "pf": "0.71",
+          "win_rate": "11 (20.75%)",
+          "max_dd": "1 190.52 (83.90%)"
+        },
+        "$20": {
+          "id": "Strategy_2_DodgysDD",
+          "name": "DodgysDD_EA",
+          "deposit": 20,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 42,
+          "net": -14.04,
+          "roi_pct": -70.2,
+          "pf": "0.76",
+          "win_rate": "9 (21.43%)",
+          "max_dd": "23.04 (79.45%)"
+        }
+      },
+      "October_2024": {
+        "$1000": {
+          "id": "Strategy_2_DodgysDD",
+          "name": "DodgysDD_EA",
+          "deposit": 1000,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 57,
+          "net": 1729.08,
+          "roi_pct": 172.91,
+          "pf": "1.26",
+          "win_rate": "20 (35.09%)",
+          "max_dd": "2 152.80 (57.04%)"
+        },
+        "$20": {
+          "id": "Strategy_2_DodgysDD",
+          "name": "DodgysDD_EA",
+          "deposit": 20,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 57,
+          "net": 34.2,
+          "roi_pct": 171.0,
+          "pf": "1.51",
+          "win_rate": "20 (35.09%)",
+          "max_dd": "16.20 (28.20%)"
+        }
+      }
+    }
+  },
+  "Strategy_3_TradeIQ": {
+    "name": "TradeIQ_Academy_EA",
+    "archetype": "200 EMA Dynamic Trend Filter + CPR Retest + Dual MACD Zero-Lag Momentum",
+    "windows": {
+      "January_2024": {
+        "$1000": {
+          "id": "Strategy_3_TradeIQ",
+          "name": "TradeIQ_Academy_EA",
+          "deposit": 1000,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 26,
+          "net": 1021.77,
+          "roi_pct": 102.18,
+          "pf": "1.55",
+          "win_rate": "12 (46.15%)",
+          "max_dd": "582.39 (30.00%)"
+        },
+        "$20": {
+          "id": "Strategy_3_TradeIQ",
+          "name": "TradeIQ_Academy_EA",
+          "deposit": 20,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 30,
+          "net": 29.6,
+          "roi_pct": 148.0,
+          "pf": "1.98",
+          "win_rate": "12 (40.00%)",
+          "max_dd": "12.37 (25.41%)"
+        }
+      },
+      "March_2024": {
+        "$1000": {
+          "id": "Strategy_3_TradeIQ",
+          "name": "TradeIQ_Academy_EA",
+          "deposit": 1000,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 21,
+          "net": 51.04,
+          "roi_pct": 5.1,
+          "pf": "1.04",
+          "win_rate": "8 (38.10%)",
+          "max_dd": "468.92 (38.14%)"
+        },
+        "$20": {
+          "id": "Strategy_3_TradeIQ",
+          "name": "TradeIQ_Academy_EA",
+          "deposit": 20,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 4,
+          "net": -14.67,
+          "roi_pct": -73.35,
+          "pf": "0.00",
+          "win_rate": "0 (0.00%)",
+          "max_dd": "14.67 (73.35%)"
+        }
+      },
+      "August_2024": {
+        "$1000": {
+          "id": "Strategy_3_TradeIQ",
+          "name": "TradeIQ_Academy_EA",
+          "deposit": 1000,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 34,
+          "net": -610.46,
+          "roi_pct": -61.05,
+          "pf": "0.55",
+          "win_rate": "12 (35.29%)",
+          "max_dd": "739.78 (69.94%)"
+        },
+        "$20": {
+          "id": "Strategy_3_TradeIQ",
+          "name": "TradeIQ_Academy_EA",
+          "deposit": 20,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 20,
+          "net": -15.88,
+          "roi_pct": -79.4,
+          "pf": "0.48",
+          "win_rate": "6 (30.00%)",
+          "max_dd": "20.43 (83.22%)"
+        }
+      },
+      "October_2024": {
+        "$1000": {
+          "id": "Strategy_3_TradeIQ",
+          "name": "TradeIQ_Academy_EA",
+          "deposit": 1000,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 19,
+          "net": 1097.23,
+          "roi_pct": 109.72,
+          "pf": "3.22",
+          "win_rate": "12 (63.16%)",
+          "max_dd": "236.19 (23.62%)"
+        },
+        "$20": {
+          "id": "Strategy_3_TradeIQ",
+          "name": "TradeIQ_Academy_EA",
+          "deposit": 20,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 22,
+          "net": 33.54,
+          "roi_pct": 167.7,
+          "pf": "2.59",
+          "win_rate": "14 (63.64%)",
+          "max_dd": "10.97 (54.85%)"
+        }
+      }
+    }
+  },
+  "Strategy_4_MasterSuper": {
+    "name": "Gold_Master_Super_EA",
+    "archetype": "Multi-Bar Impulse Displacement + ATR Dynamic Envelope + Kinetic Partials & BE Ratchet",
+    "windows": {
+      "January_2024": {
+        "$1000": {
+          "id": "Strategy_4_MasterSuper",
+          "name": "Gold_Master_Super_EA",
+          "deposit": 1000,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 23,
+          "net": 1296.64,
+          "roi_pct": 129.66,
+          "pf": "1.69",
+          "win_rate": "10 (43.48%)",
+          "max_dd": "865.21 (37.07%)"
+        },
+        "$20": {
+          "id": "Strategy_4_MasterSuper",
+          "name": "Gold_Master_Super_EA",
+          "deposit": 20,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 25,
+          "net": 31.71,
+          "roi_pct": 158.55,
+          "pf": "2.04",
+          "win_rate": "10 (40.00%)",
+          "max_dd": "11.65 (23.44%)"
+        }
+      },
+      "March_2024": {
+        "$1000": {
+          "id": "Strategy_4_MasterSuper",
+          "name": "Gold_Master_Super_EA",
+          "deposit": 1000,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 20,
+          "net": 1363.48,
+          "roi_pct": 136.35,
+          "pf": "1.83",
+          "win_rate": "9 (45.00%)",
+          "max_dd": "720.25 (32.53%)"
+        },
+        "$20": {
+          "id": "Strategy_4_MasterSuper",
+          "name": "Gold_Master_Super_EA",
+          "deposit": 20,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 4,
+          "net": -16.24,
+          "roi_pct": -81.2,
+          "pf": "0.00",
+          "win_rate": "0 (0.00%)",
+          "max_dd": "16.24 (81.20%)"
+        }
+      },
+      "August_2024": {
+        "$1000": {
+          "id": "Strategy_4_MasterSuper",
+          "name": "Gold_Master_Super_EA",
+          "deposit": 1000,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 29,
+          "net": -682.19,
+          "roi_pct": -68.22,
+          "pf": "0.52",
+          "win_rate": "6 (20.69%)",
+          "max_dd": "835.68 (76.92%)"
+        },
+        "$20": {
+          "id": "Strategy_4_MasterSuper",
+          "name": "Gold_Master_Super_EA",
+          "deposit": 20,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 20,
+          "net": -14.74,
+          "roi_pct": -73.7,
+          "pf": "0.60",
+          "win_rate": "4 (20.00%)",
+          "max_dd": "17.95 (77.34%)"
+        }
+      },
+      "October_2024": {
+        "$1000": {
+          "id": "Strategy_4_MasterSuper",
+          "name": "Gold_Master_Super_EA",
+          "deposit": 1000,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 18,
+          "net": 1446.14,
+          "roi_pct": 144.61,
+          "pf": "2.37",
+          "win_rate": "8 (44.44%)",
+          "max_dd": "452.18 (27.62%)"
+        },
+        "$20": {
+          "id": "Strategy_4_MasterSuper",
+          "name": "Gold_Master_Super_EA",
+          "deposit": 20,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 18,
+          "net": 40.27,
+          "roi_pct": 201.35,
+          "pf": "2.36",
+          "win_rate": "8 (44.44%)",
+          "max_dd": "10.55 (24.31%)"
+        }
+      }
+    }
+  },
+  "Strategy_5_CPRVelocity": {
+    "name": "CPR_Velocity_Doubler_EA",
+    "archetype": "Institutional Central Pivot Compression Breakout + FVG Velocity Expansion",
+    "windows": {
+      "January_2024": {
+        "$1000": {
+          "id": "Strategy_5_CPRVelocity",
+          "name": "CPR_Velocity_Doubler_EA",
+          "deposit": 1000,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 55,
+          "net": -796.8,
+          "roi_pct": -79.68,
+          "pf": "0.64",
+          "win_rate": "14 (25.45%)",
+          "max_dd": "883.50 (88.35%)"
+        },
+        "$20": {
+          "id": "Strategy_5_CPRVelocity",
+          "name": "CPR_Velocity_Doubler_EA",
+          "deposit": 20,
+          "from": "2024.01.01",
+          "to": "2024.01.31",
+          "trades": 43,
+          "net": -15.0,
+          "roi_pct": -75.0,
+          "pf": "0.73",
+          "win_rate": "9 (20.93%)",
+          "max_dd": "15.00 (75.00%)"
+        }
+      },
+      "March_2024": {
+        "$1000": {
+          "id": "Strategy_5_CPRVelocity",
+          "name": "CPR_Velocity_Doubler_EA",
+          "deposit": 1000,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 32,
+          "net": -839.7,
+          "roi_pct": -83.97,
+          "pf": "0.68",
+          "win_rate": "6 (18.75%)",
+          "max_dd": "1 772.10 (91.70%)"
+        },
+        "$20": {
+          "id": "Strategy_5_CPRVelocity",
+          "name": "CPR_Velocity_Doubler_EA",
+          "deposit": 20,
+          "from": "2024.03.01",
+          "to": "2024.03.31",
+          "trades": 25,
+          "net": -15.0,
+          "roi_pct": -75.0,
+          "pf": "0.73",
+          "win_rate": "5 (20.00%)",
+          "max_dd": "37.50 (88.24%)"
+        }
+      },
+      "August_2024": {
+        "$1000": {
+          "id": "Strategy_5_CPRVelocity",
+          "name": "CPR_Velocity_Doubler_EA",
+          "deposit": 1000,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 36,
+          "net": -453.3,
+          "roi_pct": -45.33,
+          "pf": "0.86",
+          "win_rate": "10 (27.78%)",
+          "max_dd": "974.70 (67.99%)"
+        },
+        "$20": {
+          "id": "Strategy_5_CPRVelocity",
+          "name": "CPR_Velocity_Doubler_EA",
+          "deposit": 20,
+          "from": "2024.08.01",
+          "to": "2024.08.31",
+          "trades": 30,
+          "net": -15.0,
+          "roi_pct": -75.0,
+          "pf": "0.75",
+          "win_rate": "7 (23.33%)",
+          "max_dd": "21.00 (80.77%)"
+        }
+      },
+      "October_2024": {
+        "$1000": {
+          "id": "Strategy_5_CPRVelocity",
+          "name": "CPR_Velocity_Doubler_EA",
+          "deposit": 1000,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 8,
+          "net": 1051.5,
+          "roi_pct": 105.15,
+          "pf": "1.77",
+          "win_rate": "4 (50.00%)",
+          "max_dd": "1 170.00 (36.32%)"
+        },
+        "$20": {
+          "id": "Strategy_5_CPRVelocity",
+          "name": "CPR_Velocity_Doubler_EA",
+          "deposit": 20,
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "trades": 8,
+          "net": 28.5,
+          "roi_pct": 142.5,
+          "pf": "1.66",
+          "win_rate": "4 (50.00%)",
+          "max_dd": "39.00 (44.57%)"
+        }
+      }
+    }
+  }
+}

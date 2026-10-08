@@ -1,0 +1,33 @@
+; =====================================================================
+; Preset 3: Balanced Golden Pocket Compounder (Steady Multi-Year Growth)
+; Strategy: Gold Daily 61.8% Fibonacci with Dual-Leg 1:1 Partials & Fixed Micro Lot
+; Recommended Capital: $100.00 (1:100 Leverage)
+; Benchmark Output: 100% Quarterly Win Rate, +$205.00 Annual Return, Drawdown < 28%
+; =====================================================================
+
+InpSizingMode=0
+InpFixedLot=0.01
+InpStepEquitySize=50.0
+InpMaxLotCap=2.0
+InpSLPoints=400
+InpTargetMode=0
+InpLeg1_RR=1.0
+InpLeg2_RR=2.0
+InpBELockPoints=10
+InpBaseMagic=618903
+InpMinDayRangePts=1000
+InpEntryTolerance=50
+InpMaxSpreadPoints=50
+InpTradeImmediate=true
+InpTradeVirginLevels=true
+InpMaxVirginAgeDays=30
+InpMaxDailyTrades=2
+InpUseSessionFilter=true
+InpSessionStartHour=7
+InpSessionEndHour=18
+InpDrawChartObjects=true
+InpBuyColor=16747520
+InpSellColor=255
+InpVirginColor=55295
+InpRangeColor=6908265
+InpShowDashboard=true

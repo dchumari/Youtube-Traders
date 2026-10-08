@@ -1,0 +1,240 @@
+[
+  {
+    "name": "TradeIQ_Opt",
+    "path": "YoutubeTraders\\TradeIQ_Opt\\TradeIQ_F2S8Sg12",
+    "tot_net": 14.11,
+    "tot_kes": 1820.0,
+    "tot_trades": 8,
+    "win_wks": "2/4",
+    "windows": [
+      "$12.33",
+      "$4.24",
+      "$-2.46",
+      "$0.00"
+    ]
+  },
+  {
+    "name": "JadeCap_FX",
+    "path": "YoutubeTraders\\JadeCap_FX\\JadeCap_FX_EA",
+    "tot_net": 12.5,
+    "tot_kes": 1612.0,
+    "tot_trades": 55,
+    "win_wks": "2/4",
+    "windows": [
+      "$12.10",
+      "$-3.00",
+      "$6.40",
+      "$-3.00"
+    ]
+  },
+  {
+    "name": "Stock_Sniper",
+    "path": "YoutubeTraders\\Stock_Sniper_Trading\\Stock_Sniper_Trading_EA",
+    "tot_net": 1.44,
+    "tot_kes": 186.0,
+    "tot_trades": 3,
+    "win_wks": "1/4",
+    "windows": [
+      "$-1.16",
+      "$0.00",
+      "$-4.12",
+      "$6.72"
+    ]
+  },
+  {
+    "name": "RockzFX",
+    "path": "YoutubeTraders\\RockzFX\\RockzFX_EA",
+    "tot_net": 0.0,
+    "tot_kes": 0.0,
+    "tot_trades": 0,
+    "win_wks": "0/4",
+    "windows": [
+      "$0.00",
+      "$0.00",
+      "$0.00",
+      "$0.00"
+    ]
+  },
+  {
+    "name": "Wealth_Secret",
+    "path": "YoutubeTraders\\Wealth_Secret\\Wealth_Secret_EA",
+    "tot_net": 0.0,
+    "tot_kes": 0.0,
+    "tot_trades": 0,
+    "win_wks": "0/4",
+    "windows": [
+      "$0.00",
+      "$0.00",
+      "$0.00",
+      "$0.00"
+    ]
+  },
+  {
+    "name": "WicksDontLie",
+    "path": "YoutubeTraders\\WicksDontLie\\WicksDontLie_EA",
+    "tot_net": 0.0,
+    "tot_kes": 0.0,
+    "tot_trades": 0,
+    "win_wks": "0/4",
+    "windows": [
+      "$0.00",
+      "$0.00",
+      "$0.00",
+      "$0.00"
+    ]
+  },
+  {
+    "name": "Lorenzo_Corrado",
+    "path": "YoutubeTraders\\Lorenzo_Corrado\\Lorenzo_Corrado_EA",
+    "tot_net": 0.0,
+    "tot_kes": 0.0,
+    "tot_trades": 0,
+    "win_wks": "0/4",
+    "windows": [
+      "$0.00",
+      "$0.00",
+      "$0.00",
+      "$0.00"
+    ]
+  },
+  {
+    "name": "TTrades",
+    "path": "YoutubeTraders\\TTrades\\TTrades_EA",
+    "tot_net": -1.4,
+    "tot_kes": -181.0,
+    "tot_trades": 30,
+    "win_wks": "1/4",
+    "windows": [
+      "$-1.50",
+      "$-3.00",
+      "$6.10",
+      "$-3.00"
+    ]
+  },
+  {
+    "name": "Ali_Khan_ICT",
+    "path": "YoutubeTraders\\Ali_Khan_ICT\\Ali_Khan_ICT_EA",
+    "tot_net": -1.8,
+    "tot_kes": -232.0,
+    "tot_trades": 18,
+    "win_wks": "1/4",
+    "windows": [
+      "$-1.50",
+      "$-3.00",
+      "$-3.00",
+      "$5.70"
+    ]
+  },
+  {
+    "name": "Arjo_MMT",
+    "path": "YoutubeTraders\\Arjo_MMT\\Arjo_MMT_EA",
+    "tot_net": -5.04,
+    "tot_kes": -650.0,
+    "tot_trades": 18,
+    "win_wks": "1/4",
+    "windows": [
+      "$-1.80",
+      "$-3.60",
+      "$3.96",
+      "$-3.60"
+    ]
+  },
+  {
+    "name": "Cove_Trader",
+    "path": "YoutubeTraders\\Cove_Trader\\Cove_Trader_EA",
+    "tot_net": -5.9,
+    "tot_kes": -761.0,
+    "tot_trades": 21,
+    "win_wks": "1/4",
+    "windows": [
+      "$-1.50",
+      "$1.60",
+      "$-3.00",
+      "$-3.00"
+    ]
+  },
+  {
+    "name": "DonVo",
+    "path": "YoutubeTraders\\DonVo\\DonVo_EA",
+    "tot_net": -8.76,
+    "tot_kes": -1130.0,
+    "tot_trades": 16,
+    "win_wks": "1/4",
+    "windows": [
+      "$-2.39",
+      "$1.78",
+      "$-3.67",
+      "$-4.48"
+    ]
+  },
+  {
+    "name": "LumiTraders",
+    "path": "YoutubeTraders\\LumiTraders\\LumiTraders_EA",
+    "tot_net": -10.2,
+    "tot_kes": -1316.0,
+    "tot_trades": 11,
+    "win_wks": "0/4",
+    "windows": [
+      "$-1.50",
+      "$-3.00",
+      "$-2.70",
+      "$-3.00"
+    ]
+  },
+  {
+    "name": "Tanja_Trades",
+    "path": "YoutubeTraders\\Tanja_Trades\\Tanja_Trades_EA",
+    "tot_net": -10.5,
+    "tot_kes": -1354.0,
+    "tot_trades": 23,
+    "win_wks": "0/4",
+    "windows": [
+      "$-1.50",
+      "$-3.00",
+      "$-3.00",
+      "$-3.00"
+    ]
+  },
+  {
+    "name": "Hunter_DiVenzo",
+    "path": "YoutubeTraders\\Hunter_DiVenzo\\Hunter_DiVenzo_EA",
+    "tot_net": -12.96,
+    "tot_kes": -1672.0,
+    "tot_trades": 11,
+    "win_wks": "0/4",
+    "windows": [
+      "$-2.16",
+      "$-3.60",
+      "$-3.60",
+      "$-3.60"
+    ]
+  },
+  {
+    "name": "MSB_FX",
+    "path": "YoutubeTraders\\MSB_FX\\MSB_FX_EA",
+    "tot_net": -16.6,
+    "tot_kes": -2141.0,
+    "tot_trades": 7,
+    "win_wks": "0/4",
+    "windows": [
+      "$-2.65",
+      "$-3.90",
+      "$-7.06",
+      "$-2.99"
+    ]
+  },
+  {
+    "name": "FX_WOLF",
+    "path": "YoutubeTraders\\FX_WOLF\\FX_WOLF_EA",
+    "tot_net": -16.85,
+    "tot_kes": -2174.0,
+    "tot_trades": 5,
+    "win_wks": "0/4",
+    "windows": [
+      "$-2.56",
+      "$-3.02",
+      "$-6.69",
+      "$-4.58"
+    ]
+  }
+]

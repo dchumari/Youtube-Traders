@@ -1,0 +1,15 @@
+StrategyModel=2
+ExecutionMode=1
+Part1_RR=1.0
+Part2_RR=2.0
+MoveBE_On_TP1=1
+BE_Offset_Pips=1.0
+RiskPercent=2.0
+SL_Pips=15.0
+Min_FVG_Pips=2.0
+Sweep_Pips=2.0
+UseVolumeFilter=1
+StartHourUTC=13
+EndHourUTC=19
+MaxDailyTrades=4
+MaxDailyLosses=2

@@ -1,0 +1,17 @@
+{
+  "Total Net Profit": "2 994.06",
+  "Gross Profit": "7 529.18",
+  "Gross Loss": "-4 535.12",
+  "Profit Factor": "1.66",
+  "Expected Payoff": "157.58",
+  "Balance Drawdown Maximal": "1 794.60 (14.91%)",
+  "Equity Drawdown Maximal": "3 689.43 (27.26%)",
+  "Sharpe Ratio": "9.25",
+  "Recovery Factor": "0.81",
+  "Margin Level": "99.68%",
+  "Total Trades": "19",
+  "Short Trades (won %)": "11 (36.36%)",
+  "Long Trades (won %)": "8 (50.00%)",
+  "Profit Trades (% of total)": "8 (42.11%)",
+  "Loss Trades (% of total)": "11 (57.89%)"
+}

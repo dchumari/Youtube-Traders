@@ -1,0 +1,30 @@
+{
+  "Window_1_BullishMomentum": {
+    "net": 0.9,
+    "roi_pct": 11.25,
+    "pf": "1.32",
+    "trades": 5,
+    "win_rate": "0 (0.00%)"
+  },
+  "Window_2_ConsolidationChop": {
+    "net": -2.8,
+    "roi_pct": -35.0,
+    "pf": "0.00",
+    "trades": 2,
+    "win_rate": "2 (0.00%)"
+  },
+  "Window_3_HighVolatilityShock": {
+    "net": -2.8,
+    "roi_pct": -35.0,
+    "pf": "0.00",
+    "trades": 2,
+    "win_rate": "2 (0.00%)"
+  },
+  "Window_4_CorrectionPullback": {
+    "net": -1.4,
+    "roi_pct": -17.5,
+    "pf": "0.00",
+    "trades": 1,
+    "win_rate": "1 (0.00%)"
+  }
+}

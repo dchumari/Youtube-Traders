@@ -1,0 +1,236 @@
+[
+  {
+    "id": "Micro_HyperScalp_SingleRunner",
+    "name": "Gold_Micro_HyperScalp_EA (Single 2.5R - Baseline)",
+    "tot_net": 53.8,
+    "tot_kes": 6940.0,
+    "avg_roi": 672.5,
+    "tot_trades": 8,
+    "win_weeks": "3/4",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "net": 20.61,
+        "roi_pct": 257.62,
+        "pf": "6.66",
+        "trades": 4,
+        "win_rate": "3 (66.67%)"
+      },
+      "Window_2_ConsolidationChop": {
+        "net": 21.52,
+        "roi_pct": 269.0,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "2 (100.00%)"
+      },
+      "Window_3_HighVolatilityShock": {
+        "net": -3.18,
+        "roi_pct": -39.75,
+        "pf": "0.00",
+        "trades": 1,
+        "win_rate": "1 (0.00%)"
+      },
+      "Window_4_CorrectionPullback": {
+        "net": 14.85,
+        "roi_pct": 185.62,
+        "pf": "0.00",
+        "trades": 1,
+        "win_rate": "1 (100.00%)"
+      }
+    }
+  },
+  {
+    "id": "SMT_Void_Doubler",
+    "name": "SMT_Void_Doubler_EA",
+    "tot_net": 4.2,
+    "tot_kes": 542.0,
+    "avg_roi": 52.5,
+    "tot_trades": 13,
+    "win_weeks": "2/4",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "net": 4.2,
+        "roi_pct": 52.5,
+        "pf": "2.00",
+        "trades": 5,
+        "win_rate": "5 (40.00%)"
+      },
+      "Window_2_ConsolidationChop": {
+        "net": 7.0,
+        "roi_pct": 87.5,
+        "pf": "6.00",
+        "trades": 3,
+        "win_rate": "0 (0.00%)"
+      },
+      "Window_3_HighVolatilityShock": {
+        "net": -2.8,
+        "roi_pct": -35.0,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "0 (0.00%)"
+      },
+      "Window_4_CorrectionPullback": {
+        "net": -4.2,
+        "roi_pct": -52.5,
+        "pf": "0.00",
+        "trades": 3,
+        "win_rate": "0 (0.00%)"
+      }
+    }
+  },
+  {
+    "id": "Macro_Judas_Doubler",
+    "name": "Macro_Judas_Doubler_EA",
+    "tot_net": 3.75,
+    "tot_kes": 484.0,
+    "avg_roi": 46.9,
+    "tot_trades": 22,
+    "win_weeks": "1/4",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "net": 11.25,
+        "roi_pct": 140.62,
+        "pf": "2.50",
+        "trades": 10,
+        "win_rate": "7 (57.14%)"
+      },
+      "Window_2_ConsolidationChop": {
+        "net": -3.0,
+        "roi_pct": -37.5,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)"
+      },
+      "Window_3_HighVolatilityShock": {
+        "net": -1.5,
+        "roi_pct": -18.75,
+        "pf": "0.83",
+        "trades": 8,
+        "win_rate": "3 (33.33%)"
+      },
+      "Window_4_CorrectionPullback": {
+        "net": -3.0,
+        "roi_pct": -37.5,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)"
+      }
+    }
+  },
+  {
+    "id": "Micro_HyperScalp_DualPartial",
+    "name": "Gold_Micro_HyperScalp_EA (Dual Partial + BE)",
+    "tot_net": 0.0,
+    "tot_kes": 0.0,
+    "avg_roi": 0.0,
+    "tot_trades": 0,
+    "win_weeks": "0/4",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "net": 0.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0.0%"
+      },
+      "Window_2_ConsolidationChop": {
+        "net": 0.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0.0%"
+      },
+      "Window_3_HighVolatilityShock": {
+        "net": 0.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0.0%"
+      },
+      "Window_4_CorrectionPullback": {
+        "net": 0.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0.0%"
+      }
+    }
+  },
+  {
+    "id": "Micro_HyperScalp_TightSL_3RR",
+    "name": "Gold_Micro_HyperScalp_EA (Tight 12p SL + 3.0R TP)",
+    "tot_net": 0.0,
+    "tot_kes": 0.0,
+    "avg_roi": 0.0,
+    "tot_trades": 0,
+    "win_weeks": "0/4",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "net": 0.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0.0%"
+      },
+      "Window_2_ConsolidationChop": {
+        "net": 0.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0.0%"
+      },
+      "Window_3_HighVolatilityShock": {
+        "net": 0.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0.0%"
+      },
+      "Window_4_CorrectionPullback": {
+        "net": 0.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0.0%"
+      }
+    }
+  },
+  {
+    "id": "Kinetic_Partials_Doubler",
+    "name": "Kinetic_Partials_Doubler_EA",
+    "tot_net": -10.5,
+    "tot_kes": -1354.0,
+    "avg_roi": -131.2,
+    "tot_trades": 27,
+    "win_weeks": "0/4",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "net": -1.5,
+        "roi_pct": -18.75,
+        "pf": "0.00",
+        "trades": 1,
+        "win_rate": "0 (0.00%)"
+      },
+      "Window_2_ConsolidationChop": {
+        "net": -3.0,
+        "roi_pct": -37.5,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "0 (0.00%)"
+      },
+      "Window_3_HighVolatilityShock": {
+        "net": -3.0,
+        "roi_pct": -37.5,
+        "pf": "0.60",
+        "trades": 8,
+        "win_rate": "6 (50.00%)"
+      },
+      "Window_4_CorrectionPullback": {
+        "net": -3.0,
+        "roi_pct": -37.5,
+        "pf": "0.78",
+        "trades": 16,
+        "win_rate": "10 (40.00%)"
+      }
+    }
+  }
+]

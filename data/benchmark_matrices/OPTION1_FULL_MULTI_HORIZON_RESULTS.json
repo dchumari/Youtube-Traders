@@ -1,0 +1,632 @@
+{
+  "1_WEEK_WINDOWS": [
+    {
+      "window_info": {
+        "id": "W5_Apr2024",
+        "name": "Week 5 (Mid-April 2024)",
+        "from": "2024.04.15",
+        "to": "2024.04.22",
+        "desc": "Geopolitical War Surge"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -3.54,
+        "final_balance": 4.46,
+        "roi_pct": -44.25,
+        "pf": "0.58",
+        "trades": 4,
+        "win_rate": "4 (25.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -580.15,
+        "final_balance": 194.85,
+        "roi_pct": -74.86,
+        "pf": "0.24",
+        "trades": 8,
+        "win_rate": "5 (20.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "W6_Jun2024",
+        "name": "Week 6 (Mid-June 2024)",
+        "from": "2024.06.10",
+        "to": "2024.06.17",
+        "desc": "Summer Range Consolidation"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -3.28,
+        "final_balance": 4.72,
+        "roi_pct": -41.0,
+        "pf": "0.00",
+        "trades": 1,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": 516.49,
+        "final_balance": 1291.49,
+        "roi_pct": 66.64,
+        "pf": "4.09",
+        "trades": 3,
+        "win_rate": "3 (66.67%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "W7_Sep2024",
+        "name": "Week 7 (Mid-Sept 2024)",
+        "from": "2024.09.16",
+        "to": "2024.09.23",
+        "desc": "Fed 50bps Rate Cut Pivot"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -4.3,
+        "final_balance": 3.7,
+        "roi_pct": -53.75,
+        "pf": "0.00",
+        "trades": 1,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -279.3,
+        "final_balance": 495.7,
+        "roi_pct": -36.04,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "W8_Nov2024",
+        "name": "Week 8 (Mid-Nov 2024)",
+        "from": "2024.11.11",
+        "to": "2024.11.18",
+        "desc": "Post-US Election Selloff"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": 0.0,
+        "final_balance": 8.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": 0.0,
+        "final_balance": 775.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    }
+  ],
+  "1_MONTH_WINDOWS": [
+    {
+      "window_info": {
+        "id": "M1_Feb2024",
+        "name": "Month 1 (February 2024)",
+        "from": "2024.02.01",
+        "to": "2024.02.29",
+        "desc": "Pre-Breakout Volatility Coil"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -3.67,
+        "final_balance": 4.33,
+        "roi_pct": -45.88,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -51.03,
+        "final_balance": 723.97,
+        "roi_pct": -6.58,
+        "pf": "0.97",
+        "trades": 11,
+        "win_rate": "3 (33.33%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "M2_May2024",
+        "name": "Month 2 (May 2024)",
+        "from": "2024.05.01",
+        "to": "2024.05.31",
+        "desc": "ATH Breakout Impulse ($2,450)"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -3.12,
+        "final_balance": 4.88,
+        "roi_pct": -39.0,
+        "pf": "0.58",
+        "trades": 4,
+        "win_rate": "2 (50.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -411.27,
+        "final_balance": 363.73,
+        "roi_pct": -53.07,
+        "pf": "0.55",
+        "trades": 16,
+        "win_rate": "10 (30.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "M3_Jul2024",
+        "name": "Month 3 (July 2024)",
+        "from": "2024.07.01",
+        "to": "2024.07.31",
+        "desc": "Mid-Summer Range Expansion"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -2.63,
+        "final_balance": 5.37,
+        "roi_pct": -32.88,
+        "pf": "0.88",
+        "trades": 10,
+        "win_rate": "6 (50.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -64.91,
+        "final_balance": 710.09,
+        "roi_pct": -8.38,
+        "pf": "0.95",
+        "trades": 13,
+        "win_rate": "7 (57.14%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "M4_Nov2024",
+        "name": "Month 4 (November 2024)",
+        "from": "2024.11.01",
+        "to": "2024.11.30",
+        "desc": "Election Volatility & Swing"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -2.18,
+        "final_balance": 5.82,
+        "roi_pct": -27.25,
+        "pf": "0.00",
+        "trades": 1,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -123.9,
+        "final_balance": 651.1,
+        "roi_pct": -15.99,
+        "pf": "0.74",
+        "trades": 5,
+        "win_rate": "4 (25.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    }
+  ],
+  "3_MONTH_WINDOWS": [
+    {
+      "window_info": {
+        "id": "Q1_Q4_2023",
+        "name": "Quarter 1 (Q4 2023)",
+        "from": "2023.10.01",
+        "to": "2023.12.31",
+        "desc": "Middle East Breakout to $2,075"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -5.56,
+        "final_balance": 2.44,
+        "roi_pct": -69.5,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -685.44,
+        "final_balance": 89.56,
+        "roi_pct": -88.44,
+        "pf": "0.64",
+        "trades": 46,
+        "win_rate": "24 (20.83%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "Q2_Q1_2024",
+        "name": "Quarter 2 (Q1 2024)",
+        "from": "2024.01.01",
+        "to": "2024.03.31",
+        "desc": "Historic $2,000 -> $2,230 Breakout"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -4.99,
+        "final_balance": 3.01,
+        "roi_pct": -62.38,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -139.57,
+        "final_balance": 635.43,
+        "roi_pct": -18.01,
+        "pf": "0.96",
+        "trades": 32,
+        "win_rate": "15 (40.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "Q3_Q2_2024",
+        "name": "Quarter 3 (Q2 2024)",
+        "from": "2024.04.01",
+        "to": "2024.06.30",
+        "desc": "Consolidation Above $2,300"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -2.33,
+        "final_balance": 5.67,
+        "roi_pct": -29.12,
+        "pf": "0.00",
+        "trades": 1,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -749.01,
+        "final_balance": 25.99,
+        "roi_pct": -96.65,
+        "pf": "0.50",
+        "trades": 58,
+        "win_rate": "37 (32.43%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "Q4_Q3_2024",
+        "name": "Quarter 4 (Q3 2024)",
+        "from": "2024.07.01",
+        "to": "2024.09.30",
+        "desc": "Fed Rate-Cut Run to $2,685"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -2.63,
+        "final_balance": 5.37,
+        "roi_pct": -32.88,
+        "pf": "0.88",
+        "trades": 10,
+        "win_rate": "6 (50.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -748.52,
+        "final_balance": 26.48,
+        "roi_pct": -96.58,
+        "pf": "0.71",
+        "trades": 42,
+        "win_rate": "29 (27.59%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    }
+  ],
+  "6_MONTH_WINDOWS": [
+    {
+      "window_info": {
+        "id": "H1_2023",
+        "name": "Half-Year 1 (H1 2023)",
+        "from": "2023.01.01",
+        "to": "2023.06.30",
+        "desc": "SVB Bank Crisis & Inflation Spike"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": 0.0,
+        "final_balance": 8.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": 0.0,
+        "final_balance": 775.0,
+        "roi_pct": 0.0,
+        "pf": "0.00",
+        "trades": 0,
+        "win_rate": "0 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "H2_2023",
+        "name": "Half-Year 2 (H2 2023)",
+        "from": "2023.07.01",
+        "to": "2023.12.31",
+        "desc": "Q3 Pullback & Q4 Breakout"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -5.56,
+        "final_balance": 2.44,
+        "roi_pct": -69.5,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -685.44,
+        "final_balance": 89.56,
+        "roi_pct": -88.44,
+        "pf": "0.64",
+        "trades": 46,
+        "win_rate": "24 (20.83%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "H1_2024",
+        "name": "Half-Year 3 (H1 2024)",
+        "from": "2024.01.01",
+        "to": "2024.06.30",
+        "desc": "Historic $2,000 -> $2,450 Rally"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -4.99,
+        "final_balance": 3.01,
+        "roi_pct": -62.38,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -748.8,
+        "final_balance": 26.2,
+        "roi_pct": -96.62,
+        "pf": "0.85",
+        "trades": 90,
+        "win_rate": "52 (34.62%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "H2_2024",
+        "name": "Half-Year 4 (H2 2024)",
+        "from": "2024.07.01",
+        "to": "2024.12.31",
+        "desc": "ATH Acceleration to $2,790"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -2.63,
+        "final_balance": 5.37,
+        "roi_pct": -32.88,
+        "pf": "0.88",
+        "trades": 10,
+        "win_rate": "6 (50.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -749.13,
+        "final_balance": 25.87,
+        "roi_pct": -96.66,
+        "pf": "0.73",
+        "trades": 86,
+        "win_rate": "59 (33.90%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    }
+  ],
+  "1_YEAR_WINDOWS": [
+    {
+      "window_info": {
+        "id": "Y1_2021",
+        "name": "Year 1 (Full Year 2021)",
+        "from": "2021.01.01",
+        "to": "2021.12.31",
+        "desc": "Post-COVID Consolidation Year"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -5.86,
+        "final_balance": 2.14,
+        "roi_pct": -73.25,
+        "pf": "0.00",
+        "trades": 1,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -746.88,
+        "final_balance": 28.12,
+        "roi_pct": -96.37,
+        "pf": "0.82",
+        "trades": 130,
+        "win_rate": "61 (27.87%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "Y2_2022",
+        "name": "Year 2 (Full Year 2022)",
+        "from": "2022.01.01",
+        "to": "2022.12.31",
+        "desc": "War Outbreak & Aggressive Fed Rate Hikes"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -6.4,
+        "final_balance": 1.6,
+        "roi_pct": -80.0,
+        "pf": "0.57",
+        "trades": 4,
+        "win_rate": "2 (50.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -746.73,
+        "final_balance": 28.27,
+        "roi_pct": -96.35,
+        "pf": "0.60",
+        "trades": 66,
+        "win_rate": "38 (18.42%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "Y3_2023",
+        "name": "Year 3 (Full Year 2023)",
+        "from": "2023.01.01",
+        "to": "2023.12.31",
+        "desc": "Bank Runs & Geopolitical Inversion"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -5.56,
+        "final_balance": 2.44,
+        "roi_pct": -69.5,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -685.44,
+        "final_balance": 89.56,
+        "roi_pct": -88.44,
+        "pf": "0.64",
+        "trades": 46,
+        "win_rate": "24 (20.83%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "window_info": {
+        "id": "Y4_2024",
+        "name": "Year 4 (Full Year 2024)",
+        "from": "2024.01.01",
+        "to": "2024.12.31",
+        "desc": "Historic Record Gold Bull Market"
+      },
+      "standard_8usd": {
+        "deposit": 8,
+        "net": -4.99,
+        "final_balance": 3.01,
+        "roi_pct": -62.38,
+        "pf": "0.00",
+        "trades": 2,
+        "win_rate": "1 (0.00%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      },
+      "cent_775usc": {
+        "deposit": 775,
+        "net": -771.23,
+        "final_balance": 3.77,
+        "roi_pct": -99.51,
+        "pf": "0.85",
+        "trades": 122,
+        "win_rate": "74 (33.78%)",
+        "max_dd": "0.00",
+        "status": "SUCCESS"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs and runtime artifacts
+*.log
+scripts/watchdog.log
+*.ini
+*.htm
+*.html
+
+# Sandbox and scratch dirs
+scratch/
+.system_generated/
+tempmediaStorage/
+
+# OS and Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

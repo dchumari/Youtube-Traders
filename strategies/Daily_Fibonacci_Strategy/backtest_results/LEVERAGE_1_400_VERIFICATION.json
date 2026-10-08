@@ -1,0 +1,86 @@
+[
+  {
+    "name": "W1 (NFP Shock)",
+    "from": "2024.03.04",
+    "to": "2024.03.11",
+    "deposit": 20,
+    "leverage": "1:400",
+    "net_profit": 35.06,
+    "profit_factor": 4.59,
+    "trades": 14,
+    "dd_pct": 10.57,
+    "win_rate": 71.43
+  },
+  {
+    "name": "W2 (CPI/FOMC Shock)",
+    "from": "2024.06.10",
+    "to": "2024.06.17",
+    "deposit": 20,
+    "leverage": "1:400",
+    "net_profit": 8.28,
+    "profit_factor": 2.11,
+    "trades": 7,
+    "dd_pct": 19.26,
+    "win_rate": 57.14
+  },
+  {
+    "name": "W3 (Yen Carry Crash)",
+    "from": "2024.08.05",
+    "to": "2024.08.12",
+    "deposit": 20,
+    "leverage": "1:400",
+    "net_profit": 31.84,
+    "profit_factor": 2.84,
+    "trades": 9,
+    "dd_pct": 24.02,
+    "win_rate": 55.56
+  },
+  {
+    "name": "W4 (US Election Shock)",
+    "from": "2024.11.04",
+    "to": "2024.11.11",
+    "deposit": 20,
+    "leverage": "1:400",
+    "net_profit": 12.81,
+    "profit_factor": 1.85,
+    "trades": 10,
+    "dd_pct": 40.35,
+    "win_rate": 60.0
+  },
+  {
+    "name": "W1 (NFP Shock)",
+    "from": "2024.03.04",
+    "to": "2024.03.11",
+    "deposit": 100,
+    "leverage": "1:400",
+    "net_profit": 35.06,
+    "profit_factor": 4.59,
+    "trades": 14,
+    "dd_pct": 3.87,
+    "win_rate": 71.43
+  },
+  {
+    "name": "W2 (CPI/FOMC Shock)",
+    "from": "2024.06.10",
+    "to": "2024.06.17",
+    "deposit": 100,
+    "leverage": "1:400",
+    "error": "No report generated"
+  },
+  {
+    "name": "W3 (Yen Carry Crash)",
+    "from": "2024.08.05",
+    "to": "2024.08.12",
+    "deposit": 100,
+    "leverage": "1:400",
+    "error": "No report generated"
+  },
+  {
+    "name": "W4 (US Election Shock)",
+    "from": "2024.11.04",
+    "to": "2024.11.11",
+    "deposit": 100,
+    "leverage": "1:400",
+    "error": "No report generated"
+  }
+]

@@ -1,0 +1,73 @@
+//@version=5
+indicator("Daily 61.8% Fibonacci & Virgin Levels [Multi-Timeframe]", overlay=true, max_lines_count=500, max_labels_count=500)
+
+// --- INPUTS ---
+grp_lookback = "=== Lookback & Level Settings ==="
+lookbackDays      = input.int(30, "Lookback (Days)", minval=1, maxval=100, group=grp_lookback)
+showTodayActive   = input.bool(true, "Show Current Day Active 61.8%", group=grp_lookback)
+showHistorical    = input.bool(true, "Show Historical Daily 61.8% Lines", group=grp_lookback)
+trackVirgin       = input.bool(true, "Track Virgin (Untested) Levels", group=grp_lookback)
+showOnlyVirgin    = input.bool(false, "Show ONLY Virgin Levels", group=grp_lookback)
+
+grp_styles = "=== Visual Styles & Colors ==="
+colorBullish      = input.color(color.new(#00e676, 0), "Bullish 61.8% Support Line", group=grp_styles)
+colorBearish      = input.color(color.new(#ff5252, 0), "Bearish 61.8% Resistance Line", group=grp_styles)
+colorVirgin       = input.color(color.new(#ffd700, 0), "Virgin (Untested) Level Color", group=grp_styles)
+showLabels        = input.bool(true, "Show Price & Direction Labels", group=grp_styles)
+labelSize         = input.string(size.small, "Label Size", options=[size.tiny, size.small, size.normal], group=grp_styles)
+
+grp_alerts = "=== Alerts ==="
+alertDistPoints   = input.float(5.0, "Alert Proximity Buffer ($)", group=grp_alerts)
+
+// --- FETCH DAILY DATA ---
+[d_open, d_high, d_low, d_close, d_time] = request.security(syminfo.tickerid, "D", [open, high, low, close, time], lookahead=barmerge.lookahead_off)
+[d_open1, d_high1, d_low1, d_close1, d_time1] = request.security(syminfo.tickerid, "D", [open[1], high[1], low[1], close[1], time[1]], lookahead=barmerge.lookahead_off)
+
+// Detect New Day on Chart
+isNewDay = ta.change(time("D")) != 0
+
+// --- CALCULATION LOGIC ---
+// Bullish Day: 100% at Low, 0% at High -> Retracement level = High - 0.618 * Range (BUY)
+// Bearish Day: 100% at High, 0% at Low -> Retracement level = Low + 0.618 * Range (SELL)
+f_calc_fib(d_o, d_h, d_l, d_c) =>
+    rng = d_h - d_l
+    is_bull = d_c >= d_o
+    fib_lvl = is_bull ? (d_h - 0.618 * rng) : (d_l + 0.618 * rng)
+    [fib_lvl, is_bull]
+
+// Plot Current Active Day Level on Chart directly for zero-latency execution
+[today_fib, today_is_bull] = f_calc_fib(d_open1, d_high1, d_low1, d_close1)
+
+var line activeLine = na
+var label activeLabel = na
+
+if isNewDay and showTodayActive
+    if not na(activeLine)
+        line.delete(activeLine)
+    if not na(activeLabel)
+        label.delete(activeLabel)
+        
+    lineColor = today_is_bull ? colorBullish : colorBearish
+    activeLine := line.new(x1=bar_index, y1=today_fib, x2=bar_index + 10, y2=today_fib, 
+                           color=lineColor, width=2, style=line.style_solid, extend=extend.right)
+                           
+    if showLabels
+        txt = "TODAY 61.8% " + (today_is_bull ? "BUY SUPPORT: " : "SELL RESISTANCE: ") + str.tostring(today_fib, "#.##")
+        activeLabel := label.new(x=bar_index, y=today_fib, text=txt, color=color.new(color.black, 40), 
+                                 textcolor=lineColor, style=label.style_label_left, size=labelSize)
+
+// Update active line endpoint
+if not na(activeLine)
+    line.set_x2(activeLine, bar_index + 5)
+if not na(activeLabel)
+    label.set_x(activeLabel, bar_index + 5)
+
+// --- ALERTS ---
+near_support    = today_is_bull and math.abs(close - today_fib) <= alertDistPoints
+near_resistance = not today_is_bull and math.abs(close - today_fib) <= alertDistPoints
+hit_support     = today_is_bull and low <= today_fib
+hit_resistance  = not today_is_bull and high >= today_fib
+
+alertcondition(hit_support, title="61.8% Buy Level Hit", message="Gold has touched the Daily 61.8% Bullish Retracement Level! Look for Buy Confirmation.")
+alertcondition(hit_resistance, title="61.8% Sell Level Hit", message="Gold has touched the Daily 61.8% Bearish Retracement Level! Look for Sell Confirmation.")
+alertcondition(near_support or near_resistance, title="61.8% Level Proximity Alert", message="Gold is approaching a Daily 61.8% Key Level!")

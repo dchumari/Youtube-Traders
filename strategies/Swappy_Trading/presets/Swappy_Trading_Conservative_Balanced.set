@@ -1,0 +1,12 @@
+StrategyModel=4
+ExecutionMode=0
+SingleTarget_RR=2.5
+RiskPercent=2.0
+SL_Pips=20.0
+Min_FVG_Pips=3.5
+Sweep_Pips=3.0
+UseVolumeFilter=1
+StartHourUTC=13
+EndHourUTC=18
+MaxDailyTrades=2
+MaxDailyLosses=1

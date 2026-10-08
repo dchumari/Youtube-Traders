@@ -1,0 +1,222 @@
+[
+  {
+    "id": "OPT-1-RR2.0",
+    "name": "Gold M15 Liquidity Grab (RR 2.0, Wick 0.45, Lookback 20)",
+    "inputs": {
+      "InpStrategy": 0,
+      "InpRewardRiskRatio": 2.0,
+      "InpSweepLookback": 20,
+      "InpMinSweepPoints": 35,
+      "InpMinWickRatio": 0.45,
+      "InpUseTrendFilter": "true",
+      "InpUseSessionFilter": "true",
+      "InpSessionStartH1": 7,
+      "InpSessionEndH1": 11,
+      "InpSessionStartH2": 13,
+      "InpSessionEndH2": 17,
+      "InpUseBreakeven": "true",
+      "InpBETriggerR": 1.0,
+      "InpBELockPoints": 10,
+      "InpRiskPercent": 0.0,
+      "InpFixedLot": 0.01
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": 27.42,
+      "profit_factor": 2.17,
+      "drawdown_pct": 11.4,
+      "total_trades": 21,
+      "win_rate_pct": 57.14
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": 27.42,
+      "profit_factor": 2.17,
+      "drawdown_pct": 57.0,
+      "total_trades": 21,
+      "win_rate_pct": 57.14
+    }
+  },
+  {
+    "id": "OPT-2-RR2.5-Standard",
+    "name": "Gold M15 Liquidity Grab (RR 2.5, Wick 0.45, Lookback 20)",
+    "inputs": {
+      "InpStrategy": 0,
+      "InpRewardRiskRatio": 2.5,
+      "InpSweepLookback": 20,
+      "InpMinSweepPoints": 35,
+      "InpMinWickRatio": 0.45,
+      "InpUseTrendFilter": "true",
+      "InpUseSessionFilter": "true",
+      "InpSessionStartH1": 7,
+      "InpSessionEndH1": 11,
+      "InpSessionStartH2": 13,
+      "InpSessionEndH2": 17,
+      "InpUseBreakeven": "true",
+      "InpBETriggerR": 1.0,
+      "InpBELockPoints": 10,
+      "InpRiskPercent": 0.0,
+      "InpFixedLot": 0.01
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": 13.83,
+      "profit_factor": 1.59,
+      "drawdown_pct": 11.4,
+      "total_trades": 21,
+      "win_rate_pct": 57.14
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": 13.83,
+      "profit_factor": 1.59,
+      "drawdown_pct": 57.0,
+      "total_trades": 21,
+      "win_rate_pct": 57.14
+    }
+  },
+  {
+    "id": "OPT-3-RR3.0-Runner",
+    "name": "Gold M15 Liquidity Grab (RR 3.0, Wick 0.45, Lookback 20)",
+    "inputs": {
+      "InpStrategy": 0,
+      "InpRewardRiskRatio": 3.0,
+      "InpSweepLookback": 20,
+      "InpMinSweepPoints": 35,
+      "InpMinWickRatio": 0.45,
+      "InpUseTrendFilter": "true",
+      "InpUseSessionFilter": "true",
+      "InpSessionStartH1": 7,
+      "InpSessionEndH1": 11,
+      "InpSessionStartH2": 13,
+      "InpSessionEndH2": 17,
+      "InpUseBreakeven": "true",
+      "InpBETriggerR": 1.0,
+      "InpBELockPoints": 10,
+      "InpRiskPercent": 0.0,
+      "InpFixedLot": 0.01
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": 14.52,
+      "profit_factor": 1.62,
+      "drawdown_pct": 11.4,
+      "total_trades": 20,
+      "win_rate_pct": 55.0
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": 14.52,
+      "profit_factor": 1.62,
+      "drawdown_pct": 57.0,
+      "total_trades": 20,
+      "win_rate_pct": 55.0
+    }
+  },
+  {
+    "id": "OPT-4-StrictWick0.50",
+    "name": "Gold M15 Liquidity Grab (RR 2.5, Wick 0.50, Lookback 20)",
+    "inputs": {
+      "InpStrategy": 0,
+      "InpRewardRiskRatio": 2.5,
+      "InpSweepLookback": 20,
+      "InpMinSweepPoints": 35,
+      "InpMinWickRatio": 0.5,
+      "InpUseTrendFilter": "true",
+      "InpUseSessionFilter": "true",
+      "InpSessionStartH1": 7,
+      "InpSessionEndH1": 11,
+      "InpSessionStartH2": 13,
+      "InpSessionEndH2": 17,
+      "InpUseBreakeven": "true",
+      "InpBETriggerR": 1.0,
+      "InpBELockPoints": 10,
+      "InpRiskPercent": 0.0,
+      "InpFixedLot": 0.01
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": 13.63,
+      "profit_factor": 1.58,
+      "drawdown_pct": 11.5,
+      "total_trades": 19,
+      "win_rate_pct": 52.63
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": 13.63,
+      "profit_factor": 1.58,
+      "drawdown_pct": 57.5,
+      "total_trades": 19,
+      "win_rate_pct": 52.63
+    }
+  },
+  {
+    "id": "OPT-5-FastLookback15",
+    "name": "Gold M15 Liquidity Grab (RR 2.5, Wick 0.45, Lookback 15)",
+    "inputs": {
+      "InpStrategy": 0,
+      "InpRewardRiskRatio": 2.5,
+      "InpSweepLookback": 15,
+      "InpMinSweepPoints": 30,
+      "InpMinWickRatio": 0.45,
+      "InpUseTrendFilter": "true",
+      "InpUseSessionFilter": "true",
+      "InpSessionStartH1": 7,
+      "InpSessionEndH1": 11,
+      "InpSessionStartH2": 13,
+      "InpSessionEndH2": 17,
+      "InpUseBreakeven": "true",
+      "InpBETriggerR": 1.0,
+      "InpBELockPoints": 10,
+      "InpRiskPercent": 0.0,
+      "InpFixedLot": 0.01
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": 15.02,
+      "profit_factor": 1.4,
+      "drawdown_pct": 15.94,
+      "total_trades": 37,
+      "win_rate_pct": 48.65
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": -19.53,
+      "profit_factor": 0.23,
+      "drawdown_pct": 97.81,
+      "total_trades": 10,
+      "win_rate_pct": 20.0
+    }
+  },
+  {
+    "id": "OPT-6-MacroLookback25",
+    "name": "Gold M15 Liquidity Grab (RR 2.5, Wick 0.45, Lookback 25)",
+    "inputs": {
+      "InpStrategy": 0,
+      "InpRewardRiskRatio": 2.5,
+      "InpSweepLookback": 25,
+      "InpMinSweepPoints": 40,
+      "InpMinWickRatio": 0.45,
+      "InpUseTrendFilter": "true",
+      "InpUseSessionFilter": "true",
+      "InpSessionStartH1": 7,
+      "InpSessionEndH1": 11,
+      "InpSessionStartH2": 13,
+      "InpSessionEndH2": 17,
+      "InpUseBreakeven": "true",
+      "InpBETriggerR": 1.0,
+      "InpBELockPoints": 10,
+      "InpRiskPercent": 0.0,
+      "InpFixedLot": 0.01
+    },
+    "account_100": {
+      "success": false,
+      "error": "No report file"
+    },
+    "account_20": {
+      "success": false,
+      "error": "No report file"
+    }
+  }
+]

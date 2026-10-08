@@ -1,0 +1,405 @@
+[
+  {
+    "config": {
+      "id": "S1_Grid_1",
+      "strat": 1,
+      "name": "Trendline Retest (Fast 10, Slow 30, Tol 20, RR 1.5, BE 1.0R)",
+      "inputs": {
+        "InpStrategy": 1,
+        "InpRewardRiskRatio": 1.5,
+        "InpFastEMAPeriod": 10,
+        "InpSlowEMAPeriod": 30,
+        "InpRetestTolerance": 20,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "true",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": -81.19,
+      "profit_factor": 0.71,
+      "drawdown_pct": 81.42,
+      "total_trades": 210,
+      "win_rate_pct": 40.95
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": -16.11,
+      "profit_factor": 0.69,
+      "drawdown_pct": 81.67,
+      "total_trades": 34,
+      "win_rate_pct": 38.24
+    }
+  },
+  {
+    "config": {
+      "id": "S1_Grid_2",
+      "strat": 1,
+      "name": "Trendline Retest (Fast 20, Slow 50, Tol 30, RR 2.0, BE 1.0R)",
+      "inputs": {
+        "InpStrategy": 1,
+        "InpRewardRiskRatio": 2.0,
+        "InpFastEMAPeriod": 20,
+        "InpSlowEMAPeriod": 50,
+        "InpRetestTolerance": 30,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "true",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": -23.36,
+      "profit_factor": 0.95,
+      "drawdown_pct": 68.29,
+      "total_trades": 332,
+      "win_rate_pct": 42.17
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": -17.06,
+      "profit_factor": 0.55,
+      "drawdown_pct": 87.02,
+      "total_trades": 25,
+      "win_rate_pct": 36.0
+    }
+  },
+  {
+    "config": {
+      "id": "S1_Grid_3",
+      "strat": 1,
+      "name": "Trendline Retest (Fast 20, Slow 50, Tol 50, RR 2.5, No BE)",
+      "inputs": {
+        "InpStrategy": 1,
+        "InpRewardRiskRatio": 2.5,
+        "InpFastEMAPeriod": 20,
+        "InpSlowEMAPeriod": 50,
+        "InpRetestTolerance": 50,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "false",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": 10.84,
+      "profit_factor": 1.02,
+      "drawdown_pct": 53.1,
+      "total_trades": 274,
+      "win_rate_pct": 27.01
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": -17.06,
+      "profit_factor": 0.92,
+      "drawdown_pct": 93.85,
+      "total_trades": 132,
+      "win_rate_pct": 25.0
+    }
+  },
+  {
+    "config": {
+      "id": "S1_Grid_4",
+      "strat": 1,
+      "name": "Trendline Retest (Fast 50, Slow 100, Tol 40, RR 2.0, BE 1.0R)",
+      "inputs": {
+        "InpStrategy": 1,
+        "InpRewardRiskRatio": 2.0,
+        "InpFastEMAPeriod": 50,
+        "InpSlowEMAPeriod": 100,
+        "InpRetestTolerance": 40,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "true",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": -80.43,
+      "profit_factor": 0.63,
+      "drawdown_pct": 80.45,
+      "total_trades": 173,
+      "win_rate_pct": 41.04
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": -17.47,
+      "profit_factor": 0.48,
+      "drawdown_pct": 87.41,
+      "total_trades": 25,
+      "win_rate_pct": 32.0
+    }
+  },
+  {
+    "config": {
+      "id": "S2_Grid_1",
+      "strat": 2,
+      "name": "Gold Matrix (Keltner 1.5, ATR 14, RSI 65/35, RR 1.5)",
+      "inputs": {
+        "InpStrategy": 2,
+        "InpRewardRiskRatio": 1.5,
+        "InpKeltnerMult": 1.5,
+        "InpATRPeriod": 14,
+        "InpRSIPeriod": 14,
+        "InpRSIOverbought": 65.0,
+        "InpRSIOversold": 35.0,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "true",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": 12.03,
+      "profit_factor": 1.04,
+      "drawdown_pct": 63.76,
+      "total_trades": 203,
+      "win_rate_pct": 47.78
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": -17.4,
+      "profit_factor": 0.61,
+      "drawdown_pct": 90.3,
+      "total_trades": 20,
+      "win_rate_pct": 40.0
+    }
+  },
+  {
+    "config": {
+      "id": "S2_Grid_2",
+      "strat": 2,
+      "name": "Gold Matrix (Keltner 2.0, ATR 14, RSI 70/30, RR 2.0)",
+      "inputs": {
+        "InpStrategy": 2,
+        "InpRewardRiskRatio": 2.0,
+        "InpKeltnerMult": 2.0,
+        "InpATRPeriod": 14,
+        "InpRSIPeriod": 14,
+        "InpRSIOverbought": 70.0,
+        "InpRSIOversold": 30.0,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "true",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": -79.6,
+      "profit_factor": 0.64,
+      "drawdown_pct": 79.6,
+      "total_trades": 135,
+      "win_rate_pct": 42.22
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": -18.29,
+      "profit_factor": 0.26,
+      "drawdown_pct": 91.45,
+      "total_trades": 12,
+      "win_rate_pct": 33.33
+    }
+  },
+  {
+    "config": {
+      "id": "S2_Grid_3",
+      "strat": 2,
+      "name": "Gold Matrix (Keltner 1.8, ATR 10, RSI 60/40, RR 2.0)",
+      "inputs": {
+        "InpStrategy": 2,
+        "InpRewardRiskRatio": 2.0,
+        "InpKeltnerMult": 1.8,
+        "InpATRPeriod": 10,
+        "InpRSIPeriod": 10,
+        "InpRSIOverbought": 60.0,
+        "InpRSIOversold": 40.0,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "false",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": -17.82,
+      "profit_factor": 0.83,
+      "drawdown_pct": 47.15,
+      "total_trades": 53,
+      "win_rate_pct": 26.42
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": -21.25,
+      "profit_factor": 0.0,
+      "drawdown_pct": 106.25,
+      "total_trades": 6,
+      "win_rate_pct": 0.0
+    }
+  },
+  {
+    "config": {
+      "id": "S3_Grid_1",
+      "strat": 3,
+      "name": "Killzone Momentum (Fast 10, Slow 30, RR 1.5, BE 1.0R)",
+      "inputs": {
+        "InpStrategy": 3,
+        "InpRewardRiskRatio": 1.5,
+        "InpFastEMAPeriod": 10,
+        "InpSlowEMAPeriod": 30,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "true",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": -3.64,
+      "profit_factor": 0.99,
+      "drawdown_pct": 27.3,
+      "total_trades": 238,
+      "win_rate_pct": 47.9
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": -17.29,
+      "profit_factor": 0.83,
+      "drawdown_pct": 91.94,
+      "total_trades": 92,
+      "win_rate_pct": 46.74
+    }
+  },
+  {
+    "config": {
+      "id": "S3_Grid_2",
+      "strat": 3,
+      "name": "Killzone Momentum (Fast 20, Slow 50, RR 2.0, BE 1.0R)",
+      "inputs": {
+        "InpStrategy": 3,
+        "InpRewardRiskRatio": 2.0,
+        "InpFastEMAPeriod": 20,
+        "InpSlowEMAPeriod": 50,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "true",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": 3.74,
+      "profit_factor": 1.02,
+      "drawdown_pct": 23.99,
+      "total_trades": 144,
+      "win_rate_pct": 47.22
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": 3.74,
+      "profit_factor": 1.02,
+      "drawdown_pct": 58.05,
+      "total_trades": 144,
+      "win_rate_pct": 47.22
+    }
+  },
+  {
+    "config": {
+      "id": "S3_Grid_3",
+      "strat": 3,
+      "name": "Killzone Momentum (Fast 20, Slow 50, RR 2.5, No BE)",
+      "inputs": {
+        "InpStrategy": 3,
+        "InpRewardRiskRatio": 2.5,
+        "InpFastEMAPeriod": 20,
+        "InpSlowEMAPeriod": 50,
+        "InpUseSessionFilter": "true",
+        "InpSessionStartH1": 7,
+        "InpSessionEndH1": 11,
+        "InpSessionStartH2": 13,
+        "InpSessionEndH2": 17,
+        "InpUseBreakeven": "false",
+        "InpBETriggerR": 1.0,
+        "InpBELockPoints": 10,
+        "InpRiskPercent": 0.0,
+        "InpFixedLot": 0.01
+      }
+    },
+    "account_100": {
+      "success": true,
+      "net_profit": 36.3,
+      "profit_factor": 1.2,
+      "drawdown_pct": 21.18,
+      "total_trades": 132,
+      "win_rate_pct": 28.79
+    },
+    "account_20": {
+      "success": true,
+      "net_profit": 36.3,
+      "profit_factor": 1.2,
+      "drawdown_pct": 42.73,
+      "total_trades": 132,
+      "win_rate_pct": 28.79
+    }
+  }
+]

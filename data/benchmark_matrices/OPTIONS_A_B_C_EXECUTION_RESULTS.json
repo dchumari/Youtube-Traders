@@ -1,0 +1,476 @@
+{
+  "Option_A_Standard_Gold": {
+    "info": {
+      "name": "Option A: High-Risk Weekly Sprint (XAUUSD $8.00)",
+      "symbol": "XAUUSD",
+      "deposit": 8,
+      "currency": "USD",
+      "desc": "Standard $8.00 deposit, 1:400 leverage, aggressive lot scaling on Gold"
+    },
+    "windows": {
+      "W1_Oct2024": {
+        "window_meta": {
+          "id": "W1_Oct2024",
+          "type": "1_WEEK",
+          "name": "Oct 14 - Oct 21, 2024",
+          "from": "2024.10.14",
+          "to": "2024.10.21",
+          "desc": "Clean Trend Expansion"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": 20.61,
+          "final_balance": 28.61,
+          "roi_pct": 257.62,
+          "pf": "6.66",
+          "trades": 4,
+          "win_rate": "3 (66.67%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "W2_Mar2024": {
+        "window_meta": {
+          "id": "W2_Mar2024",
+          "type": "1_WEEK",
+          "name": "Mar 11 - Mar 18, 2024",
+          "from": "2024.03.11",
+          "to": "2024.03.18",
+          "desc": "Consolidation & Squeeze"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": 21.52,
+          "final_balance": 29.52,
+          "roi_pct": 269.0,
+          "pf": "0.00",
+          "trades": 2,
+          "win_rate": "2 (100.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "W3_Aug2024": {
+        "window_meta": {
+          "id": "W3_Aug2024",
+          "type": "1_WEEK",
+          "name": "Aug 05 - Aug 12, 2024",
+          "from": "2024.08.05",
+          "to": "2024.08.12",
+          "desc": "High Volatility Shock"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": -3.18,
+          "final_balance": 4.82,
+          "roi_pct": -39.75,
+          "pf": "0.00",
+          "trades": 1,
+          "win_rate": "1 (0.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "W4_Apr2024": {
+        "window_meta": {
+          "id": "W4_Apr2024",
+          "type": "1_WEEK",
+          "name": "Apr 15 - Apr 22, 2024",
+          "from": "2024.04.15",
+          "to": "2024.04.22",
+          "desc": "Geopolitical War Surge"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": -3.54,
+          "final_balance": 4.46,
+          "roi_pct": -44.25,
+          "pf": "0.58",
+          "trades": 4,
+          "win_rate": "4 (25.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "M1_Feb2024": {
+        "window_meta": {
+          "id": "M1_Feb2024",
+          "type": "1_MONTH",
+          "name": "February 2024 (Full Month)",
+          "from": "2024.02.01",
+          "to": "2024.02.29",
+          "desc": "Pre-Breakout Volatility Coil"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": -3.67,
+          "final_balance": 4.33,
+          "roi_pct": -45.88,
+          "pf": "0.00",
+          "trades": 2,
+          "win_rate": "1 (0.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "M2_May2024": {
+        "window_meta": {
+          "id": "M2_May2024",
+          "type": "1_MONTH",
+          "name": "May 2024 (Full Month)",
+          "from": "2024.05.01",
+          "to": "2024.05.31",
+          "desc": "ATH Breakout Impulse ($2,450)"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": -3.12,
+          "final_balance": 4.88,
+          "roi_pct": -39.0,
+          "pf": "0.58",
+          "trades": 4,
+          "win_rate": "2 (50.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "M3_Oct2024": {
+        "window_meta": {
+          "id": "M3_Oct2024",
+          "type": "1_MONTH",
+          "name": "October 2024 (Full Month)",
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "desc": "Historic Multi-Week Rally"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": -5.24,
+          "final_balance": 2.76,
+          "roi_pct": -65.5,
+          "pf": "0.00",
+          "trades": 1,
+          "win_rate": "1 (0.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      }
+    }
+  },
+  "Option_B_Cent_Gold": {
+    "info": {
+      "name": "Option B: Cent Account Survival (XAUUSD 775 USC)",
+      "symbol": "XAUUSD",
+      "deposit": 775,
+      "currency": "USD",
+      "desc": "Cent account 775 USC (~$7.75), 1:400 leverage, massive 117-trade margin buffer"
+    },
+    "windows": {
+      "W1_Oct2024": {
+        "window_meta": {
+          "id": "W1_Oct2024",
+          "type": "1_WEEK",
+          "name": "Oct 14 - Oct 21, 2024",
+          "from": "2024.10.14",
+          "to": "2024.10.21",
+          "desc": "Clean Trend Expansion"
+        },
+        "metrics": {
+          "deposit": 775,
+          "net": 1176.75,
+          "final_balance": 1951.75,
+          "roi_pct": 151.84,
+          "pf": "7.22",
+          "trades": 4,
+          "win_rate": "3 (66.67%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "W2_Mar2024": {
+        "window_meta": {
+          "id": "W2_Mar2024",
+          "type": "1_WEEK",
+          "name": "Mar 11 - Mar 18, 2024",
+          "from": "2024.03.11",
+          "to": "2024.03.18",
+          "desc": "Consolidation & Squeeze"
+        },
+        "metrics": {
+          "deposit": 775,
+          "net": 1474.26,
+          "final_balance": 2249.26,
+          "roi_pct": 190.23,
+          "pf": "0.00",
+          "trades": 2,
+          "win_rate": "2 (100.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "W3_Aug2024": {
+        "window_meta": {
+          "id": "W3_Aug2024",
+          "type": "1_WEEK",
+          "name": "Aug 05 - Aug 12, 2024",
+          "from": "2024.08.05",
+          "to": "2024.08.12",
+          "desc": "High Volatility Shock"
+        },
+        "metrics": {
+          "deposit": 775,
+          "net": -299.42,
+          "final_balance": 475.58,
+          "roi_pct": -38.63,
+          "pf": "0.00",
+          "trades": 4,
+          "win_rate": "3 (0.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "W4_Apr2024": {
+        "window_meta": {
+          "id": "W4_Apr2024",
+          "type": "1_WEEK",
+          "name": "Apr 15 - Apr 22, 2024",
+          "from": "2024.04.15",
+          "to": "2024.04.22",
+          "desc": "Geopolitical War Surge"
+        },
+        "metrics": {
+          "deposit": 775,
+          "net": -580.15,
+          "final_balance": 194.85,
+          "roi_pct": -74.86,
+          "pf": "0.24",
+          "trades": 8,
+          "win_rate": "5 (20.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "M1_Feb2024": {
+        "window_meta": {
+          "id": "M1_Feb2024",
+          "type": "1_MONTH",
+          "name": "February 2024 (Full Month)",
+          "from": "2024.02.01",
+          "to": "2024.02.29",
+          "desc": "Pre-Breakout Volatility Coil"
+        },
+        "metrics": {
+          "deposit": 775,
+          "net": -51.03,
+          "final_balance": 723.97,
+          "roi_pct": -6.58,
+          "pf": "0.97",
+          "trades": 11,
+          "win_rate": "3 (33.33%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "M2_May2024": {
+        "window_meta": {
+          "id": "M2_May2024",
+          "type": "1_MONTH",
+          "name": "May 2024 (Full Month)",
+          "from": "2024.05.01",
+          "to": "2024.05.31",
+          "desc": "ATH Breakout Impulse ($2,450)"
+        },
+        "metrics": {
+          "deposit": 775,
+          "net": -411.27,
+          "final_balance": 363.73,
+          "roi_pct": -53.07,
+          "pf": "0.55",
+          "trades": 16,
+          "win_rate": "10 (30.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "M3_Oct2024": {
+        "window_meta": {
+          "id": "M3_Oct2024",
+          "type": "1_MONTH",
+          "name": "October 2024 (Full Month)",
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "desc": "Historic Multi-Week Rally"
+        },
+        "metrics": {
+          "deposit": 775,
+          "net": 1161.15,
+          "final_balance": 1936.15,
+          "roi_pct": 149.83,
+          "pf": "1.75",
+          "trades": 16,
+          "win_rate": "10 (50.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      }
+    }
+  },
+  "Option_C_EURUSD_Micro": {
+    "info": {
+      "name": "Option C: Lower-Margin Asset Model (EURUSD $8.00)",
+      "symbol": "EURUSD",
+      "deposit": 8,
+      "currency": "USD",
+      "desc": "Standard $8.00 deposit, 1:400 leverage, EURUSD ($2.75 margin vs $6.63 on Gold)"
+    },
+    "windows": {
+      "W1_Oct2024": {
+        "window_meta": {
+          "id": "W1_Oct2024",
+          "type": "1_WEEK",
+          "name": "Oct 14 - Oct 21, 2024",
+          "from": "2024.10.14",
+          "to": "2024.10.21",
+          "desc": "Clean Trend Expansion"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": 5.24,
+          "final_balance": 13.24,
+          "roi_pct": 65.5,
+          "pf": "4.42",
+          "trades": 2,
+          "win_rate": "2 (50.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "W2_Mar2024": {
+        "window_meta": {
+          "id": "W2_Mar2024",
+          "type": "1_WEEK",
+          "name": "Mar 11 - Mar 18, 2024",
+          "from": "2024.03.11",
+          "to": "2024.03.18",
+          "desc": "Consolidation & Squeeze"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": 2.75,
+          "final_balance": 10.75,
+          "roi_pct": 34.38,
+          "pf": "2.61",
+          "trades": 2,
+          "win_rate": "2 (50.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "W3_Aug2024": {
+        "window_meta": {
+          "id": "W3_Aug2024",
+          "type": "1_WEEK",
+          "name": "Aug 05 - Aug 12, 2024",
+          "from": "2024.08.05",
+          "to": "2024.08.12",
+          "desc": "High Volatility Shock"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": 0.07,
+          "final_balance": 8.07,
+          "roi_pct": 0.88,
+          "pf": "1.04",
+          "trades": 2,
+          "win_rate": "1 (100.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "W4_Apr2024": {
+        "window_meta": {
+          "id": "W4_Apr2024",
+          "type": "1_WEEK",
+          "name": "Apr 15 - Apr 22, 2024",
+          "from": "2024.04.15",
+          "to": "2024.04.22",
+          "desc": "Geopolitical War Surge"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": -6.55,
+          "final_balance": 1.45,
+          "roi_pct": -81.88,
+          "pf": "0.00",
+          "trades": 3,
+          "win_rate": "1 (0.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "M1_Feb2024": {
+        "window_meta": {
+          "id": "M1_Feb2024",
+          "type": "1_MONTH",
+          "name": "February 2024 (Full Month)",
+          "from": "2024.02.01",
+          "to": "2024.02.29",
+          "desc": "Pre-Breakout Volatility Coil"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": -7.48,
+          "final_balance": 0.52,
+          "roi_pct": -93.5,
+          "pf": "0.27",
+          "trades": 5,
+          "win_rate": "2 (0.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "M2_May2024": {
+        "window_meta": {
+          "id": "M2_May2024",
+          "type": "1_MONTH",
+          "name": "May 2024 (Full Month)",
+          "from": "2024.05.01",
+          "to": "2024.05.31",
+          "desc": "ATH Breakout Impulse ($2,450)"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": -7.25,
+          "final_balance": 0.75,
+          "roi_pct": -90.62,
+          "pf": "0.00",
+          "trades": 2,
+          "win_rate": "1 (0.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      },
+      "M3_Oct2024": {
+        "window_meta": {
+          "id": "M3_Oct2024",
+          "type": "1_MONTH",
+          "name": "October 2024 (Full Month)",
+          "from": "2024.10.01",
+          "to": "2024.10.31",
+          "desc": "Historic Multi-Week Rally"
+        },
+        "metrics": {
+          "deposit": 8,
+          "net": 9.03,
+          "final_balance": 17.03,
+          "roi_pct": 112.87,
+          "pf": "1.40",
+          "trades": 12,
+          "win_rate": "8 (50.00%)",
+          "max_dd": "0.00",
+          "status": "SUCCESS"
+        }
+      }
+    }
+  }
+}

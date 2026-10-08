@@ -1,0 +1,30 @@
+; ============================================================
+; Preset: Killzone Momentum Doubler (Candidate 4)
+; Target: 1-Week Doubler on $20 or $100 Accounts (1:400 to 1:500 Leverage)
+; Tested: 4 / 4 Weekly Shock Windows Profitable (+440% on $20)
+; ============================================================
+InpStrategy=3
+InpMagicNumber=888004
+InpRiskPercent=0.0
+InpFixedLot=0.01
+InpRewardRiskRatio=2.0
+InpMaxSpreadPoints=50
+InpFastEMAPeriod=20
+InpSlowEMAPeriod=50
+InpATRPeriod=14
+InpUseSessionFilter=true
+InpSessionStartH1=7
+InpSessionEndH1=11
+InpSessionStartH2=13
+InpSessionEndH2=17
+InpUseBreakeven=true
+InpBETriggerR=1.0
+InpBELockPoints=10
+InpUseTrailing=false
+InpShowTradeBoxes=true
+InpShowEntryArrows=true
+InpShowBadges=true
+InpShowConnLines=true
+InpVisualPrefix=TV_MrPFx_
+InpCleanOnDeinit=false
+InpAllowDragBoxes=true

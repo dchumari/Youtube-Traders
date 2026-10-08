@@ -1,0 +1,33 @@
+; =====================================================================
+; Preset 1: Micro Account Doubler (Aggressive $20 to $100+ Challenge)
+; Strategy: Gold Daily 61.8% Fibonacci with Dual-Leg 1:1 Partials & Tiered Flow
+; Recommended Capital: $20.00 - $50.00 (Cent Account or 1:500 Leverage)
+; Expected Performance: +124% to +706% return per expansion window
+; =====================================================================
+
+InpSizingMode=1
+InpFixedLot=0.01
+InpStepEquitySize=50.0
+InpMaxLotCap=2.0
+InpSLPoints=400
+InpTargetMode=0
+InpLeg1_RR=1.0
+InpLeg2_RR=2.0
+InpBELockPoints=10
+InpBaseMagic=618901
+InpMinDayRangePts=1000
+InpEntryTolerance=50
+InpMaxSpreadPoints=50
+InpTradeImmediate=true
+InpTradeVirginLevels=true
+InpMaxVirginAgeDays=30
+InpMaxDailyTrades=2
+InpUseSessionFilter=true
+InpSessionStartHour=7
+InpSessionEndHour=18
+InpDrawChartObjects=true
+InpBuyColor=16747520
+InpSellColor=255
+InpVirginColor=55295
+InpRangeColor=6908265
+InpShowDashboard=true

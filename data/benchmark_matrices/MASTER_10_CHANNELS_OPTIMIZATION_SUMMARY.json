@@ -1,0 +1,92 @@
+[
+  {
+    "Channel": "LumiTraders",
+    "Champion_Config": "M1_Runner_3.5R_NY",
+    "Net_Profit": 3040.5,
+    "Profit_Factor": 1.15,
+    "Win_Rate": 25.4,
+    "Max_DD": "3 699.00 (24.50%)",
+    "Trades": 126
+  },
+  {
+    "Channel": "Cove_Trader",
+    "Champion_Config": "M1_Conservative_WideStop",
+    "Net_Profit": -219.0,
+    "Profit_Factor": 0.98,
+    "Win_Rate": 28.79,
+    "Max_DD": "3 029.00 (25.44%)",
+    "Trades": 66
+  },
+  {
+    "Channel": "Tanja_Trades",
+    "Champion_Config": "M1_Conservative_WideStop",
+    "Net_Profit": -1000.0,
+    "Profit_Factor": 0.81,
+    "Win_Rate": 25.0,
+    "Max_DD": "2 314.00 (21.25%)",
+    "Trades": 36
+  },
+  {
+    "Channel": "DodgysDD",
+    "Champion_Config": "M2_Conservative_WideStop",
+    "Net_Profit": 2977.0,
+    "Profit_Factor": 1.24,
+    "Win_Rate": 33.72,
+    "Max_DD": "2 375.00 (20.42%)",
+    "Trades": 86
+  },
+  {
+    "Channel": "Swappy_Trading",
+    "Champion_Config": "M1_Runner_2.5R_NY",
+    "Net_Profit": 2025.0,
+    "Profit_Factor": 1.1,
+    "Win_Rate": 30.91,
+    "Max_DD": "2 544.00 (25.22%)",
+    "Trades": 165
+  },
+  {
+    "Channel": "TTrades",
+    "Champion_Config": "M3_Runner_3.5R_NY",
+    "Net_Profit": 972.75,
+    "Profit_Factor": 1.05,
+    "Win_Rate": 23.81,
+    "Max_DD": "2 973.00 (27.79%)",
+    "Trades": 126
+  },
+  {
+    "Channel": "Arjo_MMT",
+    "Champion_Config": "M2_Conservative_WideStop",
+    "Net_Profit": 2633.0,
+    "Profit_Factor": 1.19,
+    "Win_Rate": 33.33,
+    "Max_DD": "3 001.00 (19.20%)",
+    "Trades": 84
+  },
+  {
+    "Channel": "Ali_Khan_ICT",
+    "Champion_Config": "M2_Runner_2.5R_NY",
+    "Net_Profit": 3154.5,
+    "Profit_Factor": 1.13,
+    "Win_Rate": 31.71,
+    "Max_DD": "4 417.50 (31.23%)",
+    "Trades": 164
+  },
+  {
+    "Channel": "JadeCap_FX",
+    "Champion_Config": "M1_Conservative_WideStop",
+    "Net_Profit": -491.0,
+    "Profit_Factor": 0.96,
+    "Win_Rate": 28.4,
+    "Max_DD": "2 901.00 (26.26%)",
+    "Trades": 81
+  },
+  {
+    "Channel": "Hunter_DiVenzo",
+    "Champion_Config": "M3_Runner_3.5R_NY",
+    "Net_Profit": 3040.5,
+    "Profit_Factor": 1.15,
+    "Win_Rate": 25.4,
+    "Max_DD": "3 699.00 (24.50%)",
+    "Trades": 126
+  }
+]

@@ -1,0 +1,14 @@
+RiskPercent=2.0||4.5||0.5||15.0||N
+CapitalPerMicroLot=8.0||16.0||1.0||50.0||N
+UseFixedMicroStep=true||false||0||true||N
+MaxLotCap=5.00||5.00||0.1||10.0||N
+SL_Pips=15.0||15.0||1.0||30.0||N
+Target_RR=3.0||2.8||0.1||5.0||N
+CPR_NarrowMaxPips=35.0||18.0||2.0||50.0||N
+Min_FVG_Pips=2.5||2.5||0.5||10.0||N
+VolMultiplier=1.20||1.25||0.05||2.0||N
+StartHourUTC=8||13||0||24||N
+EndHourUTC=20||19||0||24||N
+MaxDailyTrades=4||4||1||10||N
+MaxDailyLosses=2||2||1||5||N
+MagicNumber=20265001||20265001||1||99999999||N

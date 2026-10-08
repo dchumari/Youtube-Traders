@@ -1,0 +1,627 @@
+{
+  "Master_Super_EA": {
+    "name": "Gold_Master_Super_EA",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "window_info": {
+          "name": "Window_1_BullishMomentum",
+          "from": "2024.10.14",
+          "to": "2024.10.21",
+          "desc": "Clean Bullish Trend Expansion"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 13.12,
+          "final_balance": 21.12,
+          "roi_pct": 164.0,
+          "pf": "4.60",
+          "trades": 3,
+          "max_dd": "0.00",
+          "win_rate": "2 (50.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 62.22,
+          "final_balance": 837.22,
+          "roi_pct": 8.03,
+          "pf": "3.14",
+          "trades": 3,
+          "max_dd": "0.00",
+          "win_rate": "2 (50.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_2_ConsolidationChop": {
+        "window_info": {
+          "name": "Window_2_ConsolidationChop",
+          "from": "2024.03.11",
+          "to": "2024.03.18",
+          "desc": "Choppy Consolidation & Compression"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 5.89,
+          "final_balance": 13.89,
+          "roi_pct": 73.62,
+          "pf": "2.88",
+          "trades": 3,
+          "max_dd": "0.00",
+          "win_rate": "2 (50.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 11.38,
+          "final_balance": 786.38,
+          "roi_pct": 1.47,
+          "pf": "1.19",
+          "trades": 3,
+          "max_dd": "0.00",
+          "win_rate": "2 (50.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_3_HighVolatilityShock": {
+        "window_info": {
+          "name": "Window_3_HighVolatilityShock",
+          "from": "2024.08.05",
+          "to": "2024.08.12",
+          "desc": "High-Volatility Liquidity Flush"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -3.25,
+          "final_balance": 4.75,
+          "roi_pct": -40.62,
+          "pf": "0.00",
+          "trades": 1,
+          "max_dd": "0.00",
+          "win_rate": "0 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 31.85,
+          "final_balance": 806.85,
+          "roi_pct": 4.11,
+          "pf": "2.40",
+          "trades": 2,
+          "max_dd": "0.00",
+          "win_rate": "1 (100.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_4_CorrectionPullback": {
+        "window_info": {
+          "name": "Window_4_CorrectionPullback",
+          "from": "2024.01.15",
+          "to": "2024.01.22",
+          "desc": "Deep Mean-Reversion Pullback"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 0.0,
+          "final_balance": 8.0,
+          "roi_pct": 0.0,
+          "pf": "0.00",
+          "trades": 0,
+          "max_dd": "0.00",
+          "win_rate": "0 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 0.0,
+          "final_balance": 775.0,
+          "roi_pct": 0.0,
+          "pf": "0.00",
+          "trades": 0,
+          "max_dd": "0.00",
+          "win_rate": "0 (0.00%)",
+          "status": "SUCCESS"
+        }
+      }
+    }
+  },
+  "Micro_HyperScalp_EA": {
+    "name": "Gold_Micro_HyperScalp_EA",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "window_info": {
+          "name": "Window_1_BullishMomentum",
+          "from": "2024.10.14",
+          "to": "2024.10.21",
+          "desc": "Clean Bullish Trend Expansion"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 20.61,
+          "final_balance": 28.61,
+          "roi_pct": 257.62,
+          "pf": "6.66",
+          "trades": 4,
+          "max_dd": "0.00",
+          "win_rate": "3 (66.67%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 1176.75,
+          "final_balance": 1951.75,
+          "roi_pct": 151.84,
+          "pf": "7.22",
+          "trades": 4,
+          "max_dd": "0.00",
+          "win_rate": "3 (66.67%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_2_ConsolidationChop": {
+        "window_info": {
+          "name": "Window_2_ConsolidationChop",
+          "from": "2024.03.11",
+          "to": "2024.03.18",
+          "desc": "Choppy Consolidation & Compression"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 21.52,
+          "final_balance": 29.52,
+          "roi_pct": 269.0,
+          "pf": "0.00",
+          "trades": 2,
+          "max_dd": "0.00",
+          "win_rate": "2 (100.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 1474.26,
+          "final_balance": 2249.26,
+          "roi_pct": 190.23,
+          "pf": "0.00",
+          "trades": 2,
+          "max_dd": "0.00",
+          "win_rate": "2 (100.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_3_HighVolatilityShock": {
+        "window_info": {
+          "name": "Window_3_HighVolatilityShock",
+          "from": "2024.08.05",
+          "to": "2024.08.12",
+          "desc": "High-Volatility Liquidity Flush"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -3.18,
+          "final_balance": 4.82,
+          "roi_pct": -39.75,
+          "pf": "0.00",
+          "trades": 1,
+          "max_dd": "0.00",
+          "win_rate": "1 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": -299.42,
+          "final_balance": 475.58,
+          "roi_pct": -38.63,
+          "pf": "0.00",
+          "trades": 4,
+          "max_dd": "0.00",
+          "win_rate": "3 (0.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_4_CorrectionPullback": {
+        "window_info": {
+          "name": "Window_4_CorrectionPullback",
+          "from": "2024.01.15",
+          "to": "2024.01.22",
+          "desc": "Deep Mean-Reversion Pullback"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 14.85,
+          "final_balance": 22.85,
+          "roi_pct": 185.62,
+          "pf": "0.00",
+          "trades": 1,
+          "max_dd": "0.00",
+          "win_rate": "1 (100.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 638.55,
+          "final_balance": 1413.55,
+          "roi_pct": 82.39,
+          "pf": "0.00",
+          "trades": 1,
+          "max_dd": "0.00",
+          "win_rate": "1 (100.00%)",
+          "status": "SUCCESS"
+        }
+      }
+    }
+  },
+  "DodgysDD_EA": {
+    "name": "DodgysDD_EA",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "window_info": {
+          "name": "Window_1_BullishMomentum",
+          "from": "2024.10.14",
+          "to": "2024.10.21",
+          "desc": "Clean Bullish Trend Expansion"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -2.25,
+          "final_balance": 5.75,
+          "roi_pct": -28.12,
+          "pf": "0.83",
+          "trades": 12,
+          "max_dd": "0.00",
+          "win_rate": "10 (30.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": -21.75,
+          "final_balance": 753.25,
+          "roi_pct": -2.81,
+          "pf": "0.87",
+          "trades": 15,
+          "max_dd": "0.00",
+          "win_rate": "11 (27.27%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_2_ConsolidationChop": {
+        "window_info": {
+          "name": "Window_2_ConsolidationChop",
+          "from": "2024.03.11",
+          "to": "2024.03.18",
+          "desc": "Choppy Consolidation & Compression"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 5.25,
+          "final_balance": 13.25,
+          "roi_pct": 65.62,
+          "pf": "1.39",
+          "trades": 14,
+          "max_dd": "0.00",
+          "win_rate": "8 (50.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 47.25,
+          "final_balance": 822.25,
+          "roi_pct": 6.1,
+          "pf": "1.33",
+          "trades": 14,
+          "max_dd": "0.00",
+          "win_rate": "8 (50.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_3_HighVolatilityShock": {
+        "window_info": {
+          "name": "Window_3_HighVolatilityShock",
+          "from": "2024.08.05",
+          "to": "2024.08.12",
+          "desc": "High-Volatility Liquidity Flush"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -3.0,
+          "final_balance": 5.0,
+          "roi_pct": -37.5,
+          "pf": "0.00",
+          "trades": 2,
+          "max_dd": "0.00",
+          "win_rate": "1 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": -135.0,
+          "final_balance": 640.0,
+          "roi_pct": -17.42,
+          "pf": "0.00",
+          "trades": 10,
+          "max_dd": "0.00",
+          "win_rate": "8 (0.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_4_CorrectionPullback": {
+        "window_info": {
+          "name": "Window_4_CorrectionPullback",
+          "from": "2024.01.15",
+          "to": "2024.01.22",
+          "desc": "Deep Mean-Reversion Pullback"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -3.0,
+          "final_balance": 5.0,
+          "roi_pct": -37.5,
+          "pf": "0.00",
+          "trades": 2,
+          "max_dd": "0.00",
+          "win_rate": "2 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": -39.75,
+          "final_balance": 735.25,
+          "roi_pct": -5.13,
+          "pf": "0.73",
+          "trades": 13,
+          "max_dd": "0.00",
+          "win_rate": "13 (23.08%)",
+          "status": "SUCCESS"
+        }
+      }
+    }
+  },
+  "TradeIQ_Academy_EA": {
+    "name": "TradeIQ_Academy_EA",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "window_info": {
+          "name": "Window_1_BullishMomentum",
+          "from": "2024.10.14",
+          "to": "2024.10.21",
+          "desc": "Clean Bullish Trend Expansion"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -1.51,
+          "final_balance": 6.49,
+          "roi_pct": -18.88,
+          "pf": "0.00",
+          "trades": 1,
+          "max_dd": "0.00",
+          "win_rate": "1 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 67.67,
+          "final_balance": 842.67,
+          "roi_pct": 8.73,
+          "pf": "9.96",
+          "trades": 3,
+          "max_dd": "0.00",
+          "win_rate": "2 (50.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_2_ConsolidationChop": {
+        "window_info": {
+          "name": "Window_2_ConsolidationChop",
+          "from": "2024.03.11",
+          "to": "2024.03.18",
+          "desc": "Choppy Consolidation & Compression"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 5.89,
+          "final_balance": 13.89,
+          "roi_pct": 73.62,
+          "pf": "2.88",
+          "trades": 3,
+          "max_dd": "0.00",
+          "win_rate": "2 (50.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 4.95,
+          "final_balance": 779.95,
+          "roi_pct": 0.64,
+          "pf": "1.16",
+          "trades": 3,
+          "max_dd": "0.00",
+          "win_rate": "2 (50.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_3_HighVolatilityShock": {
+        "window_info": {
+          "name": "Window_3_HighVolatilityShock",
+          "from": "2024.08.05",
+          "to": "2024.08.12",
+          "desc": "High-Volatility Liquidity Flush"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -3.25,
+          "final_balance": 4.75,
+          "roi_pct": -40.62,
+          "pf": "0.00",
+          "trades": 1,
+          "max_dd": "0.00",
+          "win_rate": "0 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 18.85,
+          "final_balance": 793.85,
+          "roi_pct": 2.43,
+          "pf": "2.16",
+          "trades": 2,
+          "max_dd": "0.00",
+          "win_rate": "1 (100.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_4_CorrectionPullback": {
+        "window_info": {
+          "name": "Window_4_CorrectionPullback",
+          "from": "2024.01.15",
+          "to": "2024.01.22",
+          "desc": "Deep Mean-Reversion Pullback"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 0.0,
+          "final_balance": 8.0,
+          "roi_pct": 0.0,
+          "pf": "0.00",
+          "trades": 0,
+          "max_dd": "0.00",
+          "win_rate": "0 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 0.0,
+          "final_balance": 775.0,
+          "roi_pct": 0.0,
+          "pf": "0.00",
+          "trades": 0,
+          "max_dd": "0.00",
+          "win_rate": "0 (0.00%)",
+          "status": "SUCCESS"
+        }
+      }
+    }
+  },
+  "CPR_Velocity_Doubler_EA": {
+    "name": "CPR_Velocity_Doubler_EA",
+    "windows": {
+      "Window_1_BullishMomentum": {
+        "window_info": {
+          "name": "Window_1_BullishMomentum",
+          "from": "2024.10.14",
+          "to": "2024.10.21",
+          "desc": "Clean Bullish Trend Expansion"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": 1.2,
+          "final_balance": 9.2,
+          "roi_pct": 15.0,
+          "pf": "1.40",
+          "trades": 3,
+          "max_dd": "0.00",
+          "win_rate": "0 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": 21.6,
+          "final_balance": 796.6,
+          "roi_pct": 2.79,
+          "pf": "1.29",
+          "trades": 3,
+          "max_dd": "0.00",
+          "win_rate": "0 (0.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_2_ConsolidationChop": {
+        "window_info": {
+          "name": "Window_2_ConsolidationChop",
+          "from": "2024.03.11",
+          "to": "2024.03.18",
+          "desc": "Choppy Consolidation & Compression"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -3.0,
+          "final_balance": 5.0,
+          "roi_pct": -37.5,
+          "pf": "0.00",
+          "trades": 2,
+          "max_dd": "0.00",
+          "win_rate": "2 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": -129.0,
+          "final_balance": 646.0,
+          "roi_pct": -16.65,
+          "pf": "0.00",
+          "trades": 4,
+          "max_dd": "0.00",
+          "win_rate": "4 (0.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_3_HighVolatilityShock": {
+        "window_info": {
+          "name": "Window_3_HighVolatilityShock",
+          "from": "2024.08.05",
+          "to": "2024.08.12",
+          "desc": "High-Volatility Liquidity Flush"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -3.0,
+          "final_balance": 5.0,
+          "roi_pct": -37.5,
+          "pf": "0.00",
+          "trades": 2,
+          "max_dd": "0.00",
+          "win_rate": "0 (0.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": -13.8,
+          "final_balance": 761.2,
+          "roi_pct": -1.78,
+          "pf": "0.86",
+          "trades": 4,
+          "max_dd": "0.00",
+          "win_rate": "2 (50.00%)",
+          "status": "SUCCESS"
+        }
+      },
+      "Window_4_CorrectionPullback": {
+        "window_info": {
+          "name": "Window_4_CorrectionPullback",
+          "from": "2024.01.15",
+          "to": "2024.01.22",
+          "desc": "Deep Mean-Reversion Pullback"
+        },
+        "standard_8usd": {
+          "deposit": 8,
+          "net": -0.3,
+          "final_balance": 7.7,
+          "roi_pct": -3.75,
+          "pf": "0.93",
+          "trades": 4,
+          "max_dd": "0.00",
+          "win_rate": "4 (25.00%)",
+          "status": "SUCCESS"
+        },
+        "cent_775usc": {
+          "deposit": 775,
+          "net": -12.6,
+          "final_balance": 762.4,
+          "roi_pct": -1.63,
+          "pf": "0.88",
+          "trades": 4,
+          "max_dd": "0.00",
+          "win_rate": "4 (25.00%)",
+          "status": "SUCCESS"
+        }
+      }
+    }
+  }
+}

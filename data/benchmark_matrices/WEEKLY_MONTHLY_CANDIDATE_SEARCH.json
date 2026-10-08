@@ -1,0 +1,786 @@
+[
+  {
+    "id": "CAND_1_Original_Optimal",
+    "name": "Original Optimal (RR 2.0, Lookback 20, Wick 0.45, BE 1.0R, Trend 50)",
+    "weekly": {
+      "W1": {
+        "100": {
+          "success": true,
+          "net_profit": 6.88,
+          "gross_profit": 6.88,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 3,
+          "win_rate_pct": 100.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 6.88,
+          "gross_profit": 6.88,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 3,
+          "win_rate_pct": 100.0
+        }
+      },
+      "W2": {
+        "100": {
+          "success": true,
+          "net_profit": -2.36,
+          "gross_profit": 0.1,
+          "gross_loss": -2.46,
+          "profit_factor": 0.04,
+          "drawdown_pct": 2.36,
+          "total_trades": 3,
+          "win_rate_pct": 33.33
+        },
+        "20": {
+          "success": true,
+          "net_profit": -2.36,
+          "gross_profit": 0.1,
+          "gross_loss": -2.46,
+          "profit_factor": 0.04,
+          "drawdown_pct": 11.8,
+          "total_trades": 3,
+          "win_rate_pct": 33.33
+        }
+      },
+      "W3": {
+        "100": {
+          "success": true,
+          "net_profit": 0.2,
+          "gross_profit": 0.2,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 2,
+          "win_rate_pct": 100.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 0.2,
+          "gross_profit": 0.2,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 2,
+          "win_rate_pct": 100.0
+        }
+      },
+      "W4": {
+        "100": {
+          "success": true,
+          "net_profit": 0.1,
+          "gross_profit": 0.1,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 1,
+          "win_rate_pct": 100.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 0.1,
+          "gross_profit": 0.1,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 1,
+          "win_rate_pct": 100.0
+        }
+      }
+    },
+    "monthly": {
+      "M1": {
+        "100": {
+          "success": true,
+          "net_profit": 8.94,
+          "gross_profit": 20.44,
+          "gross_loss": -11.5,
+          "profit_factor": 1.78,
+          "drawdown_pct": 11.4,
+          "total_trades": 7,
+          "win_rate_pct": 42.86
+        },
+        "20": {
+          "success": true,
+          "net_profit": 8.94,
+          "gross_profit": 20.44,
+          "gross_loss": -11.5,
+          "profit_factor": 1.78,
+          "drawdown_pct": 57.0,
+          "total_trades": 7,
+          "win_rate_pct": 42.86
+        }
+      },
+      "M2": {
+        "100": {
+          "success": true,
+          "net_profit": -12.61,
+          "gross_profit": 17.78,
+          "gross_loss": -30.39,
+          "profit_factor": 0.59,
+          "drawdown_pct": 21.9,
+          "total_trades": 10,
+          "win_rate_pct": 30.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": -12.61,
+          "gross_profit": 17.78,
+          "gross_loss": -30.39,
+          "profit_factor": 0.59,
+          "drawdown_pct": 76.83,
+          "total_trades": 10,
+          "win_rate_pct": 30.0
+        }
+      },
+      "M3": {
+        "100": {
+          "success": true,
+          "net_profit": 43.28,
+          "gross_profit": 55.22,
+          "gross_loss": -11.94,
+          "profit_factor": 4.62,
+          "drawdown_pct": 5.49,
+          "total_trades": 9,
+          "win_rate_pct": 44.44
+        },
+        "20": {
+          "success": true,
+          "net_profit": -19.91,
+          "gross_profit": 4.16,
+          "gross_loss": -24.07,
+          "profit_factor": 0.17,
+          "drawdown_pct": 99.63,
+          "total_trades": 3,
+          "win_rate_pct": 33.33
+        }
+      },
+      "M4": {
+        "100": {
+          "success": true,
+          "net_profit": 36.13,
+          "gross_profit": 41.04,
+          "gross_loss": -4.91,
+          "profit_factor": 8.36,
+          "drawdown_pct": 1.69,
+          "total_trades": 8,
+          "win_rate_pct": 62.5
+        },
+        "20": {
+          "success": true,
+          "net_profit": 36.13,
+          "gross_profit": 41.04,
+          "gross_loss": -4.91,
+          "profit_factor": 8.36,
+          "drawdown_pct": 4.1,
+          "total_trades": 8,
+          "win_rate_pct": 62.5
+        }
+      }
+    },
+    "summary": {
+      "w_wins_100": 3,
+      "w_wins_20": 3,
+      "w_net_100": 4.82,
+      "w_net_20": 4.82,
+      "w_ret_20_pct": 24.1,
+      "m_wins_100": 3,
+      "m_wins_20": 2,
+      "m_net_100": 75.74,
+      "m_net_20": 12.55,
+      "m_ret_20_pct": 62.8
+    }
+  },
+  {
+    "id": "CAND_2_Sniper_Wick050",
+    "name": "Sniper Wick 0.50 + Fast BE 0.8R (Strict Rejection)",
+    "weekly": {
+      "W1": {
+        "100": {
+          "success": true,
+          "net_profit": 6.83,
+          "gross_profit": 6.83,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 3,
+          "win_rate_pct": 100.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 6.83,
+          "gross_profit": 6.83,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 3,
+          "win_rate_pct": 100.0
+        }
+      },
+      "W2": {
+        "100": {
+          "success": true,
+          "net_profit": -2.41,
+          "gross_profit": 0.05,
+          "gross_loss": -2.46,
+          "profit_factor": 0.02,
+          "drawdown_pct": 2.41,
+          "total_trades": 3,
+          "win_rate_pct": 33.33
+        },
+        "20": {
+          "success": true,
+          "net_profit": -2.41,
+          "gross_profit": 0.05,
+          "gross_loss": -2.46,
+          "profit_factor": 0.02,
+          "drawdown_pct": 12.05,
+          "total_trades": 3,
+          "win_rate_pct": 33.33
+        }
+      },
+      "W3": {
+        "100": {
+          "success": true,
+          "net_profit": 0.05,
+          "gross_profit": 0.05,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 1,
+          "win_rate_pct": 100.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 0.05,
+          "gross_profit": 0.05,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 1,
+          "win_rate_pct": 100.0
+        }
+      },
+      "W4": {
+        "100": {
+          "success": true,
+          "net_profit": 0.05,
+          "gross_profit": 0.05,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 1,
+          "win_rate_pct": 100.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 0.05,
+          "gross_profit": 0.05,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 1,
+          "win_rate_pct": 100.0
+        }
+      }
+    },
+    "monthly": {
+      "M1": {
+        "100": {
+          "success": true,
+          "net_profit": -11.4,
+          "gross_profit": 0.1,
+          "gross_loss": -11.5,
+          "profit_factor": 0.01,
+          "drawdown_pct": 11.5,
+          "total_trades": 6,
+          "win_rate_pct": 33.33
+        },
+        "20": {
+          "success": true,
+          "net_profit": -11.4,
+          "gross_profit": 0.1,
+          "gross_loss": -11.5,
+          "profit_factor": 0.01,
+          "drawdown_pct": 57.5,
+          "total_trades": 6,
+          "win_rate_pct": 33.33
+        }
+      },
+      "M2": {
+        "100": {
+          "success": true,
+          "net_profit": -6.41,
+          "gross_profit": 17.73,
+          "gross_loss": -24.14,
+          "profit_factor": 0.73,
+          "drawdown_pct": 16.44,
+          "total_trades": 9,
+          "win_rate_pct": 44.44
+        },
+        "20": {
+          "success": true,
+          "net_profit": -6.41,
+          "gross_profit": 17.73,
+          "gross_loss": -24.14,
+          "profit_factor": 0.73,
+          "drawdown_pct": 57.7,
+          "total_trades": 9,
+          "win_rate_pct": 44.44
+        }
+      },
+      "M3": {
+        "100": {
+          "success": true,
+          "net_profit": 44.56,
+          "gross_profit": 55.12,
+          "gross_loss": -10.56,
+          "profit_factor": 5.22,
+          "drawdown_pct": 4.64,
+          "total_trades": 8,
+          "win_rate_pct": 50.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": -19.91,
+          "gross_profit": 4.16,
+          "gross_loss": -24.07,
+          "profit_factor": 0.17,
+          "drawdown_pct": 99.63,
+          "total_trades": 3,
+          "win_rate_pct": 33.33
+        }
+      },
+      "M4": {
+        "100": {
+          "success": true,
+          "net_profit": -1.36,
+          "gross_profit": 3.55,
+          "gross_loss": -4.91,
+          "profit_factor": 0.72,
+          "drawdown_pct": 3.5,
+          "total_trades": 7,
+          "win_rate_pct": 57.14
+        },
+        "20": {
+          "success": true,
+          "net_profit": -1.36,
+          "gross_profit": 3.55,
+          "gross_loss": -4.91,
+          "profit_factor": 0.72,
+          "drawdown_pct": 17.41,
+          "total_trades": 7,
+          "win_rate_pct": 57.14
+        }
+      }
+    },
+    "summary": {
+      "w_wins_100": 3,
+      "w_wins_20": 3,
+      "w_net_100": 4.52,
+      "w_net_20": 4.52,
+      "w_ret_20_pct": 22.6,
+      "m_wins_100": 1,
+      "m_wins_20": 0,
+      "m_net_100": 25.39,
+      "m_net_20": -39.08,
+      "m_ret_20_pct": -195.4
+    }
+  },
+  {
+    "id": "CAND_3_RR25_Runner",
+    "name": "High Reward Runner (RR 2.5, Lookback 20, Wick 0.45, BE 1.0R)",
+    "weekly": {
+      "W1": {
+        "100": {
+          "success": true,
+          "net_profit": 5.75,
+          "gross_profit": 5.75,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 3,
+          "win_rate_pct": 100.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 5.75,
+          "gross_profit": 5.75,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 3,
+          "win_rate_pct": 100.0
+        }
+      },
+      "W2": {
+        "100": {
+          "success": true,
+          "net_profit": -2.36,
+          "gross_profit": 0.1,
+          "gross_loss": -2.46,
+          "profit_factor": 0.04,
+          "drawdown_pct": 2.36,
+          "total_trades": 3,
+          "win_rate_pct": 33.33
+        },
+        "20": {
+          "success": true,
+          "net_profit": -2.36,
+          "gross_profit": 0.1,
+          "gross_loss": -2.46,
+          "profit_factor": 0.04,
+          "drawdown_pct": 11.8,
+          "total_trades": 3,
+          "win_rate_pct": 33.33
+        }
+      },
+      "W3": {
+        "100": {
+          "success": true,
+          "net_profit": 0.2,
+          "gross_profit": 0.2,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 2,
+          "win_rate_pct": 100.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 0.2,
+          "gross_profit": 0.2,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 2,
+          "win_rate_pct": 100.0
+        }
+      },
+      "W4": {
+        "100": {
+          "success": true,
+          "net_profit": 0.1,
+          "gross_profit": 0.1,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 1,
+          "win_rate_pct": 100.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 0.1,
+          "gross_profit": 0.1,
+          "gross_loss": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 1,
+          "win_rate_pct": 100.0
+        }
+      }
+    },
+    "monthly": {
+      "M1": {
+        "100": {
+          "success": true,
+          "net_profit": 14.0,
+          "gross_profit": 25.5,
+          "gross_loss": -11.5,
+          "profit_factor": 2.22,
+          "drawdown_pct": 11.4,
+          "total_trades": 7,
+          "win_rate_pct": 42.86
+        },
+        "20": {
+          "success": true,
+          "net_profit": 14.0,
+          "gross_profit": 25.5,
+          "gross_loss": -11.5,
+          "profit_factor": 2.22,
+          "drawdown_pct": 57.0,
+          "total_trades": 7,
+          "win_rate_pct": 42.86
+        }
+      },
+      "M2": {
+        "100": {
+          "success": true,
+          "net_profit": -8.21,
+          "gross_profit": 22.18,
+          "gross_loss": -30.39,
+          "profit_factor": 0.73,
+          "drawdown_pct": 21.07,
+          "total_trades": 10,
+          "win_rate_pct": 30.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": -8.21,
+          "gross_profit": 22.18,
+          "gross_loss": -30.39,
+          "profit_factor": 0.73,
+          "drawdown_pct": 67.51,
+          "total_trades": 10,
+          "win_rate_pct": 30.0
+        }
+      },
+      "M3": {
+        "100": {
+          "success": true,
+          "net_profit": 64.07,
+          "gross_profit": 68.98,
+          "gross_loss": -4.91,
+          "profit_factor": 14.05,
+          "drawdown_pct": 3.36,
+          "total_trades": 6,
+          "win_rate_pct": 66.67
+        },
+        "20": {
+          "success": true,
+          "net_profit": -18.87,
+          "gross_profit": 5.2,
+          "gross_loss": -24.07,
+          "profit_factor": 0.22,
+          "drawdown_pct": 95.52,
+          "total_trades": 3,
+          "win_rate_pct": 33.33
+        }
+      },
+      "M4": {
+        "100": {
+          "success": true,
+          "net_profit": 48.63,
+          "gross_profit": 51.23,
+          "gross_loss": -2.6,
+          "profit_factor": 19.7,
+          "drawdown_pct": 0.94,
+          "total_trades": 7,
+          "win_rate_pct": 71.43
+        },
+        "20": {
+          "success": true,
+          "net_profit": 48.63,
+          "gross_profit": 51.23,
+          "gross_loss": -2.6,
+          "profit_factor": 19.7,
+          "drawdown_pct": 2.02,
+          "total_trades": 7,
+          "win_rate_pct": 71.43
+        }
+      }
+    },
+    "summary": {
+      "w_wins_100": 3,
+      "w_wins_20": 3,
+      "w_net_100": 3.69,
+      "w_net_20": 3.69,
+      "w_ret_20_pct": 18.5,
+      "m_wins_100": 3,
+      "m_wins_20": 2,
+      "m_net_100": 118.49,
+      "m_net_20": 35.55,
+      "m_ret_20_pct": 177.8
+    }
+  },
+  {
+    "id": "CAND_4_Killzone_Mom_Calibrated",
+    "name": "Killzone Momentum (Fast 20, Slow 50, ATR 1.2, RR 2.0, BE 1.0R)",
+    "weekly": {
+      "W1": {
+        "100": {
+          "success": true,
+          "net_profit": 35.06,
+          "gross_profit": 44.83,
+          "gross_loss": -9.77,
+          "profit_factor": 4.59,
+          "drawdown_pct": 3.87,
+          "total_trades": 14,
+          "win_rate_pct": 71.43
+        },
+        "20": {
+          "success": true,
+          "net_profit": 35.06,
+          "gross_profit": 44.83,
+          "gross_loss": -9.77,
+          "profit_factor": 4.59,
+          "drawdown_pct": 10.57,
+          "total_trades": 14,
+          "win_rate_pct": 71.43
+        }
+      },
+      "W2": {
+        "100": {
+          "success": true,
+          "net_profit": 8.28,
+          "gross_profit": 15.71,
+          "gross_loss": -7.43,
+          "profit_factor": 2.11,
+          "drawdown_pct": 4.6,
+          "total_trades": 7,
+          "win_rate_pct": 57.14
+        },
+        "20": {
+          "success": true,
+          "net_profit": 8.28,
+          "gross_profit": 15.71,
+          "gross_loss": -7.43,
+          "profit_factor": 2.11,
+          "drawdown_pct": 19.26,
+          "total_trades": 7,
+          "win_rate_pct": 57.14
+        }
+      },
+      "W3": {
+        "100": {
+          "success": true,
+          "net_profit": 31.84,
+          "gross_profit": 49.1,
+          "gross_loss": -17.26,
+          "profit_factor": 2.84,
+          "drawdown_pct": 8.12,
+          "total_trades": 9,
+          "win_rate_pct": 55.56
+        },
+        "20": {
+          "success": true,
+          "net_profit": 31.84,
+          "gross_profit": 49.1,
+          "gross_loss": -17.26,
+          "profit_factor": 2.84,
+          "drawdown_pct": 24.02,
+          "total_trades": 9,
+          "win_rate_pct": 55.56
+        }
+      },
+      "W4": {
+        "100": {
+          "success": true,
+          "net_profit": 12.81,
+          "gross_profit": 27.82,
+          "gross_loss": -15.01,
+          "profit_factor": 1.85,
+          "drawdown_pct": 10.09,
+          "total_trades": 10,
+          "win_rate_pct": 60.0
+        },
+        "20": {
+          "success": true,
+          "net_profit": 12.81,
+          "gross_profit": 27.82,
+          "gross_loss": -15.01,
+          "profit_factor": 1.85,
+          "drawdown_pct": 40.35,
+          "total_trades": 10,
+          "win_rate_pct": 60.0
+        }
+      }
+    },
+    "monthly": {
+      "M1": {
+        "100": {
+          "success": true,
+          "net_profit": 6.57,
+          "gross_profit": 52.29,
+          "gross_loss": -45.72,
+          "profit_factor": 1.14,
+          "drawdown_pct": 13.32,
+          "total_trades": 49,
+          "win_rate_pct": 55.1
+        },
+        "20": {
+          "success": true,
+          "net_profit": 6.57,
+          "gross_profit": 52.29,
+          "gross_loss": -45.72,
+          "profit_factor": 1.14,
+          "drawdown_pct": 42.31,
+          "total_trades": 49,
+          "win_rate_pct": 55.1
+        }
+      },
+      "M2": {
+        "100": {
+          "success": true,
+          "net_profit": -59.01,
+          "gross_profit": 49.59,
+          "gross_loss": -108.6,
+          "profit_factor": 0.46,
+          "drawdown_pct": 63.02,
+          "total_trades": 39,
+          "win_rate_pct": 33.33
+        },
+        "20": {
+          "success": true,
+          "net_profit": -19.21,
+          "gross_profit": 49.39,
+          "gross_loss": -68.6,
+          "profit_factor": 0.72,
+          "drawdown_pct": 97.44,
+          "total_trades": 28,
+          "win_rate_pct": 39.29
+        }
+      },
+      "M3": {
+        "100": {
+          "success": true,
+          "net_profit": -9.29,
+          "gross_profit": 57.27,
+          "gross_loss": -66.56,
+          "profit_factor": 0.86,
+          "drawdown_pct": 17.82,
+          "total_trades": 40,
+          "win_rate_pct": 52.5
+        },
+        "20": {
+          "success": true,
+          "net_profit": -9.29,
+          "gross_profit": 57.27,
+          "gross_loss": -66.56,
+          "profit_factor": 0.86,
+          "drawdown_pct": 64.94,
+          "total_trades": 40,
+          "win_rate_pct": 52.5
+        }
+      },
+      "M4": {
+        "100": {
+          "success": true,
+          "net_profit": 46.4,
+          "gross_profit": 86.68,
+          "gross_loss": -40.28,
+          "profit_factor": 2.15,
+          "drawdown_pct": 9.34,
+          "total_trades": 36,
+          "win_rate_pct": 66.67
+        },
+        "20": {
+          "success": true,
+          "net_profit": 46.4,
+          "gross_profit": 86.68,
+          "gross_loss": -40.28,
+          "profit_factor": 2.15,
+          "drawdown_pct": 19.2,
+          "total_trades": 36,
+          "win_rate_pct": 66.67
+        }
+      }
+    },
+    "summary": {
+      "w_wins_100": 4,
+      "w_wins_20": 4,
+      "w_net_100": 87.99,
+      "w_net_20": 87.99,
+      "w_ret_20_pct": 440.0,
+      "m_wins_100": 2,
+      "m_wins_20": 2,
+      "m_net_100": -15.33,
+      "m_net_20": 24.47,
+      "m_ret_20_pct": 122.4
+    }
+  }
+]

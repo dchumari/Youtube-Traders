@@ -1,0 +1,33 @@
+; =====================================================================
+; Preset 2: Institutional Compounder ($100 to $1,000+ Alpha Growth)
+; Strategy: Gold Daily 61.8% Fibonacci with Dual-Leg 1:1 Partials & Tiered Flow
+; Recommended Capital: $100.00 - $500.00 (1:200 to 1:500 Leverage)
+; Benchmark Output: +$311.40 Net (+311%) in single month (M4), +$180.80 (Q1)
+; =====================================================================
+
+InpSizingMode=1
+InpFixedLot=0.01
+InpStepEquitySize=50.0
+InpMaxLotCap=3.0
+InpSLPoints=400
+InpTargetMode=0
+InpLeg1_RR=1.0
+InpLeg2_RR=2.0
+InpBELockPoints=10
+InpBaseMagic=618902
+InpMinDayRangePts=1000
+InpEntryTolerance=50
+InpMaxSpreadPoints=50
+InpTradeImmediate=true
+InpTradeVirginLevels=true
+InpMaxVirginAgeDays=30
+InpMaxDailyTrades=2
+InpUseSessionFilter=true
+InpSessionStartHour=7
+InpSessionEndHour=18
+InpDrawChartObjects=true
+InpBuyColor=16747520
+InpSellColor=255
+InpVirginColor=55295
+InpRangeColor=6908265
+InpShowDashboard=true

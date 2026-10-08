@@ -1,0 +1,34 @@
+; ============================================================
+; Preset: Liquidity Grab Runner (Candidate 3)
+; Target: 1-Month Compounding Runner on $100 or $20 Accounts
+; Tested: 3 / 4 Monthly Windows & 3 / 4 Weekly Windows Profitable (+118.5% on $100, +177.8% on $20)
+; ============================================================
+InpStrategy=0
+InpMagicNumber=888001
+InpRiskPercent=0.0
+InpFixedLot=0.01
+InpRewardRiskRatio=2.5
+InpMaxSpreadPoints=50
+InpSweepLookback=20
+InpMinSweepPoints=30
+InpMinWickRatio=0.45
+InpUseTrendFilter=true
+InpTrendEMAPeriod=50
+InpMacroEMAPeriod=0
+InpMaxSLPoints=0
+InpSkipWideSL=false
+InpUseSessionFilter=true
+InpSessionStartH1=7
+InpSessionEndH1=11
+InpSessionStartH2=13
+InpSessionEndH2=17
+InpUseBreakeven=true
+InpBETriggerR=1.0
+InpBELockPoints=10
+InpUseTrailing=false
+InpShowTradeBoxes=true
+InpShowEntryArrows=true
+InpShowBadges=true
+InpShowConnLines=true
+InpVisualPrefix=TV_MrPFx_
+InpCleanOnDeinit=false

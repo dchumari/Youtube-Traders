@@ -1,0 +1,17 @@
+StrategyModel=2
+ExecutionMode=0
+SingleTarget_RR=3.0
+UseFixedLot=true
+FixedLotSize=0.01
+SL_Pips=15.0
+Min_FVG_Pips=2.0
+Sweep_Pips=2.5
+StructureLookback=10
+UseVolumeFilter=true
+VolMultiplier=1.15
+StartHourUTC=13
+EndHourUTC=19
+MaxDailyTrades=3
+MaxDailyLosses=2
+MaxSpreadPips=25.0
+MagicNumber=20264020
