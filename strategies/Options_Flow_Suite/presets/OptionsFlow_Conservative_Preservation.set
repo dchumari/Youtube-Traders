@@ -1,0 +1,31 @@
+; Options Flow Suite - Conservative Capital Preservation Preset
+; Fixed 0.01 lot with strict drawdown defense
+
+InpStrategyMode=10
+InpMagicNumber=777003
+InpCapitalMode=0
+InpFixedLot=0.01
+InpEquityPerMicroLot=50.0
+InpMaxLotCap=0.5
+InpStopLossPoints=250
+InpRiskRewardRatio=2.0
+InpUsePartials=1
+InpPart1_RR=1.0
+InpPart2_RR=2.0
+InpBELockPoints=15
+InpUseTrailingStop=1
+InpATRPeriod=14
+InpATRMultiplier=2.0
+InpFlowVolumeThreshold=150
+InpClusterLookback=12
+InpMinWickRatio=0.40
+InpGammaLookback=50
+InpGammaSensitivity=1.25
+InpUseSessionFilter=1
+InpSessionStartH1=7
+InpSessionEndH1=11
+InpSessionStartH2=13
+InpSessionEndH2=17
+InpUseTrendFilter=0
+InpTrendEMAPeriod=50
+InpMaxSpreadPoints=40

@@ -1,0 +1,50 @@
+{
+  "project": "Options Flow Algorithmic Strategy Extraction",
+  "mined_sources": [
+    {
+      "platform": "TikTok",
+      "tags": ["#optionsflow", "#unusualwhales", "#cheddarflow", "#daytrading", "#optionsstrategy"],
+      "core_themes": [
+        "Following $1M+ Golden Sweeps on SPY, QQQ, AAPL, TSLA, and GLD",
+        "Filtering for orders hitting AT or ABOVE the ASK (aggressive buyers)",
+        "0DTE Call/Put momentum spikes in the first 30-45 minutes of market open",
+        "Dark Pool prints acting as support/resistance bouncing zones"
+      ],
+      "influencer_setups": [
+        "Unusual Whales TikTok: Golden Sweep > $1M premium + OTM strike + Expiration < 14 days = Directional Momentum Play.",
+        "Cheddar Flow TikTok: Repeated Sweeps (3+ sweeps within 15 mins) on high volume = Smart Money accumulation.",
+        "Options Millionaire TikTok: Gamma flip crossover (price crossing zero gamma) triggers high-volatility trend acceleration."
+      ]
+    },
+    {
+      "platform": "YouTube",
+      "channels": ["Unusual Whales", "Cheddar Flow", "FlowAlgo", "SpotGamma", "InTheMoney", "Trade Brigade", "SMB Capital"],
+      "core_themes": [
+        "Intermarket Sweep Orders (ISO) vs Block Trades: Sweeps represent urgent, price-insensitive fills across multiple exchanges.",
+        "Dealer Gamma Positioning (GEX): Dealers short gamma = volatility amplifier (momentum/trend following); dealers long gamma = volatility dampener (mean reversion to Call/Put walls).",
+        "Put/Call Ratio (PCR) and Skew extremes as contrarian sentiment exhaustion indicators.",
+        "Volume > Open Interest (Vol > OI): Verifies fresh position initiation rather than institutional profit-taking/unwinding."
+      ]
+    },
+    {
+      "platform": "Twitter/X & Quant Research",
+      "core_themes": [
+        "Gamma Exposure (GEX) mathematical formulation: Sizing dealer delta-hedging flow based on option gamma.",
+        "Synthetic Options Delta/Gamma Modeling: Tracking implied volatility shifts, tick-volume imbalance, and order flow velocity to infer institutional options hedging pressure on spot/futures."
+      ]
+    }
+  ],
+  "extracted_strategies_catalog": [
+    "Strategy 0: Golden Sweep Momentum Breakout (Urgent Flow > 1M, Ask-side, OTM)",
+    "Strategy 1: Repeat Institutional Accumulation (Clustered Flow across 3+ consecutive sweeps)",
+    "Strategy 2: Zero Gamma (Gamma Flip) Volatility Expansion (Dealer Short Gamma Breakout)",
+    "Strategy 3: Call Wall / Put Wall Mean Reversion (Dealer Long Gamma Pin)",
+    "Strategy 4: 0DTE Open Momentum Squeeze (Opening 60-minute gamma acceleration)",
+    "Strategy 5: Dark Pool Signature Level + Flow Confluence (Large print test + sweep trigger)",
+    "Strategy 6: Put/Call Ratio Extreme Exhaustion (Contrarian sentiment mean reversion)",
+    "Strategy 7: Macro Tail-Risk Volatility Spillover (Safe haven Gold/USD flow spike)",
+    "Strategy 8: Bid-Side Trapped Retail Reversal (Institutional distribution vs retail buying)",
+    "Strategy 9: Synthetic Institutional Delta/Gamma Flow Engine (Real-time quantitative proxy)",
+    "Strategy 10: Hybrid Options Flow Champion (Golden Sweep + Gamma Regime Filter + Rejection Wick)"
+  ]
+}

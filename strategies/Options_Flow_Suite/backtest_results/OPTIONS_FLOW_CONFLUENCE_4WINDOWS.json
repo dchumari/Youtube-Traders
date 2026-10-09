@@ -1,0 +1,46 @@
+{
+  "W1": {
+    "100": {
+      "success": false,
+      "error": "No report"
+    },
+    "20": {
+      "success": false,
+      "error": "No report"
+    },
+    "win": false
+  },
+  "W2": {
+    "100": {
+      "success": false,
+      "error": "No report"
+    },
+    "20": {
+      "success": false,
+      "error": "No report"
+    },
+    "win": false
+  },
+  "W3": {
+    "100": {
+      "success": false,
+      "error": "No report"
+    },
+    "20": {
+      "success": false,
+      "error": "No report"
+    },
+    "win": false
+  },
+  "W4": {
+    "100": {
+      "success": false,
+      "error": "No report"
+    },
+    "20": {
+      "success": false,
+      "error": "No report"
+    },
+    "win": false
+  }
+}

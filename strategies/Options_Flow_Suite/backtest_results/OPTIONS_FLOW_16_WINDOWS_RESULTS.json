@@ -1,0 +1,362 @@
+{
+  "metadata": {
+    "strategy": "Options_Flow_Master_Suite (Hybrid Champion)",
+    "symbol": "XAUUSD",
+    "period": "M15",
+    "leverage": "1:400",
+    "timestamp": "2026-10-09T02:38:24.195592",
+    "inputs": {
+      "InpStrategyMode": 10,
+      "InpMagicNumber": 777001,
+      "InpCapitalMode": 1,
+      "InpFixedLot": 0.01,
+      "InpEquityPerMicroLot": 25.0,
+      "InpMaxLotCap": 3.0,
+      "InpStopLossPoints": 220,
+      "InpRiskRewardRatio": 2.0,
+      "InpUsePartials": "true",
+      "InpPart1_RR": 1.0,
+      "InpPart2_RR": 2.5,
+      "InpBELockPoints": 10,
+      "InpUseTrailingStop": "true",
+      "InpATRPeriod": 14,
+      "InpATRMultiplier": 1.5,
+      "InpFlowVolumeThreshold": 135,
+      "InpClusterLookback": 12,
+      "InpMinWickRatio": 0.35,
+      "InpGammaLookback": 50,
+      "InpGammaSensitivity": 1.25,
+      "InpUseSessionFilter": "true",
+      "InpSessionStartH1": 7,
+      "InpSessionEndH1": 11,
+      "InpSessionStartH2": 13,
+      "InpSessionEndH2": 17,
+      "InpMaxSpreadPoints": 50
+    }
+  },
+  "account_100": {
+    "W1": {
+      "success": true,
+      "net_profit": 12.94,
+      "gross_profit": 32.18,
+      "gross_loss": -19.24,
+      "profit_factor": 1.67,
+      "drawdown_pct": 9.72,
+      "total_trades": 10,
+      "win_rate_pct": 80.0
+    },
+    "W2": {
+      "success": true,
+      "net_profit": -10.3,
+      "gross_profit": 13.8,
+      "gross_loss": -24.1,
+      "profit_factor": 0.57,
+      "drawdown_pct": 16.57,
+      "total_trades": 6,
+      "win_rate_pct": 50.0
+    },
+    "W3": {
+      "success": true,
+      "net_profit": -23.7,
+      "gross_profit": 0.0,
+      "gross_loss": -23.7,
+      "profit_factor": 0.0,
+      "drawdown_pct": 23.7,
+      "total_trades": 3,
+      "win_rate_pct": 0.0
+    },
+    "W4": {
+      "success": true,
+      "net_profit": -17.46,
+      "gross_profit": 13.8,
+      "gross_loss": -31.26,
+      "profit_factor": 0.44,
+      "drawdown_pct": 24.12,
+      "total_trades": 7,
+      "win_rate_pct": 42.86
+    },
+    "M1": {
+      "success": true,
+      "net_profit": -29.9,
+      "gross_profit": 92.26,
+      "gross_loss": -122.16,
+      "profit_factor": 0.76,
+      "drawdown_pct": 40.63,
+      "total_trades": 37,
+      "win_rate_pct": 43.24
+    },
+    "M2": {
+      "success": true,
+      "net_profit": -37.3,
+      "gross_profit": 74.5,
+      "gross_loss": -111.8,
+      "profit_factor": 0.67,
+      "drawdown_pct": 47.72,
+      "total_trades": 39,
+      "win_rate_pct": 56.41
+    },
+    "M3": {
+      "success": true,
+      "net_profit": -11.33,
+      "gross_profit": 114.19,
+      "gross_loss": -125.52,
+      "profit_factor": 0.91,
+      "drawdown_pct": 39.18,
+      "total_trades": 35,
+      "win_rate_pct": 54.29
+    },
+    "M4": {
+      "success": true,
+      "net_profit": -20.18,
+      "gross_profit": 53.76,
+      "gross_loss": -73.94,
+      "profit_factor": 0.73,
+      "drawdown_pct": 44.49,
+      "total_trades": 26,
+      "win_rate_pct": 57.69
+    },
+    "Q1": {
+      "success": true,
+      "net_profit": -54.07,
+      "gross_profit": 164.87,
+      "gross_loss": -218.94,
+      "profit_factor": 0.75,
+      "drawdown_pct": 61.44,
+      "total_trades": 91,
+      "win_rate_pct": 50.55
+    },
+    "Q2": {
+      "success": true,
+      "net_profit": -72.89,
+      "gross_profit": 82.09,
+      "gross_loss": -154.98,
+      "profit_factor": 0.53,
+      "drawdown_pct": 79.84,
+      "total_trades": 83,
+      "win_rate_pct": 40.96
+    },
+    "Q3": {
+      "success": true,
+      "net_profit": -78.22,
+      "gross_profit": 185.0,
+      "gross_loss": -263.22,
+      "profit_factor": 0.7,
+      "drawdown_pct": 87.36,
+      "total_trades": 97,
+      "win_rate_pct": 45.36
+    },
+    "Q4": {
+      "success": true,
+      "net_profit": 10.42,
+      "gross_profit": 526.61,
+      "gross_loss": -516.19,
+      "profit_factor": 1.02,
+      "drawdown_pct": 44.01,
+      "total_trades": 115,
+      "win_rate_pct": 56.52
+    },
+    "Y1": {
+      "success": true,
+      "net_profit": -16.66,
+      "gross_profit": 391.76,
+      "gross_loss": -408.42,
+      "profit_factor": 0.96,
+      "drawdown_pct": 71.1,
+      "total_trades": 149,
+      "win_rate_pct": 52.35
+    },
+    "Y2": {
+      "success": true,
+      "net_profit": -96.79,
+      "gross_profit": 200.87,
+      "gross_loss": -297.66,
+      "profit_factor": 0.67,
+      "drawdown_pct": 96.89,
+      "total_trades": 139,
+      "win_rate_pct": 44.6
+    },
+    "Y3": {
+      "success": true,
+      "net_profit": -95.24,
+      "gross_profit": 430.73,
+      "gross_loss": -525.97,
+      "profit_factor": 0.82,
+      "drawdown_pct": 95.24,
+      "total_trades": 290,
+      "win_rate_pct": 50.69
+    },
+    "Y4": {
+      "success": true,
+      "net_profit": -92.35,
+      "gross_profit": 399.69,
+      "gross_loss": -492.04,
+      "profit_factor": 0.81,
+      "drawdown_pct": 95.0,
+      "total_trades": 188,
+      "win_rate_pct": 47.34
+    }
+  },
+  "account_20": {
+    "W1": {
+      "success": true,
+      "net_profit": 5.75,
+      "gross_profit": 10.56,
+      "gross_loss": -4.81,
+      "profit_factor": 2.2,
+      "drawdown_pct": 12.15,
+      "total_trades": 10,
+      "win_rate_pct": 80.0
+    },
+    "W2": {
+      "success": true,
+      "net_profit": -2.63,
+      "gross_profit": 4.6,
+      "gross_loss": -7.23,
+      "profit_factor": 0.64,
+      "drawdown_pct": 23.6,
+      "total_trades": 6,
+      "win_rate_pct": 50.0
+    },
+    "W3": {
+      "success": true,
+      "net_profit": -7.11,
+      "gross_profit": 0.0,
+      "gross_loss": -7.11,
+      "profit_factor": 0.0,
+      "drawdown_pct": 35.55,
+      "total_trades": 3,
+      "win_rate_pct": 0.0
+    },
+    "W4": {
+      "success": true,
+      "net_profit": -5.01,
+      "gross_profit": 4.6,
+      "gross_loss": -9.61,
+      "profit_factor": 0.48,
+      "drawdown_pct": 36.15,
+      "total_trades": 7,
+      "win_rate_pct": 42.86
+    },
+    "M1": {
+      "success": true,
+      "net_profit": -15.1,
+      "gross_profit": 13.2,
+      "gross_loss": -28.3,
+      "profit_factor": 0.47,
+      "drawdown_pct": 75.5,
+      "total_trades": 15,
+      "win_rate_pct": 20.0
+    },
+    "M2": {
+      "success": true,
+      "net_profit": -11.68,
+      "gross_profit": 28.0,
+      "gross_loss": -39.68,
+      "profit_factor": 0.71,
+      "drawdown_pct": 67.8,
+      "total_trades": 39,
+      "win_rate_pct": 56.41
+    },
+    "M3": {
+      "success": true,
+      "net_profit": -0.23,
+      "gross_profit": 37.66,
+      "gross_loss": -37.89,
+      "profit_factor": 0.99,
+      "drawdown_pct": 50.65,
+      "total_trades": 35,
+      "win_rate_pct": 54.29
+    },
+    "M4": {
+      "success": true,
+      "net_profit": -14.12,
+      "gross_profit": 0.2,
+      "gross_loss": -14.32,
+      "profit_factor": 0.01,
+      "drawdown_pct": 70.6,
+      "total_trades": 8,
+      "win_rate_pct": 25.0
+    },
+    "Q1": {
+      "success": true,
+      "net_profit": -16.72,
+      "gross_profit": 32.48,
+      "gross_loss": -49.2,
+      "profit_factor": 0.66,
+      "drawdown_pct": 85.66,
+      "total_trades": 38,
+      "win_rate_pct": 47.37
+    },
+    "Q2": {
+      "success": true,
+      "net_profit": -17.22,
+      "gross_profit": 0.0,
+      "gross_loss": -17.22,
+      "profit_factor": 0.0,
+      "drawdown_pct": 86.1,
+      "total_trades": 7,
+      "win_rate_pct": 0.0
+    },
+    "Q3": {
+      "success": true,
+      "net_profit": -17.31,
+      "gross_profit": 22.05,
+      "gross_loss": -39.36,
+      "profit_factor": 0.56,
+      "drawdown_pct": 90.24,
+      "total_trades": 28,
+      "win_rate_pct": 42.86
+    },
+    "Q4": {
+      "success": true,
+      "net_profit": 18.3,
+      "gross_profit": 136.93,
+      "gross_loss": -118.63,
+      "profit_factor": 1.15,
+      "drawdown_pct": 65.1,
+      "total_trades": 115,
+      "win_rate_pct": 56.52
+    },
+    "Y1": {
+      "success": true,
+      "net_profit": -16.68,
+      "gross_profit": 70.7,
+      "gross_loss": -87.38,
+      "profit_factor": 0.81,
+      "drawdown_pct": 87.54,
+      "total_trades": 60,
+      "win_rate_pct": 43.33
+    },
+    "Y2": {
+      "success": true,
+      "net_profit": -16.72,
+      "gross_profit": 32.48,
+      "gross_loss": -49.2,
+      "profit_factor": 0.66,
+      "drawdown_pct": 85.66,
+      "total_trades": 38,
+      "win_rate_pct": 47.37
+    },
+    "Y3": {
+      "success": true,
+      "net_profit": -15.1,
+      "gross_profit": 13.2,
+      "gross_loss": -28.3,
+      "profit_factor": 0.47,
+      "drawdown_pct": 75.5,
+      "total_trades": 15,
+      "win_rate_pct": 20.0
+    },
+    "Y4": {
+      "success": true,
+      "net_profit": -13.78,
+      "gross_profit": 5.63,
+      "gross_loss": -19.41,
+      "profit_factor": 0.29,
+      "drawdown_pct": 68.9,
+      "total_trades": 16,
+      "win_rate_pct": 50.0
+    }
+  },
+  "summary": {}
+}

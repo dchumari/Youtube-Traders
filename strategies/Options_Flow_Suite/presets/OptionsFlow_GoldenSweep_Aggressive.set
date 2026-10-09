@@ -1,0 +1,31 @@
+; Options Flow Suite - Golden Sweep Aggressive Momentum Preset
+; Calibrated for Event-Driven Volatility Shocks (NFP, CPI, Earnings)
+
+InpStrategyMode=0
+InpMagicNumber=777002
+InpCapitalMode=1
+InpFixedLot=0.01
+InpEquityPerMicroLot=30.0
+InpMaxLotCap=3.0
+InpStopLossPoints=180
+InpRiskRewardRatio=2.5
+InpUsePartials=1
+InpPart1_RR=1.0
+InpPart2_RR=2.5
+InpBELockPoints=10
+InpUseTrailingStop=1
+InpATRPeriod=14
+InpATRMultiplier=1.5
+InpFlowVolumeThreshold=150
+InpClusterLookback=12
+InpMinWickRatio=0.35
+InpGammaLookback=50
+InpGammaSensitivity=1.25
+InpUseSessionFilter=1
+InpSessionStartH1=7
+InpSessionEndH1=11
+InpSessionStartH2=13
+InpSessionEndH2=17
+InpUseTrendFilter=0
+InpTrendEMAPeriod=50
+InpMaxSpreadPoints=50

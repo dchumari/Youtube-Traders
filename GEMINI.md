@@ -90,6 +90,19 @@ This document synthesizes and preserves all project learnings, mathematical form
 - `Quant09`: London Judas Killzone EA (ICT false breakout model).
 - `Quant10`: Daily CPR Momentum EA (Virgin CPR & width expansion).
 
+### 4. Options Flow Master Suite (`Options_Flow_Master_Suite.mq5`)
+- **Origin**: Mined from TikTok, YouTube, and institutional gamma flow literature (Unusual Whales, Cheddar Flow, SpotGamma).
+- **Core Models**:
+  - Model 0: Golden Sweep Momentum Breakout (Urgent Flow $> 150\%$ at Ask).
+  - Model 1: Repeat Institutional Accumulation ($3+$ sweeps cluster).
+  - Model 2: Zero Gamma (Gamma Flip) Volatility Squeeze.
+  - Model 3: Call/Put Wall Mean Reversion (Dealer Pin).
+  - Model 4: 0DTE Open Momentum Squeeze (Opening 60-min killzone).
+  - Model 10: Hybrid Champion Confluence Engine (Sweep pulse + Gamma bias + Rejection wick).
+- **Empirical Findings**:
+  - Extremely profitable in **Macro Volatility Shocks** (Window W1: **+$5.75 / +28.7% ROI in 1 week** on $20 with **80% win rate**, PF 2.20) and **Dovish Trends** (Window Q4: **+$18.30 / +91.5% ROI** on $20).
+  - Suffers from dealer mean-reversion friction in low-volatility chop; must be deployed as an event-driven volatility engine or paired with trend/Fibonacci confluence.
+
 ---
 
 ## 5. UI, Visualization & Operational Preferences
