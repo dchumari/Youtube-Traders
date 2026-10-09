@@ -1,0 +1,43 @@
+; DanialFX_100USD_to_10000USD_Flip_Engine.set
+; Dedicated High-Conviction 100X Account Flip Engine ($100 -> $10,000)
+; Designed for Ahmad Danial's 1-Session Volatility Cascade Strategy on XAUUSD M15
+; Mechanics: Floating Margin Pyramiding + Cascading Breakeven Protection + Geometric Compounding
+InpStrategyMode=0
+InpMagicNumber=991199
+InpTradeComment=DanialFX_100XFlip
+InpRiskMode=0
+InpFixedLot=0.01
+InpEquityStepPerMinLot=25.0
+InpMinLot=0.01
+InpMaxLot=5.00
+InpEnableLayering=true
+InpMaxLayers=6
+InpLayerStepPoints=250
+InpLockBreakevenOnLayer=true
+InpBreakevenBufferPts=10
+InpEnableTrailing=true
+InpTrailingStartPoints=350
+InpTrailingStepPoints=120
+InpAccountFlipMode=true
+InpFlipInitialLotPer100=0.05
+InpFlipMultiplier=1.50
+InpFlipMaxLayers=6
+InpFlipStepPoints=250
+InpFlipTargetEquity=10000.0
+InpSwingLookback=25
+InpMinBOSPoints=120
+InpQMLTolerancePoints=100
+InpSLHeadBufferPoints=50
+InpStopLossPoints=200
+InpTakeProfitPoints=1500
+InpAOFastPeriod=5
+InpAOSlowPeriod=34
+InpBBPeriod=20
+InpBBDev=2.0
+InpEMA50Period=50
+InpUseEMATrendFilter=true
+InpMinRejectionWickPct=0.40
+InpUseSessionFilter=true
+InpStartHour=7
+InpEndHour=19
+InpMaxSpreadPoints=45

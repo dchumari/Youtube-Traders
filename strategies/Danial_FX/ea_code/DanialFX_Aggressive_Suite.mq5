@@ -49,6 +49,14 @@ input bool                 InpEnableTrailing      = true;                  // En
 input int                  InpTrailingStartPoints = 450;                   // Trailing Start (Points)
 input int                  InpTrailingStepPoints  = 150;                   // Trailing Step (Points)
 
+input group "=== 100X Account Flip Engine ($100 -> $10,000) ==="
+input bool                 InpAccountFlipMode     = false;                 // Enable 100X Single-Session Account Flip Mode
+input double               InpFlipInitialLotPer100= 0.05;                  // Initial Base Lot per $100 Balance (e.g. 0.05 lot)
+input double               InpFlipMultiplier      = 1.50;                  // Cascading Layer Multiplier (1.5x - 2.0x)
+input int                  InpFlipMaxLayers       = 6;                     // Max Cascade Layers in Flip Mode
+input int                  InpFlipStepPoints      = 250;                   // Step Points for Next Cascade Layer (25 pips)
+input double               InpFlipTargetEquity    = 10000.0;               // Account Flip Target ($10,000) - Closes Basket on Target
+
 input group "=== Quasimodo (QM) Structural Engine ==="
 input int                  InpSwingLookback       = 30;                    // Lookback Bars for Swing High/Low
 input int                  InpMinBOSPoints        = 120;                   // Minimum Break of Structure (Points)
@@ -137,19 +145,46 @@ void OnDeinit(const int reason)
 //+------------------------------------------------------------------+
 //| Calculate Dynamic Lot Size Based on Danial FX Tiering            |
 //+------------------------------------------------------------------+
-double CalculateDanialLot()
+double CalculateDanialLot(int layer_index = 0)
 {
    if (InpRiskMode == RISK_FIXED_LOT)
       return InpFixedLot;
 
    double equity = AccountInfoDouble(ACCOUNT_EQUITY);
-   if (InpEquityStepPerMinLot <= 0.0)
-      return InpMinLot;
+   double balance = AccountInfoDouble(ACCOUNT_BALANCE);
 
-   int tiers = (int)MathFloor(equity / InpEquityStepPerMinLot);
-   if (tiers < 1) tiers = 1;
+   double lot = InpMinLot;
 
-   double lot = tiers * 0.01;
+   if (InpAccountFlipMode)
+   {
+      // 100X Account Flip Compounding:
+      // Base lot on initial capital: e.g. 0.05 lot per $100 balance
+      double base_lot = MathMax(InpMinLot, MathFloor(balance / 100.0 * InpFlipInitialLotPer100 / 0.01) * 0.01);
+
+      if (layer_index == 0)
+      {
+         lot = base_lot;
+      }
+      else
+      {
+         // Scale geometric layers using freed floating margin
+         lot = base_lot * MathPow(InpFlipMultiplier, layer_index);
+
+         // Scale further if floating equity has expanded significantly
+         double eq_lot = (equity / 100.0) * InpFlipInitialLotPer100;
+         if (eq_lot > lot) lot = eq_lot;
+      }
+   }
+   else
+   {
+      if (InpEquityStepPerMinLot <= 0.0)
+         return InpMinLot;
+
+      int tiers = (int)MathFloor(equity / InpEquityStepPerMinLot);
+      if (tiers < 1) tiers = 1;
+
+      lot = tiers * 0.01;
+   }
 
    double min_lot = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_MIN);
    double max_lot = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_MAX);
@@ -509,19 +544,21 @@ void CheckLayeringExecution()
 {
    if (!InpEnableLayering) return;
 
+   int max_layers = InpAccountFlipMode ? InpFlipMaxLayers : InpMaxLayers;
+   int step_pts = InpAccountFlipMode ? InpFlipStepPoints : InpLayerStepPoints;
+
    double oldest_price = 0.0, newest_price = 0.0, profit_pts = 0.0;
 
    // Check Buy Layering
    int buy_count = GetOpenPositions(POSITION_TYPE_BUY, oldest_price, newest_price, profit_pts);
-   if (buy_count > 0 && buy_count < InpMaxLayers)
+   if (buy_count > 0 && buy_count < max_layers)
    {
       double ask = SymbolInfoDouble(_Symbol, SYMBOL_ASK);
-      // Require profit from newest layer to be at least InpLayerStepPoints
       double dist_from_last = (ask - newest_price) / _Point;
 
-      if (dist_from_last >= InpLayerStepPoints && profit_pts >= (buy_count * InpLayerStepPoints))
+      if (dist_from_last >= step_pts && profit_pts >= (buy_count * step_pts))
       {
-         double lot = CalculateDanialLot();
+         double lot = CalculateDanialLot(buy_count);
          double sl = oldest_price + (InpBreakevenBufferPts * _Point);
          double tp = ask + (InpTakeProfitPoints * _Point);
 
@@ -535,14 +572,14 @@ void CheckLayeringExecution()
 
    // Check Sell Layering
    int sell_count = GetOpenPositions(POSITION_TYPE_SELL, oldest_price, newest_price, profit_pts);
-   if (sell_count > 0 && sell_count < InpMaxLayers)
+   if (sell_count > 0 && sell_count < max_layers)
    {
       double bid = SymbolInfoDouble(_Symbol, SYMBOL_BID);
       double dist_from_last = (newest_price - bid) / _Point;
 
-      if (dist_from_last >= InpLayerStepPoints && profit_pts >= (sell_count * InpLayerStepPoints))
+      if (dist_from_last >= step_pts && profit_pts >= (sell_count * step_pts))
       {
-         double lot = CalculateDanialLot();
+         double lot = CalculateDanialLot(sell_count);
          double sl = oldest_price - (InpBreakevenBufferPts * _Point);
          double tp = bid - (InpTakeProfitPoints * _Point);
 
@@ -556,10 +593,39 @@ void CheckLayeringExecution()
 }
 
 //+------------------------------------------------------------------+
+//| Close All Positions on Flip Target Achievement                   |
+//+------------------------------------------------------------------+
+void CloseAllPositions()
+{
+   for (int i = PositionsTotal() - 1; i >= 0; i--)
+   {
+      if (m_position.SelectByIndex(i))
+      {
+         if (m_position.Symbol() == _Symbol && m_position.Magic() == InpMagicNumber)
+         {
+            m_trade.PositionClose(m_position.Ticket());
+         }
+      }
+   }
+}
+
+//+------------------------------------------------------------------+
 //| Expert tick function                                             |
 //+------------------------------------------------------------------+
 void OnTick()
 {
+   // 100X Account Flip Target Check: Close everything once target equity is achieved!
+   if (InpAccountFlipMode && InpFlipTargetEquity > 0.0)
+   {
+      if (AccountInfoDouble(ACCOUNT_EQUITY) >= InpFlipTargetEquity)
+      {
+         PrintFormat(">>> 100X ACCOUNT FLIP TARGET ACHIEVED! Equity: $%.2f >= $%.2f! CLOSING ALL TRADES! <<<",
+                     AccountInfoDouble(ACCOUNT_EQUITY), InpFlipTargetEquity);
+         CloseAllPositions();
+         return;
+      }
+   }
+
    // 1. Manage breakeven locks and trailing stops
    ManageBreakevenAndTrailing();
 
