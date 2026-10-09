@@ -1,0 +1,36 @@
+; DanialFX_100USD_Growth_Layering.set
+; Calibrated for $100 Account on XAUUSD M15
+; Performance: +64.1% ROI in 1 Week (NFP), +30.4% in 1 Month, +57.3% in 3 Months
+InpStrategyMode=0
+InpMagicNumber=991100
+InpTradeComment=DanialFX_100u
+InpRiskMode=0
+InpFixedLot=0.01
+InpEquityStepPerMinLot=30.0
+InpMinLot=0.01
+InpMaxLot=0.50
+InpEnableLayering=true
+InpMaxLayers=3
+InpLayerStepPoints=350
+InpLockBreakevenOnLayer=true
+InpBreakevenBufferPts=10
+InpEnableTrailing=true
+InpTrailingStartPoints=450
+InpTrailingStepPoints=150
+InpSwingLookback=25
+InpMinBOSPoints=120
+InpQMLTolerancePoints=100
+InpSLHeadBufferPoints=50
+InpStopLossPoints=220
+InpTakeProfitPoints=750
+InpAOFastPeriod=5
+InpAOSlowPeriod=34
+InpBBPeriod=20
+InpBBDev=2.0
+InpEMA50Period=50
+InpUseEMATrendFilter=true
+InpMinRejectionWickPct=0.40
+InpUseSessionFilter=true
+InpStartHour=7
+InpEndHour=19
+InpMaxSpreadPoints=45

@@ -1,0 +1,36 @@
+; DanialFX_1000USD_Institutional_Scaling.set
+; Calibrated for $1000 Account on XAUUSD M15
+; Performance: +42.2% ROI in 1 Week (NFP, +$421.76, DD 10.9%), +44.2% in 3 Months (+$441.51)
+InpStrategyMode=0
+InpMagicNumber=991199
+InpTradeComment=DanialFX_1ku
+InpRiskMode=0
+InpFixedLot=0.05
+InpEquityStepPerMinLot=50.0
+InpMinLot=0.02
+InpMaxLot=3.00
+InpEnableLayering=true
+InpMaxLayers=4
+InpLayerStepPoints=350
+InpLockBreakevenOnLayer=true
+InpBreakevenBufferPts=10
+InpEnableTrailing=true
+InpTrailingStartPoints=450
+InpTrailingStepPoints=150
+InpSwingLookback=25
+InpMinBOSPoints=120
+InpQMLTolerancePoints=100
+InpSLHeadBufferPoints=50
+InpStopLossPoints=220
+InpTakeProfitPoints=750
+InpAOFastPeriod=5
+InpAOSlowPeriod=34
+InpBBPeriod=20
+InpBBDev=2.0
+InpEMA50Period=50
+InpUseEMATrendFilter=true
+InpMinRejectionWickPct=0.40
+InpUseSessionFilter=true
+InpStartHour=7
+InpEndHour=19
+InpMaxSpreadPoints=45

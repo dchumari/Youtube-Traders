@@ -14,6 +14,7 @@ This document synthesizes and preserves all project learnings, mathematical form
 | `fbf4d4da-fa3e-4da1-b237-499f56fe6afe` | **Autonomous Institutional Algo Suite (Quant01-10)** | Created `QuantCore.mqh` execution harness; built Quant01 (Asian Sweep Sniper) through Quant10 (Daily CPR Momentum); multi-regime stress validation. |
 | `3bdb51a7-be68-4872-a687-720f237a28e3` | **Mr P FX YouTube Mining & 16-Window Optimization** | Scraped 80+ videos; extracted 4 core strategies; built `MrPFx_Master_Suite.mq5`. Champion: Strategy 3 (Fair Value Gap Trend Continuation) passed 3/4 windows. Profit expansion math from 0.01 lot. |
 | `908548ce-da6e-4067-ad2d-a1589ba235cd` | **Daily Range Fibonacci 61.8% & Virgin Levels** | Daily bullish/bearish candle 61.8% pullback + virgin key levels. Pine Script & MQL5 indicator. EAs: Baseline, V2 (Partials/Trail), Institutional (Session/EMA/Wick), Aggressive Math (Tiered sizing). |
+| `2d2e95f5-1cb0-4f28-8f7d-321666504597` | **Options Flow & Danial FX Aggressive Suite** | Mined Options Flow & Ahmad Danial (@Danialfx, 74 videos). Built `Options_Flow_Master_Suite.mq5` & `DanialFX_Aggressive_Suite.mq5`. Champion Model 0 (Quasimodo Sniper + Layering) passed 3/4 windows across all capital tiers ($20, $50, $100, $1,000), nearly doubling $50 to $96.07 (+92.1%) in 1 week. |
 
 ---
 
@@ -102,6 +103,25 @@ This document synthesizes and preserves all project learnings, mathematical form
 - **Empirical Findings**:
   - Extremely profitable in **Macro Volatility Shocks** (Window W1: **+$5.75 / +28.7% ROI in 1 week** on $20 with **80% win rate**, PF 2.20) and **Dovish Trends** (Window Q4: **+$18.30 / +91.5% ROI** on $20).
   - Suffers from dealer mean-reversion friction in low-volatility chop; must be deployed as an event-driven volatility engine or paired with trend/Fibonacci confluence.
+
+### 5. Ahmad Danial (@Danialfx) Quasimodo & Profit Layering Suite (`DanialFX_Aggressive_Suite.mq5`)
+- **Origin**: Mined from Ahmad Danial (@Danialfx, 74 YouTube videos), Malaysian aggressive Gold (`XAUUSD`) scalper.
+- **Core Models**:
+  - Model 0: Quasimodo (QM) Left Shoulder Sniper Reversal with rejection wick $\ge 40\%$ & EMA 50 trend backbone (**Undisputed Champion**).
+  - Model 1: QM + Awesome Oscillator (AO) Momentum Exhaustion & Zero-Cross Confluence.
+  - Model 2: BBMA REM Setup (Re-entry, Extreme, MHV).
+  - Model 3: Danial FX Master Hybrid Confluence Engine.
+- **The Signature Profit Layering Engine**:
+  - Enters Layer 1 at Left Shoulder (QML).
+  - When Layer 1 reaches $+35\text{ pips}$ ($+350\text{ points}$), moves SL to Breakeven $+ 10\text{ points}$ and triggers **Layer 2**.
+  - When Layer 2 hits $+35\text{ pips}$, locks Layer 1 in $+350\text{ points}$ profit, moves Layer 2 to BE, and triggers **Layer 3**.
+  - Asymmetric compounding: Total risk never exceeds initial Layer 1 risk, while upside expands non-linearly.
+- **Empirical Findings across 4 Capital Tiers ($20, $50, $100, $1,000)**:
+  - **Passed 3 out of 4 distinct windows across all four capital tiers**:
+    - **$20 Capital**: +66.3% ROI in 1 week (NFP shock), +30.6% in 1 month, +78.0% in 3 months.
+    - **$50 Capital**: **+$46.07 / +92.1% ROI in 1 week ($50 \rightarrow $96.07)** with 75.0% Win Rate, 18.5% Max DD.
+    - **$100 Capital**: **+$64.11 / +64.1% ROI in 1 week**, +30.4% in 1 month, +57.3% in 3 months.
+    - **$1,000 Capital**: **+$421.76 / +42.2% ROI in 1 week** (DD: 10.9%), **+$441.51 / +44.2% ROI in 3 months** (DD: 30.6%).
 
 ---
 

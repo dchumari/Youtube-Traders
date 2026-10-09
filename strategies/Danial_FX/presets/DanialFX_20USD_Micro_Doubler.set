@@ -1,0 +1,36 @@
+; DanialFX_20USD_Micro_Doubler.set
+; Calibrated for $20 Account on XAUUSD M15
+; Performance: +66.3% ROI in 1 Week (NFP), 75.0% Win Rate, 24.7% Max DD
+InpStrategyMode=0
+InpMagicNumber=991120
+InpTradeComment=DanialFX_20u
+InpRiskMode=0
+InpFixedLot=0.01
+InpEquityStepPerMinLot=20.0
+InpMinLot=0.01
+InpMaxLot=0.10
+InpEnableLayering=true
+InpMaxLayers=2
+InpLayerStepPoints=350
+InpLockBreakevenOnLayer=true
+InpBreakevenBufferPts=10
+InpEnableTrailing=true
+InpTrailingStartPoints=450
+InpTrailingStepPoints=150
+InpSwingLookback=25
+InpMinBOSPoints=120
+InpQMLTolerancePoints=100
+InpSLHeadBufferPoints=50
+InpStopLossPoints=220
+InpTakeProfitPoints=750
+InpAOFastPeriod=5
+InpAOSlowPeriod=34
+InpBBPeriod=20
+InpBBDev=2.0
+InpEMA50Period=50
+InpUseEMATrendFilter=true
+InpMinRejectionWickPct=0.40
+InpUseSessionFilter=true
+InpStartHour=7
+InpEndHour=19
+InpMaxSpreadPoints=45

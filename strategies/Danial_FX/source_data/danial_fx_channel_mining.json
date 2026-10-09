@@ -1,0 +1,572 @@
+{
+  "channel": "@Danialfx",
+  "creator": "Ahmad Danial",
+  "location": "Malaysia",
+  "focus_assets": [
+    "XAUUSD (Gold)",
+    "US30 (Dow Jones)"
+  ],
+  "core_philosophy": "Aggressive sniper reversals (Quasimodo + SND) and trend re-entries (BBMA REM) with Awesome Oscillator momentum confluence, compounded via aggressive pyramiding (layering positions in profit) to scale small accounts ($20, $50, $100) into massive exponential gains.",
+  "total_videos": 74,
+  "categorized_counts": {
+    "quasimodo_qm": 8,
+    "bbma_rem": 5,
+    "awesome_oscillator_ao": 3,
+    "supply_demand_snd": 7,
+    "full_margin_layering": 13,
+    "gold_scalping_analysis": 22,
+    "tutorials": 7
+  },
+  "videos": [
+    {
+      "videoId": "7v3kn8Ss_h0",
+      "title": "Gold Weekly Outlook ",
+      "url": "https://www.youtube.com/watch?v=7v3kn8Ss_h0",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "jHv9FGxwZvU",
+      "title": "Gold",
+      "url": "https://www.youtube.com/watch?v=jHv9FGxwZvU",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "uQrmNkeR7_I",
+      "title": "Gold | Daily Mapping ",
+      "url": "https://www.youtube.com/watch?v=uQrmNkeR7_I",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "o03vrPSUr-k",
+      "title": "$300 to $2600 | BBMA Multi-timeframe",
+      "url": "https://www.youtube.com/watch?v=o03vrPSUr-k",
+      "strategy_tags": [
+        "BBMA (Bollinger Bands Moving Average)",
+        "Aggressive Scalping & Full Margin Layering"
+      ]
+    },
+    {
+      "videoId": "hO3tU0TyF9o",
+      "title": "Gold Analysis",
+      "url": "https://www.youtube.com/watch?v=hO3tU0TyF9o",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "7Vujr3BN49U",
+      "title": "Gold -1,000 Pips on Friday! WHAT HAPPENED? | Fundamental vs Technical",
+      "url": "https://www.youtube.com/watch?v=7Vujr3BN49U",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "mMsQn0MhBKM",
+      "title": "Gold Analysis",
+      "url": "https://www.youtube.com/watch?v=mMsQn0MhBKM",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "jKM9LtBpLl0",
+      "title": "Gold Analysis ",
+      "url": "https://www.youtube.com/watch?v=jKM9LtBpLl0",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "blP68092fMI",
+      "title": "How to Margin Call 🤣 SCALPING",
+      "url": "https://www.youtube.com/watch?v=blP68092fMI",
+      "strategy_tags": [
+        "Aggressive Scalping & Full Margin Layering",
+        "Educational Tutorial"
+      ]
+    },
+    {
+      "videoId": "LCHuW_LKXrk",
+      "title": "US 30 Dow Jones | Today",
+      "url": "https://www.youtube.com/watch?v=LCHuW_LKXrk",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "o_y7hi1TGOk",
+      "title": "Gold Weekly Analysis",
+      "url": "https://www.youtube.com/watch?v=o_y7hi1TGOk",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "KYnxpOfD7HI",
+      "title": "Stop Loss Gold ?  QM BUY ",
+      "url": "https://www.youtube.com/watch?v=KYnxpOfD7HI",
+      "strategy_tags": [
+        "Quasimodo (QM)",
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "SCrXmp50VGM",
+      "title": "Gold Analysis: Will Monday Open with a Gap?",
+      "url": "https://www.youtube.com/watch?v=SCrXmp50VGM",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "dmxEwIRxYs4",
+      "title": "BBMA | REM Setup",
+      "url": "https://www.youtube.com/watch?v=dmxEwIRxYs4",
+      "strategy_tags": [
+        "BBMA (Bollinger Bands Moving Average)"
+      ]
+    },
+    {
+      "videoId": "aulmTq3BUBs",
+      "title": "Full margin $500 using QM !!",
+      "url": "https://www.youtube.com/watch?v=aulmTq3BUBs",
+      "strategy_tags": [
+        "Quasimodo (QM)",
+        "Aggressive Scalping & Full Margin Layering"
+      ]
+    },
+    {
+      "videoId": "afE-Szc-Dbw",
+      "title": "Gold | 27 July",
+      "url": "https://www.youtube.com/watch?v=afE-Szc-Dbw",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "acfe_CvfJhk",
+      "title": "Gold Weekly Analysis",
+      "url": "https://www.youtube.com/watch?v=acfe_CvfJhk",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "vJVyfqhJf1Q",
+      "title": "Gold analysis | 22 july",
+      "url": "https://www.youtube.com/watch?v=vJVyfqhJf1Q",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "2GM6rzXgY7A",
+      "title": "Gold update | 21 July ",
+      "url": "https://www.youtube.com/watch?v=2GM6rzXgY7A",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "PUTZ5IcXBLs",
+      "title": "Gold Weekly Analysis",
+      "url": "https://www.youtube.com/watch?v=PUTZ5IcXBLs",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "0KSppbiVNzU",
+      "title": "Trade 1 | How Much Profit Should You Actually Withdraw?",
+      "url": "https://www.youtube.com/watch?v=0KSppbiVNzU",
+      "strategy_tags": [
+        "Aggressive Scalping & Full Margin Layering"
+      ]
+    },
+    {
+      "videoId": "yvuoJpt7sEU",
+      "title": "FAKED QM Sell | Scalping Gold Part 1/2",
+      "url": "https://www.youtube.com/watch?v=yvuoJpt7sEU",
+      "strategy_tags": [
+        "Quasimodo (QM)",
+        "Aggressive Scalping & Full Margin Layering",
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "Obc5xfSwouA",
+      "title": "$3000 profit | QM + AO + SND SNR",
+      "url": "https://www.youtube.com/watch?v=Obc5xfSwouA",
+      "strategy_tags": [
+        "Quasimodo (QM)",
+        "Awesome Oscillator (AO)",
+        "Supply and Demand (SND / SNR)",
+        "Aggressive Scalping & Full Margin Layering"
+      ]
+    },
+    {
+      "videoId": "QREyifspM_o",
+      "title": "Daily Setup | Why QM Failed ? ",
+      "url": "https://www.youtube.com/watch?v=QREyifspM_o",
+      "strategy_tags": [
+        "Quasimodo (QM)"
+      ]
+    },
+    {
+      "videoId": "YSBg6N0Ljew",
+      "title": "What Happens If Iran Closes the Strait of Hormuz?",
+      "url": "https://www.youtube.com/watch?v=YSBg6N0Ljew",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "fO5Ikgr19ho",
+      "title": "I Made $8,000  on a Funded Account Using This Setup | My Favourite Strategy ",
+      "url": "https://www.youtube.com/watch?v=fO5Ikgr19ho",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "fy3Tep3Q1LE",
+      "title": "Part 2 | Fake Setup & Multi-Timeframe",
+      "url": "https://www.youtube.com/watch?v=fy3Tep3Q1LE",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "CoaaKLh7vgw",
+      "title": "A Simple Way to Read Trend, Minimize Risk & Avoid Fake QM and SND Setups",
+      "url": "https://www.youtube.com/watch?v=CoaaKLh7vgw",
+      "strategy_tags": [
+        "Quasimodo (QM)",
+        "Supply and Demand (SND / SNR)",
+        "Educational Tutorial"
+      ]
+    },
+    {
+      "videoId": "Ux-NMVijJCc",
+      "title": "AO SND SNR QM ",
+      "url": "https://www.youtube.com/watch?v=Ux-NMVijJCc",
+      "strategy_tags": [
+        "Quasimodo (QM)",
+        "Awesome Oscillator (AO)",
+        "Supply and Demand (SND / SNR)"
+      ]
+    },
+    {
+      "videoId": "xQ7fJWi00Ys",
+      "title": "Gold this week | Price GAP",
+      "url": "https://www.youtube.com/watch?v=xQ7fJWi00Ys",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "xCcE7BJfJ88",
+      "title": "Full Margin Trading: How to Control Fear & Stay Consistent ??",
+      "url": "https://www.youtube.com/watch?v=xCcE7BJfJ88",
+      "strategy_tags": [
+        "Aggressive Scalping & Full Margin Layering",
+        "Educational Tutorial"
+      ]
+    },
+    {
+      "videoId": "J4X-MkNtkN4",
+      "title": "Scalping Full Margin | 200% | SND SNR",
+      "url": "https://www.youtube.com/watch?v=J4X-MkNtkN4",
+      "strategy_tags": [
+        "Supply and Demand (SND / SNR)",
+        "Aggressive Scalping & Full Margin Layering"
+      ]
+    },
+    {
+      "videoId": "_ZjcHN0RdJg",
+      "title": "Mama ! Kenapa Papa Miskin ? ",
+      "url": "https://www.youtube.com/watch?v=_ZjcHN0RdJg",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "p7l7Z8Ujy1o",
+      "title": "Gold & Oil Prices After Venezuela President Arrest",
+      "url": "https://www.youtube.com/watch?v=p7l7Z8Ujy1o",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "qnR3b7GmfJc",
+      "title": "Poor Trader ",
+      "url": "https://www.youtube.com/watch?v=qnR3b7GmfJc",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "xQG5mly1hCg",
+      "title": "2026 Plans & Goals – The Road to Success",
+      "url": "https://www.youtube.com/watch?v=xQG5mly1hCg",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "gbbweHUjEe8",
+      "title": "Gold Analysis",
+      "url": "https://www.youtube.com/watch?v=gbbweHUjEe8",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "xjuasXA2IWs",
+      "title": "Scalping BBMA ",
+      "url": "https://www.youtube.com/watch?v=xjuasXA2IWs",
+      "strategy_tags": [
+        "BBMA (Bollinger Bands Moving Average)",
+        "Aggressive Scalping & Full Margin Layering"
+      ]
+    },
+    {
+      "videoId": "2hMQTyu9APg",
+      "title": "Scalping GOLD | QM SND SNR",
+      "url": "https://www.youtube.com/watch?v=2hMQTyu9APg",
+      "strategy_tags": [
+        "Quasimodo (QM)",
+        "Supply and Demand (SND / SNR)",
+        "Aggressive Scalping & Full Margin Layering",
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "eEzkfc5yHrg",
+      "title": "BBMA Full Setup | SCALPING & Confirmation Entry",
+      "url": "https://www.youtube.com/watch?v=eEzkfc5yHrg",
+      "strategy_tags": [
+        "BBMA (Bollinger Bands Moving Average)",
+        "Aggressive Scalping & Full Margin Layering"
+      ]
+    },
+    {
+      "videoId": "URJFCNJgId8",
+      "title": "A+ SETUP | RR 1:40",
+      "url": "https://www.youtube.com/watch?v=URJFCNJgId8",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "BJAVzL1Vzrk",
+      "title": "Fibo Tutorial & Setting ",
+      "url": "https://www.youtube.com/watch?v=BJAVzL1Vzrk",
+      "strategy_tags": [
+        "Educational Tutorial"
+      ]
+    },
+    {
+      "videoId": "cR5fU4t-26U",
+      "title": "How to make Million without high risk | Basic Money Management for beginner daily trade trader",
+      "url": "https://www.youtube.com/watch?v=cR5fU4t-26U",
+      "strategy_tags": [
+        "Educational Tutorial"
+      ]
+    },
+    {
+      "videoId": "gcIduZvLX-M",
+      "title": "Tarzan Trader ",
+      "url": "https://www.youtube.com/watch?v=gcIduZvLX-M",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "zKLvS334qVQ",
+      "title": "Gold Analysis | SND + AO ",
+      "url": "https://www.youtube.com/watch?v=zKLvS334qVQ",
+      "strategy_tags": [
+        "Awesome Oscillator (AO)",
+        "Supply and Demand (SND / SNR)",
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "hiulDc-8OZU",
+      "title": "Gold analysis",
+      "url": "https://www.youtube.com/watch?v=hiulDc-8OZU",
+      "strategy_tags": [
+        "Gold (XAUUSD)"
+      ]
+    },
+    {
+      "videoId": "EslWyOuA1EU",
+      "title": "Loss | Memes",
+      "url": "https://www.youtube.com/watch?v=EslWyOuA1EU",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "Gi476gBBH20",
+      "title": "Scalping Setup",
+      "url": "https://www.youtube.com/watch?v=Gi476gBBH20",
+      "strategy_tags": [
+        "Aggressive Scalping & Full Margin Layering"
+      ]
+    },
+    {
+      "videoId": "9rqlpqC-5b8",
+      "title": "Reality as Trader",
+      "url": "https://www.youtube.com/watch?v=9rqlpqC-5b8",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "T78JbUT9Bo0",
+      "title": "Trader in Real Life",
+      "url": "https://www.youtube.com/watch?v=T78JbUT9Bo0",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "ay7LPwmEypc",
+      "title": "Memes: Unpredictable",
+      "url": "https://www.youtube.com/watch?v=ay7LPwmEypc",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "jjnoLp3xNiw",
+      "title": "Forex Memes: Lot Size",
+      "url": "https://www.youtube.com/watch?v=jjnoLp3xNiw",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "CRyvPyhJzsM",
+      "title": "LOSSES 😂 Forex Memes",
+      "url": "https://www.youtube.com/watch?v=CRyvPyhJzsM",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "JkRBFgwJTo0",
+      "title": "My first LAMBO | Motivational | Thanks for 200k Subscriber",
+      "url": "https://www.youtube.com/watch?v=JkRBFgwJTo0",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "fBjieV9_3O0",
+      "title": "REVENGE | MEMES REAL ACC",
+      "url": "https://www.youtube.com/watch?v=fBjieV9_3O0",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "yncNxjLNriA",
+      "title": "Happy Weekend",
+      "url": "https://www.youtube.com/watch?v=yncNxjLNriA",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "unhe1Rqe9-8",
+      "title": "MEMES ON REAL LIFE | LOSS 10K USD !!",
+      "url": "https://www.youtube.com/watch?v=unhe1Rqe9-8",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "1xiVOK5-i7g",
+      "title": "HOLD until LOSS #shorts",
+      "url": "https://www.youtube.com/watch?v=1xiVOK5-i7g",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "mNgzedBWF8A",
+      "title": "FOMO BUYYY !!",
+      "url": "https://www.youtube.com/watch?v=mNgzedBWF8A",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "6_EtoIK35t0",
+      "title": "Confident !!",
+      "url": "https://www.youtube.com/watch?v=6_EtoIK35t0",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "OQNPARu8LIc",
+      "title": "Mother Candlestick 😂",
+      "url": "https://www.youtube.com/watch?v=OQNPARu8LIc",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "Mg9uhlv3gVQ",
+      "title": "Uptrend Selllll !!",
+      "url": "https://www.youtube.com/watch?v=Mg9uhlv3gVQ",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "Fsd5T-etJzE",
+      "title": "Serious Thinking",
+      "url": "https://www.youtube.com/watch?v=Fsd5T-etJzE",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "TmJT8bAqDaw",
+      "title": "Lagu Forex Trader | Trader Songs (English Subs)",
+      "url": "https://www.youtube.com/watch?v=TmJT8bAqDaw",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "X2_vLjkPCT8",
+      "title": "Basic Theory Supply & Demand",
+      "url": "https://www.youtube.com/watch?v=X2_vLjkPCT8",
+      "strategy_tags": [
+        "Supply and Demand (SND / SNR)",
+        "Educational Tutorial"
+      ]
+    },
+    {
+      "videoId": "o7xZcbsGAp4",
+      "title": "Heart Attack",
+      "url": "https://www.youtube.com/watch?v=o7xZcbsGAp4",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "kT6243_kc4A",
+      "title": "Panic Order",
+      "url": "https://www.youtube.com/watch?v=kT6243_kc4A",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "LdT2AZmY-rY",
+      "title": "Take Profit Chaser",
+      "url": "https://www.youtube.com/watch?v=LdT2AZmY-rY",
+      "strategy_tags": [
+        "Aggressive Scalping & Full Margin Layering"
+      ]
+    },
+    {
+      "videoId": "rstx4VgE8UQ",
+      "title": "BASIC BBMA (ENGLISH SUBTITLE)",
+      "url": "https://www.youtube.com/watch?v=rstx4VgE8UQ",
+      "strategy_tags": [
+        "BBMA (Bollinger Bands Moving Average)",
+        "Educational Tutorial"
+      ]
+    },
+    {
+      "videoId": "4TqhfQpIDBM",
+      "title": "Stop Loss Hunter 😭",
+      "url": "https://www.youtube.com/watch?v=4TqhfQpIDBM",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "luDlRzCX8GE",
+      "title": "Cara urus akaun trading untuk pemula | supaya low risk & high reward",
+      "url": "https://www.youtube.com/watch?v=luDlRzCX8GE",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "eI9Wec_Mem0",
+      "title": "Uptrend buyyyyy!!",
+      "url": "https://www.youtube.com/watch?v=eI9Wec_Mem0",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "v_YiZP00nRA",
+      "title": "Forex Newbie",
+      "url": "https://www.youtube.com/watch?v=v_YiZP00nRA",
+      "strategy_tags": []
+    },
+    {
+      "videoId": "8-Ul4MYM63Q",
+      "title": "Motivational Videos & Words | Motivational Music & Song part 2",
+      "url": "https://www.youtube.com/watch?v=8-Ul4MYM63Q",
+      "strategy_tags": []
+    }
+  ]
+}
