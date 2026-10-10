@@ -10,6 +10,7 @@
 
 #include <Trade\Trade.mqh>
 #include <Trade\PositionInfo.mqh>
+#include <Flipper_Behavioral_Engine.mqh>
 
 //--- Enums
 enum ENUM_DANIAL_STRATEGY
@@ -82,9 +83,24 @@ input int                  InpStartHour           = 7;                     // St
 input int                  InpEndHour             = 19;                    // End Hour (NY Close)
 input int                  InpMaxSpreadPoints     = 45;                    // Max Spread (Points)
 
+input group "=== The 10 Unique Behavioral Patterns Engine ==="
+input bool                 InpEnableBehavioralEngine = false;              // Enable 10 Behavioral Patterns Engine
+input int                  InpBehavioralSpamTickets  = 6;                  // Pattern 1: Multi-Ticket Slicing (6x micro-orders)
+input int                  InpBehavioralTP1_Pts      = 200;                // Pattern 2: TP1 Harvest 20% (+20 pips)
+input int                  InpBehavioralTP2_Pts      = 350;                // Pattern 2: TP2 Harvest 25% + BE Lock (+35 pips)
+input int                  InpBehavioralTP3_Pts      = 600;                // Pattern 2: TP3 Harvest 25% + +25p Lock (+60 pips)
+input int                  InpBehavioralTP4_Pts      = 1000;               // Pattern 2: TP4 Harvest 20% (+100 pips)
+input int                  InpBehavioralTP5_Pts      = 1600;               // Pattern 2: TP5 10% Moonshot Runner (+160 pips)
+input bool                 InpBehavioralTraceback    = true;               // Pattern 3: The Traceback Pullback Scalp & HL Reload
+input bool                 InpBehavioralPyramiding   = true;               // Pattern 4: Floating Margin Pyramiding Reload
+input bool                 InpBehavioralDumpAndFlip  = true;               // Pattern 7: Opposing Exhaustion Dump & Flip
+input bool                 InpBehavioralClimaxFade   = true;               // Pattern 8: Climax Volume Absorption Fade
+input bool                 InpBehavioralVisuals      = true;               // Pattern 10: On-Chart Visual Roadmap & HUD
+
 //--- Global Variables
-CTrade         m_trade;
-CPositionInfo  m_position;
+CTrade                   m_trade;
+CPositionInfo            m_position;
+CFlipperBehavioralEngine g_flipper_engine;
 
 int            h_bb;
 int            h_ema50;
@@ -128,6 +144,46 @@ int OnInit()
    last_layer_price_buy = 0.0;
    last_layer_price_sell = 0.0;
 
+   if (InpEnableBehavioralEngine)
+   {
+      SFlipperBehavioralConfig bcfg;
+      bcfg.enabled               = true;
+      bcfg.magicNumber           = InpMagicNumber;
+      bcfg.prefix                = "DFX_Viz_";
+      bcfg.spamTicketsCount      = InpBehavioralSpamTickets;
+      bcfg.equityPerMinLot       = InpEquityStepPerMinLot;
+      bcfg.maxLotPerTicket       = InpMaxLot;
+      bcfg.stopLossPoints        = InpStopLossPoints;
+      bcfg.tp1Points             = InpBehavioralTP1_Pts;
+      bcfg.tp2Points             = InpBehavioralTP2_Pts;
+      bcfg.tp3Points             = InpBehavioralTP3_Pts;
+      bcfg.tp4Points             = InpBehavioralTP4_Pts;
+      bcfg.tp5Points             = InpBehavioralTP5_Pts;
+      bcfg.enableTraceback       = InpBehavioralTraceback;
+      bcfg.tracebackExtensionPts = 350;
+      bcfg.tracebackWickRatio    = 0.38;
+      bcfg.tracebackTPPoints     = 180;
+      bcfg.tracebackSLPoints     = 150;
+      bcfg.reloadAtHL            = true;
+      bcfg.enablePyramiding      = InpBehavioralPyramiding;
+      bcfg.maxPyramidLayers      = InpMaxLayers;
+      bcfg.reloadStepPoints      = InpLayerStepPoints;
+      bcfg.reloadTicketsCount    = 3;
+      bcfg.enableLiquidationSweep= true;
+      bcfg.spikeMinWickPct       = 0.40;
+      bcfg.enableJudasFlush      = true;
+      bcfg.enableDumpAndFlip     = InpBehavioralDumpAndFlip;
+      bcfg.dumpWickRatio         = 0.45;
+      bcfg.enableVolumeClimaxFade= InpBehavioralClimaxFade;
+      bcfg.volumeSpikeMultiplier = 3.0;
+      bcfg.enableFlipMilestone   = InpAccountFlipMode;
+      bcfg.targetEquity          = InpFlipTargetEquity;
+      bcfg.enableVisuals         = InpBehavioralVisuals;
+      bcfg.applyDraculaTheme     = true;
+
+      g_flipper_engine.Init(bcfg);
+   }
+
    PrintFormat("DanialFX Aggressive Suite v1.10 initialized. Symbol: %s, Strategy: %d", _Symbol, InpStrategyMode);
    return INIT_SUCCEEDED;
 }
@@ -137,6 +193,11 @@ int OnInit()
 //+------------------------------------------------------------------+
 void OnDeinit(const int reason)
 {
+   if (InpEnableBehavioralEngine)
+   {
+      g_flipper_engine.Clean();
+   }
+
    IndicatorRelease(h_bb);
    IndicatorRelease(h_ema50);
    IndicatorRelease(h_ao);
@@ -626,6 +687,21 @@ void OnTick()
       }
    }
 
+   // The 10 Behavioral Patterns Engine Live Tick Management
+   if (InpEnableBehavioralEngine)
+   {
+      if (g_flipper_engine.CheckMilestoneFlipTarget()) return;
+      g_flipper_engine.ManageLadderAndBreakeven();
+      g_flipper_engine.CheckPyramiding();
+
+      double ema_b[];
+      ArraySetAsSeries(ema_b, true);
+      if (CopyBuffer(h_ema50, 0, 0, 1, ema_b) > 0)
+         g_flipper_engine.ManageTraceback(ema_b[0]);
+
+      g_flipper_engine.UpdateHUD();
+   }
+
    // 1. Manage breakeven locks and trailing stops
    ManageBreakevenAndTrailing();
 
@@ -657,7 +733,7 @@ void OnTick()
 
    MqlRates rates[];
    ArraySetAsSeries(rates, true);
-   if (CopyRates(_Symbol, _Period, 0, 2, rates) < 2) return;
+   if (CopyRates(_Symbol, _Period, 0, 30, rates) < 30) return;
    double prev_close = rates[1].close;
 
    bool signal_buy = false;
@@ -714,9 +790,34 @@ void OnTick()
          break;
    }
 
-   double lot = CalculateDanialLot();
+   // Additional Behavioral Pattern Triggers on New Bar
+   if (InpEnableBehavioralEngine)
+   {
+      g_flipper_engine.CheckTraceback(ema50_val, rates);
+      g_flipper_engine.CheckOpposingDumpAndFlip(rates);
+      g_flipper_engine.CheckVolumeClimaxFade(rates, 2);
+   }
+
    double ask = SymbolInfoDouble(_Symbol, SYMBOL_ASK);
    double bid = SymbolInfoDouble(_Symbol, SYMBOL_BID);
+
+   // Behavioral Pattern 1: Multi-Ticket Spamming Execution
+   if (InpEnableBehavioralEngine)
+   {
+      if (signal_buy)
+      {
+         g_flipper_engine.ExecuteSpamBasket(ORDER_TYPE_BUY, ask, InpStopLossPoints);
+         PrintFormat("BEHAVIORAL SPAM BUY OPENED! Model: %d, Tickets: %d", InpStrategyMode, InpBehavioralSpamTickets);
+      }
+      else if (signal_sell)
+      {
+         g_flipper_engine.ExecuteSpamBasket(ORDER_TYPE_SELL, bid, InpStopLossPoints);
+         PrintFormat("BEHAVIORAL SPAM SELL OPENED! Model: %d, Tickets: %d", InpStrategyMode, InpBehavioralSpamTickets);
+      }
+      return;
+   }
+
+   double lot = CalculateDanialLot();
 
    if (signal_buy)
    {

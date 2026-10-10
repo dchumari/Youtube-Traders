@@ -18,6 +18,7 @@
 #include <Trade\PositionInfo.mqh>
 #include <Trade\AccountInfo.mqh>
 #include <TradingView_Visualizer.mqh>
+#include <Flipper_Behavioral_Engine.mqh>
 
 enum ENUM_MRPFX_STRATEGY
 {
@@ -83,11 +84,26 @@ input string              InpVisualPrefix     = "TV_MrPFx_";          // Visual 
 input bool                InpCleanOnDeinit    = false;                // Clean Visuals on Unload (false = Persist)
 input bool                InpAllowDragBoxes   = true;                 // Allow Selecting & Dragging Diagram Boxes with Mouse
 
+input group "=== The 10 Unique Behavioral Patterns Engine ==="
+input bool                 InpEnableBehavioralEngine = false;              // Enable 10 Behavioral Patterns Engine
+input int                  InpBehavioralSpamTickets  = 5;                  // Pattern 1: Multi-Ticket Slicing (5x micro-orders)
+input int                  InpBehavioralTP1_Pts      = 200;                // Pattern 2: TP1 Harvest (+20 pips)
+input int                  InpBehavioralTP2_Pts      = 350;                // Pattern 2: TP2 Harvest + BE Lock (+35 pips)
+input int                  InpBehavioralTP3_Pts      = 600;                // Pattern 2: TP3 Harvest + +25p Lock (+60 pips)
+input int                  InpBehavioralTP4_Pts      = 1000;               // Pattern 2: TP4 Harvest (+100 pips)
+input int                  InpBehavioralTP5_Pts      = 1600;               // Pattern 2: TP5 Moonshot Runner (+160 pips)
+input bool                 InpBehavioralTraceback    = true;               // Pattern 3: The Traceback Pullback Scalp & HL Reload
+input bool                 InpBehavioralPyramiding   = true;               // Pattern 4: Floating Margin Pyramiding Reload
+input bool                 InpBehavioralDumpAndFlip  = true;               // Pattern 7: Opposing Exhaustion Dump & Flip
+input bool                 InpBehavioralClimaxFade   = true;               // Pattern 8: Climax Volume Absorption Fade
+input bool                 InpBehavioralVisuals      = true;               // Pattern 10: On-Chart Visual Roadmap & HUD
+
 //--- GLOBAL OBJECTS & HANDLES ---
-CTrade         ExtTrade;
-CSymbolInfo    ExtSymbol;
-CPositionInfo  ExtPosition;
-CAccountInfo   ExtAccount;
+CTrade                   ExtTrade;
+CSymbolInfo              ExtSymbol;
+CPositionInfo            ExtPosition;
+CAccountInfo             ExtAccount;
+CFlipperBehavioralEngine g_flipper_engine;
 
 int            ExtTrendEMAHandle   = INVALID_HANDLE;
 int            ExtMacroEMAHandle   = INVALID_HANDLE;
@@ -134,7 +150,47 @@ int OnInit()
                       InpShowEntryArrows, InpShowBadges, InpShowTradeBoxes,
                       InpShowConnLines, InpCleanOnDeinit, InpAllowDragBoxes);
    TV_Visualizer_PlotHistory();
-   
+
+   if(InpEnableBehavioralEngine)
+   {
+      SFlipperBehavioralConfig cfg;
+      cfg.enabled               = true;
+      cfg.magicNumber           = InpMagicNumber;
+      cfg.prefix                = "MrP_Flp_";
+      cfg.spamTicketsCount      = InpBehavioralSpamTickets;
+      cfg.equityPerMinLot       = 25.0;
+      cfg.maxLotPerTicket       = 2.0;
+      cfg.stopLossPoints        = 250;
+      cfg.tp1Points             = InpBehavioralTP1_Pts;
+      cfg.tp2Points             = InpBehavioralTP2_Pts;
+      cfg.tp3Points             = InpBehavioralTP3_Pts;
+      cfg.tp4Points             = InpBehavioralTP4_Pts;
+      cfg.tp5Points             = InpBehavioralTP5_Pts;
+      cfg.enableTraceback       = InpBehavioralTraceback;
+      cfg.tracebackExtensionPts = 350;
+      cfg.tracebackWickRatio    = 0.35;
+      cfg.tracebackTPPoints     = 200;
+      cfg.tracebackSLPoints     = 150;
+      cfg.reloadAtHL            = true;
+      cfg.enablePyramiding      = InpBehavioralPyramiding;
+      cfg.maxPyramidLayers      = 4;
+      cfg.reloadStepPoints      = 300;
+      cfg.reloadTicketsCount    = 3;
+      cfg.enableLiquidationSweep= true;
+      cfg.spikeMinWickPct       = 0.40;
+      cfg.enableJudasFlush      = true;
+      cfg.enableDumpAndFlip     = InpBehavioralDumpAndFlip;
+      cfg.dumpWickRatio         = 0.45;
+      cfg.enableVolumeClimaxFade= InpBehavioralClimaxFade;
+      cfg.volumeSpikeMultiplier = 3.0;
+      cfg.enableFlipMilestone   = true;
+      cfg.targetEquity          = 10000.0;
+      cfg.enableVisuals         = InpBehavioralVisuals;
+      cfg.applyDraculaTheme     = true;
+
+      g_flipper_engine.Init(cfg);
+   }
+
    PrintFormat("Mr P Fx Master Suite Initialized. Strategy: %d on %s", InpStrategy, _Symbol);
    return INIT_SUCCEEDED;
 }
@@ -151,6 +207,9 @@ void OnDeinit(const int reason)
    IndicatorRelease(ExtRSIHandle);
    if(ExtMacroEMAHandle != INVALID_HANDLE)
       IndicatorRelease(ExtMacroEMAHandle);
+
+   if(InpEnableBehavioralEngine)
+      g_flipper_engine.Clean();
 
    TV_Visualizer_Deinit();
 }
@@ -193,7 +252,7 @@ bool HasOpenPosition(long &pos_type, double &open_price, double &pos_sl, double 
    {
       if(ExtPosition.SelectByIndex(i))
       {
-         if(ExtPosition.Symbol() == _Symbol && ExtPosition.Magic() == InpMagicNumber)
+         if(ExtPosition.Symbol() == _Symbol && (ExtPosition.Magic() == InpMagicNumber || ExtPosition.Magic() == InpMagicNumber + 99))
          {
             pos_type   = ExtPosition.PositionType();
             open_price = ExtPosition.PriceOpen();
@@ -241,6 +300,24 @@ double CalculateLots(double sl_distance_points)
    if(lots > max_lot) lots = max_lot;
    
    return NormalizeDouble(lots, 2);
+}
+
+//+------------------------------------------------------------------+
+//| Execute Order (Standard or Behavioral Spam Basket)               |
+//+------------------------------------------------------------------+
+void OpenStrategyOrder(ENUM_ORDER_TYPE otype, double price, double sl_price, double tp_price, double sl_dist_points, string comment)
+{
+   if(InpEnableBehavioralEngine)
+   {
+      g_flipper_engine.ExecuteSpamBasket(otype, price, (int)sl_dist_points);
+      return;
+   }
+   
+   double lots = CalculateLots(sl_dist_points);
+   if(otype == ORDER_TYPE_BUY)
+      ExtTrade.Buy(lots, _Symbol, price, NormalizeDouble(sl_price, _Digits), NormalizeDouble(tp_price, _Digits), comment);
+   else
+      ExtTrade.Sell(lots, _Symbol, price, NormalizeDouble(sl_price, _Digits), NormalizeDouble(tp_price, _Digits), comment);
 }
 
 //+------------------------------------------------------------------+
@@ -387,8 +464,7 @@ void CheckLiquidityGrabSignals()
          {
             double tp_dist_points = sl_dist_points * InpRewardRiskRatio;
             double tp_price = NormalizeDouble(bid - tp_dist_points * point, _Digits);
-            double lots = CalculateLots(sl_dist_points);
-            ExtTrade.Sell(lots, _Symbol, bid, NormalizeDouble(sl_price, _Digits), tp_price, "MrPFx_Sweep_Sell");
+            OpenStrategyOrder(ORDER_TYPE_SELL, bid, sl_price, tp_price, sl_dist_points, "MrPFx_Sweep_Sell");
             return;
          }
       }
@@ -430,8 +506,7 @@ void CheckLiquidityGrabSignals()
          {
             double tp_dist_points = sl_dist_points * InpRewardRiskRatio;
             double tp_price = NormalizeDouble(ask + tp_dist_points * point, _Digits);
-            double lots = CalculateLots(sl_dist_points);
-            ExtTrade.Buy(lots, _Symbol, ask, NormalizeDouble(sl_price, _Digits), tp_price, "MrPFx_Sweep_Buy");
+            OpenStrategyOrder(ORDER_TYPE_BUY, ask, sl_price, tp_price, sl_dist_points, "MrPFx_Sweep_Buy");
             return;
          }
       }
@@ -476,8 +551,7 @@ void CheckTrendlineRetestSignals()
          {
             double tp_dist_points = sl_dist_points * InpRewardRiskRatio;
             double tp_price = NormalizeDouble(ask + tp_dist_points * point, _Digits);
-            double lots = CalculateLots(sl_dist_points);
-            ExtTrade.Buy(lots, _Symbol, ask, NormalizeDouble(sl_price, _Digits), tp_price, "MrPFx_TL_Buy");
+            OpenStrategyOrder(ORDER_TYPE_BUY, ask, sl_price, tp_price, sl_dist_points, "MrPFx_TL_Buy");
             return;
          }
       }
@@ -498,8 +572,7 @@ void CheckTrendlineRetestSignals()
          {
             double tp_dist_points = sl_dist_points * InpRewardRiskRatio;
             double tp_price = NormalizeDouble(bid - tp_dist_points * point, _Digits);
-            double lots = CalculateLots(sl_dist_points);
-            ExtTrade.Sell(lots, _Symbol, bid, NormalizeDouble(sl_price, _Digits), tp_price, "MrPFx_TL_Sell");
+            OpenStrategyOrder(ORDER_TYPE_SELL, bid, sl_price, tp_price, sl_dist_points, "MrPFx_TL_Sell");
             return;
          }
       }
@@ -545,8 +618,7 @@ void CheckGoldMatrixSignals()
          double sl_price = ask - sl_dist_points * point;
          double tp_dist_points = sl_dist_points * InpRewardRiskRatio;
          double tp_price = NormalizeDouble(ask + tp_dist_points * point, _Digits);
-         double lots = CalculateLots(sl_dist_points);
-         ExtTrade.Buy(lots, _Symbol, ask, NormalizeDouble(sl_price, _Digits), tp_price, "MrPFx_Matrix_Buy");
+         OpenStrategyOrder(ORDER_TYPE_BUY, ask, sl_price, tp_price, sl_dist_points, "MrPFx_Matrix_Buy");
          return;
       }
    }
@@ -561,8 +633,7 @@ void CheckGoldMatrixSignals()
          double sl_price = bid + sl_dist_points * point;
          double tp_dist_points = sl_dist_points * InpRewardRiskRatio;
          double tp_price = NormalizeDouble(bid - tp_dist_points * point, _Digits);
-         double lots = CalculateLots(sl_dist_points);
-         ExtTrade.Sell(lots, _Symbol, bid, NormalizeDouble(sl_price, _Digits), tp_price, "MrPFx_Matrix_Sell");
+         OpenStrategyOrder(ORDER_TYPE_SELL, bid, sl_price, tp_price, sl_dist_points, "MrPFx_Matrix_Sell");
          return;
       }
    }
@@ -606,8 +677,7 @@ void CheckKillzoneMomentumSignals()
          double sl_price = ask - sl_dist_points * point;
          double tp_dist_points = sl_dist_points * InpRewardRiskRatio;
          double tp_price = NormalizeDouble(ask + tp_dist_points * point, _Digits);
-         double lots = CalculateLots(sl_dist_points);
-         ExtTrade.Buy(lots, _Symbol, ask, NormalizeDouble(sl_price, _Digits), tp_price, "MrPFx_KZ_Buy");
+         OpenStrategyOrder(ORDER_TYPE_BUY, ask, sl_price, tp_price, sl_dist_points, "MrPFx_KZ_Buy");
          return;
       }
    }
@@ -622,8 +692,7 @@ void CheckKillzoneMomentumSignals()
          double sl_price = bid + sl_dist_points * point;
          double tp_dist_points = sl_dist_points * InpRewardRiskRatio;
          double tp_price = NormalizeDouble(bid - tp_dist_points * point, _Digits);
-         double lots = CalculateLots(sl_dist_points);
-         ExtTrade.Sell(lots, _Symbol, bid, NormalizeDouble(sl_price, _Digits), tp_price, "MrPFx_KZ_Sell");
+         OpenStrategyOrder(ORDER_TYPE_SELL, bid, sl_price, tp_price, sl_dist_points, "MrPFx_KZ_Sell");
          return;
       }
    }
@@ -634,19 +703,46 @@ void CheckKillzoneMomentumSignals()
 //+------------------------------------------------------------------+
 void OnTick()
 {
-   // Always manage trailing and breakeven on every tick
-   ManageOpenTrades();
+   if(InpEnableBehavioralEngine)
+   {
+      g_flipper_engine.ManageLadderAndBreakeven();
+      g_flipper_engine.CheckPyramiding();
+      if(g_flipper_engine.CheckMilestoneFlipTarget()) return;
+      g_flipper_engine.UpdateHUD();
+   }
+   else
+   {
+      // Always manage trailing and breakeven on every tick
+      ManageOpenTrades();
+   }
    
    // Signal generation occurs strictly on bar completion
    if(!IsNewBar())
       return;
-      
+
+   if(InpEnableBehavioralEngine)
+   {
+      MqlRates rates_chk[];
+      ArraySetAsSeries(rates_chk, true);
+      if(CopyRates(_Symbol, _Period, 0, 25, rates_chk) >= 25)
+      {
+         double ema50[];
+         ArraySetAsSeries(ema50, true);
+         CopyBuffer(ExtTrendEMAHandle, 0, 1, 1, ema50);
+         double ema_val = (ArraySize(ema50) > 0) ? ema50[0] : rates_chk[1].close;
+
+         g_flipper_engine.CheckTraceback(ema_val, rates_chk);
+         g_flipper_engine.CheckOpposingDumpAndFlip(rates_chk);
+         g_flipper_engine.CheckVolumeClimaxFade(rates_chk, 25);
+      }
+   }
+       
    long pos_type;
    double open_price, pos_sl, pos_tp;
    ulong ticket;
    if(HasOpenPosition(pos_type, open_price, pos_sl, pos_tp, ticket))
       return; // 1 concurrent position per strategy instance
-      
+       
    switch(InpStrategy)
    {
       case STRAT_LIQUIDITY_GRAB:

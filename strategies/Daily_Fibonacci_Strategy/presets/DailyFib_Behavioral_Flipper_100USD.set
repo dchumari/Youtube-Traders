@@ -1,0 +1,37 @@
+; DailyFib_Behavioral_Flipper_100USD.set
+; Daily Range 61.8% Fibonacci & Virgin Levels + 10 Behavioral Patterns Engine
+; Golden Pocket Rejection + Multi-Ticket Cluster Slicing + 5-Stage TP Ladder
+InpSizingMode=1
+InpFixedLot=0.01
+InpStepEquitySize=50.0
+InpMaxLotCap=3.00
+InpSLPoints=400
+InpTargetMode=0
+InpLeg1_RR=1.0
+InpLeg2_RR=2.0
+InpBELockPoints=10
+InpBaseMagic=618900
+InpMinDayRangePts=1000
+InpEntryTolerance=50
+InpMaxSpreadPoints=50
+InpTradeImmediate=true
+InpTradeVirginLevels=true
+InpMaxVirginAgeDays=30
+InpMaxDailyTrades=2
+InpUseSessionFilter=true
+InpSessionStartHour=7
+InpSessionEndHour=18
+InpDrawChartObjects=true
+InpShowDashboard=true
+InpEnableBehavioralEngine=true
+InpBehavioralSpamTickets=5
+InpBehavioralTP1_Pts=200
+InpBehavioralTP2_Pts=350
+InpBehavioralTP3_Pts=600
+InpBehavioralTP4_Pts=1000
+InpBehavioralTP5_Pts=1600
+InpBehavioralTraceback=true
+InpBehavioralPyramiding=true
+InpBehavioralDumpAndFlip=true
+InpBehavioralClimaxFade=true
+InpBehavioralVisuals=true

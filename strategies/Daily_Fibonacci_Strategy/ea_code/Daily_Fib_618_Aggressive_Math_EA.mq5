@@ -12,6 +12,7 @@
 #include <Trade\SymbolInfo.mqh>
 #include <Trade\PositionInfo.mqh>
 #include <Trade\AccountInfo.mqh>
+#include <Flipper_Behavioral_Engine.mqh>
 
 //--- Enums
 enum ENUM_TIER_COMPOUNDING
@@ -64,6 +65,20 @@ input color                 InpVirginColor      = clrGold;                // Vir
 input color                 InpRangeColor       = clrDimGray;             // Prior Day Range Bounds Color
 input bool                    InpShowDashboard    = true;                   // Show Real-Time Mathematical HUD
 
+input group "=== The 10 Unique Behavioral Patterns Engine ==="
+input bool                 InpEnableBehavioralEngine = false;              // Enable 10 Behavioral Patterns Engine
+input int                  InpBehavioralSpamTickets  = 5;                  // Pattern 1: Multi-Ticket Slicing (5x micro-orders)
+input int                  InpBehavioralTP1_Pts      = 200;                // Pattern 2: TP1 Harvest (+20 pips)
+input int                  InpBehavioralTP2_Pts      = 350;                // Pattern 2: TP2 Harvest + BE Lock (+35 pips)
+input int                  InpBehavioralTP3_Pts      = 600;                // Pattern 2: TP3 Harvest + +25p Lock (+60 pips)
+input int                  InpBehavioralTP4_Pts      = 1000;               // Pattern 2: TP4 Harvest (+100 pips)
+input int                  InpBehavioralTP5_Pts      = 1600;               // Pattern 2: TP5 Moonshot Runner (+160 pips)
+input bool                 InpBehavioralTraceback    = true;               // Pattern 3: The Traceback Pullback Scalp & HL Reload
+input bool                 InpBehavioralPyramiding   = true;               // Pattern 4: Floating Margin Pyramiding Reload
+input bool                 InpBehavioralDumpAndFlip  = true;               // Pattern 7: Opposing Exhaustion Dump & Flip
+input bool                 InpBehavioralClimaxFade   = true;               // Pattern 8: Climax Volume Absorption Fade
+input bool                 InpBehavioralVisuals      = true;               // Pattern 10: On-Chart Visual Roadmap & HUD
+
 //--- Level Structure
 struct SFibLevel
 {
@@ -79,10 +94,11 @@ struct SFibLevel
 };
 
 //--- Global Objects
-CTrade         m_trade;
-CSymbolInfo    m_symbol;
-CPositionInfo  m_position;
-CAccountInfo   m_account;
+CTrade                   m_trade;
+CSymbolInfo              m_symbol;
+CPositionInfo            m_position;
+CAccountInfo             m_account;
+CFlipperBehavioralEngine g_flipper_engine;
 
 SFibLevel      g_active_levels[];
 int            g_daily_trade_count = 0;
@@ -102,6 +118,46 @@ int OnInit()
    m_trade.SetMarginMode();
    m_trade.SetTypeFillingBySymbol(_Symbol);
 
+   if(InpEnableBehavioralEngine)
+   {
+      SFlipperBehavioralConfig cfg;
+      cfg.enabled               = true;
+      cfg.magicNumber           = InpBaseMagic;
+      cfg.prefix                = "Fib_Flp_";
+      cfg.spamTicketsCount      = InpBehavioralSpamTickets;
+      cfg.equityPerMinLot       = 25.0;
+      cfg.maxLotPerTicket       = 2.0;
+      cfg.stopLossPoints        = InpSLPoints;
+      cfg.tp1Points             = InpBehavioralTP1_Pts;
+      cfg.tp2Points             = InpBehavioralTP2_Pts;
+      cfg.tp3Points             = InpBehavioralTP3_Pts;
+      cfg.tp4Points             = InpBehavioralTP4_Pts;
+      cfg.tp5Points             = InpBehavioralTP5_Pts;
+      cfg.enableTraceback       = InpBehavioralTraceback;
+      cfg.tracebackExtensionPts = 350;
+      cfg.tracebackWickRatio    = 0.35;
+      cfg.tracebackTPPoints     = 200;
+      cfg.tracebackSLPoints     = 150;
+      cfg.reloadAtHL            = true;
+      cfg.enablePyramiding      = InpBehavioralPyramiding;
+      cfg.maxPyramidLayers      = 4;
+      cfg.reloadStepPoints      = 300;
+      cfg.reloadTicketsCount    = 3;
+      cfg.enableLiquidationSweep= true;
+      cfg.spikeMinWickPct       = 0.40;
+      cfg.enableJudasFlush      = true;
+      cfg.enableDumpAndFlip     = InpBehavioralDumpAndFlip;
+      cfg.dumpWickRatio         = 0.45;
+      cfg.enableVolumeClimaxFade= InpBehavioralClimaxFade;
+      cfg.volumeSpikeMultiplier = 3.0;
+      cfg.enableFlipMilestone   = true;
+      cfg.targetEquity          = 10000.0;
+      cfg.enableVisuals         = InpBehavioralVisuals;
+      cfg.applyDraculaTheme     = true;
+
+      g_flipper_engine.Init(cfg);
+   }
+
    UpdateDailyLevels();
    if(InpDrawChartObjects) RedrawChartObjects();
    return(INIT_SUCCEEDED);
@@ -112,6 +168,9 @@ int OnInit()
 //+------------------------------------------------------------------+
 void OnDeinit(const int reason)
 {
+   if(InpEnableBehavioralEngine)
+      g_flipper_engine.Clean();
+
    if(InpDrawChartObjects)
    {
       ObjectsDeleteAll(0, "FIB618_");
@@ -313,7 +372,7 @@ bool HasOpenPositions()
          if(m_position.Symbol() == _Symbol)
          {
             ulong m = m_position.Magic();
-            if(m == InpBaseMagic + 1 || m == InpBaseMagic + 2)
+            if(m == InpBaseMagic || m == InpBaseMagic + 1 || m == InpBaseMagic + 2 || m == InpBaseMagic + 99)
                return true;
          }
       }
@@ -423,11 +482,37 @@ void OnTick()
       if(InpDrawChartObjects) RedrawChartObjects();
    }
 
-   // Manage Leg 2 Runner (Breakeven Lock)
-   ManageOpenPositions();
+   if(InpEnableBehavioralEngine)
+   {
+      g_flipper_engine.ManageLadderAndBreakeven();
+      g_flipper_engine.CheckPyramiding();
+      if(g_flipper_engine.CheckMilestoneFlipTarget()) return;
+      g_flipper_engine.UpdateHUD();
+   }
+   else
+   {
+      // Manage Leg 2 Runner (Breakeven Lock)
+      ManageOpenPositions();
+      // Update HUD
+      UpdateHUD();
+   }
 
-   // Update HUD
-   UpdateHUD();
+   // On new bar check Traceback, Dump & Flip, Climax Fade
+   static datetime last_fib_bar = 0;
+   datetime cur_bar = iTime(_Symbol, _Period, 0);
+   if(InpEnableBehavioralEngine && cur_bar != last_fib_bar)
+   {
+      last_fib_bar = cur_bar;
+      MqlRates rates_chk[];
+      ArraySetAsSeries(rates_chk, true);
+      if(CopyRates(_Symbol, _Period, 0, 25, rates_chk) >= 25)
+      {
+         double ema50 = rates_chk[1].close;
+         g_flipper_engine.CheckTraceback(ema50, rates_chk);
+         g_flipper_engine.CheckOpposingDumpAndFlip(rates_chk);
+         g_flipper_engine.CheckVolumeClimaxFade(rates_chk, 25);
+      }
+   }
 
    // Spread check
    if(m_symbol.Spread() > InpMaxSpreadPoints) return;
@@ -462,6 +547,14 @@ void OnTick()
       {
          if(ask <= lvl + InpEntryTolerance * point && ask >= lvl - InpEntryTolerance * point)
          {
+            if(InpEnableBehavioralEngine)
+            {
+               g_flipper_engine.ExecuteSpamBasket(ORDER_TYPE_BUY, ask, InpSLPoints);
+               g_active_levels[i].trade_taken = true;
+               g_daily_trade_count++;
+               break;
+            }
+
             double sl  = NormalizeDouble(ask - InpSLPoints * point, _Digits);
             double tp1 = 0.0;
             double tp2 = 0.0;
@@ -498,6 +591,14 @@ void OnTick()
       {
          if(bid >= lvl - InpEntryTolerance * point && bid <= lvl + InpEntryTolerance * point)
          {
+            if(InpEnableBehavioralEngine)
+            {
+               g_flipper_engine.ExecuteSpamBasket(ORDER_TYPE_SELL, bid, InpSLPoints);
+               g_active_levels[i].trade_taken = true;
+               g_daily_trade_count++;
+               break;
+            }
+
             double sl  = NormalizeDouble(bid + InpSLPoints * point, _Digits);
             double tp1 = 0.0;
             double tp2 = 0.0;

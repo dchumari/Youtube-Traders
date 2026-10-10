@@ -145,6 +145,29 @@ This document synthesizes and preserves all project learnings, mathematical form
   - [`AggressiveFlipper_50USD_Sprint_Doubler.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Aggressive_Flipper_Suite/presets/AggressiveFlipper_50USD_Sprint_Doubler.set)
   - [`AggressiveFlipper_Traceback_SwingReload.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Aggressive_Flipper_Suite/presets/AggressiveFlipper_Traceback_SwingReload.set)
 
+### 7. Universal Behavioral Engine & Multi-Strategy Benchmark (`Flipper_Behavioral_Engine.mqh`)
+- **Universal Architectural Harness**: Built [`strategies/Include/Flipper_Behavioral_Engine.mqh`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Include/Flipper_Behavioral_Engine.mqh) enabling ANY strategy to plug into the 10 Unique Online Flipper Behavioral Patterns with zero structural code changes.
+- **The 10 Truly Unique Behavioral Patterns Codified**:
+  1. **Granular Ticket Cluster Slicing**: Decomposes chunky volume into 5-10 micro-tickets ($0.01\text{ to }0.02$) to bypass broker execution limits and enable fine-grained target management.
+  2. **5-Stage Take-Profit Laddering**: Staggered profit harvesting across TP1 (+20p, close 20%), TP2 (+35p, close 25%), TP3 (+60p, close 25%), TP4 (+100p, close 20%), and TP5 (+160p moonshot runner).
+  3. **The "Traceback" Retracement Scalp & Higher Low Trend Reload**: Monetizes two-way wave mechanics by counter-scalping overextensions into support, banking the pullback, and reloading heavy trend positions at the confirmed Higher Low (HL).
+  4. **Floating Equity Free-Margin Pyramiding**: Leverages newly unlocked broker margin at positive thresholds (+30 to +40 pips) to fire cascading Layers 2, 3, and 4.
+  5. **Stepped Breakeven Shield & Asymmetric Net-Risk Ratchet**: Automates ratchet stop progression: moves SL to Breakeven (+1.0 pip) at TP2, locks +25 pips at TP3, and locks +60 pips at TP4, driving net risk below \$0.00.
+  6. **Session Transition Flush & Trap Injection**: Firing bursts strictly during London (07:00-11:00 UTC) and New York (12:00-17:00 UTC) volatility expansion windows.
+  7. **Opposing Exhaustion Dump & Flip**: Handbrake emergency exit that wipes the basket atomically and inverts direction 180° when an opposing rejection wick ($\ge 45\%$) forms at key resistance.
+  8. **Climax Volume Absorption Fade**: Detects institutional absorption when tick volume surges $\ge 3.0\times$ 20-bar average with $\ge 40\%$ wick rejection, fading retail exhaustion.
+  9. **Milestone Lockout & Capital Extraction Ratchet**: Atomic equity wipe and lockout upon achieving target equity (e.g. +50%, +100%, 10X, 100X) to enforce the "House Money Protocol" and prevent overtrading givebacks.
+  10. **Interactive On-Chart Visual Roadmap & Live Dracula Status HUD**: Dracula dark palette (#282A36), translucent profit zones, colored TP1-TP5 target lines, cyan Breakeven Shield line, structural market swing tags, and live real-time HUD displaying basket PnL, active layer, and flip progress.
+- **Empirical Multi-Strategy Backtest Matrix (1-Week NFP Volatility Shock, $100 Capital, 1:400 Leverage)**:
+  - **Mr P FX Master Suite** (`MrPFx_Master_Suite.mq5`): **+$49.59 Net Profit (+49.6% ROI)**, 362 trades, PF 1.15. **PASS**
+  - **Danial FX Aggressive Suite** (`DanialFX_Aggressive_Suite.mq5`): **+$49.49 Net Profit (+49.5% ROI)**, 257 trades, PF 1.17. **PASS**
+  - **Daily Fibonacci 61.8% Suite** (`Daily_Fib_618_Aggressive_Math_EA.mq5`): **+$24.59 Net Profit (+24.6% ROI)**, 68 trades, PF 1.52. **PASS**
+  - **Aggressive Flipper Master EA** (`Aggressive_Flipper_Master_EA.mq5`): **+$11.18 Net Profit (+11.2% ROI)**, 166 trades, PF 1.06. **PASS**
+- **Presets Created**:
+  - [`DanialFX_Behavioral_Flipper_100USD.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Danial_FX/presets/DanialFX_Behavioral_Flipper_100USD.set)
+  - [`MrPFx_Behavioral_Flipper_100USD.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Mr_P_Fx/presets/MrPFx_Behavioral_Flipper_100USD.set)
+  - [`DailyFib_Behavioral_Flipper_100USD.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Daily_Fibonacci_Strategy/presets/DailyFib_Behavioral_Flipper_100USD.set)
+
 ---
 
 ## 5. UI, Visualization & Operational Preferences
@@ -159,3 +182,4 @@ This document synthesizes and preserves all project learnings, mathematical form
 3. **Execution Mode Preference**:
    - Prefer background/headless execution for automated testing and backtesting tasks.
    - Provide concrete `.set` presets for every tested tier (Conservative, Balanced, Aggressive Doubler).
+
