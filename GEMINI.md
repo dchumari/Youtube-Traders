@@ -126,7 +126,24 @@ This document synthesizes and preserves all project learnings, mathematical form
   - **Empirical Backtest Validation on $100 Capital**:
     - **1-Week NFP Volatility Shock**: **+$336.61 Net Profit (+336.6% ROI in 5 days)**, turning $100 into $436.61 with **78.6% Win Rate** (11/14 wins, DD: 51.7%).
     - **1-Month Trend Expansion**: **+$123.66 Net Profit (+123.7% ROI in 1 month)**, turning $100 into $223.66 with **71.4% Win Rate** (5/7 wins, DD: 53.3%).
-    - Preset: [`DanialFX_100USD_to_10000USD_Flip_Engine.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Danial_FX/presets/DanialFX_100USD_to_10000USD_Flip_Engine.set).
+
+### 6. Aggressive Flipper Master Suite (`Aggressive_Flipper_Master_EA.mq5`)
+- **Origin**: Reverse-engineered from top real-world online "account flippers" ($100 $\rightarrow$ $1,000 / $10,000) on TikTok, YouTube, and Telegram.
+- **The 10 Behavioral Patterns Codified**:
+  1. **Micro-Ticket Cluster Spamming**: 5 to 10 micro-tickets per burst ($10 \times 0.01$) enabling fractional trade management.
+  2. **5-Stage Take-Profit Laddering**: TP1 (+20p, close 20%), TP2 (+35p, close 25% + BE move), TP3 (+60p, close 25% + +25p lock), TP4 (+100p, close 20%), TP5 (+160p runner).
+  3. **Floating Margin Pyramiding**: Re-spamming 3-5 tickets every +30 pips using floating equity.
+  4. **The "Traceback" Engine**: Scalping overextended pullbacks at resistance and reloading heavy trend buys at the confirmed Higher Low (HL).
+  5. **Stepped Breakeven Shield**: Ratchet stop-loss progression guaranteeing negative portfolio net risk.
+  6. **London & NY Killzone Velocity Sync**: Firing bursts strictly during peak liquidity (07:00-11:00 & 12:00-17:00 UTC).
+  7. **Liquidity Sweep & Wick Invalidation**: Requiring prior extreme sweep with $\ge 35\%$ rejection wick before entry.
+  8. **Opposing Exhaustion Dump**: Wiping open basket if opposing wick $\ge 45\%$ prints at key resistance.
+  9. **Milestone Account Flip Milestones**: Auto-liquidating at target equity ($1,000 / $10,000) to prevent givebacks.
+  10. **Interactive On-Chart Visual Roadmap & HUD**: Dracula dark palette, shaded position boxes, TP1-TP5 lines, cyan BE shield line, `[HH]` / `[HL]` structure tags, and real-time status HUD.
+- **Presets**:
+  - [`AggressiveFlipper_100USD_to_10000USD_Flip.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Aggressive_Flipper_Suite/presets/AggressiveFlipper_100USD_to_10000USD_Flip.set)
+  - [`AggressiveFlipper_50USD_Sprint_Doubler.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Aggressive_Flipper_Suite/presets/AggressiveFlipper_50USD_Sprint_Doubler.set)
+  - [`AggressiveFlipper_Traceback_SwingReload.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Aggressive_Flipper_Suite/presets/AggressiveFlipper_Traceback_SwingReload.set)
 
 ---
 

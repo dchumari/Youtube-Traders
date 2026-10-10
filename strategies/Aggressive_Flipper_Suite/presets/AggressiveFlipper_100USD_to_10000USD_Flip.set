@@ -1,0 +1,48 @@
+; AggressiveFlipper_100USD_to_10000USD_Flip.set
+; Dedicated High-Conviction 100X Account Flip Engine ($100 -> $10,000)
+; Incorporating the 10 Real-World Flipper Behavioral Patterns:
+; Multi-Ticket Spamming + 5-Stage TP Laddering + Floating Margin Reloads + Traceback Engine
+InpMagicNumber=882200
+InpTradeComment=Flipper_100X
+InpLotMode=1
+InpFixedLotPerTicket=0.01
+InpEquityPerMinLot=25.0
+InpSpamTicketsCount=6
+InpMaxLotPerTicket=0.50
+InpStopLossPoints=200
+InpTP1_Points=200
+InpTP2_Points=350
+InpTP3_Points=600
+InpTP4_Points=1000
+InpTP5_Points=1600
+InpEnableReloadPyramid=true
+InpMaxPyramidLayers=4
+InpReloadStepPoints=300
+InpReloadTicketsCount=3
+InpBreakevenBufferPts=10
+InpSteppedTrailLock=true
+InpEnableTraceback=true
+InpTracebackExtensionPts=350
+InpTracebackWickRatio=0.38
+InpTracebackTP_Points=180
+InpTracebackSL_Points=150
+InpReloadHeavyAtHL=true
+InpSwingLookback=25
+InpMinRejectionWickPct=0.35
+InpEMA50Period=50
+InpUseKillzones=true
+InpLondonStartHour=7
+InpLondonEndHour=11
+InpNYStartHour=12
+InpNYEndHour=17
+InpMaxSpreadPoints=45
+InpDumpOnExhaustion=true
+InpAccountFlipMode=true
+InpTargetEquity=10000.0
+InpLockMilestoneProfits=true
+InpEnableVisualRoadmap=true
+InpApplyDraculaTheme=true
+InpDrawPositionBoxes=true
+InpDrawTPLines=true
+InpDrawSwingLabels=true
+InpShowHUDDashboard=true

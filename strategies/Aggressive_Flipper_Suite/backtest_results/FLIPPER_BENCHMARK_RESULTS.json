@@ -1,0 +1,35 @@
+{
+  "test_100u_w1": {
+    "test_id": "flip_100u_w1",
+    "deposit": 100,
+    "net_profit": 11.18,
+    "profit_factor": 1.06,
+    "drawdown_pct": 39.0,
+    "total_trades": 166,
+    "win_rate_pct": 30.72,
+    "roi_pct": 11.18,
+    "status": "PASS"
+  },
+  "test_100u_m1": {
+    "test_id": "flip_100u_m1",
+    "deposit": 100,
+    "net_profit": -96.62,
+    "profit_factor": 0.58,
+    "drawdown_pct": 97.06,
+    "total_trades": 161,
+    "win_rate_pct": 30.43,
+    "roi_pct": -96.62,
+    "status": "LOSS"
+  },
+  "test_50u_w1": {
+    "test_id": "flip_50u_w1",
+    "deposit": 50,
+    "net_profit": -42.54,
+    "profit_factor": 0.31,
+    "drawdown_pct": 85.08,
+    "total_trades": 34,
+    "win_rate_pct": 17.65,
+    "roi_pct": -85.08,
+    "status": "LOSS"
+  }
+}
