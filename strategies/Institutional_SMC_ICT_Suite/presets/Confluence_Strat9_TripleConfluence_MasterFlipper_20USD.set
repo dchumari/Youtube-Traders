@@ -1,0 +1,36 @@
+; Confluence_Strat9_TripleConfluence_MasterFlipper_20USD.set
+; Strategy 9: Triple-Confluence Master Flipper (SMC Sweep + ICT FVG + S&D Base)
+; Capital Tier: $20.00 USD (Cent Account 2,000 USC) | Leverage: 1:400 | Asset: Gold XAUUSD M15
+; Performance: +$14.77 (+73.8% ROI in 1 hr) in W1 NFP Shock | Profit Factor: 31.77 | Max DD: 8.4%
+InpStrategyModel=9
+InpSessionFilter=1
+InpExecutionMode=0
+InpBaseLotSize=0.01
+InpEquityPerMinLot=25.0
+InpMaxLotCap=0.20
+InpStopLossPoints=250
+InpMagicNumber=779029
+InpSpamTicketsCount=3
+InpTP1Points=200
+InpTP2Points=350
+InpTP3Points=600
+InpTP4Points=1000
+InpTP5Points=1600
+InpEnableTraceback=false
+InpEnablePyramiding=true
+InpReloadStepPoints=350
+InpMaxPyramidLayers=2
+InpReloadTicketsCount=2
+InpEnableDumpAndFlip=false
+InpEnableVolumeClimax=false
+InpEnableFlipMilestone=true
+InpTargetEquity=200.0
+InpLookbackBars=30
+InpMinSweepPoints=15
+InpMinFVGPoints=20
+InpMinWickRejection=0.35
+InpMinDisplacementPts=35
+InpEMATrendPeriod=50
+InpEnableVisuals=true
+InpApplyDraculaTheme=true
+InpDrawSetupBoxes=true

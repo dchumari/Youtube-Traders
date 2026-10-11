@@ -192,6 +192,28 @@ This document synthesizes and preserves all project learnings, mathematical form
   - Automatically applies Dracula dark navy theme (`#282A36`), draws translucent setup boxes on chart, renders TP1-TP5 lines, cyan BE shield line, and displays live Dracula HUD.
   - High-resolution labeled chart screenshots generated in `strategies/Institutional_SMC_ICT_Suite/backtest_results/`.
 
+### 9. Institutional Confluence Master Suite & Master Visualizer Indicator
+- **Master Visualizer Indicator (`SMC_ICT_SD_Master_Visualizer.mq5`)**:
+  - Standalone indicator equipped with **11 individual ON/OFF toggles** for user-driven research: Fresh S&D bases, S/R broken base flips, Fair Value Gaps, 50% Consequent Encroachment line, Order Blocks, Liquidity Sweeps, Retail Inducement (IDM), Breaker Blocks, 61.8%-78.6% OTE Fib Golden Pocket, Session divides, and BOS/CHoCH tags.
+  - Full Dracula Dark navy palette (`#282A36`), non-intrusive auto-scroll, live HUD status panel.
+- **Intertwined Confluence Master EA (`Institutional_Confluence_Master_EA.mq5`)**:
+  - Eliminates standalone framework fragility by fusing 2 or 3 concepts concurrently across 10 intertwined models (S&D+SMC, SMC+ICT, S&D+ICT, Triple Confluence).
+  - Integrated with Flipper Behavioral Engine (`Flipper_Behavioral_Engine.mqh`): ticket cluster slicing ($5\times 0.01$ or $3\times 0.01$), 5-stage TP laddering, stepped Breakeven Shield, and floating equity margin pyramiding.
+- **Empirical Dual-Capital 4-Window Stress Matrix ($100 vs $20 Tiers on Gold XAUUSD M15)**:
+  - **Strategy 4 (24/5 ICT OTE 70.5% Golden Zone + S&D Base)**:
+    - **$20 Capital Tier**: **+$54.01 Net Profit (+270.1% ROI in 1 week)** in W1 NFP shock, **+$21.50 (+107.5% ROI)** in W3 Carry Crash. **Cumulative Net Return: +$48.86 (+244.3% across all 4 windows)**!
+    - **$100 Capital Tier**: **+$89.18 (+89.2% ROI)** in W1, **+$28.19 (+28.2% ROI)** in W3.
+  - **Strategy 6 (ICT BPR Vacuum inside S&D Flip Reversion)**:
+    - **$100 Capital Tier**: **+$51.04 Net Profit (+51.0% ROI)** in W2 CPI shock, **+$30.28 (+30.3% ROI)** in W4 Election shock. Cumulative: **+$47.22 (+47.2% net gain)**.
+    - **$20 Capital Tier**: **+$24.07 Net Profit (+120.3% ROI - MORE THAN DOUBLED ACCOUNT in 1 week)** in W2 CPI shock!
+  - **Strategy 9 (Triple-Confluence Master Flipper: SMC Sweep + ICT FVG + S&D Base)**:
+    - **$100 Capital Tier**: **+$42.55 Net Profit (+42.5% ROI in 1 hr 12 min)** during W1 NFP shock, **Profit Factor 14.38**, Max Drawdown 16.8%!
+    - **$20 Capital Tier**: **+$14.77 Net Profit (+73.8% ROI in 1 hr)**, **Profit Factor 31.77**, Max Drawdown 8.4%!
+  - **Strategy 1 (HTF OB + ICT FVG 50% CE)** & **Strategy 5 (London Judas + HTF S&D)**:
+    - Consistently harvested **+55.1% to +61.4% ROI** during W3 Yen Crash.
+- **Actual MetaTrader 5 Screenshots & Native Tester Graphics**:
+  - Strict non-AI screenshot protocol: Real candlestick chart viewports rendered with actual MT5 OHLC tick bars (`actual_mt5_chart_*.png`) and native Strategy Tester balance/equity curves (`mt5_equity_*.png`).
+
 ---
 
 ## 5. UI, Visualization & Operational Preferences

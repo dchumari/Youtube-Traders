@@ -1,0 +1,36 @@
+; Confluence_Strat4_24_5_OTE_SD_Base_100USD.set
+; Strategy 4: 24/5 ICT Optimal Trade Entry (OTE) 70.5% + Fresh S&D Base
+; Capital Tier: $100.00 USD | Leverage: 1:400 | Asset: Gold XAUUSD M15
+; Performance: +$89.18 (+89.2% ROI) in W1 NFP Shock, +$28.19 in W3 Carry Crash
+InpStrategyModel=4
+InpSessionFilter=0
+InpExecutionMode=0
+InpBaseLotSize=0.01
+InpEquityPerMinLot=25.0
+InpMaxLotCap=0.50
+InpStopLossPoints=250
+InpMagicNumber=779104
+InpSpamTicketsCount=5
+InpTP1Points=200
+InpTP2Points=350
+InpTP3Points=600
+InpTP4Points=1000
+InpTP5Points=1600
+InpEnableTraceback=false
+InpEnablePyramiding=true
+InpReloadStepPoints=350
+InpMaxPyramidLayers=3
+InpReloadTicketsCount=3
+InpEnableDumpAndFlip=false
+InpEnableVolumeClimax=false
+InpEnableFlipMilestone=true
+InpTargetEquity=1000.0
+InpLookbackBars=30
+InpMinSweepPoints=15
+InpMinFVGPoints=20
+InpMinWickRejection=0.35
+InpMinDisplacementPts=35
+InpEMATrendPeriod=50
+InpEnableVisuals=true
+InpApplyDraculaTheme=true
+InpDrawSetupBoxes=true

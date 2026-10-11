@@ -1,0 +1,36 @@
+; Confluence_Strat6_ICT_BPR_SD_Flip_20USD.set
+; Strategy 6: ICT Balanced Price Range (BPR) Imbalance Vacuum + S&D Flip Reversion
+; Capital Tier: $20.00 USD (Cent Account 2,000 USC) | Leverage: 1:400 | Asset: Gold XAUUSD M15
+; Performance: +$24.07 (+120.3% ROI - Doubled in 1 Week) in W2 CPI/FOMC Volatility Shock
+InpStrategyModel=6
+InpSessionFilter=1
+InpExecutionMode=0
+InpBaseLotSize=0.01
+InpEquityPerMinLot=25.0
+InpMaxLotCap=0.20
+InpStopLossPoints=250
+InpMagicNumber=779026
+InpSpamTicketsCount=3
+InpTP1Points=200
+InpTP2Points=350
+InpTP3Points=600
+InpTP4Points=1000
+InpTP5Points=1600
+InpEnableTraceback=false
+InpEnablePyramiding=true
+InpReloadStepPoints=350
+InpMaxPyramidLayers=2
+InpReloadTicketsCount=2
+InpEnableDumpAndFlip=false
+InpEnableVolumeClimax=false
+InpEnableFlipMilestone=true
+InpTargetEquity=200.0
+InpLookbackBars=30
+InpMinSweepPoints=15
+InpMinFVGPoints=20
+InpMinWickRejection=0.35
+InpMinDisplacementPts=35
+InpEMATrendPeriod=50
+InpEnableVisuals=true
+InpApplyDraculaTheme=true
+InpDrawSetupBoxes=true
