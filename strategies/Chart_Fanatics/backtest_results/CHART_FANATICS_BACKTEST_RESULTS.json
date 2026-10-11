@@ -1,0 +1,662 @@
+{
+  "Matteo_ORB": {
+    "name": "Matteo Conti Bank ORB + VWAP",
+    "original_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_Matteo_ORB_Orig_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 12.18,
+        "profit_factor": 2.91,
+        "drawdown_pct": 6.81,
+        "total_trades": 7,
+        "win_rate_pct": 3.5,
+        "roi_pct": 12.2,
+        "status": "PASS"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_Matteo_ORB_Orig_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -3.74,
+        "profit_factor": 0.72,
+        "drawdown_pct": 12.08,
+        "total_trades": 9,
+        "win_rate_pct": 4.5,
+        "roi_pct": -3.7,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_Matteo_ORB_Orig_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -1.19,
+        "profit_factor": 0.92,
+        "drawdown_pct": 15.71,
+        "total_trades": 8,
+        "win_rate_pct": 4.0,
+        "roi_pct": -1.2,
+        "status": "FAIL"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_Matteo_ORB_Orig_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -3.28,
+        "profit_factor": 0.87,
+        "drawdown_pct": 20.45,
+        "total_trades": 7,
+        "win_rate_pct": 3.5,
+        "roi_pct": -3.3,
+        "status": "FAIL"
+      }
+    },
+    "optimal_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_Matteo_ORB_Opt_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": -16.08,
+        "profit_factor": 0.62,
+        "drawdown_pct": 38.2,
+        "total_trades": 35,
+        "win_rate_pct": 17.5,
+        "roi_pct": -16.1,
+        "status": "FAIL"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_Matteo_ORB_Opt_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -39.54,
+        "profit_factor": 0.33,
+        "drawdown_pct": 43.35,
+        "total_trades": 45,
+        "win_rate_pct": 22.5,
+        "roi_pct": -39.5,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_Matteo_ORB_Opt_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 31.79,
+        "profit_factor": 1.67,
+        "drawdown_pct": 63.83,
+        "total_trades": 40,
+        "win_rate_pct": 20.0,
+        "roi_pct": 31.8,
+        "status": "PASS"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_Matteo_ORB_Opt_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -48.81,
+        "profit_factor": 0.33,
+        "drawdown_pct": 75.47,
+        "total_trades": 34,
+        "win_rate_pct": 17.0,
+        "roi_pct": -48.8,
+        "status": "FAIL"
+      }
+    },
+    "comparison_summary": {
+      "original_passed_windows": "1/4",
+      "original_cumulative_profit": 3.97,
+      "optimal_passed_windows": "1/4",
+      "optimal_cumulative_profit": -72.64,
+      "alpha_improvement": -76.61
+    }
+  },
+  "TraderYush_VA": {
+    "name": "Trader Yush Value Area & Delta Absorption",
+    "original_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_TraderYush_VA_Orig_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 3.92,
+        "profit_factor": 1.28,
+        "drawdown_pct": 8.32,
+        "total_trades": 10,
+        "win_rate_pct": 5.0,
+        "roi_pct": 3.9,
+        "status": "PASS"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_TraderYush_VA_Orig_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -6.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 7.76,
+        "total_trades": 3,
+        "win_rate_pct": 1.5,
+        "roi_pct": -6.0,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_TraderYush_VA_Orig_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -8.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 13.85,
+        "total_trades": 4,
+        "win_rate_pct": 2.0,
+        "roi_pct": -8.0,
+        "status": "FAIL"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_TraderYush_VA_Orig_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": 14.34,
+        "profit_factor": 8.17,
+        "drawdown_pct": 8.63,
+        "total_trades": 4,
+        "win_rate_pct": 2.0,
+        "roi_pct": 14.3,
+        "status": "PASS"
+      }
+    },
+    "optimal_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_TraderYush_VA_Opt_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": -6.4,
+        "profit_factor": 0.92,
+        "drawdown_pct": 65.29,
+        "total_trades": 70,
+        "win_rate_pct": 35.0,
+        "roi_pct": -6.4,
+        "status": "FAIL"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_TraderYush_VA_Opt_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -10.3,
+        "profit_factor": 0.83,
+        "drawdown_pct": 46.68,
+        "total_trades": 50,
+        "win_rate_pct": 25.0,
+        "roi_pct": -10.3,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_TraderYush_VA_Opt_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -19.56,
+        "profit_factor": 0.51,
+        "drawdown_pct": 58.21,
+        "total_trades": 50,
+        "win_rate_pct": 25.0,
+        "roi_pct": -19.6,
+        "status": "FAIL"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_TraderYush_VA_Opt_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -0.55,
+        "profit_factor": 0.99,
+        "drawdown_pct": 32.15,
+        "total_trades": 55,
+        "win_rate_pct": 27.5,
+        "roi_pct": -0.6,
+        "status": "FAIL"
+      }
+    },
+    "comparison_summary": {
+      "original_passed_windows": "2/4",
+      "original_cumulative_profit": 4.26,
+      "optimal_passed_windows": "0/4",
+      "optimal_cumulative_profit": -36.81,
+      "alpha_improvement": -41.07
+    }
+  },
+  "Okala_8020": {
+    "name": "Okala 80/20 Distribution Tails",
+    "original_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_Okala_8020_Orig_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": -22.0,
+        "profit_factor": 0.27,
+        "drawdown_pct": 28.48,
+        "total_trades": 17,
+        "win_rate_pct": 8.5,
+        "roi_pct": -22.0,
+        "status": "FAIL"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_Okala_8020_Orig_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": 0.0,
+        "profit_factor": 1.0,
+        "drawdown_pct": 12.64,
+        "total_trades": 18,
+        "win_rate_pct": 9.0,
+        "roi_pct": 0.0,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_Okala_8020_Orig_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 8.0,
+        "profit_factor": 1.33,
+        "drawdown_pct": 8.45,
+        "total_trades": 20,
+        "win_rate_pct": 10.0,
+        "roi_pct": 8.0,
+        "status": "PASS"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_Okala_8020_Orig_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": 6.0,
+        "profit_factor": 1.23,
+        "drawdown_pct": 14.34,
+        "total_trades": 21,
+        "win_rate_pct": 10.5,
+        "roi_pct": 6.0,
+        "status": "PASS"
+      }
+    },
+    "optimal_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_Okala_8020_Opt_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": -87.25,
+        "profit_factor": 0.13,
+        "drawdown_pct": 97.16,
+        "total_trades": 69,
+        "win_rate_pct": 34.5,
+        "roi_pct": -87.2,
+        "status": "FAIL"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_Okala_8020_Opt_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -5.84,
+        "profit_factor": 0.92,
+        "drawdown_pct": 47.66,
+        "total_trades": 100,
+        "win_rate_pct": 50.0,
+        "roi_pct": -5.8,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_Okala_8020_Opt_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -4.38,
+        "profit_factor": 0.95,
+        "drawdown_pct": 41.07,
+        "total_trades": 100,
+        "win_rate_pct": 50.0,
+        "roi_pct": -4.4,
+        "status": "FAIL"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_Okala_8020_Opt_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -45.21,
+        "profit_factor": 0.54,
+        "drawdown_pct": 87.1,
+        "total_trades": 105,
+        "win_rate_pct": 52.5,
+        "roi_pct": -45.2,
+        "status": "FAIL"
+      }
+    },
+    "comparison_summary": {
+      "original_passed_windows": "2/4",
+      "original_cumulative_profit": -8.0,
+      "optimal_passed_windows": "0/4",
+      "optimal_cumulative_profit": -142.68,
+      "alpha_improvement": -134.68
+    }
+  },
+  "Crudele_BB": {
+    "name": "Anthony Crudele 3-Step Bollinger Trend",
+    "original_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_Crudele_BB_Orig_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 6.6,
+        "profit_factor": 1.11,
+        "drawdown_pct": 18.37,
+        "total_trades": 39,
+        "win_rate_pct": 19.5,
+        "roi_pct": 6.6,
+        "status": "PASS"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_Crudele_BB_Orig_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -19.63,
+        "profit_factor": 0.72,
+        "drawdown_pct": 29.44,
+        "total_trades": 42,
+        "win_rate_pct": 21.0,
+        "roi_pct": -19.6,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_Crudele_BB_Orig_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 20.12,
+        "profit_factor": 1.3,
+        "drawdown_pct": 17.56,
+        "total_trades": 48,
+        "win_rate_pct": 24.0,
+        "roi_pct": 20.1,
+        "status": "PASS"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_Crudele_BB_Orig_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -12.41,
+        "profit_factor": 0.87,
+        "drawdown_pct": 39.41,
+        "total_trades": 61,
+        "win_rate_pct": 30.5,
+        "roi_pct": -12.4,
+        "status": "FAIL"
+      }
+    },
+    "optimal_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_Crudele_BB_Opt_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 68.27,
+        "profit_factor": 1.25,
+        "drawdown_pct": 113.42,
+        "total_trades": 245,
+        "win_rate_pct": 122.5,
+        "roi_pct": 68.3,
+        "status": "PASS"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_Crudele_BB_Opt_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -94.32,
+        "profit_factor": 0.35,
+        "drawdown_pct": 109.64,
+        "total_trades": 96,
+        "win_rate_pct": 48.0,
+        "roi_pct": -94.3,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_Crudele_BB_Opt_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -0.95,
+        "profit_factor": 1.0,
+        "drawdown_pct": 127.47,
+        "total_trades": 270,
+        "win_rate_pct": 135.0,
+        "roi_pct": -0.9,
+        "status": "FAIL"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_Crudele_BB_Opt_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -94.26,
+        "profit_factor": 0.62,
+        "drawdown_pct": 101.47,
+        "total_trades": 187,
+        "win_rate_pct": 93.5,
+        "roi_pct": -94.3,
+        "status": "FAIL"
+      }
+    },
+    "comparison_summary": {
+      "original_passed_windows": "2/4",
+      "original_cumulative_profit": -5.32,
+      "optimal_passed_windows": "1/4",
+      "optimal_cumulative_profit": -121.26,
+      "alpha_improvement": -115.94
+    }
+  },
+  "KrisVerma_Short": {
+    "name": "Kris Verma Parabolic Gap Exhaustion Short",
+    "original_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_KrisVerma_Short_Orig_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": -4.0,
+        "profit_factor": 0.88,
+        "drawdown_pct": 17.77,
+        "total_trades": 22,
+        "win_rate_pct": 11.0,
+        "roi_pct": -4.0,
+        "status": "FAIL"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_KrisVerma_Short_Orig_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -6.0,
+        "profit_factor": 0.75,
+        "drawdown_pct": 18.06,
+        "total_trades": 15,
+        "win_rate_pct": 7.5,
+        "roi_pct": -6.0,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_KrisVerma_Short_Orig_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 20.0,
+        "profit_factor": 1.38,
+        "drawdown_pct": 17.37,
+        "total_trades": 38,
+        "win_rate_pct": 19.0,
+        "roi_pct": 20.0,
+        "status": "PASS"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_KrisVerma_Short_Orig_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -14.0,
+        "profit_factor": 0.72,
+        "drawdown_pct": 28.35,
+        "total_trades": 31,
+        "win_rate_pct": 15.5,
+        "roi_pct": -14.0,
+        "status": "FAIL"
+      }
+    },
+    "optimal_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_KrisVerma_Short_Opt_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": -50.44,
+        "profit_factor": 0.61,
+        "drawdown_pct": 79.31,
+        "total_trades": 110,
+        "win_rate_pct": 55.0,
+        "roi_pct": -50.4,
+        "status": "FAIL"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_KrisVerma_Short_Opt_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -21.85,
+        "profit_factor": 0.8,
+        "drawdown_pct": 53.58,
+        "total_trades": 85,
+        "win_rate_pct": 42.5,
+        "roi_pct": -21.9,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_KrisVerma_Short_Opt_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 110.69,
+        "profit_factor": 1.58,
+        "drawdown_pct": 59.5,
+        "total_trades": 190,
+        "win_rate_pct": 95.0,
+        "roi_pct": 110.7,
+        "status": "PASS"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_KrisVerma_Short_Opt_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -94.75,
+        "profit_factor": 0.43,
+        "drawdown_pct": 131.13,
+        "total_trades": 113,
+        "win_rate_pct": 56.5,
+        "roi_pct": -94.8,
+        "status": "FAIL"
+      }
+    },
+    "comparison_summary": {
+      "original_passed_windows": "1/4",
+      "original_cumulative_profit": -4.0,
+      "optimal_passed_windows": "1/4",
+      "optimal_cumulative_profit": -56.35,
+      "alpha_improvement": -52.35
+    }
+  },
+  "Master_Hybrid": {
+    "name": "Chart Fanatics Master Institutional Hybrid",
+    "original_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_Master_Hybrid_Orig_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 5.92,
+        "profit_factor": 1.27,
+        "drawdown_pct": 10.39,
+        "total_trades": 16,
+        "win_rate_pct": 8.0,
+        "roi_pct": 5.9,
+        "status": "PASS"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_Master_Hybrid_Orig_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -8.0,
+        "profit_factor": 0.56,
+        "drawdown_pct": 16.01,
+        "total_trades": 11,
+        "win_rate_pct": 5.5,
+        "roi_pct": -8.0,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_Master_Hybrid_Orig_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -10.0,
+        "profit_factor": 0.5,
+        "drawdown_pct": 18.0,
+        "total_trades": 12,
+        "win_rate_pct": 6.0,
+        "roi_pct": -10.0,
+        "status": "FAIL"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_Master_Hybrid_Orig_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": 14.34,
+        "profit_factor": 2.19,
+        "drawdown_pct": 10.51,
+        "total_trades": 11,
+        "win_rate_pct": 5.5,
+        "roi_pct": 14.3,
+        "status": "PASS"
+      }
+    },
+    "optimal_settings": {
+      "W1 (NFP Shock)": {
+        "test_id": "CF_Master_Hybrid_Opt_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": -10.35,
+        "profit_factor": 0.91,
+        "drawdown_pct": 66.89,
+        "total_trades": 105,
+        "win_rate_pct": 52.5,
+        "roi_pct": -10.3,
+        "status": "FAIL"
+      },
+      "W2 (CPI/FOMC Shock)": {
+        "test_id": "CF_Master_Hybrid_Opt_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -56.91,
+        "profit_factor": 0.56,
+        "drawdown_pct": 67.97,
+        "total_trades": 105,
+        "win_rate_pct": 52.5,
+        "roi_pct": -56.9,
+        "status": "FAIL"
+      },
+      "W3 (Yen Carry Crash)": {
+        "test_id": "CF_Master_Hybrid_Opt_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 19.6,
+        "profit_factor": 1.24,
+        "drawdown_pct": 68.42,
+        "total_trades": 100,
+        "win_rate_pct": 50.0,
+        "roi_pct": 19.6,
+        "status": "PASS"
+      },
+      "W4 (US Election Shock)": {
+        "test_id": "CF_Master_Hybrid_Opt_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": 33.47,
+        "profit_factor": 1.56,
+        "drawdown_pct": 43.85,
+        "total_trades": 80,
+        "win_rate_pct": 40.0,
+        "roi_pct": 33.5,
+        "status": "PASS"
+      }
+    },
+    "comparison_summary": {
+      "original_passed_windows": "2/4",
+      "original_cumulative_profit": 2.26,
+      "optimal_passed_windows": "2/4",
+      "optimal_cumulative_profit": -14.19,
+      "alpha_improvement": -16.45
+    }
+  }
+}

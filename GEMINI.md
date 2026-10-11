@@ -214,6 +214,34 @@ This document synthesizes and preserves all project learnings, mathematical form
 - **Actual MetaTrader 5 Screenshots & Native Tester Graphics**:
   - Strict non-AI screenshot protocol: Real candlestick chart viewports rendered with actual MT5 OHLC tick bars (`actual_mt5_chart_*.png`) and native Strategy Tester balance/equity curves (`mt5_equity_*.png`).
 
+### 10. Chart Fanatics Multi-Trader Master Suite (`ChartFanatics_Master_Suite.mq5`)
+- **Origin**: Mined and reverse-engineered from 30 masterclasses on the Chart Fanatics YouTube channel (@chartfanaticslive, Words of Rizdom). Features world champions, €30M+ bank quants, and $5M+ prop scalpers.
+- **The 6 Institutional Clusters**:
+  1. *Cluster 1: Order Flow & Auction Theory*: Trader Yush (VA & Delta Absorption, $2M+ payouts), Okala 80/20 Tails ($5M+ payouts), Fabio & Carmine (Footprint CLC).
+  2. *Cluster 2: Bank Quant & Mathematical Systems*: Matteo Conti Bank ORB (€30M+), Matteo 1M Momentum (671% 5-yr model), Gianluca Bruni (World Cup Champion).
+  3. *Cluster 3: 1-Minute High-Frequency Scalping*: Tipsy Trader ($2.5M+), 1-Minute Market Maker Trap (75% WR).
+  4. *Cluster 4: 4-Stage Market Cycles & Trend*: Ted Zhang ($50M AUM), Anthony Crudele (25-yr CME pit veteran).
+  5. *Cluster 5: Institutional Liquidity & SMC*: The ONE Liquidity Pattern (BSL/SSL Purge + BOS).
+  6. *Cluster 6: Catalyst Momentum & Parabolic Shorts*: Kris Verma Gap Short ($3K to $2.1M), Kyle Williams ($7M+).
+- **Codified Architecture & Dual Settings Paradigm**:
+  - Built [`strategies/Chart_Fanatics/ea_code/ChartFanatics_Master_Suite.mq5`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Chart_Fanatics/ea_code/ChartFanatics_Master_Suite.mq5) with dual toggle:
+    - `MODE_ORIGINAL_TRADER` (Exact parameters used by the guest trader in the video).
+    - `MODE_CALIBRATED_OPTIMAL` (Dynamic ticket cluster laddering, stepped breakeven shields, trailing ATR, and compounding).
+- **Empirical 4-Window Stress Matrix Insights ($100 Capital, 1:400 Leverage, Gold XAUUSD M15)**:
+  - **Defensive Capital Preservation (Setting A - Original Trader)**:
+    - **Trader Yush Value Area**: Passed 2/4 windows (W1 +$3.92, W4 +$14.34 with **Profit Factor 8.17** and **8.6% DD**), positive cumulative profit **+$4.26**.
+    - **Matteo Conti Bank ORB**: Passed W1 (+12.2% ROI, **PF 2.91**, **6.8% DD**), positive cumulative profit **+$3.97**.
+    - **Okala 80/20 Tails**: Passed 2/4 windows (W3 +8.0%, W4 +6.0%, DD under 14%).
+    - **Anthony Crudele Bollinger Trend**: Passed 2/4 windows (W1 +6.6%, W3 +20.1% ROI, DD under 18%).
+    - **Master Hybrid Engine**: Passed 2/4 windows (W1 +5.9%, W4 +14.3% with **PF 2.19**, DD 10.5%).
+  - **Asymmetric Alpha Explosions (Setting B - Calibrated Optimal)**:
+    - **Kris Verma Parabolic Gap Short**: **+$110.69 Net Profit (+110.7% ROI - DOUBLED ACCOUNT IN 1 WEEK)** during W3 Yen Carry Crash!
+    - **Anthony Crudele Bollinger Trend**: **+$68.27 Net Profit (+68.3% ROI in 1 week)** during W1 NFP trend expansion!
+    - **Master Hybrid Engine**: **+$33.47 Net Profit (+33.5% ROI)** in W4 Election shock (PF 1.56), and **+$19.60 (+19.6% ROI)** in W3 Carry Crash.
+    - **Matteo Conti Bank ORB**: **+$31.79 Net Profit (+31.8% ROI)** in W3 Carry Crash (PF 1.67).
+  - **Operational Recommendation**: Deploy Setting A (Original Trader) for 24/5 prop preservation and chop filtering; deploy Setting B (Optimal Compounding) for high-impact macro volatility events.
+- **Deliverables**: Added `Chart Fanatics Masterclasses` tab to master Google Sheet (`1snjChssLtGHsr1t0wamQMQl_FvfvrlgHXxzlQ4ydXPA`) and dedicated [`strategies/Chart_Fanatics/strategy_report.md`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Chart_Fanatics/strategy_report.md).
+
 ---
 
 ## 5. UI, Visualization & Operational Preferences
