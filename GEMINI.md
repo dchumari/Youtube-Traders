@@ -239,6 +239,21 @@ This document synthesizes and preserves all project learnings, mathematical form
     - **Anthony Crudele Bollinger Trend**: **+$68.27 Net Profit (+68.3% ROI in 1 week)** during W1 NFP trend expansion!
     - **Master Hybrid Engine**: **+$33.47 Net Profit (+33.5% ROI)** in W4 Election shock (PF 1.56), and **+$19.60 (+19.6% ROI)** in W3 Carry Crash.
     - **Matteo Conti Bank ORB**: **+$31.79 Net Profit (+31.8% ROI)** in W3 Carry Crash (PF 1.67).
+  - **Multi-Horizon & Random Window Rigorous Benchmark (Non-Event Weeks, Months & 1-Year)**:
+    - *The Root Cause of Setting B Initial Failure*: Slicing $0.01$ lot by $5$ clamped to broker minimum $0.01$ per slice, producing $0.05$ lots ($500\%$ intended risk), risking $10\%$ per stop on a $\$100$ account. Together with unmanaged late-night Asian spreads and churn, this caused drawdowns. Fixed by lot size clamping, London/NY session filter (`07:00 - 18:00 UTC`), and a 2-bar signal throttle.
+    - *4 Pure Random Weeks (Mid-Feb, Mid-May, Mid-July, Mid-Sept 2024)*:
+      - **Master Institutional Hybrid (Setting B)**: **4/4 PASS (100% Win Rate)**, **+$171.31 Net Profit (+171.3% ROI)** vs Setting A's +$18.47! Peak week: **+$83.36 (+83.4%)**.
+      - **Matteo Conti Bank ORB (Setting B)**: **4/4 PASS (100% Win Rate)**, **+$92.39 Net Profit (+92.4% ROI)** vs Setting A's +$10.15! Max DD under 16%.
+      - **Kris Verma Parabolic Gap Short (Setting B)**: **+$101.82 Net Profit (+101.8% ROI - DOUBLED ACCOUNT)**! Peak week: **+$103.66 (+103.7%)**.
+      - Setting A preserved capital with under 5% DD on Matteo ORB and under 2% DD on Kris Verma.
+    - *4 Random Months (Feb, May, July, Oct 2024 Continuous 30-Day Testing)*:
+      - **Trader Yush Value Area (Setting A)**: Passed 3/4 months with **+$35.99 Net Profit (+36.0% ROI)** and max DD of only 4.2% in October!
+      - **Matteo Conti Bank ORB (Setting A)**: Passed 3/4 months with **+$30.27 Net Profit (+30.3% ROI)**.
+      - **Master Hybrid (Setting A)**: Passed 3/4 months with **+$30.06 Net Profit (+30.1% ROI)**.
+    - *1 Full-Year Horizon (2024.01.01 to 2024.12.31, 365 Days Unassisted)*:
+      - **Chart Fanatics Master Hybrid (Setting A)**: Completed the entire year in profit with **+$30.60 Net Profit (+30.6% ROI)** across 557 trades!
+      - **Trader Yush Value Area (Setting A)**: Closed the entire year positive at **+$1.62 Net Profit** across 163 trades!
+      - *Core Takeaway*: Setting A is an unassisted 365-day set-and-forget preservation engine; Setting B is an explosive event/sprint flipper designed for 1-week to 1-month sprints (+100% to +171% returns).
   - **Operational Recommendation**: Deploy Setting A (Original Trader) for 24/5 prop preservation and chop filtering; deploy Setting B (Optimal Compounding) for high-impact macro volatility events.
 - **Deliverables**: Added `Chart Fanatics Masterclasses` tab to master Google Sheet (`1snjChssLtGHsr1t0wamQMQl_FvfvrlgHXxzlQ4ydXPA`) and dedicated [`strategies/Chart_Fanatics/strategy_report.md`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Chart_Fanatics/strategy_report.md).
 

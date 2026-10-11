@@ -1,0 +1,886 @@
+{
+  "random_weeks": {
+    "Master_Hybrid": {
+      "name": "Chart Fanatics Master Institutional Hybrid",
+      "original": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_Master_Hybrid_Orig_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": 11.46,
+          "profit_factor": 1.82,
+          "drawdown_pct": 12.16,
+          "total_trades": 13,
+          "win_rate_pct": 6.5,
+          "roi_pct": 11.5,
+          "status": "PASS"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_Master_Hybrid_Orig_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": 13.37,
+          "profit_factor": 2.11,
+          "drawdown_pct": 6.9,
+          "total_trades": 11,
+          "win_rate_pct": 5.5,
+          "roi_pct": 13.4,
+          "status": "PASS"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_Master_Hybrid_Orig_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": -18.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 18.13,
+          "total_trades": 9,
+          "win_rate_pct": 4.5,
+          "roi_pct": -18.0,
+          "status": "FAIL"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_Master_Hybrid_Orig_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": 11.64,
+          "profit_factor": 2.46,
+          "drawdown_pct": 6.95,
+          "total_trades": 8,
+          "win_rate_pct": 4.0,
+          "roi_pct": 11.6,
+          "status": "PASS"
+        }
+      },
+      "optimal": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_Master_Hybrid_Opt_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": 50.32,
+          "profit_factor": 2.01,
+          "drawdown_pct": 33.0,
+          "total_trades": 61,
+          "win_rate_pct": 30.5,
+          "roi_pct": 50.3,
+          "status": "PASS"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_Master_Hybrid_Opt_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": 36.96,
+          "profit_factor": 1.62,
+          "drawdown_pct": 30.42,
+          "total_trades": 20,
+          "win_rate_pct": 10.0,
+          "roi_pct": 37.0,
+          "status": "PASS"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_Master_Hybrid_Opt_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": 0.67,
+          "profit_factor": 1.01,
+          "drawdown_pct": 61.73,
+          "total_trades": 57,
+          "win_rate_pct": 28.5,
+          "roi_pct": 0.7,
+          "status": "PASS"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_Master_Hybrid_Opt_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": 83.36,
+          "profit_factor": 3.19,
+          "drawdown_pct": 26.42,
+          "total_trades": 26,
+          "win_rate_pct": 13.0,
+          "roi_pct": 83.4,
+          "status": "PASS"
+        }
+      }
+    },
+    "TraderYush_VA": {
+      "name": "Trader Yush Value Area & Delta Absorption",
+      "original": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_TraderYush_VA_Orig_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": -1.54,
+          "profit_factor": 0.87,
+          "drawdown_pct": 12.16,
+          "total_trades": 9,
+          "win_rate_pct": 4.5,
+          "roi_pct": -1.5,
+          "status": "FAIL"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_TraderYush_VA_Orig_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": -2.63,
+          "profit_factor": 0.67,
+          "drawdown_pct": 6.5,
+          "total_trades": 5,
+          "win_rate_pct": 2.5,
+          "roi_pct": -2.6,
+          "status": "FAIL"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_TraderYush_VA_Orig_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": 0.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "roi_pct": 0.0,
+          "status": "FAIL"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_TraderYush_VA_Orig_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": 4.64,
+          "profit_factor": 0.0,
+          "drawdown_pct": 2.6,
+          "total_trades": 1,
+          "win_rate_pct": 0.5,
+          "roi_pct": 4.6,
+          "status": "PASS"
+        }
+      },
+      "optimal": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_TraderYush_VA_Opt_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": 20.92,
+          "profit_factor": 1.65,
+          "drawdown_pct": 25.2,
+          "total_trades": 10,
+          "win_rate_pct": 5.0,
+          "roi_pct": 20.9,
+          "status": "PASS"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_TraderYush_VA_Opt_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": -13.25,
+          "profit_factor": 0.65,
+          "drawdown_pct": 32.78,
+          "total_trades": 10,
+          "win_rate_pct": 5.0,
+          "roi_pct": -13.2,
+          "status": "FAIL"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_TraderYush_VA_Opt_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": -18.96,
+          "profit_factor": 0.47,
+          "drawdown_pct": 47.0,
+          "total_trades": 7,
+          "win_rate_pct": 3.5,
+          "roi_pct": -19.0,
+          "status": "FAIL"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_TraderYush_VA_Opt_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": 30.04,
+          "profit_factor": 4.76,
+          "drawdown_pct": 23.56,
+          "total_trades": 5,
+          "win_rate_pct": 2.5,
+          "roi_pct": 30.0,
+          "status": "PASS"
+        }
+      }
+    },
+    "Matteo_ORB": {
+      "name": "Matteo Conti Bank ORB + VWAP",
+      "original": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_Matteo_ORB_Orig_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": 7.5,
+          "profit_factor": 2.67,
+          "drawdown_pct": 4.45,
+          "total_trades": 7,
+          "win_rate_pct": 3.5,
+          "roi_pct": 7.5,
+          "status": "PASS"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_Matteo_ORB_Orig_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": 8.61,
+          "profit_factor": 3.54,
+          "drawdown_pct": 3.12,
+          "total_trades": 6,
+          "win_rate_pct": 3.0,
+          "roi_pct": 8.6,
+          "status": "PASS"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_Matteo_ORB_Orig_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": -24.49,
+          "profit_factor": 0.0,
+          "drawdown_pct": 24.62,
+          "total_trades": 9,
+          "win_rate_pct": 4.5,
+          "roi_pct": -24.5,
+          "status": "FAIL"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_Matteo_ORB_Orig_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": 18.53,
+          "profit_factor": 7.18,
+          "drawdown_pct": 5.02,
+          "total_trades": 7,
+          "win_rate_pct": 3.5,
+          "roi_pct": 18.5,
+          "status": "PASS"
+        }
+      },
+      "optimal": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_Matteo_ORB_Opt_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": 20.19,
+          "profit_factor": 2.12,
+          "drawdown_pct": 15.75,
+          "total_trades": 20,
+          "win_rate_pct": 10.0,
+          "roi_pct": 20.2,
+          "status": "PASS"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_Matteo_ORB_Opt_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": 31.38,
+          "profit_factor": 2.9,
+          "drawdown_pct": 15.61,
+          "total_trades": 6,
+          "win_rate_pct": 3.0,
+          "roi_pct": 31.4,
+          "status": "PASS"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_Matteo_ORB_Opt_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": 9.75,
+          "profit_factor": 1.38,
+          "drawdown_pct": 38.15,
+          "total_trades": 16,
+          "win_rate_pct": 8.0,
+          "roi_pct": 9.8,
+          "status": "PASS"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_Matteo_ORB_Opt_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": 31.07,
+          "profit_factor": 2.67,
+          "drawdown_pct": 23.44,
+          "total_trades": 7,
+          "win_rate_pct": 3.5,
+          "roi_pct": 31.1,
+          "status": "PASS"
+        }
+      }
+    },
+    "Crudele_BB": {
+      "name": "Anthony Crudele 3-Step Bollinger Trend",
+      "original": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_Crudele_BB_Orig_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": -1.1,
+          "profit_factor": 0.96,
+          "drawdown_pct": 22.66,
+          "total_trades": 18,
+          "win_rate_pct": 9.0,
+          "roi_pct": -1.1,
+          "status": "FAIL"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_Crudele_BB_Orig_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": -14.3,
+          "profit_factor": 0.54,
+          "drawdown_pct": 23.73,
+          "total_trades": 17,
+          "win_rate_pct": 8.5,
+          "roi_pct": -14.3,
+          "status": "FAIL"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_Crudele_BB_Orig_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": 25.3,
+          "profit_factor": 2.05,
+          "drawdown_pct": 11.11,
+          "total_trades": 20,
+          "win_rate_pct": 10.0,
+          "roi_pct": 25.3,
+          "status": "PASS"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_Crudele_BB_Orig_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": -6.6,
+          "profit_factor": 0.77,
+          "drawdown_pct": 21.8,
+          "total_trades": 17,
+          "win_rate_pct": 8.5,
+          "roi_pct": -6.6,
+          "status": "FAIL"
+        }
+      },
+      "optimal": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_Crudele_BB_Opt_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": 3.39,
+          "profit_factor": 1.03,
+          "drawdown_pct": 87.84,
+          "total_trades": 60,
+          "win_rate_pct": 30.0,
+          "roi_pct": 3.4,
+          "status": "PASS"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_Crudele_BB_Opt_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": -19.44,
+          "profit_factor": 0.71,
+          "drawdown_pct": 47.24,
+          "total_trades": 17,
+          "win_rate_pct": 8.5,
+          "roi_pct": -19.4,
+          "status": "FAIL"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_Crudele_BB_Opt_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": 31.53,
+          "profit_factor": 1.39,
+          "drawdown_pct": 57.75,
+          "total_trades": 64,
+          "win_rate_pct": 32.0,
+          "roi_pct": 31.5,
+          "status": "PASS"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_Crudele_BB_Opt_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": -29.22,
+          "profit_factor": 0.65,
+          "drawdown_pct": 51.26,
+          "total_trades": 21,
+          "win_rate_pct": 10.5,
+          "roi_pct": -29.2,
+          "status": "FAIL"
+        }
+      }
+    },
+    "KrisVerma_Short": {
+      "name": "Kris Verma Parabolic Gap Exhaustion Short",
+      "original": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_KrisVerma_Short_Orig_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": 6.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 1.67,
+          "total_trades": 1,
+          "win_rate_pct": 0.5,
+          "roi_pct": 6.0,
+          "status": "PASS"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_KrisVerma_Short_Orig_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": 10.0,
+          "profit_factor": 1.71,
+          "drawdown_pct": 9.03,
+          "total_trades": 11,
+          "win_rate_pct": 5.5,
+          "roi_pct": 10.0,
+          "status": "PASS"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_KrisVerma_Short_Orig_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": -14.0,
+          "profit_factor": 0.3,
+          "drawdown_pct": 17.37,
+          "total_trades": 11,
+          "win_rate_pct": 5.5,
+          "roi_pct": -14.0,
+          "status": "FAIL"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_KrisVerma_Short_Orig_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": 28.0,
+          "profit_factor": 4.5,
+          "drawdown_pct": 8.66,
+          "total_trades": 10,
+          "win_rate_pct": 5.0,
+          "roi_pct": 28.0,
+          "status": "PASS"
+        }
+      },
+      "optimal": {
+        "W_Rand1 (Mid-Feb)": {
+          "test_id": "RW_KrisVerma_Short_Opt_W_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.12 -> 2024.02.19",
+          "net_profit": 24.0,
+          "profit_factor": 0.0,
+          "drawdown_pct": 6.68,
+          "total_trades": 1,
+          "win_rate_pct": 0.5,
+          "roi_pct": 24.0,
+          "status": "PASS"
+        },
+        "W_Rand2 (Mid-May)": {
+          "test_id": "RW_KrisVerma_Short_Opt_W_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.13 -> 2024.05.20",
+          "net_profit": 15.56,
+          "profit_factor": 1.3,
+          "drawdown_pct": 29.5,
+          "total_trades": 23,
+          "win_rate_pct": 11.5,
+          "roi_pct": 15.6,
+          "status": "PASS"
+        },
+        "W_Rand3 (Mid-July)": {
+          "test_id": "RW_KrisVerma_Short_Opt_W_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.15 -> 2024.07.22",
+          "net_profit": -41.4,
+          "profit_factor": 0.01,
+          "drawdown_pct": 47.72,
+          "total_trades": 11,
+          "win_rate_pct": 5.5,
+          "roi_pct": -41.4,
+          "status": "FAIL"
+        },
+        "W_Rand4 (Mid-Sept)": {
+          "test_id": "RW_KrisVerma_Short_Opt_W_Rand4",
+          "deposit": 100.0,
+          "window": "2024.09.16 -> 2024.09.23",
+          "net_profit": 103.66,
+          "profit_factor": 3.59,
+          "drawdown_pct": 43.3,
+          "total_trades": 42,
+          "win_rate_pct": 21.0,
+          "roi_pct": 103.7,
+          "status": "PASS"
+        }
+      }
+    }
+  },
+  "random_months": {
+    "Master_Hybrid": {
+      "name": "Chart Fanatics Master Institutional Hybrid",
+      "original": {
+        "M_Rand1 (Feb 2024)": {
+          "test_id": "RM_Master_Hybrid_Orig_M_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.01 -> 2024.02.29",
+          "net_profit": 3.49,
+          "profit_factor": 1.05,
+          "drawdown_pct": 27.41,
+          "total_trades": 47,
+          "win_rate_pct": 23.5,
+          "roi_pct": 3.5,
+          "status": "PASS"
+        },
+        "M_Rand2 (May 2024)": {
+          "test_id": "RM_Master_Hybrid_Orig_M_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.01 -> 2024.05.31",
+          "net_profit": 23.71,
+          "profit_factor": 1.38,
+          "drawdown_pct": 16.07,
+          "total_trades": 47,
+          "win_rate_pct": 23.5,
+          "roi_pct": 23.7,
+          "status": "PASS"
+        },
+        "M_Rand3 (July 2024)": {
+          "test_id": "RM_Master_Hybrid_Orig_M_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.01 -> 2024.07.31",
+          "net_profit": -17.38,
+          "profit_factor": 0.76,
+          "drawdown_pct": 42.42,
+          "total_trades": 47,
+          "win_rate_pct": 23.5,
+          "roi_pct": -17.4,
+          "status": "FAIL"
+        },
+        "M_Rand4 (Oct 2024)": {
+          "test_id": "RM_Master_Hybrid_Orig_M_Rand4",
+          "deposit": 100.0,
+          "window": "2024.10.01 -> 2024.10.31",
+          "net_profit": 20.24,
+          "profit_factor": 1.34,
+          "drawdown_pct": 20.39,
+          "total_trades": 45,
+          "win_rate_pct": 22.5,
+          "roi_pct": 20.2,
+          "status": "PASS"
+        }
+      },
+      "optimal": {
+        "M_Rand1 (Feb 2024)": {
+          "test_id": "RM_Master_Hybrid_Opt_M_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.01 -> 2024.02.29",
+          "net_profit": -25.84,
+          "profit_factor": 0.86,
+          "drawdown_pct": 55.6,
+          "total_trades": 68,
+          "win_rate_pct": 34.0,
+          "roi_pct": -25.8,
+          "status": "FAIL"
+        },
+        "M_Rand2 (May 2024)": {
+          "test_id": "RM_Master_Hybrid_Opt_M_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.01 -> 2024.05.31",
+          "net_profit": 15.61,
+          "profit_factor": 1.05,
+          "drawdown_pct": 75.98,
+          "total_trades": 126,
+          "win_rate_pct": 63.0,
+          "roi_pct": 15.6,
+          "status": "PASS"
+        },
+        "M_Rand3 (July 2024)": {
+          "test_id": "RM_Master_Hybrid_Opt_M_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.01 -> 2024.07.31",
+          "net_profit": -48.97,
+          "profit_factor": 0.84,
+          "drawdown_pct": 140.21,
+          "total_trades": 160,
+          "win_rate_pct": 80.0,
+          "roi_pct": -49.0,
+          "status": "FAIL"
+        },
+        "M_Rand4 (Oct 2024)": {
+          "test_id": "RM_Master_Hybrid_Opt_M_Rand4",
+          "deposit": 100.0,
+          "window": "2024.10.01 -> 2024.10.31",
+          "net_profit": 54.9,
+          "profit_factor": 1.16,
+          "drawdown_pct": 102.19,
+          "total_trades": 290,
+          "win_rate_pct": 145.0,
+          "roi_pct": 54.9,
+          "status": "PASS"
+        }
+      }
+    },
+    "TraderYush_VA": {
+      "name": "Trader Yush Value Area & Delta Absorption",
+      "original": {
+        "M_Rand1 (Feb 2024)": {
+          "test_id": "RM_TraderYush_VA_Orig_M_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.01 -> 2024.02.29",
+          "net_profit": -0.76,
+          "profit_factor": 0.98,
+          "drawdown_pct": 16.95,
+          "total_trades": 24,
+          "win_rate_pct": 12.0,
+          "roi_pct": -0.8,
+          "status": "FAIL"
+        },
+        "M_Rand2 (May 2024)": {
+          "test_id": "RM_TraderYush_VA_Orig_M_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.01 -> 2024.05.31",
+          "net_profit": 14.35,
+          "profit_factor": 1.6,
+          "drawdown_pct": 11.13,
+          "total_trades": 19,
+          "win_rate_pct": 9.5,
+          "roi_pct": 14.3,
+          "status": "PASS"
+        },
+        "M_Rand3 (July 2024)": {
+          "test_id": "RM_TraderYush_VA_Orig_M_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.01 -> 2024.07.31",
+          "net_profit": 8.16,
+          "profit_factor": 1.58,
+          "drawdown_pct": 17.64,
+          "total_trades": 12,
+          "win_rate_pct": 6.0,
+          "roi_pct": 8.2,
+          "status": "PASS"
+        },
+        "M_Rand4 (Oct 2024)": {
+          "test_id": "RM_TraderYush_VA_Orig_M_Rand4",
+          "deposit": 100.0,
+          "window": "2024.10.01 -> 2024.10.31",
+          "net_profit": 14.24,
+          "profit_factor": 3.37,
+          "drawdown_pct": 4.17,
+          "total_trades": 6,
+          "win_rate_pct": 3.0,
+          "roi_pct": 14.2,
+          "status": "PASS"
+        }
+      },
+      "optimal": {
+        "M_Rand1 (Feb 2024)": {
+          "test_id": "RM_TraderYush_VA_Opt_M_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.01 -> 2024.02.29",
+          "net_profit": -36.41,
+          "profit_factor": 0.64,
+          "drawdown_pct": 54.53,
+          "total_trades": 39,
+          "win_rate_pct": 19.5,
+          "roi_pct": -36.4,
+          "status": "FAIL"
+        },
+        "M_Rand2 (May 2024)": {
+          "test_id": "RM_TraderYush_VA_Opt_M_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.01 -> 2024.05.31",
+          "net_profit": -37.7,
+          "profit_factor": 0.73,
+          "drawdown_pct": 57.3,
+          "total_trades": 41,
+          "win_rate_pct": 20.5,
+          "roi_pct": -37.7,
+          "status": "FAIL"
+        },
+        "M_Rand3 (July 2024)": {
+          "test_id": "RM_TraderYush_VA_Opt_M_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.01 -> 2024.07.31",
+          "net_profit": -14.7,
+          "profit_factor": 0.92,
+          "drawdown_pct": 120.68,
+          "total_trades": 117,
+          "win_rate_pct": 58.5,
+          "roi_pct": -14.7,
+          "status": "FAIL"
+        },
+        "M_Rand4 (Oct 2024)": {
+          "test_id": "RM_TraderYush_VA_Opt_M_Rand4",
+          "deposit": 100.0,
+          "window": "2024.10.01 -> 2024.10.31",
+          "net_profit": -2.63,
+          "profit_factor": 0.98,
+          "drawdown_pct": 71.64,
+          "total_trades": 102,
+          "win_rate_pct": 51.0,
+          "roi_pct": -2.6,
+          "status": "FAIL"
+        }
+      }
+    },
+    "Matteo_ORB": {
+      "name": "Matteo Conti Bank ORB + VWAP",
+      "original": {
+        "M_Rand1 (Feb 2024)": {
+          "test_id": "RM_Matteo_ORB_Orig_M_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.01 -> 2024.02.29",
+          "net_profit": 27.68,
+          "profit_factor": 2.19,
+          "drawdown_pct": 7.02,
+          "total_trades": 32,
+          "win_rate_pct": 16.0,
+          "roi_pct": 27.7,
+          "status": "PASS"
+        },
+        "M_Rand2 (May 2024)": {
+          "test_id": "RM_Matteo_ORB_Orig_M_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.01 -> 2024.05.31",
+          "net_profit": 21.83,
+          "profit_factor": 1.7,
+          "drawdown_pct": 13.95,
+          "total_trades": 30,
+          "win_rate_pct": 15.0,
+          "roi_pct": 21.8,
+          "status": "PASS"
+        },
+        "M_Rand3 (July 2024)": {
+          "test_id": "RM_Matteo_ORB_Orig_M_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.01 -> 2024.07.31",
+          "net_profit": -34.2,
+          "profit_factor": 0.45,
+          "drawdown_pct": 45.01,
+          "total_trades": 36,
+          "win_rate_pct": 18.0,
+          "roi_pct": -34.2,
+          "status": "FAIL"
+        },
+        "M_Rand4 (Oct 2024)": {
+          "test_id": "RM_Matteo_ORB_Orig_M_Rand4",
+          "deposit": 100.0,
+          "window": "2024.10.01 -> 2024.10.31",
+          "net_profit": 14.96,
+          "profit_factor": 1.29,
+          "drawdown_pct": 19.8,
+          "total_trades": 41,
+          "win_rate_pct": 20.5,
+          "roi_pct": 15.0,
+          "status": "PASS"
+        }
+      },
+      "optimal": {
+        "M_Rand1 (Feb 2024)": {
+          "test_id": "RM_Matteo_ORB_Opt_M_Rand1",
+          "deposit": 100.0,
+          "window": "2024.02.01 -> 2024.02.29",
+          "net_profit": 15.84,
+          "profit_factor": 1.23,
+          "drawdown_pct": 47.47,
+          "total_trades": 33,
+          "win_rate_pct": 16.5,
+          "roi_pct": 15.8,
+          "status": "PASS"
+        },
+        "M_Rand2 (May 2024)": {
+          "test_id": "RM_Matteo_ORB_Opt_M_Rand2",
+          "deposit": 100.0,
+          "window": "2024.05.01 -> 2024.05.31",
+          "net_profit": 54.17,
+          "profit_factor": 1.36,
+          "drawdown_pct": 76.55,
+          "total_trades": 142,
+          "win_rate_pct": 71.0,
+          "roi_pct": 54.2,
+          "status": "PASS"
+        },
+        "M_Rand3 (July 2024)": {
+          "test_id": "RM_Matteo_ORB_Opt_M_Rand3",
+          "deposit": 100.0,
+          "window": "2024.07.01 -> 2024.07.31",
+          "net_profit": -32.2,
+          "profit_factor": 0.77,
+          "drawdown_pct": 74.15,
+          "total_trades": 35,
+          "win_rate_pct": 17.5,
+          "roi_pct": -32.2,
+          "status": "FAIL"
+        },
+        "M_Rand4 (Oct 2024)": {
+          "test_id": "RM_Matteo_ORB_Opt_M_Rand4",
+          "deposit": 100.0,
+          "window": "2024.10.01 -> 2024.10.31",
+          "net_profit": -12.32,
+          "profit_factor": 0.9,
+          "drawdown_pct": 57.05,
+          "total_trades": 39,
+          "win_rate_pct": 19.5,
+          "roi_pct": -12.3,
+          "status": "FAIL"
+        }
+      }
+    }
+  },
+  "full_year": {
+    "Master_Hybrid": {
+      "name": "Chart Fanatics Master Institutional Hybrid",
+      "original": {
+        "test_id": "FY_Master_Hybrid_Orig",
+        "deposit": 100.0,
+        "window": "2024.01.01 -> 2024.12.31",
+        "net_profit": 30.6,
+        "profit_factor": 1.04,
+        "drawdown_pct": 55.25,
+        "total_trades": 557,
+        "win_rate_pct": 278.5,
+        "roi_pct": 30.6,
+        "status": "PASS"
+      },
+      "optimal": {
+        "test_id": "FY_Master_Hybrid_Opt",
+        "deposit": 100.0,
+        "window": "2024.01.01 -> 2024.12.31",
+        "net_profit": -96.72,
+        "profit_factor": 0.45,
+        "drawdown_pct": 99.32,
+        "total_trades": 115,
+        "win_rate_pct": 57.5,
+        "roi_pct": -96.7,
+        "status": "FAIL"
+      }
+    },
+    "TraderYush_VA": {
+      "name": "Trader Yush Value Area & Delta Absorption",
+      "original": {
+        "test_id": "FY_TraderYush_VA_Orig",
+        "deposit": 100.0,
+        "window": "2024.01.01 -> 2024.12.31",
+        "net_profit": 1.62,
+        "profit_factor": 1.01,
+        "drawdown_pct": 39.72,
+        "total_trades": 163,
+        "win_rate_pct": 81.5,
+        "roi_pct": 1.6,
+        "status": "PASS"
+      },
+      "optimal": {
+        "test_id": "FY_TraderYush_VA_Opt",
+        "deposit": 100.0,
+        "window": "2024.01.01 -> 2024.12.31",
+        "net_profit": -95.93,
+        "profit_factor": 0.57,
+        "drawdown_pct": 110.25,
+        "total_trades": 150,
+        "win_rate_pct": 75.0,
+        "roi_pct": -95.9,
+        "status": "FAIL"
+      }
+    }
+  }
+}

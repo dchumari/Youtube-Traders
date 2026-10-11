@@ -91,6 +91,11 @@ input double InpVermaWickMin      = 0.40;      // Min Exhaustion Shooting Star W
 input int    InpVermaStopPts      = 200;       // Stop Loss Points above high (20.0 pips)
 input int    InpVermaTP_Pts       = 600;       // Target Points (60.0 pips, 3.0 R:R)
 
+input group "=== INSTITUTIONAL TIME & SESSION FILTER ==="
+input bool   InpUseSessionFilter  = true;      // Filter trades to institutional sessions
+input int    InpSessionStartHour  = 7;         // Session Start Hour UTC (London Open)
+input int    InpSessionEndHour    = 18;        // Session End Hour UTC (NY Session)
+
 input group "=== TRADE MANAGEMENT & STEERING ==="
 input bool   InpUseSteppedBE      = true;      // Enable Stepped Breakeven Shield
 input int    InpBE_TriggerPoints  = 250;       // Profit to trigger Breakeven (25 pips)
@@ -106,6 +111,7 @@ CTrade         m_trade;
 CPositionInfo  m_position;
 
 datetime       m_lastBarTime;
+datetime       m_lastTradeTime;
 int            m_atrHandle;
 int            m_bbHandle;
 int            m_emaFastHandle;
@@ -259,6 +265,19 @@ void OnTick()
       return; // Run analytical checks on bar close
 
    m_lastBarTime = currentBarTime;
+
+   // Institutional Session Filter (Skip Asian rollover & illiquid dead zone)
+   if(InpUseSessionFilter)
+   {
+      MqlDateTime dt;
+      TimeToStruct(TimeCurrent(), dt);
+      if(dt.hour < InpSessionStartHour || dt.hour >= InpSessionEndHour)
+         return;
+   }
+
+   // Signal Throttle: Minimum 2 bars between trade executions
+   if((currentBarTime - m_lastTradeTime) < (2 * PeriodSeconds()))
+      return;
 
    // 3. Check Signal according to selected Model
    int signal = 0; // 1 = Buy, -1 = Sell
@@ -595,14 +614,20 @@ int CheckCrudeleBollinger(int &slPts, int &tpPts)
    slPts = InpBB_StopPts;
    tpPts = InpBB_TargetPts;
 
-   // Step 2 & 3: Uptrend pullback to Midline and reject upward
-   if(close1 > emaTrend[0] && low1 <= bbMid[0] && close1 > bbMid[0])
+   // Require minimum volatility bandwidth (skip dead consolidation squeeze)
+   double bbWidth = (bbUpper[0] - bbLower[0]) / _Point;
+   if(bbWidth < 150) return 0;
+
+   double open1 = iOpen(_Symbol, _Period, 1);
+
+   // Step 2 & 3: Uptrend pullback to Midline and reject upward with bullish confirmation
+   if(close1 > emaTrend[0] && low1 <= bbMid[0] && close1 > bbMid[0] && close1 > open1)
    {
       return 1;
    }
 
-   // Downtrend pullback to Midline and reject downward
-   if(close1 < emaTrend[0] && high1 >= bbMid[0] && close1 < bbMid[0])
+   // Downtrend pullback to Midline and reject downward with bearish confirmation
+   if(close1 < emaTrend[0] && high1 >= bbMid[0] && close1 < bbMid[0] && close1 < open1)
    {
       return -1;
    }
@@ -670,12 +695,23 @@ void ExecuteSignal(int signal, int slPts, int tpPts)
    double ask = SymbolInfoDouble(_Symbol, SYMBOL_ASK);
    double bid = SymbolInfoDouble(_Symbol, SYMBOL_BID);
 
-   int slices = (InpSettingsMode == MODE_CALIBRATED_OPTIMAL) ? InpTicketSlices : 1;
+   m_lastTradeTime = iTime(_Symbol, _Period, 0);
+
    double totalLot = CalculateLotSize();
+   double minLot   = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_MIN);
+   double stepLot  = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_STEP);
+
+   int slices = 1;
+   if(InpSettingsMode == MODE_CALIBRATED_OPTIMAL && InpTicketSlices > 1)
+   {
+      // Only slice into multiple tickets if totalLot can be divided without artificially ballooning risk!
+      if(totalLot >= (minLot * InpTicketSlices))
+         slices = InpTicketSlices;
+      else
+         slices = 1; // Preserve strict single-ticket risk on $100 base capital
+   }
+
    double sliceLot = totalLot / (double)slices;
-   
-   double minLot = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_MIN);
-   double stepLot = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_STEP);
    sliceLot = MathMax(minLot, MathFloor(sliceLot / stepLot) * stepLot);
 
    for(int i = 0; i < slices; i++)
