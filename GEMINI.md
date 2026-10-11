@@ -14,7 +14,7 @@ This document synthesizes and preserves all project learnings, mathematical form
 | `fbf4d4da-fa3e-4da1-b237-499f56fe6afe` | **Autonomous Institutional Algo Suite (Quant01-10)** | Created `QuantCore.mqh` execution harness; built Quant01 (Asian Sweep Sniper) through Quant10 (Daily CPR Momentum); multi-regime stress validation. |
 | `3bdb51a7-be68-4872-a687-720f237a28e3` | **Mr P FX YouTube Mining & 16-Window Optimization** | Scraped 80+ videos; extracted 4 core strategies; built `MrPFx_Master_Suite.mq5`. Champion: Strategy 3 (Fair Value Gap Trend Continuation) passed 3/4 windows. Profit expansion math from 0.01 lot. |
 | `908548ce-da6e-4067-ad2d-a1589ba235cd` | **Daily Range Fibonacci 61.8% & Virgin Levels** | Daily bullish/bearish candle 61.8% pullback + virgin key levels. Pine Script & MQL5 indicator. EAs: Baseline, V2 (Partials/Trail), Institutional (Session/EMA/Wick), Aggressive Math (Tiered sizing). |
-| `2d2e95f5-1cb0-4f28-8f7d-321666504597` | **Options Flow & Danial FX Aggressive Suite** | Mined Options Flow & Ahmad Danial (@Danialfx, 74 videos). Built `Options_Flow_Master_Suite.mq5` & `DanialFX_Aggressive_Suite.mq5`. Champion Model 0 (Quasimodo Sniper + Layering) passed 3/4 windows across all capital tiers ($20, $50, $100, $1,000), nearly doubling $50 to $96.07 (+92.1%) in 1 week. |
+| `2d2e95f5-1cb0-4f28-8f7d-321666504597` | **Options Flow, Danial FX & Institutional SMC/ICT 10-Model Master Suite** | Built `Options_Flow_Master_Suite.mq5`, `DanialFX_Aggressive_Suite.mq5`, `Aggressive_Flipper_Master_EA.mq5`, and `Institutional_SMC_ICT_Master_Suite.mq5`. Universal behavioral engine `Flipper_Behavioral_Engine.mqh`. Champion Model 8 (ICT BPR Vacuum Reversion) passed 3/4 windows (+69.0% net gain). Model 9 (Master Hybrid) generated +42.5% ROI in 1 hour on $100 with 14.38 PF. High-res labeled trade screenshots generated. |
 
 ---
 
@@ -167,6 +167,30 @@ This document synthesizes and preserves all project learnings, mathematical form
   - [`DanialFX_Behavioral_Flipper_100USD.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Danial_FX/presets/DanialFX_Behavioral_Flipper_100USD.set)
   - [`MrPFx_Behavioral_Flipper_100USD.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Mr_P_Fx/presets/MrPFx_Behavioral_Flipper_100USD.set)
   - [`DailyFib_Behavioral_Flipper_100USD.set`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Daily_Fibonacci_Strategy/presets/DailyFib_Behavioral_Flipper_100USD.set)
+
+### 8. Institutional SMC, ICT & Supply-Demand Master Suite (`Institutional_SMC_ICT_Master_Suite.mq5`)
+- **Origin**: Comprehensive quantitative synthesis bridging Smart Money Concepts (SMC), Inner Circle Trader (ICT), and Supply & Demand (S&D) institutional market structures.
+- **The 10 Strategies Codified**:
+  1. *Model 0*: SMC Liquidity Sweep & Order Block Sniper (BSL/SSL Purge + OB Retest).
+  2. *Model 1*: ICT Fair Value Gap Mitigation (Displacement + 50% Consequent Encroachment Retest).
+  3. *Model 2*: S&D Fresh Base Support/Resistance Flip Breakout.
+  4. *Model 3*: SMC Inducement (IDM) Trap & Institutional Reload (Sweeps retail bait into HTF Order Block).
+  5. *Model 4*: ICT Power of 3 (AMD) Session Expander (Asian Accumulation $\rightarrow$ London Judas $\rightarrow$ NY Distribution).
+  6. *Model 5*: ICT Breaker Block Invalidation Flip (Violated Order Block inverted into high-momentum Breaker).
+  7. *Model 6*: 24/5 ICT Optimal Trade Entry (OTE) Golden Zone (61.8% to 78.6% Fib corridor, 70.5% sweet spot).
+  8. *Model 7*: S&D Multi-Timeframe Velocity (Drop-Base-Rally DBR / Rally-Base-Drop RBD fresh base tap).
+  9. *Model 8 (4-Window Champion)*: ICT Liquidity Void & Balanced Price Range (BPR) Mean Reversion.
+  10. *Model 9 (High-Alpha Event Engine)*: Institutional Master Hybrid Confluence Engine (SMC + ICT + S&D + Flipper Compounding).
+- **Universal Behavioral Flipper Integration**:
+  - Every model is equipped with multi-ticket slicing ($5\times 0.01$), 5-stage TP laddering (TP1 +20p, TP2 +35p, TP3 +60p, TP4 +100p, TP5 +160p), stepped Breakeven Shield line, and floating equity pyramiding.
+- **Empirical 4-Window Stress Matrix Results ($100 Capital, 1:400 Leverage, Gold XAUUSD M15)**:
+  - **Model 8 (ICT BPR Reversion)**: **3/4 CHAMPION PASS** — W1: +$7.98 (+8.0%), W2: +$50.10 (+50.1%), W3: -$1.68 (-1.7%), W4: +$12.63 (+12.6%). Cumulative Net Profit: **+$69.03 (+69.0% total return)**.
+  - **Model 9 (Master Confluence Engine)**: **+$42.55 Net Profit (+42.5% ROI in 1 hour 12 min on $100)** during W1 NFP shock with **Profit Factor 14.38** and max drawdown of only 16.8%.
+  - **Model 3 (SMC Inducement Trap)**: **+$47.11 Net Profit (+47.1% ROI)** during W2 CPI shock with **Profit Factor 3.60**.
+  - **Model 6 (24/5 ICT OTE Golden Zone)**: **+$19.95 Net Profit (+19.9% ROI)** during W1 NFP shock with **Profit Factor 1.25**.
+- **Interactive On-Chart Visual Roadmap & Drawings**:
+  - Automatically applies Dracula dark navy theme (`#282A36`), draws translucent setup boxes on chart, renders TP1-TP5 lines, cyan BE shield line, and displays live Dracula HUD.
+  - High-resolution labeled chart screenshots generated in `strategies/Institutional_SMC_ICT_Suite/backtest_results/`.
 
 ---
 

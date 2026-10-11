@@ -1,0 +1,592 @@
+{
+  "Model_0": {
+    "name": "SMC Liquidity Sweep & OB Sniper",
+    "pass_count": 0,
+    "overall_status": "NEEDS CALIBRATION",
+    "windows": [
+      {
+        "test_id": "calib_Model_0_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_0_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_0_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -7.84,
+        "profit_factor": 0.22,
+        "drawdown_pct": 22.68,
+        "total_trades": 5,
+        "win_rate_pct": 2.5,
+        "roi_pct": -7.8,
+        "status": "FAIL",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_0_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  },
+  "Model_1": {
+    "name": "ICT FVG Consequent Encroachment",
+    "pass_count": 2,
+    "overall_status": "VIABLE",
+    "windows": [
+      {
+        "test_id": "calib_Model_1_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": -21.25,
+        "profit_factor": 0.66,
+        "drawdown_pct": 55.41,
+        "total_trades": 36,
+        "win_rate_pct": 18.0,
+        "roi_pct": -21.2,
+        "status": "FAIL",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_1_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": 9.67,
+        "profit_factor": 1.39,
+        "drawdown_pct": 21.9,
+        "total_trades": 21,
+        "win_rate_pct": 10.5,
+        "roi_pct": 9.7,
+        "status": "PASS",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_1_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 10.3,
+        "profit_factor": 1.16,
+        "drawdown_pct": 33.65,
+        "total_trades": 50,
+        "win_rate_pct": 25.0,
+        "roi_pct": 10.3,
+        "status": "PASS",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_1_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -22.58,
+        "profit_factor": 0.22,
+        "drawdown_pct": 30.14,
+        "total_trades": 18,
+        "win_rate_pct": 9.0,
+        "roi_pct": -22.6,
+        "status": "FAIL",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  },
+  "Model_2": {
+    "name": "S&D Fresh Base Support/Res Flip",
+    "pass_count": 0,
+    "overall_status": "NEEDS CALIBRATION",
+    "windows": [
+      {
+        "test_id": "calib_Model_2_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_2_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_2_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_2_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  },
+  "Model_3": {
+    "name": "SMC Inducement Trap Reload",
+    "pass_count": 2,
+    "overall_status": "VIABLE",
+    "windows": [
+      {
+        "test_id": "calib_Model_3_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 4.79,
+        "profit_factor": 1.17,
+        "drawdown_pct": 20.6,
+        "total_trades": 21,
+        "win_rate_pct": 10.5,
+        "roi_pct": 4.8,
+        "status": "PASS",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_3_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": 47.11,
+        "profit_factor": 3.6,
+        "drawdown_pct": 24.26,
+        "total_trades": 13,
+        "win_rate_pct": 6.5,
+        "roi_pct": 47.1,
+        "status": "PASS",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_3_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -21.25,
+        "profit_factor": 0.28,
+        "drawdown_pct": 38.28,
+        "total_trades": 18,
+        "win_rate_pct": 9.0,
+        "roi_pct": -21.2,
+        "status": "FAIL",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_3_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -12.5,
+        "profit_factor": 0.0,
+        "drawdown_pct": 12.5,
+        "total_trades": 5,
+        "win_rate_pct": 2.5,
+        "roi_pct": -12.5,
+        "status": "FAIL",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  },
+  "Model_4": {
+    "name": "ICT Power of 3 (AMD) Session",
+    "pass_count": 1,
+    "overall_status": "NEEDS CALIBRATION",
+    "windows": [
+      {
+        "test_id": "calib_Model_4_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_4_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_4_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 18.91,
+        "profit_factor": 25.24,
+        "drawdown_pct": 12.7,
+        "total_trades": 8,
+        "win_rate_pct": 4.0,
+        "roi_pct": 18.9,
+        "status": "PASS",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_4_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -12.5,
+        "profit_factor": 0.0,
+        "drawdown_pct": 18.7,
+        "total_trades": 5,
+        "win_rate_pct": 2.5,
+        "roi_pct": -12.5,
+        "status": "FAIL",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  },
+  "Model_5": {
+    "name": "ICT Breaker Block Invalidation Flip",
+    "pass_count": 1,
+    "overall_status": "NEEDS CALIBRATION",
+    "windows": [
+      {
+        "test_id": "calib_Model_5_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": -35.01,
+        "profit_factor": 0.77,
+        "drawdown_pct": 85.99,
+        "total_trades": 101,
+        "win_rate_pct": 50.5,
+        "roi_pct": -35.0,
+        "status": "FAIL",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_5_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -79.67,
+        "profit_factor": 0.4,
+        "drawdown_pct": 99.55,
+        "total_trades": 76,
+        "win_rate_pct": 38.0,
+        "roi_pct": -79.7,
+        "status": "FAIL",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_5_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 40.07,
+        "profit_factor": 1.52,
+        "drawdown_pct": 65.45,
+        "total_trades": 63,
+        "win_rate_pct": 31.5,
+        "roi_pct": 40.1,
+        "status": "PASS",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_5_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -15.6,
+        "profit_factor": 0.87,
+        "drawdown_pct": 94.96,
+        "total_trades": 90,
+        "win_rate_pct": 45.0,
+        "roi_pct": -15.6,
+        "status": "FAIL",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  },
+  "Model_6": {
+    "name": "24/5 ICT OTE Golden Pocket",
+    "pass_count": 1,
+    "overall_status": "NEEDS CALIBRATION",
+    "windows": [
+      {
+        "test_id": "calib_Model_6_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 19.95,
+        "profit_factor": 1.25,
+        "drawdown_pct": 50.77,
+        "total_trades": 68,
+        "win_rate_pct": 34.0,
+        "roi_pct": 19.9,
+        "status": "PASS",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_6_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -17.66,
+        "profit_factor": 0.33,
+        "drawdown_pct": 35.76,
+        "total_trades": 18,
+        "win_rate_pct": 9.0,
+        "roi_pct": -17.7,
+        "status": "FAIL",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_6_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -18.2,
+        "profit_factor": 0.8,
+        "drawdown_pct": 78.88,
+        "total_trades": 70,
+        "win_rate_pct": 35.0,
+        "roi_pct": -18.2,
+        "status": "FAIL",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_6_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -69.68,
+        "profit_factor": 0.56,
+        "drawdown_pct": 122.63,
+        "total_trades": 101,
+        "win_rate_pct": 50.5,
+        "roi_pct": -69.7,
+        "status": "FAIL",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  },
+  "Model_7": {
+    "name": "S&D DBR / RBD Velocity",
+    "pass_count": 0,
+    "overall_status": "NEEDS CALIBRATION",
+    "windows": [
+      {
+        "test_id": "calib_Model_7_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_7_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_7_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_7_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": 0.0,
+        "profit_factor": 0.0,
+        "drawdown_pct": 0.0,
+        "total_trades": 0,
+        "win_rate_pct": 0.0,
+        "roi_pct": 0.0,
+        "status": "FAIL",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  },
+  "Model_8": {
+    "name": "ICT Liquidity Void & BPR Reversion",
+    "pass_count": 3,
+    "overall_status": "CHAMPION (PASS)",
+    "windows": [
+      {
+        "test_id": "calib_Model_8_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 7.98,
+        "profit_factor": 1.1,
+        "drawdown_pct": 73.48,
+        "total_trades": 63,
+        "win_rate_pct": 31.5,
+        "roi_pct": 8.0,
+        "status": "PASS",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_8_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": 50.1,
+        "profit_factor": 1.68,
+        "drawdown_pct": 46.73,
+        "total_trades": 77,
+        "win_rate_pct": 38.5,
+        "roi_pct": 50.1,
+        "status": "PASS",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_8_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -1.68,
+        "profit_factor": 0.98,
+        "drawdown_pct": 65.38,
+        "total_trades": 73,
+        "win_rate_pct": 36.5,
+        "roi_pct": -1.7,
+        "status": "FAIL",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_8_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": 12.63,
+        "profit_factor": 1.15,
+        "drawdown_pct": 46.45,
+        "total_trades": 68,
+        "win_rate_pct": 34.0,
+        "roi_pct": 12.6,
+        "status": "PASS",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  },
+  "Model_9": {
+    "name": "Master Institutional Hybrid Confluence",
+    "pass_count": 1,
+    "overall_status": "NEEDS CALIBRATION",
+    "windows": [
+      {
+        "test_id": "calib_Model_9_W1",
+        "deposit": 100.0,
+        "window": "2024.03.04 -> 2024.03.11",
+        "net_profit": 42.55,
+        "profit_factor": 14.38,
+        "drawdown_pct": 16.84,
+        "total_trades": 11,
+        "win_rate_pct": 5.5,
+        "roi_pct": 42.5,
+        "status": "PASS",
+        "window_label": "W1 (NFP Shock)"
+      },
+      {
+        "test_id": "calib_Model_9_W2",
+        "deposit": 100.0,
+        "window": "2024.06.10 -> 2024.06.17",
+        "net_profit": -12.5,
+        "profit_factor": 0.0,
+        "drawdown_pct": 13.7,
+        "total_trades": 5,
+        "win_rate_pct": 2.5,
+        "roi_pct": -12.5,
+        "status": "FAIL",
+        "window_label": "W2 (CPI/FOMC Shock)"
+      },
+      {
+        "test_id": "calib_Model_9_W3",
+        "deposit": 100.0,
+        "window": "2024.08.05 -> 2024.08.12",
+        "net_profit": -7.84,
+        "profit_factor": 0.22,
+        "drawdown_pct": 22.68,
+        "total_trades": 5,
+        "win_rate_pct": 2.5,
+        "roi_pct": -7.8,
+        "status": "FAIL",
+        "window_label": "W3 (Yen Carry Crash)"
+      },
+      {
+        "test_id": "calib_Model_9_W4",
+        "deposit": 100.0,
+        "window": "2024.11.04 -> 2024.11.11",
+        "net_profit": -7.86,
+        "profit_factor": 0.21,
+        "drawdown_pct": 23.44,
+        "total_trades": 5,
+        "win_rate_pct": 2.5,
+        "roi_pct": -7.9,
+        "status": "FAIL",
+        "window_label": "W4 (US Election Shock)"
+      }
+    ]
+  }
+}
