@@ -1,0 +1,35 @@
+// Grand Master Hybrid: Annual Endurance Compounding ($100 USD Tier)
+// Targets Long-Horizon Compounding & Maximum Return across Full Year 2024
+InpCoreModel=4
+InpHorizonTier=2
+InpMagicNumber=889004
+InpBaseLotSize=0.01
+InpEquityStepSprint=30.0
+InpEquityStepMonthly=40.0
+InpEquityStepAnnual=50.0
+InpMaxLotCap=1.00
+InpBaseStopLossPoints=250
+InpSpamTicketsCount=2
+InpTP1Points=300
+InpTP2Points=500
+InpTP3Points=900
+InpTP4Points=1500
+InpTP5Points=2200
+InpEnablePyramiding=0
+InpReloadStepPoints=500
+InpMaxPyramidLayers=1
+InpEnableDumpAndFlip=1
+InpDumpWickRatio=0.45
+InpEnableFlipMilestone=0
+InpTargetEquityWeekly=10000.0
+InpUseSessionFilter=1
+InpLondonStartHour=7
+InpLondonEndHour=11
+InpNYStartHour=12
+InpNYEndHour=18
+InpEMATrendPeriod=50
+InpMinWickRejection=0.40
+InpSwingLookback=30
+InpVolumeSurgeMult=2.0
+InpEnableVisuals=1
+InpApplyDraculaTheme=1

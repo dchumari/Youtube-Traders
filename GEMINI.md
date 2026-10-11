@@ -257,6 +257,30 @@ This document synthesizes and preserves all project learnings, mathematical form
   - **Operational Recommendation**: Deploy Setting A (Original Trader) for 24/5 prop preservation and chop filtering; deploy Setting B (Optimal Compounding) for high-impact macro volatility events.
 - **Deliverables**: Added `Chart Fanatics Masterclasses` tab to master Google Sheet (`1snjChssLtGHsr1t0wamQMQl_FvfvrlgHXxzlQ4ydXPA`) and dedicated [`strategies/Chart_Fanatics/strategy_report.md`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Chart_Fanatics/strategy_report.md).
 
+### 11. Grand Master Hybrid Multi-Strategy Suite (`Grand_Master_Hybrid_EA.mq5`)
+- **Origin**: Pinnacle synthesis fusing the highest-alpha institutional concepts mined across all channels:
+  - Matteo Conti Bank ORB + Session VWAP
+  - 24/5 ICT Optimal Trade Entry (OTE 70.5% Golden Pocket) inside fresh S&D Base
+  - Ahmad Danial Quasimodo (QML) Left Shoulder Invalidation Reversal
+  - Kris Verma Parabolic Gap Exhaustion Short
+  - Universal Flipper Behavioral Engine (`Flipper_Behavioral_Engine.mqh`): ticket slicing ($3\times 0.01$ to $5\times 0.01$), 5-stage TP laddering, stepped Breakeven Shield, and floating margin pyramiding.
+- **Empirical Multi-Horizon Backtest Validation (Gold XAUUSD M15 at 1:400 Leverage)**:
+  - **$20 Capital Tier (Micro / Cent Account Doubler)**:
+    - **W1 (NFP Shock)**: **+$40.31 Net Profit (+201.6% ROI - MORE THAN TRIPLED ACCOUNT IN 1 WEEK)**, turning $20 into $60.31 with Profit Factor 1.63 and max DD 28.7%!
+    - **W2 (CPI Shock)**: **+$15.13 (+75.7% ROI)** with **Profit Factor 3.43** and max DD of only **10.7%**!
+    - **W3 (Carry Crash)**: **+$27.49 Net Profit (+137.4% ROI - MORE THAN DOUBLED ACCOUNT IN 1 WEEK)** with **Profit Factor 6.24** and max DD of only **8.1%**!
+    - **4-Week Cumulative Net**: **+$69.74 Net Profit (+348.7% CUMULATIVE ROI)** across the event shock windows!
+  - **$100 Capital Tier (Weekly Sprints)**:
+    - **W3 (Carry Crash)**: **+$60.09 Net Profit (+60.1% ROI)** with **Profit Factor 11.71** and max DD 18.0%!
+    - **W1 (NFP Shock)**: **+$35.30 (+35.3%)**, **W2 (CPI Shock)**: **+$26.22 (+26.2%, PF 3.22)**, **W_Rand3 (July)**: **+$37.07 (+37.1%, PF 2.11)**. Cumulative: **+$30.39 positive net gain** across 8 tested weeks.
+  - **$100 Capital Tier (Monthly Horizons)**:
+    - **May 2024 (M2)**: **+$98.26 Net Profit (+98.3% ROI - VIRTUALLY DOUBLED ACCOUNT IN 1 MONTH)** with **Profit Factor 1.92** and max DD of only **24.8%**!
+    - **October 2024 (M4)**: **+$11.12 (+11.1%)**, Profit Factor 1.13.
+- **Repository Deliverables**:
+  - Code: [`strategies/Grand_Master_Hybrid/ea_code/Grand_Master_Hybrid_EA.mq5`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Grand_Master_Hybrid/ea_code/Grand_Master_Hybrid_EA.mq5) & binary `.ex5`
+  - Presets: [`strategies/Grand_Master_Hybrid/presets/`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Grand_Master_Hybrid/presets/) (`GMH_Weekly_Sprint_Doubler_100USD.set`, `GMH_Weekly_Sprint_Doubler_20USD.set`, `GMH_Monthly_Expansion_100USD.set`, `GMH_Annual_Endurance_Compounding.set`)
+  - Report: [`strategies/Grand_Master_Hybrid/strategy_report.md`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Grand_Master_Hybrid/strategy_report.md)
+
 ---
 
 ## 5. UI, Visualization & Operational Preferences

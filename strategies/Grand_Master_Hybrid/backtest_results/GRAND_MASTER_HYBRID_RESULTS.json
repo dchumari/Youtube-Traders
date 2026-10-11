@@ -1,0 +1,214 @@
+{
+  "weekly_sprints_100USD": {
+    "W1 (NFP Shock)": {
+      "test_id": "GMH_W100_W1NFP",
+      "deposit": 100.0,
+      "window": "2024.03.04 -> 2024.03.11",
+      "net_profit": 35.3,
+      "profit_factor": 1.28,
+      "drawdown_pct": 53.7,
+      "total_trades": 99,
+      "win_rate_pct": 49.5,
+      "roi_pct": 35.3,
+      "status": "PASS"
+    },
+    "W2 (CPI Shock)": {
+      "test_id": "GMH_W100_W2CPI",
+      "deposit": 100.0,
+      "window": "2024.06.10 -> 2024.06.17",
+      "net_profit": 26.22,
+      "profit_factor": 3.22,
+      "drawdown_pct": 21.89,
+      "total_trades": 21,
+      "win_rate_pct": 10.5,
+      "roi_pct": 26.2,
+      "status": "PASS"
+    },
+    "W3 (Carry Crash)": {
+      "test_id": "GMH_W100_W3Car",
+      "deposit": 100.0,
+      "window": "2024.08.05 -> 2024.08.12",
+      "net_profit": 60.09,
+      "profit_factor": 11.71,
+      "drawdown_pct": 18.0,
+      "total_trades": 23,
+      "win_rate_pct": 11.5,
+      "roi_pct": 60.1,
+      "status": "PASS"
+    },
+    "W4 (Election Shock)": {
+      "test_id": "GMH_W100_W4Ele",
+      "deposit": 100.0,
+      "window": "2024.11.04 -> 2024.11.11",
+      "net_profit": -52.09,
+      "profit_factor": 0.36,
+      "drawdown_pct": 52.09,
+      "total_trades": 56,
+      "win_rate_pct": 28.0,
+      "roi_pct": -52.1,
+      "status": "FAIL"
+    },
+    "W_Rand1 (Mid-Feb)": {
+      "test_id": "GMH_W100_W_Rand1",
+      "deposit": 100.0,
+      "window": "2024.02.12 -> 2024.02.19",
+      "net_profit": -51.49,
+      "profit_factor": 0.47,
+      "drawdown_pct": 90.99,
+      "total_trades": 66,
+      "win_rate_pct": 33.0,
+      "roi_pct": -51.5,
+      "status": "FAIL"
+    },
+    "W_Rand2 (Mid-May)": {
+      "test_id": "GMH_W100_W_Rand2",
+      "deposit": 100.0,
+      "window": "2024.05.13 -> 2024.05.20",
+      "net_profit": -2.71,
+      "profit_factor": 0.96,
+      "drawdown_pct": 43.19,
+      "total_trades": 62,
+      "win_rate_pct": 31.0,
+      "roi_pct": -2.7,
+      "status": "FAIL"
+    },
+    "W_Rand3 (Mid-July)": {
+      "test_id": "GMH_W100_W_Rand3",
+      "deposit": 100.0,
+      "window": "2024.07.15 -> 2024.07.22",
+      "net_profit": 37.07,
+      "profit_factor": 2.11,
+      "drawdown_pct": 34.22,
+      "total_trades": 33,
+      "win_rate_pct": 16.5,
+      "roi_pct": 37.1,
+      "status": "PASS"
+    },
+    "W_Rand4 (Mid-Sept)": {
+      "test_id": "GMH_W100_W_Rand4",
+      "deposit": 100.0,
+      "window": "2024.09.16 -> 2024.09.23",
+      "net_profit": -22.0,
+      "profit_factor": 0.0,
+      "drawdown_pct": 31.45,
+      "total_trades": 10,
+      "win_rate_pct": 5.0,
+      "roi_pct": -22.0,
+      "status": "FAIL"
+    }
+  },
+  "weekly_sprints_20USD": {
+    "W1 (NFP Shock)": {
+      "test_id": "GMH_W20_W1NFP",
+      "deposit": 20.0,
+      "window": "2024.03.04 -> 2024.03.11",
+      "net_profit": 40.31,
+      "profit_factor": 1.63,
+      "drawdown_pct": 28.71,
+      "total_trades": 57,
+      "win_rate_pct": 28.5,
+      "roi_pct": 201.6,
+      "status": "PASS"
+    },
+    "W2 (CPI Shock)": {
+      "test_id": "GMH_W20_W2CPI",
+      "deposit": 20.0,
+      "window": "2024.06.10 -> 2024.06.17",
+      "net_profit": 15.13,
+      "profit_factor": 3.43,
+      "drawdown_pct": 10.65,
+      "total_trades": 13,
+      "win_rate_pct": 6.5,
+      "roi_pct": 75.7,
+      "status": "PASS"
+    },
+    "W3 (Carry Crash)": {
+      "test_id": "GMH_W20_W3Car",
+      "deposit": 20.0,
+      "window": "2024.08.05 -> 2024.08.12",
+      "net_profit": 27.49,
+      "profit_factor": 6.24,
+      "drawdown_pct": 8.08,
+      "total_trades": 15,
+      "win_rate_pct": 7.5,
+      "roi_pct": 137.4,
+      "status": "PASS"
+    },
+    "W4 (Election Shock)": {
+      "test_id": "GMH_W20_W4Ele",
+      "deposit": 20.0,
+      "window": "2024.11.04 -> 2024.11.11",
+      "net_profit": -13.19,
+      "profit_factor": 0.34,
+      "drawdown_pct": 13.19,
+      "total_trades": 13,
+      "win_rate_pct": 6.5,
+      "roi_pct": -66.0,
+      "status": "FAIL"
+    }
+  },
+  "monthly_horizons_100USD": {
+    "M1 (Feb 2024)": {
+      "test_id": "GMH_M100_M1Feb",
+      "deposit": 100.0,
+      "window": "2024.02.01 -> 2024.02.29",
+      "net_profit": -68.43,
+      "profit_factor": 0.61,
+      "drawdown_pct": 97.32,
+      "total_trades": 131,
+      "win_rate_pct": 65.5,
+      "roi_pct": -68.4,
+      "status": "FAIL"
+    },
+    "M2 (May 2024)": {
+      "test_id": "GMH_M100_M2May",
+      "deposit": 100.0,
+      "window": "2024.05.01 -> 2024.05.31",
+      "net_profit": 98.26,
+      "profit_factor": 1.92,
+      "drawdown_pct": 24.79,
+      "total_trades": 110,
+      "win_rate_pct": 55.0,
+      "roi_pct": 98.3,
+      "status": "PASS"
+    },
+    "M3 (July 2024)": {
+      "test_id": "GMH_M100_M3Jul",
+      "deposit": 100.0,
+      "window": "2024.07.01 -> 2024.07.31",
+      "net_profit": -41.63,
+      "profit_factor": 0.67,
+      "drawdown_pct": 73.44,
+      "total_trades": 94,
+      "win_rate_pct": 47.0,
+      "roi_pct": -41.6,
+      "status": "FAIL"
+    },
+    "M4 (Oct 2024)": {
+      "test_id": "GMH_M100_M4Oct",
+      "deposit": 100.0,
+      "window": "2024.10.01 -> 2024.10.31",
+      "net_profit": 11.12,
+      "profit_factor": 1.13,
+      "drawdown_pct": 40.71,
+      "total_trades": 73,
+      "win_rate_pct": 36.5,
+      "roi_pct": 11.1,
+      "status": "PASS"
+    }
+  },
+  "annual_horizon_100USD": {
+    "Full_Year_2024": {
+      "test_id": "GMH_Annual_2024",
+      "deposit": 100.0,
+      "window": "2024.01.01 -> 2024.12.31",
+      "net_profit": -17.95,
+      "profit_factor": 0.98,
+      "drawdown_pct": 139.85,
+      "total_trades": 616,
+      "win_rate_pct": 308.0,
+      "roi_pct": -17.9,
+      "status": "FAIL"
+    }
+  }
+}
