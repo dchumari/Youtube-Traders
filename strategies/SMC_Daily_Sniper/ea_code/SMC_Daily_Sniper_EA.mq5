@@ -87,6 +87,11 @@ sinput string   sep6 = "================ DAILY TRADE & FREQUENCY CONTROLS ======
 input int       InpMaxDailyTrades       = 2;         // Maximum Setups Allowed Per Day (1 to 2 Target)
 input int       InpMinTradeCooldownMin  = 90;        // Minimum Minutes Between Consecutive Entries
 
+sinput string   sep6b = "================ DAILY DOUBLING & TARGET LOCKOUT ======";
+input bool      InpEnableDailyDoubleLockout = false; // Halt trading for the day once account doubles (+100%)
+input double    InpDailyTargetPct       = 100.0;     // Daily Target Return % to lock in (+100% = doubling)
+input double    InpMinATRPoints         = 0.0;       // Minimum ATR points to trade (filters out low-vol chop)
+
 sinput string   sep7 = "================ VISUAL TRADE SUITE & HUD ==============";
 input bool      InpEnableVisuals        = true;      // Enable On-Chart Visual Roadmap & Boxes
 input bool      InpApplyDraculaTheme    = true;      // Auto-Apply Dracula Dark Palette (#282A36)
@@ -104,6 +109,8 @@ datetime g_last_bar_time      = 0;
 datetime g_last_trade_time    = 0;
 int      g_last_day           = -1;
 int      g_daily_trades_count = 0;
+double   g_day_start_equity   = 0.0;
+bool     g_day_locked_out     = false;
 
 // Internal Swing Structure
 struct SMarketSwing
@@ -693,11 +700,40 @@ void OnTick()
    {
       g_last_day = dt.day;
       g_daily_trades_count = 0;
+      g_day_start_equity = AccountInfoDouble(ACCOUNT_EQUITY);
+      g_day_locked_out = false;
    }
+
+   // 3b. Daily Doubling Milestone Check (+100% in 1 day / 1 trade)
+   if(InpEnableDailyDoubleLockout && !g_day_locked_out)
+   {
+      double cur_equity = AccountInfoDouble(ACCOUNT_EQUITY);
+      if(g_day_start_equity > 0 && cur_equity >= g_day_start_equity * (1.0 + (InpDailyTargetPct / 100.0)))
+      {
+         Print("🎯 DAILY DOUBLING TARGET ACHIEVED (+", InpDailyTargetPct, "%)! Closing basket & locking profits for today!");
+         ExtEngine.CloseAllPositions();
+         g_day_locked_out = true;
+         return;
+      }
+   }
+   if(g_day_locked_out) return;
+
    if(g_daily_trades_count >= InpMaxDailyTrades) return;
 
    // 4. Time between consecutive entries (cooldown in minutes)
    if(TimeCurrent() - g_last_trade_time < InpMinTradeCooldownMin * 60) return;
+
+   // 4b. Low Volatility Chop Filter (Skip dead consolidation)
+   if(InpMinATRPoints > 0)
+   {
+      double atr_buf[];
+      ArraySetAsSeries(atr_buf, true);
+      if(CopyBuffer(hATR, 0, 0, 2, atr_buf) >= 1)
+      {
+         double cur_atr_pts = atr_buf[1] / SymbolInfoDouble(_Symbol, SYMBOL_POINT);
+         if(cur_atr_pts < InpMinATRPoints) return;
+      }
+   }
 
    // 5. Session Filter Guard
    if(!IsInActiveSession()) return;
