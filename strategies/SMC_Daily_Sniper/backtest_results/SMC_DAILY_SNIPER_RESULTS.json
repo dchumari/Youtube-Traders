@@ -1,0 +1,246 @@
+{
+  "model1_idm_100usd_weekly": {
+    "W1 (NFP Shock)": {
+      "net_profit": 74.24,
+      "roi_pct": 74.2,
+      "trades": 173,
+      "win_rate": 34.7,
+      "profit_factor": 1.32,
+      "max_dd_pct": 25.7,
+      "status": "PASS"
+    },
+    "W2 (CPI Shock)": {
+      "net_profit": -94.62,
+      "roi_pct": -94.6,
+      "trades": 74,
+      "win_rate": 23.0,
+      "profit_factor": 0.23,
+      "max_dd_pct": 94.6,
+      "status": "FAIL"
+    },
+    "W3 (Carry Crash)": {
+      "net_profit": -25.19,
+      "roi_pct": -25.2,
+      "trades": 97,
+      "win_rate": 36.1,
+      "profit_factor": 0.82,
+      "max_dd_pct": 67.7,
+      "status": "FAIL"
+    },
+    "W4 (Election Shock)": {
+      "net_profit": 3.72,
+      "roi_pct": 3.7,
+      "trades": 137,
+      "win_rate": 42.3,
+      "profit_factor": 1.02,
+      "max_dd_pct": 54.8,
+      "status": "PASS"
+    },
+    "W_Rand1 (Mid-Feb)": {
+      "net_profit": 66.21,
+      "roi_pct": 66.2,
+      "trades": 152,
+      "win_rate": 46.0,
+      "profit_factor": 1.44,
+      "max_dd_pct": 42.1,
+      "status": "PASS"
+    },
+    "W_Rand2 (Mid-May)": {
+      "net_profit": -95.9,
+      "roi_pct": -95.9,
+      "trades": 134,
+      "win_rate": 27.6,
+      "profit_factor": 0.51,
+      "max_dd_pct": 95.9,
+      "status": "FAIL"
+    }
+  },
+  "model1_idm_20usd_weekly": {
+    "W1 (NFP Shock)": {
+      "net_profit": -14.75,
+      "roi_pct": -73.8,
+      "trades": 25,
+      "win_rate": 32.0,
+      "profit_factor": 0.57,
+      "max_dd_pct": 75.2,
+      "status": "FAIL"
+    },
+    "W2 (CPI Shock)": {
+      "net_profit": -14.25,
+      "roi_pct": -71.2,
+      "trades": 27,
+      "win_rate": 29.6,
+      "profit_factor": 0.6,
+      "max_dd_pct": 71.2,
+      "status": "FAIL"
+    },
+    "W3 (Carry Crash)": {
+      "net_profit": -14.69,
+      "roi_pct": -73.4,
+      "trades": 21,
+      "win_rate": 23.8,
+      "profit_factor": 0.54,
+      "max_dd_pct": 77.1,
+      "status": "FAIL"
+    },
+    "W4 (Election Shock)": {
+      "net_profit": 18.99,
+      "roi_pct": 94.9,
+      "trades": 35,
+      "win_rate": 48.6,
+      "profit_factor": 1.52,
+      "max_dd_pct": 50.0,
+      "status": "PASS"
+    },
+    "W_Rand1 (Mid-Feb)": {
+      "net_profit": -16.21,
+      "roi_pct": -81.0,
+      "trades": 53,
+      "win_rate": 32.1,
+      "profit_factor": 0.76,
+      "max_dd_pct": 88.2,
+      "status": "FAIL"
+    },
+    "W_Rand2 (Mid-May)": {
+      "net_profit": -15.69,
+      "roi_pct": -78.5,
+      "trades": 10,
+      "win_rate": 10.0,
+      "profit_factor": 0.13,
+      "max_dd_pct": 78.5,
+      "status": "FAIL"
+    }
+  },
+  "model0_trendline_100usd_weekly": {
+    "W1 (NFP Shock)": {
+      "net_profit": 27.09,
+      "roi_pct": 27.1,
+      "trades": 161,
+      "win_rate": 32.9,
+      "profit_factor": 1.13,
+      "max_dd_pct": 35.0,
+      "status": "PASS"
+    },
+    "W2 (CPI Shock)": {
+      "net_profit": 20.53,
+      "roi_pct": 20.5,
+      "trades": 127,
+      "win_rate": 31.5,
+      "profit_factor": 1.13,
+      "max_dd_pct": 50.1,
+      "status": "PASS"
+    },
+    "W3 (Carry Crash)": {
+      "net_profit": -43.3,
+      "roi_pct": -43.3,
+      "trades": 39,
+      "win_rate": 28.2,
+      "profit_factor": 0.3,
+      "max_dd_pct": 47.7,
+      "status": "FAIL"
+    },
+    "W4 (Election Shock)": {
+      "net_profit": -36.92,
+      "roi_pct": -36.9,
+      "trades": 75,
+      "win_rate": 34.7,
+      "profit_factor": 0.63,
+      "max_dd_pct": 54.4,
+      "status": "FAIL"
+    },
+    "W_Rand1 (Mid-Feb)": {
+      "net_profit": 76.94,
+      "roi_pct": 76.9,
+      "trades": 118,
+      "win_rate": 47.5,
+      "profit_factor": 1.68,
+      "max_dd_pct": 21.5,
+      "status": "PASS"
+    },
+    "W_Rand2 (Mid-May)": {
+      "net_profit": -58.18,
+      "roi_pct": -58.2,
+      "trades": 149,
+      "win_rate": 27.5,
+      "profit_factor": 0.73,
+      "max_dd_pct": 85.4,
+      "status": "FAIL"
+    }
+  },
+  "model0_trendline_20usd_weekly": {
+    "W1 (NFP Shock)": {
+      "net_profit": 44.28,
+      "roi_pct": 221.4,
+      "trades": 104,
+      "win_rate": 36.5,
+      "profit_factor": 1.34,
+      "max_dd_pct": 62.8,
+      "status": "PASS"
+    },
+    "W2 (CPI Shock)": {
+      "net_profit": -14.82,
+      "roi_pct": -74.1,
+      "trades": 23,
+      "win_rate": 30.4,
+      "profit_factor": 0.54,
+      "max_dd_pct": 74.1,
+      "status": "FAIL"
+    },
+    "W3 (Carry Crash)": {
+      "net_profit": -8.52,
+      "roi_pct": -42.6,
+      "trades": 15,
+      "win_rate": 26.7,
+      "profit_factor": 0.6,
+      "max_dd_pct": 61.6,
+      "status": "FAIL"
+    },
+    "W4 (Election Shock)": {
+      "net_profit": 2.52,
+      "roi_pct": 12.6,
+      "trades": 21,
+      "win_rate": 42.9,
+      "profit_factor": 1.11,
+      "max_dd_pct": 50.0,
+      "status": "PASS"
+    },
+    "W_Rand1 (Mid-Feb)": {
+      "net_profit": 27.02,
+      "roi_pct": 135.1,
+      "trades": 79,
+      "win_rate": 43.0,
+      "profit_factor": 1.33,
+      "max_dd_pct": 49.2,
+      "status": "PASS"
+    },
+    "W_Rand2 (Mid-May)": {
+      "net_profit": -15.69,
+      "roi_pct": -78.5,
+      "trades": 10,
+      "win_rate": 10.0,
+      "profit_factor": 0.13,
+      "max_dd_pct": 78.5,
+      "status": "FAIL"
+    }
+  },
+  "monthly_100usd": {
+    "M1 (Feb 2024)": {
+      "net_profit": -23.28,
+      "roi_pct": -23.3,
+      "trades": 377,
+      "win_rate": 39.0,
+      "profit_factor": 0.95,
+      "max_dd_pct": 57.6,
+      "status": "FAIL"
+    },
+    "M2 (May 2024)": {
+      "net_profit": -13.61,
+      "roi_pct": -13.6,
+      "trades": 473,
+      "win_rate": 37.0,
+      "profit_factor": 0.98,
+      "max_dd_pct": 69.9,
+      "status": "FAIL"
+    }
+  }
+}

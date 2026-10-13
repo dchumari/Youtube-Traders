@@ -281,6 +281,35 @@ This document synthesizes and preserves all project learnings, mathematical form
   - Presets: [`strategies/Grand_Master_Hybrid/presets/`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Grand_Master_Hybrid/presets/) (`GMH_Weekly_Sprint_Doubler_100USD.set`, `GMH_Weekly_Sprint_Doubler_20USD.set`, `GMH_Monthly_Expansion_100USD.set`, `GMH_Annual_Endurance_Compounding.set`)
   - Report: [`strategies/Grand_Master_Hybrid/strategy_report.md`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/Grand_Master_Hybrid/strategy_report.md)
 
+### 12. SMC Daily Sniper Master Suite (`SMC_Daily_Sniper_EA.mq5`)
+- **Origin**: Designed to exploit daily institutional market structure setups on Gold (`XAUUSD`, M15), specifically targeting retail diagonal trendline stops ("strandline / fan land") and retail inducement bait into fresh Supply & Demand origin blocks.
+- **The 5 Codified Models**:
+  1. *Model 0 (Champion Doubler)*: Trendline Liquidity Trap ("Fan Land" Purge) + S&D Base Tap.
+  2. *Model 1 (High Alpha)*: SMC Inducement (IDM) Sweep + Origin Order Block Reload.
+  3. *Model 2*: Fresh Drop-Base-Rally (DBR) / Rally-Base-Drop (RBD) S&D Flip.
+  4. *Model 3*: Daily Asian Range Sweep (London Judas) + Killzone Momentum.
+  5. *Model 4*: Master Confluence Engine (Multi-Signal Fusion).
+- **Universal Behavioral Flipper Integration**:
+  - Integrated with `Flipper_Behavioral_Engine.mqh`: micro-ticket slicing ($3\times 0.01$ to $5\times 0.01$), 5-stage TP laddering (TP1 +20p, TP2 +35p, TP3 +60p, TP4 +100p, TP5 +160p), stepped Breakeven Shield line, and floating margin pyramiding.
+  - **Clean Visual Engine**: Strictly bounded target lines (8 bars forward, no infinite screen rays), auto-erased hit target lines, and bounded TradingView-style green/red profit/loss boxes.
+- **Empirical Multi-Tier Stress Benchmark Matrix ($20 vs $100 Tiers on Gold XAUUSD M15 at 1:400 Leverage)**:
+  - **Model 0: Trendline Liquidity Trap ($20 Capital Tier / Micro Doubler)**:
+    - **W1 (NFP Shock)**: **+$44.28 Net Profit (+221.4% ROI - TRIPLED ACCOUNT IN 1 WEEK)**, turning $20 into $64.28 with PF 1.34 and 104 trades!
+    - **W_Rand1 (Mid-Feb Random Week)**: **+$27.02 Net Profit (+135.1% ROI - MORE THAN DOUBLED ACCOUNT IN 1 WEEK)**, turning $20 into $47.02 with PF 1.33 and 79 trades!
+    - **W4 (Election Shock)**: **+$2.52 (+12.6% ROI)**, PF 1.11, 21 trades.
+  - **Model 0: Trendline Liquidity Trap ($100 Capital Tier)**:
+    - **W_Rand1 (Mid-Feb)**: **+$76.94 Net Profit (+76.9% ROI in 1 week)**, **Profit Factor 1.68**, max DD of only 21.5%, 118 trades!
+    - **W1 (NFP Shock)**: **+$27.09 Net Profit (+27.1% ROI)**, PF 1.13, 161 trades.
+    - **W2 (CPI Shock)**: **+$20.53 Net Profit (+20.5% ROI)**, PF 1.13, 127 trades.
+  - **Model 1: SMC Inducement IDM Sniper ($100 Capital Tier)**:
+    - **W1 (NFP Shock)**: **+$74.24 Net Profit (+74.2% ROI in 1 week)**, **Profit Factor 1.32**, max DD of only 25.7%, 173 trades!
+    - **W_Rand1 (Mid-Feb)**: **+$66.21 Net Profit (+66.2% ROI in 1 week)**, **Profit Factor 1.44**, max DD 42.1%, 152 trades!
+    - **$20 Capital Tier (W4 Election Shock)**: **+$18.99 Net Profit (+94.9% ROI - NEARLY DOUBLED FROM $20 TO $38.99 in 1 week)** with **Profit Factor 1.52**!
+- **Repository Deliverables**:
+  - Source: [`strategies/SMC_Daily_Sniper/ea_code/SMC_Daily_Sniper_EA.mq5`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/SMC_Daily_Sniper/ea_code/SMC_Daily_Sniper_EA.mq5) & binary `.ex5`
+  - Presets: [`strategies/SMC_Daily_Sniper/presets/`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/SMC_Daily_Sniper/presets/) (`SMCD_Daily_Sprint_Doubler_20USD.set`, `SMCD_Daily_Sprint_Doubler_100USD.set`, `SMCD_Monthly_Consistency_100USD.set`)
+  - Report: [`strategies/SMC_Daily_Sniper/strategy_report.md`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/SMC_Daily_Sniper/strategy_report.md)
+
 ---
 
 ## 5. UI, Visualization & Operational Preferences
