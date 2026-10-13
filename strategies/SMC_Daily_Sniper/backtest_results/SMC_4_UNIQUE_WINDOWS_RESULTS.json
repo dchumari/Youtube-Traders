@@ -1,0 +1,314 @@
+{
+  "Model 4: 24/5 ICT OTE 70.5% Golden Pocket + S&D Base": {
+    "20USD": {
+      "Window 1 (Trending Volatility Shock / NFP)": {
+        "net_profit": 63.25,
+        "roi_pct": 316.2,
+        "trades": 64,
+        "win_rate": 43.8,
+        "profit_factor": 1.97,
+        "max_dd_pct": 33.1,
+        "status": "PASS"
+      },
+      "Window 2 (Two-Way Volatility Expansion / CPI)": {
+        "net_profit": -15.81,
+        "roi_pct": -79.0,
+        "trades": 11,
+        "win_rate": 9.1,
+        "profit_factor": 0.15,
+        "max_dd_pct": 79.0,
+        "status": "FAIL"
+      },
+      "Window 3 (Pure Random Trending Week / Mid-Feb)": {
+        "net_profit": 15.56,
+        "roi_pct": 77.8,
+        "trades": 46,
+        "win_rate": 41.3,
+        "profit_factor": 1.34,
+        "max_dd_pct": 42.1,
+        "status": "PASS"
+      },
+      "Window 4 (Pure Random Summer Range / Mid-July)": {
+        "net_profit": 31.56,
+        "roi_pct": 157.8,
+        "trades": 47,
+        "win_rate": 46.8,
+        "profit_factor": 1.7,
+        "max_dd_pct": 37.2,
+        "status": "PASS"
+      }
+    },
+    "100USD": {
+      "Window 1 (Trending Volatility Shock / NFP)": {
+        "net_profit": 18.33,
+        "roi_pct": 18.3,
+        "trades": 100,
+        "win_rate": 29.0,
+        "profit_factor": 1.14,
+        "max_dd_pct": 35.8,
+        "status": "PASS"
+      },
+      "Window 2 (Two-Way Volatility Expansion / CPI)": {
+        "net_profit": -43.74,
+        "roi_pct": -43.7,
+        "trades": 88,
+        "win_rate": 23.9,
+        "profit_factor": 0.64,
+        "max_dd_pct": 61.4,
+        "status": "FAIL"
+      },
+      "Window 3 (Pure Random Trending Week / Mid-Feb)": {
+        "net_profit": 9.32,
+        "roi_pct": 9.3,
+        "trades": 83,
+        "win_rate": 37.4,
+        "profit_factor": 1.1,
+        "max_dd_pct": 25.9,
+        "status": "PASS"
+      },
+      "Window 4 (Pure Random Summer Range / Mid-July)": {
+        "net_profit": 121.64,
+        "roi_pct": 121.6,
+        "trades": 85,
+        "win_rate": 48.2,
+        "profit_factor": 1.8,
+        "max_dd_pct": 26.2,
+        "status": "PASS"
+      }
+    }
+  },
+  "Model 0: Trendline Liquidity Trap + S&D Base": {
+    "20USD": {
+      "Window 1 (Trending Volatility Shock / NFP)": {
+        "net_profit": 51.26,
+        "roi_pct": 256.3,
+        "trades": 68,
+        "win_rate": 41.2,
+        "profit_factor": 1.7,
+        "max_dd_pct": 47.8,
+        "status": "PASS"
+      },
+      "Window 2 (Two-Way Volatility Expansion / CPI)": {
+        "net_profit": -11.4,
+        "roi_pct": -57.0,
+        "trades": 39,
+        "win_rate": 33.3,
+        "profit_factor": 0.76,
+        "max_dd_pct": 64.5,
+        "status": "FAIL"
+      },
+      "Window 3 (Pure Random Trending Week / Mid-Feb)": {
+        "net_profit": 21.68,
+        "roi_pct": 108.4,
+        "trades": 40,
+        "win_rate": 42.5,
+        "profit_factor": 1.55,
+        "max_dd_pct": 37.0,
+        "status": "PASS"
+      },
+      "Window 4 (Pure Random Summer Range / Mid-July)": {
+        "net_profit": 32.6,
+        "roi_pct": 163.0,
+        "trades": 45,
+        "win_rate": 46.7,
+        "profit_factor": 1.76,
+        "max_dd_pct": 35.8,
+        "status": "PASS"
+      }
+    },
+    "100USD": {
+      "Window 1 (Trending Volatility Shock / NFP)": {
+        "net_profit": 27.32,
+        "roi_pct": 27.3,
+        "trades": 116,
+        "win_rate": 31.0,
+        "profit_factor": 1.18,
+        "max_dd_pct": 19.9,
+        "status": "PASS"
+      },
+      "Window 2 (Two-Way Volatility Expansion / CPI)": {
+        "net_profit": -26.75,
+        "roi_pct": -26.8,
+        "trades": 85,
+        "win_rate": 24.7,
+        "profit_factor": 0.77,
+        "max_dd_pct": 44.4,
+        "status": "FAIL"
+      },
+      "Window 3 (Pure Random Trending Week / Mid-Feb)": {
+        "net_profit": 26.32,
+        "roi_pct": 26.3,
+        "trades": 74,
+        "win_rate": 40.5,
+        "profit_factor": 1.33,
+        "max_dd_pct": 18.5,
+        "status": "PASS"
+      },
+      "Window 4 (Pure Random Summer Range / Mid-July)": {
+        "net_profit": 124.08,
+        "roi_pct": 124.1,
+        "trades": 82,
+        "win_rate": 48.8,
+        "profit_factor": 1.86,
+        "max_dd_pct": 22.0,
+        "status": "PASS"
+      }
+    }
+  },
+  "Model 1: SMC Inducement (IDM) Sweep + Origin OB": {
+    "20USD": {
+      "Window 1 (Trending Volatility Shock / NFP)": {
+        "net_profit": 63.07,
+        "roi_pct": 315.4,
+        "trades": 68,
+        "win_rate": 44.1,
+        "profit_factor": 1.91,
+        "max_dd_pct": 30.4,
+        "status": "PASS"
+      },
+      "Window 2 (Two-Way Volatility Expansion / CPI)": {
+        "net_profit": -14.29,
+        "roi_pct": -71.4,
+        "trades": 21,
+        "win_rate": 28.6,
+        "profit_factor": 0.5,
+        "max_dd_pct": 71.5,
+        "status": "FAIL"
+      },
+      "Window 3 (Pure Random Trending Week / Mid-Feb)": {
+        "net_profit": -12.64,
+        "roi_pct": -63.2,
+        "trades": 37,
+        "win_rate": 29.7,
+        "profit_factor": 0.73,
+        "max_dd_pct": 75.2,
+        "status": "FAIL"
+      },
+      "Window 4 (Pure Random Summer Range / Mid-July)": {
+        "net_profit": 22.55,
+        "roi_pct": 112.8,
+        "trades": 29,
+        "win_rate": 55.2,
+        "profit_factor": 1.87,
+        "max_dd_pct": 50.0,
+        "status": "PASS"
+      }
+    },
+    "100USD": {
+      "Window 1 (Trending Volatility Shock / NFP)": {
+        "net_profit": 36.75,
+        "roi_pct": 36.8,
+        "trades": 118,
+        "win_rate": 34.8,
+        "profit_factor": 1.22,
+        "max_dd_pct": 24.3,
+        "status": "PASS"
+      },
+      "Window 2 (Two-Way Volatility Expansion / CPI)": {
+        "net_profit": -88.31,
+        "roi_pct": -88.3,
+        "trades": 68,
+        "win_rate": 14.7,
+        "profit_factor": 0.19,
+        "max_dd_pct": 88.3,
+        "status": "FAIL"
+      },
+      "Window 3 (Pure Random Trending Week / Mid-Feb)": {
+        "net_profit": 19.76,
+        "roi_pct": 19.8,
+        "trades": 96,
+        "win_rate": 39.6,
+        "profit_factor": 1.19,
+        "max_dd_pct": 23.7,
+        "status": "PASS"
+      },
+      "Window 4 (Pure Random Summer Range / Mid-July)": {
+        "net_profit": 186.78,
+        "roi_pct": 186.8,
+        "trades": 68,
+        "win_rate": 54.4,
+        "profit_factor": 2.75,
+        "max_dd_pct": 10.4,
+        "status": "PASS"
+      }
+    }
+  },
+  "Model 5: Master Institutional Confluence Engine": {
+    "20USD": {
+      "Window 1 (Trending Volatility Shock / NFP)": {
+        "net_profit": 63.25,
+        "roi_pct": 316.2,
+        "trades": 64,
+        "win_rate": 43.8,
+        "profit_factor": 1.97,
+        "max_dd_pct": 33.1,
+        "status": "PASS"
+      },
+      "Window 2 (Two-Way Volatility Expansion / CPI)": {
+        "net_profit": -15.81,
+        "roi_pct": -79.0,
+        "trades": 11,
+        "win_rate": 9.1,
+        "profit_factor": 0.15,
+        "max_dd_pct": 79.0,
+        "status": "FAIL"
+      },
+      "Window 3 (Pure Random Trending Week / Mid-Feb)": {
+        "net_profit": 15.56,
+        "roi_pct": 77.8,
+        "trades": 46,
+        "win_rate": 41.3,
+        "profit_factor": 1.34,
+        "max_dd_pct": 42.1,
+        "status": "PASS"
+      },
+      "Window 4 (Pure Random Summer Range / Mid-July)": {
+        "net_profit": 39.77,
+        "roi_pct": 198.9,
+        "trades": 49,
+        "win_rate": 49.0,
+        "profit_factor": 1.88,
+        "max_dd_pct": 30.7,
+        "status": "PASS"
+      }
+    },
+    "100USD": {
+      "Window 1 (Trending Volatility Shock / NFP)": {
+        "net_profit": 18.33,
+        "roi_pct": 18.3,
+        "trades": 100,
+        "win_rate": 29.0,
+        "profit_factor": 1.14,
+        "max_dd_pct": 35.8,
+        "status": "PASS"
+      },
+      "Window 2 (Two-Way Volatility Expansion / CPI)": {
+        "net_profit": -24.24,
+        "roi_pct": -24.2,
+        "trades": 76,
+        "win_rate": 25.0,
+        "profit_factor": 0.77,
+        "max_dd_pct": 41.9,
+        "status": "FAIL"
+      },
+      "Window 3 (Pure Random Trending Week / Mid-Feb)": {
+        "net_profit": 9.32,
+        "roi_pct": 9.3,
+        "trades": 83,
+        "win_rate": 37.4,
+        "profit_factor": 1.1,
+        "max_dd_pct": 25.9,
+        "status": "PASS"
+      },
+      "Window 4 (Pure Random Summer Range / Mid-July)": {
+        "net_profit": 134.68,
+        "roi_pct": 134.7,
+        "trades": 90,
+        "win_rate": 48.9,
+        "profit_factor": 1.78,
+        "max_dd_pct": 28.7,
+        "status": "PASS"
+      }
+    }
+  }
+}

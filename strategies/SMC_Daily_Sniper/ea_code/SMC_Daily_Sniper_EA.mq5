@@ -26,7 +26,8 @@ enum ENUM_SMC_DAILY_MODEL
    MODEL_SMC_INDUCEMENT_ORDERBLOCK  = 1, // 1: SMC Inducement (IDM) Sweep + Origin Order Block
    MODEL_FRESH_SD_BASE_FLIP         = 2, // 2: Fresh Drop-Base-Rally / Rally-Base-Drop S&D Flip
    MODEL_ASIAN_SWEEP_CONTINUATION   = 3, // 3: Daily Asian High/Low Sweep + Killzone Momentum
-   MODEL_MASTER_ALL_CONFLUENCE      = 4  // 4: Master Confluence Sniper (Multi-Signal Fusion)
+   MODEL_ICT_OTE_SD_GOLDEN_ZONE     = 4, // 4: 24/5 ICT OTE 70.5% Golden Pocket nested in S&D Base
+   MODEL_MASTER_ALL_CONFLUENCE      = 5  // 5: Master Confluence Sniper (Multi-Signal Fusion)
 };
 
 enum ENUM_DAILY_TARGET_HORIZON
@@ -82,7 +83,11 @@ input int       InpNYStartHour          = 12;        // New York Open Start (12:
 input int       InpNYEndHour            = 18;        // New York Open End (18:00 UTC)
 input int       InpGMTOffset            = 3;         // Broker GMT Offset
 
-sinput string   sep6 = "================ VISUAL TRADE SUITE & HUD ==============";
+sinput string   sep6 = "================ DAILY TRADE & FREQUENCY CONTROLS ======";
+input int       InpMaxDailyTrades       = 2;         // Maximum Setups Allowed Per Day (1 to 2 Target)
+input int       InpMinTradeCooldownMin  = 90;        // Minimum Minutes Between Consecutive Entries
+
+sinput string   sep7 = "================ VISUAL TRADE SUITE & HUD ==============";
 input bool      InpEnableVisuals        = true;      // Enable On-Chart Visual Roadmap & Boxes
 input bool      InpApplyDraculaTheme    = true;      // Auto-Apply Dracula Dark Palette (#282A36)
 
@@ -93,10 +98,12 @@ CFlipperBehavioralEngine ExtEngine;
 CTrade                   ExtTrade;
 CPositionInfo            ExtPos;
 
-int      hEMA             = INVALID_HANDLE;
-int      hATR             = INVALID_HANDLE;
-datetime g_last_bar_time  = 0;
-datetime g_last_trade_time= 0;
+int      hEMA                 = INVALID_HANDLE;
+int      hATR                 = INVALID_HANDLE;
+datetime g_last_bar_time      = 0;
+datetime g_last_trade_time    = 0;
+int      g_last_day           = -1;
+int      g_daily_trades_count = 0;
 
 // Internal Swing Structure
 struct SMarketSwing
@@ -522,7 +529,73 @@ bool CheckAsianSweepContinuation(const MqlRates &rates[], int total, double ema_
 }
 
 //+------------------------------------------------------------------+
-//| MODEL 4: Master Confluence Daily Sniper (Multi-Signal Fusion)    |
+//| MODEL 4: 24/5 ICT Optimal Trade Entry (OTE 70.5% Golden Pocket)  |
+//| Retraces 61.8% to 78.6% of session impulse into fresh S&D base   |
+//+------------------------------------------------------------------+
+bool CheckICTOptimalTradeEntry(const MqlRates &rates[], int total, double ema_val, int &signal_dir)
+{
+   signal_dir = 0;
+   if(total < 25) return false;
+   double point = SymbolInfoDouble(_Symbol, SYMBOL_POINT);
+
+   // Find recent impulse leg (bars 2 to 20)
+   double legHigh = 0.0, legLow = 999999.0;
+   int hIdx = -1, lIdx = -1;
+   for(int i = 2; i <= 20; i++)
+   {
+      if(rates[i].high > legHigh) { legHigh = rates[i].high; hIdx = i; }
+      if(rates[i].low < legLow)   { legLow  = rates[i].low;  lIdx = i; }
+   }
+
+   if((legHigh - legLow) < 80 * point) return false;
+
+   // Bullish OTE: Swing Low formed BEFORE Swing High (Impulse is Upward)
+   if(lIdx > hIdx)
+   {
+      double fib618 = legHigh - (0.618 * (legHigh - legLow));
+      double fib786 = legHigh - (0.786 * (legHigh - legLow));
+
+      // Bar 1 enters the 61.8% - 78.6% golden pocket with a lower rejection wick
+      if(rates[1].low <= fib618 && rates[1].close >= fib786)
+      {
+         double total_range = rates[1].high - rates[1].low;
+         double lower_wick  = MathMin(rates[1].open, rates[1].close) - rates[1].low;
+         if(total_range > 0 && (lower_wick / total_range) >= InpMinWickRejection)
+         {
+            if(rates[1].close > ema_val) // Aligned with macro EMA 50
+            {
+               signal_dir = 1; // BUY
+               return true;
+            }
+         }
+      }
+   }
+   // Bearish OTE: Swing High formed BEFORE Swing Low (Impulse is Downward)
+   else if(hIdx > lIdx)
+   {
+      double fib618 = legLow + (0.618 * (legHigh - legLow));
+      double fib786 = legLow + (0.786 * (legHigh - legLow));
+
+      if(rates[1].high >= fib618 && rates[1].close <= fib786)
+      {
+         double total_range = rates[1].high - rates[1].low;
+         double upper_wick  = rates[1].high - MathMax(rates[1].open, rates[1].close);
+         if(total_range > 0 && (upper_wick / total_range) >= InpMinWickRejection)
+         {
+            if(rates[1].close < ema_val)
+            {
+               signal_dir = -1; // SELL
+               return true;
+            }
+         }
+      }
+   }
+
+   return false;
+}
+
+//+------------------------------------------------------------------+
+//| MODEL 5: Master Confluence Daily Sniper (Multi-Signal Fusion)    |
 //| Requires >= 2 aligned signals for maximum win rate & PF          |
 //+------------------------------------------------------------------+
 bool CheckMasterAllConfluence(const MqlRates &rates[], int total, double ema_val, int &signal_dir)
@@ -531,7 +604,7 @@ bool CheckMasterAllConfluence(const MqlRates &rates[], int total, double ema_val
    int buy_votes = 0;
    int sell_votes = 0;
 
-   int d0 = 0, d1 = 0, d2 = 0, d3 = 0;
+   int d0 = 0, d1 = 0, d2 = 0, d3 = 0, d4 = 0;
 
    if(CheckTrendlineLiquidityTrap(rates, total, ema_val, d0))
    {
@@ -548,6 +621,10 @@ bool CheckMasterAllConfluence(const MqlRates &rates[], int total, double ema_val
    if(CheckAsianSweepContinuation(rates, total, ema_val, d3))
    {
       if(d3 > 0) buy_votes++; else if(d3 < 0) sell_votes++;
+   }
+   if(CheckICTOptimalTradeEntry(rates, total, ema_val, d4))
+   {
+      if(d4 > 0) buy_votes += 2; else if(d4 < 0) sell_votes += 2;
    }
 
    if(buy_votes >= 2 && buy_votes > sell_votes)
@@ -585,6 +662,9 @@ bool EvaluateDailySignal(const MqlRates &rates[], int total, double ema_val, int
       case MODEL_ASIAN_SWEEP_CONTINUATION:
          return CheckAsianSweepContinuation(rates, total, ema_val, signal_dir);
 
+      case MODEL_ICT_OTE_SD_GOLDEN_ZONE:
+         return CheckICTOptimalTradeEntry(rates, total, ema_val, signal_dir);
+
       case MODEL_MASTER_ALL_CONFLUENCE:
       default:
          return CheckMasterAllConfluence(rates, total, ema_val, signal_dir);
@@ -606,13 +686,23 @@ void OnTick()
    if(cur_bar == g_last_bar_time) return;
    g_last_bar_time = cur_bar;
 
-   // 3. Time between consecutive entries (cooldown)
-   if(TimeCurrent() - g_last_trade_time < PeriodSeconds(_Period) * 2) return;
+   // 3. Daily Trade Reset & Limit (Strict 1 to 2 setups/day target)
+   MqlDateTime dt;
+   TimeToStruct(TimeCurrent(), dt);
+   if(dt.day != g_last_day)
+   {
+      g_last_day = dt.day;
+      g_daily_trades_count = 0;
+   }
+   if(g_daily_trades_count >= InpMaxDailyTrades) return;
 
-   // 4. Session Filter Guard
+   // 4. Time between consecutive entries (cooldown in minutes)
+   if(TimeCurrent() - g_last_trade_time < InpMinTradeCooldownMin * 60) return;
+
+   // 5. Session Filter Guard
    if(!IsInActiveSession()) return;
 
-   // 5. Retrieve Market Rates & Indicators
+   // 6. Retrieve Market Rates & Indicators
    MqlRates rates[];
    ArraySetAsSeries(rates, true);
    int copied = CopyRates(_Symbol, _Period, 0, 50, rates);
@@ -623,13 +713,13 @@ void OnTick()
    if(CopyBuffer(hEMA, 0, 0, 3, ema_buf) < 2) return;
    double ema_val = ema_buf[1];
 
-   // 6. Check Opposing Dump & Flip
+   // 7. Check Opposing Dump & Flip
    ExtEngine.CheckOpposingDumpAndFlip(rates);
 
-   // 7. Check Volume Climax Absorption
+   // 8. Check Volume Climax Absorption
    ExtEngine.CheckVolumeClimaxFade(rates, copied);
 
-   // 8. If basket already open, let the behavioral manager run
+   // 9. If basket already open, let the behavioral manager run
    int primary_open = 0;
    for(int i = PositionsTotal() - 1; i >= 0; i--)
    {
@@ -640,17 +730,18 @@ void OnTick()
    }
    if(primary_open > 0) return;
 
-   // 9. Evaluate SMC Daily Setup
+   // 10. Evaluate SMC Daily Setup
    int signal_dir = 0;
    if(EvaluateDailySignal(rates, copied, ema_val, signal_dir))
    {
       ENUM_ORDER_TYPE otype = (signal_dir > 0) ? ORDER_TYPE_BUY : ORDER_TYPE_SELL;
       double entryPrice = (otype == ORDER_TYPE_BUY) ? SymbolInfoDouble(_Symbol, SYMBOL_ASK) : SymbolInfoDouble(_Symbol, SYMBOL_BID);
 
-      Print("🎯 SMC DAILY SNIPER SIGNAL DETECTED: ", (signal_dir > 0 ? "BUY" : "SELL"), " @ ", entryPrice);
+      Print("🎯 SMC DAILY SNIPER SIGNAL DETECTED: ", (signal_dir > 0 ? "BUY" : "SELL"), " @ ", entryPrice, " [Daily Trade: ", g_daily_trades_count + 1, "/", InpMaxDailyTrades, "]");
       if(ExtEngine.ExecuteSpamBasket(otype, entryPrice, InpBaseStopLossPoints))
       {
          g_last_trade_time = TimeCurrent();
+         g_daily_trades_count++;
       }
    }
 }
