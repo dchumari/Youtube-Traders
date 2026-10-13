@@ -340,7 +340,7 @@ void RedrawChartObjects()
          ObjectSetInteger(0, name_line, OBJPROP_COLOR, line_col);
          ObjectSetInteger(0, name_line, OBJPROP_STYLE, style);
          ObjectSetInteger(0, name_line, OBJPROP_WIDTH, width);
-         ObjectSetInteger(0, name_line, OBJPROP_RAY_RIGHT, true);
+         ObjectSetInteger(0, name_line, OBJPROP_RAY_RIGHT, false);
          ObjectSetInteger(0, name_line, OBJPROP_SELECTABLE, false);
       }
 

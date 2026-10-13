@@ -773,7 +773,7 @@ void DrawHorizontalRoadmapLine(double entry, double price, string label, color c
    ObjectSetInteger(0, line_name, OBJPROP_COLOR, clr);
    ObjectSetInteger(0, line_name, OBJPROP_STYLE, STYLE_DASH);
    ObjectSetInteger(0, line_name, OBJPROP_WIDTH, 1);
-   ObjectSetInteger(0, line_name, OBJPROP_RAY_RIGHT, true);
+   ObjectSetInteger(0, line_name, OBJPROP_RAY_RIGHT, false);
 
    string txt_name = StringFormat("%sTxt_%s_%d", VIZ_PREFIX, label, (int)t1);
    ObjectCreate(0, txt_name, OBJ_TEXT, 0, t2, price);
@@ -789,14 +789,14 @@ void UpdateBELineVisual(double entry, ENUM_POSITION_TYPE ptype, int buffer_pts)
 
    string line_name = StringFormat("%sBE_SHIELD", VIZ_PREFIX);
    datetime t_now = TimeCurrent();
-   datetime t_end = t_now + PeriodSeconds(_Period) * 50;
+   datetime t_end = t_now + PeriodSeconds(_Period) * 8;
 
    ObjectDelete(0, line_name);
-   ObjectCreate(0, line_name, OBJ_TREND, 0, t_now - 3600, be_price, t_end, be_price);
+   ObjectCreate(0, line_name, OBJ_TREND, 0, t_now - PeriodSeconds(_Period) * 4, be_price, t_end, be_price);
    ObjectSetInteger(0, line_name, OBJPROP_COLOR, COLOR_CYAN_BE);
    ObjectSetInteger(0, line_name, OBJPROP_STYLE, STYLE_SOLID);
    ObjectSetInteger(0, line_name, OBJPROP_WIDTH, 2);
-   ObjectSetInteger(0, line_name, OBJPROP_RAY_RIGHT, true);
+   ObjectSetInteger(0, line_name, OBJPROP_RAY_RIGHT, false);
 }
 
 void DrawTracebackRoadmap(double entry, double tp, double sl, ENUM_ORDER_TYPE otype)

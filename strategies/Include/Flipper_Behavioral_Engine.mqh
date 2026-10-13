@@ -101,14 +101,55 @@ private:
    int                      m_traceback_ticket;
    datetime                 m_last_bar_time;
 
+   // Live Basket Tracking for Crisp Visuals
+   bool                     m_basket_active;
+   ENUM_ORDER_TYPE          m_basket_type;
+   double                   m_basket_entry;
+   datetime                 m_basket_entry_time;
+   double                   m_basket_sl;
+   double                   m_basket_tp1;
+   double                   m_basket_tp2;
+   double                   m_basket_tp3;
+   double                   m_basket_tp4;
+   double                   m_basket_tp5;
+   bool                     m_tp1_hit;
+   bool                     m_tp2_hit;
+   bool                     m_tp3_hit;
+   bool                     m_tp4_hit;
+   bool                     m_tp5_hit;
+   int                      m_max_tp_level;
+
+   // Historical Completed Trade Boxes Tracking (Max 20 to prevent clutter)
+   datetime                 m_hist_box_times[50];
+   int                      m_hist_box_count;
+
 public:
    CFlipperBehavioralEngine()
    {
-      m_current_layer    = 1;
-      m_last_layer_entry = 0.0;
-      m_be_active        = false;
-      m_traceback_ticket = 0;
-      m_last_bar_time    = 0;
+      m_current_layer     = 1;
+      m_last_layer_entry  = 0.0;
+      m_be_active         = false;
+      m_traceback_ticket  = 0;
+      m_last_bar_time     = 0;
+
+      m_basket_active     = false;
+      m_basket_type       = ORDER_TYPE_BUY;
+      m_basket_entry      = 0.0;
+      m_basket_entry_time = 0;
+      m_basket_sl         = 0.0;
+      m_basket_tp1        = 0.0;
+      m_basket_tp2        = 0.0;
+      m_basket_tp3        = 0.0;
+      m_basket_tp4        = 0.0;
+      m_basket_tp5        = 0.0;
+      m_tp1_hit           = false;
+      m_tp2_hit           = false;
+      m_tp3_hit           = false;
+      m_tp4_hit           = false;
+      m_tp5_hit           = false;
+      m_max_tp_level      = 0;
+      m_hist_box_count    = 0;
+      ArrayInitialize(m_hist_box_times, 0);
    }
 
    void Init(const SFlipperBehavioralConfig &cfg)
@@ -147,6 +188,25 @@ public:
       m_last_layer_entry = entry_price;
       m_be_active = false;
 
+      // Initialize live basket tracking
+      m_basket_active     = true;
+      m_basket_type       = order_type;
+      m_basket_entry      = entry_price;
+      m_basket_entry_time = TimeCurrent();
+      m_basket_sl         = sl_price;
+      m_tp1_hit           = false;
+      m_tp2_hit           = false;
+      m_tp3_hit           = false;
+      m_tp4_hit           = false;
+      m_tp5_hit           = false;
+      m_max_tp_level      = 0;
+
+      m_basket_tp1 = (order_type == ORDER_TYPE_BUY) ? entry_price + (m_cfg.tp1Points * point) : entry_price - (m_cfg.tp1Points * point);
+      m_basket_tp2 = (order_type == ORDER_TYPE_BUY) ? entry_price + (m_cfg.tp2Points * point) : entry_price - (m_cfg.tp2Points * point);
+      m_basket_tp3 = (order_type == ORDER_TYPE_BUY) ? entry_price + (m_cfg.tp3Points * point) : entry_price - (m_cfg.tp3Points * point);
+      m_basket_tp4 = (order_type == ORDER_TYPE_BUY) ? entry_price + (m_cfg.tp4Points * point) : entry_price - (m_cfg.tp4Points * point);
+      m_basket_tp5 = (order_type == ORDER_TYPE_BUY) ? entry_price + (m_cfg.tp5Points * point) : entry_price - (m_cfg.tp5Points * point);
+
       Print("⚡ BEHAVIORAL PATTERN 1: SPAMMING ", m_cfg.spamTicketsCount, " MICRO-ORDERS at ", entry_price, " (Lot: ", lot_per_ticket, ")!");
 
       for(int i = 1; i <= m_cfg.spamTicketsCount; i++)
@@ -160,6 +220,7 @@ public:
 
       if(m_cfg.enableVisuals)
       {
+         CleanupActiveLines();
          DrawBasketVisualRoadmap(entry_price, order_type, sl_price);
       }
 
@@ -189,21 +250,49 @@ public:
          }
       }
 
-      if(primary_count == 0) return;
+      // Check if open basket has transitioned to closed/flat
+      if(primary_count == 0)
+      {
+         if(m_basket_active)
+         {
+            FinalizeAndCloseBasketVisual();
+         }
+         return;
+      }
 
       double cur_price = (ptype == POSITION_TYPE_BUY) ? SymbolInfoDouble(_Symbol, SYMBOL_BID) : SymbolInfoDouble(_Symbol, SYMBOL_ASK);
       double profit_pts = (ptype == POSITION_TYPE_BUY) ? (cur_price - entry_price) / point : (entry_price - cur_price) / point;
 
-      // Stage 1: TP1 Hit (+20 pips) -> Harvest Ticket 1
-      if(profit_pts >= m_cfg.tp1Points)
+      // Update remaining un-hit active lines to track with live bar forward (never ray-right!)
+      if(m_cfg.enableVisuals)
       {
+         UpdateActiveLinesTime();
+      }
+
+      // Stage 1: TP1 Hit (+20 pips) -> Harvest Ticket 1
+      if(profit_pts >= m_cfg.tp1Points && !m_tp1_hit)
+      {
+         m_tp1_hit = true;
+         m_max_tp_level = 1;
          CloseSpecificTicket(1);
+         if(m_cfg.enableVisuals)
+         {
+            DeleteTargetLine("TP1");
+            DrawActiveProfitBox(m_basket_entry_time, m_basket_entry, TimeCurrent(), m_basket_tp1);
+         }
       }
 
       // Stage 2: TP2 Hit (+35 pips) -> Harvest Ticket 2 & Move ALL to Breakeven (+1.0 pip)
-      if(profit_pts >= m_cfg.tp2Points)
+      if(profit_pts >= m_cfg.tp2Points && !m_tp2_hit)
       {
+         m_tp2_hit = true;
+         m_max_tp_level = 2;
          CloseSpecificTicket(2);
+         if(m_cfg.enableVisuals)
+         {
+            DeleteTargetLine("TP2");
+            DrawActiveProfitBox(m_basket_entry_time, m_basket_entry, TimeCurrent(), m_basket_tp2);
+         }
          if(!m_be_active)
          {
             MoveStopLoss(entry_price, ptype, 10);
@@ -217,23 +306,45 @@ public:
       }
 
       // Stage 3: TP3 Hit (+60 pips) -> Harvest Ticket 3 & Lock +25 pips Profit
-      if(profit_pts >= m_cfg.tp3Points)
+      if(profit_pts >= m_cfg.tp3Points && !m_tp3_hit)
       {
+         m_tp3_hit = true;
+         m_max_tp_level = 3;
          CloseSpecificTicket(3);
          MoveStopLoss(entry_price, ptype, 250);
+         if(m_cfg.enableVisuals)
+         {
+            DeleteTargetLine("TP3");
+            DrawActiveProfitBox(m_basket_entry_time, m_basket_entry, TimeCurrent(), m_basket_tp3);
+            DrawBreakevenShieldLine(entry_price, ptype, 250);
+         }
       }
 
       // Stage 4: TP4 Hit (+100 pips) -> Harvest Ticket 4 & Lock +60 pips Profit
-      if(profit_pts >= m_cfg.tp4Points)
+      if(profit_pts >= m_cfg.tp4Points && !m_tp4_hit)
       {
+         m_tp4_hit = true;
+         m_max_tp_level = 4;
          CloseSpecificTicket(4);
          MoveStopLoss(entry_price, ptype, 600);
+         if(m_cfg.enableVisuals)
+         {
+            DeleteTargetLine("TP4");
+            DrawActiveProfitBox(m_basket_entry_time, m_basket_entry, TimeCurrent(), m_basket_tp4);
+            DrawBreakevenShieldLine(entry_price, ptype, 600);
+         }
       }
 
       // Stage 5: TP5 Hit (+160 pips) -> Bank Final Moonshot Runner
-      if(profit_pts >= m_cfg.tp5Points)
+      if(profit_pts >= m_cfg.tp5Points && !m_tp5_hit)
       {
+         m_tp5_hit = true;
+         m_max_tp_level = 5;
          Print("🏆 BEHAVIORAL PATTERN 2: MOONSHOT TP5 HIT (+160 pips)! Banking all runners!");
+         if(m_cfg.enableVisuals)
+         {
+            DeleteTargetLine("TP5");
+         }
          CloseAllPositions();
       }
    }
@@ -447,6 +558,10 @@ public:
                m_trade.PositionClose(m_pos.Ticket());
          }
       }
+      if(m_basket_active)
+      {
+         FinalizeAndCloseBasketVisual();
+      }
       m_be_active = false;
       m_current_layer = 1;
    }
@@ -579,39 +694,102 @@ private:
    {
       double point = SymbolInfoDouble(_Symbol, SYMBOL_POINT);
       datetime t_now = TimeCurrent();
-      datetime t_end = t_now + PeriodSeconds(_Period) * 30;
+      datetime t_end = t_now + PeriodSeconds(_Period) * 8; // Strictly 8 bars forward, NOT infinite!
 
-      string box_name = StringFormat("%sBox_%d", m_cfg.prefix, (int)t_now);
+      // Temporary Active Corridor Box (Subtle slate border)
+      string active_box = StringFormat("%sActiveBox", m_cfg.prefix);
       double tp_top = (otype == ORDER_TYPE_BUY) ? entry + (m_cfg.tp5Points * point) : entry - (m_cfg.tp5Points * point);
 
-      ObjectCreate(0, box_name, OBJ_RECTANGLE, 0, t_now, entry, t_end, tp_top);
-      ObjectSetInteger(0, box_name, OBJPROP_COLOR, FBE_COLOR_WIN_LIME);
-      ObjectSetInteger(0, box_name, OBJPROP_BGCOLOR, (otype == ORDER_TYPE_BUY) ? (color)C'28,60,38' : (color)C'65,24,28');
-      ObjectSetInteger(0, box_name, OBJPROP_BACK, true);
+      ObjectDelete(0, active_box);
+      ObjectCreate(0, active_box, OBJ_RECTANGLE, 0, t_now, entry, t_end, tp_top);
+      ObjectSetInteger(0, active_box, OBJPROP_COLOR, (color)C'98,114,164');
+      ObjectSetInteger(0, active_box, OBJPROP_STYLE, STYLE_DOT);
+      ObjectSetInteger(0, active_box, OBJPROP_FILL, false);
+      ObjectSetInteger(0, active_box, OBJPROP_BACK, true);
 
-      // TP Ladder Lines
-      DrawLine(entry, (otype == ORDER_TYPE_BUY) ? entry + (m_cfg.tp1Points * point) : entry - (m_cfg.tp1Points * point), "TP1 (+20p)", FBE_COLOR_YELLOW, t_now, t_end);
-      DrawLine(entry, (otype == ORDER_TYPE_BUY) ? entry + (m_cfg.tp2Points * point) : entry - (m_cfg.tp2Points * point), "TP2 (+35p BE)", FBE_COLOR_BE_CYAN, t_now, t_end);
-      DrawLine(entry, (otype == ORDER_TYPE_BUY) ? entry + (m_cfg.tp3Points * point) : entry - (m_cfg.tp3Points * point), "TP3 (+60p Lock)", FBE_COLOR_WIN_LIME, t_now, t_end);
-      DrawLine(entry, (otype == ORDER_TYPE_BUY) ? entry + (m_cfg.tp4Points * point) : entry - (m_cfg.tp4Points * point), "TP4 (+100p)", FBE_COLOR_ORANGE, t_now, t_end);
-      DrawLine(entry, (otype == ORDER_TYPE_BUY) ? entry + (m_cfg.tp5Points * point) : entry - (m_cfg.tp5Points * point), "TP5 (+160p Runner)", FBE_COLOR_PURPLE, t_now, t_end);
+      // TP Ladder Lines (Strictly RAY_RIGHT = FALSE!)
+      DrawBoundedLine("TP1", m_basket_tp1, "TP1 (+20p)", FBE_COLOR_YELLOW, t_now, t_end);
+      DrawBoundedLine("TP2", m_basket_tp2, "TP2 (+35p BE)", FBE_COLOR_BE_CYAN, t_now, t_end);
+      DrawBoundedLine("TP3", m_basket_tp3, "TP3 (+60p Lock)", FBE_COLOR_WIN_LIME, t_now, t_end);
+      DrawBoundedLine("TP4", m_basket_tp4, "TP4 (+100p)", FBE_COLOR_ORANGE, t_now, t_end);
+      DrawBoundedLine("TP5", m_basket_tp5, "TP5 (+160p Runner)", FBE_COLOR_PURPLE, t_now, t_end);
 
       ChartRedraw(0);
    }
 
-   void DrawLine(double entry, double price, string label, color clr, datetime t1, datetime t2)
+   void DrawBoundedLine(string tag, double price, string label, color clr, datetime t1, datetime t2)
    {
-      string line_name = StringFormat("%sLine_%s_%d", m_cfg.prefix, label, (int)t1);
+      string line_name = StringFormat("%sLine_%s", m_cfg.prefix, tag);
+      ObjectDelete(0, line_name);
       ObjectCreate(0, line_name, OBJ_TREND, 0, t1, price, t2, price);
       ObjectSetInteger(0, line_name, OBJPROP_COLOR, clr);
       ObjectSetInteger(0, line_name, OBJPROP_STYLE, STYLE_DASH);
-      ObjectSetInteger(0, line_name, OBJPROP_RAY_RIGHT, true);
+      ObjectSetInteger(0, line_name, OBJPROP_WIDTH, 1);
+      ObjectSetInteger(0, line_name, OBJPROP_RAY_RIGHT, false); // NEVER INFINITE!
+      ObjectSetInteger(0, line_name, OBJPROP_BACK, false);
 
-      string txt_name = StringFormat("%sTxt_%s_%d", m_cfg.prefix, label, (int)t1);
+      string txt_name = StringFormat("%sTxt_%s", m_cfg.prefix, tag);
+      ObjectDelete(0, txt_name);
       ObjectCreate(0, txt_name, OBJ_TEXT, 0, t2, price);
       ObjectSetString(0, txt_name, OBJPROP_TEXT, "  " + label);
       ObjectSetInteger(0, txt_name, OBJPROP_COLOR, clr);
+      ObjectSetString(0, txt_name, OBJPROP_FONT, "Segoe UI");
       ObjectSetInteger(0, txt_name, OBJPROP_FONTSIZE, 8);
+   }
+
+   void DeleteTargetLine(string tag)
+   {
+      ObjectDelete(0, StringFormat("%sLine_%s", m_cfg.prefix, tag));
+      ObjectDelete(0, StringFormat("%sTxt_%s", m_cfg.prefix, tag));
+      ChartRedraw(0);
+   }
+
+   void DrawActiveProfitBox(datetime t_start, double price_entry, datetime t_current, double target_price)
+   {
+      string active_box = StringFormat("%sActiveBox", m_cfg.prefix);
+      ObjectDelete(0, active_box);
+      ObjectCreate(0, active_box, OBJ_RECTANGLE, 0, t_start, price_entry, t_current, target_price);
+      ObjectSetInteger(0, active_box, OBJPROP_COLOR, FBE_COLOR_WIN_LIME);
+      ObjectSetInteger(0, active_box, OBJPROP_BGCOLOR, (color)C'28,60,38');
+      ObjectSetInteger(0, active_box, OBJPROP_FILL, true);
+      ObjectSetInteger(0, active_box, OBJPROP_BACK, true);
+      ChartRedraw(0);
+   }
+
+   void UpdateActiveLinesTime()
+   {
+      datetime t_end = TimeCurrent() + PeriodSeconds(_Period) * 6;
+      string tags[] = {"TP1", "TP2", "TP3", "TP4", "TP5"};
+      bool hit_flags[] = {m_tp1_hit, m_tp2_hit, m_tp3_hit, m_tp4_hit, m_tp5_hit};
+
+      for(int i = 0; i < 5; i++)
+      {
+         if(!hit_flags[i])
+         {
+            string line_name = StringFormat("%sLine_%s", m_cfg.prefix, tags[i]);
+            if(ObjectFind(0, line_name) >= 0)
+            {
+               double pr = ObjectGetDouble(0, line_name, OBJPROP_PRICE, 0);
+               ObjectMove(0, line_name, 1, t_end, pr);
+            }
+            string txt_name = StringFormat("%sTxt_%s", m_cfg.prefix, tags[i]);
+            if(ObjectFind(0, txt_name) >= 0)
+            {
+               double pr = ObjectGetDouble(0, txt_name, OBJPROP_PRICE, 0);
+               ObjectMove(0, txt_name, 0, t_end, pr);
+            }
+         }
+      }
+
+      if(m_be_active)
+      {
+         string shield_line = StringFormat("%sBE_SHIELD", m_cfg.prefix);
+         if(ObjectFind(0, shield_line) >= 0)
+         {
+            double pr = ObjectGetDouble(0, shield_line, OBJPROP_PRICE, 0);
+            ObjectMove(0, shield_line, 1, t_end, pr);
+         }
+      }
    }
 
    void DrawBreakevenShieldLine(double entry, ENUM_POSITION_TYPE ptype, int buffer_pts)
@@ -621,14 +799,128 @@ private:
 
       string line_name = StringFormat("%sBE_SHIELD", m_cfg.prefix);
       datetime t_now = TimeCurrent();
-      datetime t_end = t_now + PeriodSeconds(_Period) * 50;
+      datetime t_end = t_now + PeriodSeconds(_Period) * 8; // Strictly 8 bars forward, NOT infinite!
 
       ObjectDelete(0, line_name);
-      ObjectCreate(0, line_name, OBJ_TREND, 0, t_now - 3600, be_price, t_end, be_price);
+      ObjectCreate(0, line_name, OBJ_TREND, 0, m_basket_entry_time, be_price, t_end, be_price);
       ObjectSetInteger(0, line_name, OBJPROP_COLOR, FBE_COLOR_BE_CYAN);
       ObjectSetInteger(0, line_name, OBJPROP_STYLE, STYLE_SOLID);
       ObjectSetInteger(0, line_name, OBJPROP_WIDTH, 2);
-      ObjectSetInteger(0, line_name, OBJPROP_RAY_RIGHT, true);
+      ObjectSetInteger(0, line_name, OBJPROP_RAY_RIGHT, false); // NEVER INFINITE!
+      ObjectSetInteger(0, line_name, OBJPROP_BACK, false);
+      ChartRedraw(0);
+   }
+
+   void CleanupActiveLines()
+   {
+      string targets[] = {"TP1", "TP2", "TP3", "TP4", "TP5"};
+      for(int i = 0; i < 5; i++)
+      {
+         ObjectDelete(0, StringFormat("%sLine_%s", m_cfg.prefix, targets[i]));
+         ObjectDelete(0, StringFormat("%sTxt_%s", m_cfg.prefix, targets[i]));
+      }
+      ObjectDelete(0, StringFormat("%sBE_SHIELD", m_cfg.prefix));
+      ObjectDelete(0, StringFormat("%sActiveBox", m_cfg.prefix));
+   }
+
+   void FinalizeAndCloseBasketVisual()
+   {
+      if(!m_cfg.enableVisuals || !m_basket_active)
+      {
+         m_basket_active = false;
+         m_be_active     = false;
+         return;
+      }
+
+      datetime t_exit = TimeCurrent();
+      if(t_exit <= m_basket_entry_time)
+         t_exit = m_basket_entry_time + PeriodSeconds(_Period) * 2;
+
+      // 1. Immediately delete ALL temporary active lines & texts
+      CleanupActiveLines();
+
+      // 2. Draw Final Crisp Historical Box (Bounded in time and price)
+      double point = SymbolInfoDouble(_Symbol, SYMBOL_POINT);
+      string box_name = StringFormat("%sTradeBox_%d", m_cfg.prefix, (int)m_basket_entry_time);
+      string lbl_name = StringFormat("%sTradeLbl_%d", m_cfg.prefix, (int)m_basket_entry_time);
+
+      if(m_max_tp_level >= 1)
+      {
+         // WIN / PARTIAL / BE EXIT
+         double reached_tp = (m_max_tp_level == 1) ? m_basket_tp1 :
+                             (m_max_tp_level == 2) ? m_basket_tp2 :
+                             (m_max_tp_level == 3) ? m_basket_tp3 :
+                             (m_max_tp_level == 4) ? m_basket_tp4 : m_basket_tp5;
+
+         ObjectCreate(0, box_name, OBJ_RECTANGLE, 0, m_basket_entry_time, m_basket_entry, t_exit, reached_tp);
+         ObjectSetInteger(0, box_name, OBJPROP_COLOR, FBE_COLOR_WIN_LIME);
+         ObjectSetInteger(0, box_name, OBJPROP_BGCOLOR, (color)C'28,60,38');
+         ObjectSetInteger(0, box_name, OBJPROP_FILL, true);
+         ObjectSetInteger(0, box_name, OBJPROP_BACK, true);
+         ObjectSetInteger(0, box_name, OBJPROP_WIDTH, 1);
+         ObjectSetInteger(0, box_name, OBJPROP_STYLE, STYLE_SOLID);
+
+         int banked_pts = (int)MathRound(MathAbs(reached_tp - m_basket_entry) / point);
+         string win_desc = StringFormat("  ✓ WIN: TP%d BANKED (+%d pts)", m_max_tp_level, banked_pts);
+
+         ObjectCreate(0, lbl_name, OBJ_TEXT, 0, t_exit, reached_tp);
+         ObjectSetString(0, lbl_name, OBJPROP_TEXT, win_desc);
+         ObjectSetInteger(0, lbl_name, OBJPROP_COLOR, FBE_COLOR_WIN_LIME);
+         ObjectSetString(0, lbl_name, OBJPROP_FONT, "Segoe UI Bold");
+         ObjectSetInteger(0, lbl_name, OBJPROP_FONTSIZE, 8);
+      }
+      else
+      {
+         // LOSS / DIRECT SL HIT
+         ObjectCreate(0, box_name, OBJ_RECTANGLE, 0, m_basket_entry_time, m_basket_entry, t_exit, m_basket_sl);
+         ObjectSetInteger(0, box_name, OBJPROP_COLOR, FBE_COLOR_LOSS_CORAL);
+         ObjectSetInteger(0, box_name, OBJPROP_BGCOLOR, (color)C'65,24,28');
+         ObjectSetInteger(0, box_name, OBJPROP_FILL, true);
+         ObjectSetInteger(0, box_name, OBJPROP_BACK, true);
+         ObjectSetInteger(0, box_name, OBJPROP_WIDTH, 1);
+         ObjectSetInteger(0, box_name, OBJPROP_STYLE, STYLE_SOLID);
+
+         int sl_pts = (int)MathRound(MathAbs(m_basket_entry - m_basket_sl) / point);
+         string sl_desc = StringFormat("  ✗ SL HIT (-%d pts)", sl_pts);
+
+         ObjectCreate(0, lbl_name, OBJ_TEXT, 0, t_exit, m_basket_sl);
+         ObjectSetString(0, lbl_name, OBJPROP_TEXT, sl_desc);
+         ObjectSetInteger(0, lbl_name, OBJPROP_COLOR, FBE_COLOR_LOSS_CORAL);
+         ObjectSetString(0, lbl_name, OBJPROP_FONT, "Segoe UI Bold");
+         ObjectSetInteger(0, lbl_name, OBJPROP_FONTSIZE, 8);
+      }
+
+      // 3. Register Historical Box and Prune Old Boxes (Keep max 20)
+      RegisterAndPruneBox(m_basket_entry_time);
+
+      m_basket_active = false;
+      m_be_active     = false;
+      m_current_layer = 1;
+      ChartRedraw(0);
+   }
+
+   void RegisterAndPruneBox(datetime entry_t)
+   {
+      if(m_hist_box_count < 20)
+      {
+         m_hist_box_times[m_hist_box_count] = entry_t;
+         m_hist_box_count++;
+      }
+      else
+      {
+         // Delete oldest box
+         datetime oldest_t = m_hist_box_times[0];
+         string old_box = StringFormat("%sTradeBox_%d", m_cfg.prefix, (int)oldest_t);
+         string old_lbl = StringFormat("%sTradeLbl_%d", m_cfg.prefix, (int)oldest_t);
+         ObjectDelete(0, old_box);
+         ObjectDelete(0, old_lbl);
+
+         for(int i = 0; i < 19; i++)
+         {
+            m_hist_box_times[i] = m_hist_box_times[i + 1];
+         }
+         m_hist_box_times[19] = entry_t;
+      }
    }
 
    void UpdateHUDText(string text)
