@@ -27,6 +27,7 @@ InpMinSweepPoints=100
 InpMinWickRejection=0.35
 InpEMATrendPeriod=50
 InpVolumeSurgeMult=1.5
+InpEnableVolumeClimaxFade=0
 InpUseSessionFilter=1
 InpLondonStartHour=7
 InpLondonEndHour=11

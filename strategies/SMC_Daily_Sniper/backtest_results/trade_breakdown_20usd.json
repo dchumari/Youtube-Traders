@@ -1,0 +1,640 @@
+{
+  "RW1 (Late Jan - W4)": [
+    {
+      "close_time": "2024.01.22 10:00:00",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.01.22 09:15:00",
+      "open_price": "2022.35",
+      "close_price": "2021.76",
+      "profit": -0.59,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.01.22 10:00:00",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.01.22 09:15:00",
+      "open_price": "2022.35",
+      "close_price": "2021.76",
+      "profit": -0.59,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.01.22 16:00:20",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.01.22 16:00:00",
+      "open_price": "2023.09",
+      "close_price": "2023.31",
+      "profit": -0.22,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.01.22 16:00:20",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.01.22 16:00:00",
+      "open_price": "2023.09",
+      "close_price": "2023.31",
+      "profit": -0.22,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.01.22 16:26:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.01.22 16:15:00",
+      "open_price": "2023.34",
+      "close_price": "2021.34",
+      "profit": -2.0,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.01.22 16:26:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.01.22 16:15:00",
+      "open_price": "2023.34",
+      "close_price": "2021.34",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.01.22 18:00:00",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.01.22 17:15:00",
+      "open_price": "2024.82",
+      "close_price": "2024.03",
+      "profit": -0.79,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.01.22 18:00:00",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.01.22 17:15:00",
+      "open_price": "2024.82",
+      "close_price": "2024.03",
+      "profit": -0.79,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.01.23 08:55:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.01.23 08:45:00",
+      "open_price": "2030.69",
+      "close_price": "2033.36",
+      "profit": 2.67,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.01.23 08:58:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.01.23 08:45:00",
+      "open_price": "2030.69",
+      "close_price": "2035.85",
+      "profit": 5.16,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.01.23 09:20:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.01.23 09:15:00",
+      "open_price": "2033.76",
+      "close_price": "2030.16",
+      "profit": 3.6,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.01.23 09:20:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.01.23 09:15:00",
+      "open_price": "2033.76",
+      "close_price": "2030.16",
+      "profit": 3.6,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.01.24 09:37:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.01.24 09:30:00",
+      "open_price": "2027.46",
+      "close_price": "2028.96",
+      "profit": -1.5,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.01.24 09:37:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.01.24 09:30:00",
+      "open_price": "2027.46",
+      "close_price": "2028.96",
+      "profit": -1.5,
+      "comment": "Flp_L1_T2"
+    }
+  ],
+  "RW2 (Late Apr - W17)": [
+    {
+      "close_time": "2024.04.22 09:21:20",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 09:15:00",
+      "open_price": "2365.69",
+      "close_price": "2363.69",
+      "profit": -2.0,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.22 09:21:20",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 09:15:00",
+      "open_price": "2365.69",
+      "close_price": "2363.69",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.22 10:12:20",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 10:00:00",
+      "open_price": "2355.91",
+      "close_price": "2358.20",
+      "profit": 2.29,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.22 10:58:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 10:00:00",
+      "open_price": "2355.91",
+      "close_price": "2360.93",
+      "profit": 5.02,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.22 15:20:20",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 15:15:00",
+      "open_price": "2346.41",
+      "close_price": "2344.41",
+      "profit": -2.0,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.22 15:20:20",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 15:15:00",
+      "open_price": "2346.41",
+      "close_price": "2344.41",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.22 15:33:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 15:30:00",
+      "open_price": "2346.93",
+      "close_price": "2349.87",
+      "profit": 2.94,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.22 15:40:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 15:30:00",
+      "open_price": "2346.93",
+      "close_price": "2344.93",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.22 15:51:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.04.22 15:45:00",
+      "open_price": "2342.13",
+      "close_price": "2334.17",
+      "profit": 7.96,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.22 15:51:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.04.22 15:45:00",
+      "open_price": "2342.13",
+      "close_price": "2334.17",
+      "profit": 7.96,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.22 16:03:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 16:00:00",
+      "open_price": "2336.97",
+      "close_price": "2339.02",
+      "profit": 2.05,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.22 16:03:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.22 16:00:00",
+      "open_price": "2336.97",
+      "close_price": "2339.02",
+      "profit": 2.05,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.23 12:30:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.23 12:30:00",
+      "open_price": "2295.29",
+      "close_price": "2297.38",
+      "profit": 2.09,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.23 13:19:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.23 12:30:00",
+      "open_price": "2295.29",
+      "close_price": "2300.75",
+      "profit": 5.46,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.23 15:18:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.04.23 15:15:00",
+      "open_price": "2305.52",
+      "close_price": "2307.52",
+      "profit": -2.0,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.23 15:18:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.04.23 15:15:00",
+      "open_price": "2305.52",
+      "close_price": "2307.52",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.23 16:17:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.23 16:15:00",
+      "open_price": "2313.28",
+      "close_price": "2315.35",
+      "profit": 2.07,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.23 16:25:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.23 16:15:00",
+      "open_price": "2313.28",
+      "close_price": "2311.28",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.23 17:46:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.23 17:45:00",
+      "open_price": "2319.32",
+      "close_price": "2317.32",
+      "profit": -2.0,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.23 17:46:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.04.23 17:45:00",
+      "open_price": "2319.32",
+      "close_price": "2317.32",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.04.24 09:15:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.04.24 09:15:00",
+      "open_price": "2327.71",
+      "close_price": "2328.34",
+      "profit": -0.63,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.04.24 09:15:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.04.24 09:15:00",
+      "open_price": "2327.71",
+      "close_price": "2328.34",
+      "profit": -0.63,
+      "comment": "Flp_L1_T2"
+    }
+  ],
+  "RW3 (Late Aug - W34)": [
+    {
+      "close_time": "2024.08.19 16:19:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.19 16:15:00",
+      "open_price": "2490.24",
+      "close_price": "2492.30",
+      "profit": 2.06,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.19 16:28:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.19 16:15:00",
+      "open_price": "2490.24",
+      "close_price": "2488.24",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.08.19 16:30:20",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.19 16:30:00",
+      "open_price": "2490.12",
+      "close_price": "2489.35",
+      "profit": -0.77,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.19 16:30:20",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.19 16:30:00",
+      "open_price": "2490.12",
+      "close_price": "2489.35",
+      "profit": -0.77,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.08.20 09:57:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.20 09:45:00",
+      "open_price": "2503.90",
+      "close_price": "2501.90",
+      "profit": -2.0,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.20 09:57:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.20 09:45:00",
+      "open_price": "2503.90",
+      "close_price": "2501.90",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.08.20 10:37:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.08.20 10:30:00",
+      "open_price": "2505.64",
+      "close_price": "2507.64",
+      "profit": -2.0,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.20 10:37:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.08.20 10:30:00",
+      "open_price": "2505.64",
+      "close_price": "2507.64",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.08.20 16:17:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.20 16:15:00",
+      "open_price": "2526.17",
+      "close_price": "2524.17",
+      "profit": -2.0,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.20 16:47:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.20 16:45:00",
+      "open_price": "2525.84",
+      "close_price": "2528.73",
+      "profit": 2.89,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.21 09:23:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.21 09:15:00",
+      "open_price": "2514.11",
+      "close_price": "2517.48",
+      "profit": 3.37,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.21 14:25:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.21 14:15:00",
+      "open_price": "2508.26",
+      "close_price": "2510.63",
+      "profit": 2.37,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.21 15:17:20",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.21 14:15:00",
+      "open_price": "2508.26",
+      "close_price": "2513.33",
+      "profit": 5.07,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.08.22 17:31:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.22 17:30:00",
+      "open_price": "2477.92",
+      "close_price": "2475.92",
+      "profit": -2.0,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.22 17:31:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.22 17:30:00",
+      "open_price": "2477.92",
+      "close_price": "2475.92",
+      "profit": -2.0,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.08.23 14:30:20",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.08.23 14:30:00",
+      "open_price": "2499.67",
+      "close_price": "2499.89",
+      "profit": -0.22,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.23 14:30:20",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.08.23 14:30:00",
+      "open_price": "2499.67",
+      "close_price": "2499.89",
+      "profit": -0.22,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.08.23 16:16:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.23 16:15:00",
+      "open_price": "2500.67",
+      "close_price": "2502.96",
+      "profit": 2.29,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.23 16:30:00",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.23 16:15:00",
+      "open_price": "2500.67",
+      "close_price": "2500.04",
+      "profit": -0.63,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.08.23 16:33:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.08.23 16:30:00",
+      "open_price": "2500.04",
+      "close_price": "2497.78",
+      "profit": 2.26,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.23 16:47:40",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.08.23 16:30:00",
+      "open_price": "2500.04",
+      "close_price": "2494.95",
+      "profit": 5.09,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.08.23 17:31:20",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.23 17:30:00",
+      "open_price": "2514.20",
+      "close_price": "2516.59",
+      "profit": 2.39,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.08.23 17:35:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.08.23 17:30:00",
+      "open_price": "2514.20",
+      "close_price": "2512.54",
+      "profit": -1.66,
+      "comment": "Flp_L1_T2"
+    }
+  ],
+  "RW4 (Late Oct - W43)": [
+    {
+      "close_time": "2024.10.21 10:22:20",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.10.21 10:15:00",
+      "open_price": "2730.85",
+      "close_price": "2728.66",
+      "profit": 2.19,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.10.21 10:41:20",
+      "type": "sell",
+      "vol": "0.01",
+      "open_time": "2024.10.21 10:15:00",
+      "open_price": "2730.85",
+      "close_price": "2725.70",
+      "profit": 5.15,
+      "comment": "Flp_L1_T2"
+    },
+    {
+      "close_time": "2024.10.21 15:48:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.10.21 15:45:00",
+      "open_price": "2738.52",
+      "close_price": "2737.80",
+      "profit": -0.72,
+      "comment": "Flp_L1_T1"
+    },
+    {
+      "close_time": "2024.10.21 15:48:40",
+      "type": "buy",
+      "vol": "0.01",
+      "open_time": "2024.10.21 15:45:00",
+      "open_price": "2738.52",
+      "close_price": "2737.80",
+      "profit": -0.72,
+      "comment": "Flp_L1_T2"
+    }
+  ]
+}

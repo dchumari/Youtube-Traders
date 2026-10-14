@@ -30,7 +30,8 @@ enum ENUM_SMC_DAILY_MODEL
    MODEL_DANIAL_QUASIMODO           = 5, // 5: Ahmad Danial Quasimodo (QML) Left Shoulder Invalidation
    MODEL_TRADER_YUSH_VALUE_AREA     = 6, // 6: Trader Yush 70% Value Area & Delta Absorption
    MODEL_MATTEO_BANK_ORB            = 7, // 7: Matteo Conti Bank Opening Range Breakout (ORB 30m)
-   MODEL_MASTER_ALL_CONFLUENCE      = 8  // 8: Master Institutional Confluence Suite (Autonomous Fusion)
+   MODEL_MASTER_ALL_CONFLUENCE      = 8, // 8: Master Institutional Confluence Suite (Autonomous Fusion)
+   MODEL_HYBRID_QUASIMODO_ORB       = 9  // 9: Dual Champion Hybrid (Quasimodo Left Shoulder + Matteo Bank ORB)
 };
 
 enum ENUM_DAILY_TARGET_HORIZON
@@ -77,6 +78,7 @@ input int       InpMinSweepPoints       = 120;       // Minimum Liquidity Sweep 
 input double    InpMinWickRejection     = 0.35;      // Minimum Rejection Wick Ratio (35%)
 input int       InpEMATrendPeriod       = 50;        // Baseline Structural EMA Period
 input double    InpVolumeSurgeMult      = 1.6;       // Volume Surge Multiplier (1.6x 20-bar avg)
+input bool      InpEnableVolumeClimaxFade = false;   // Enable Volume Climax Absorption Fade (Default false to prevent false chop entries)
 
 sinput string   sep5 = "================ SESSION & TIMING FILTERS ==============";
 input bool      InpUseSessionFilter     = true;      // Enable London / NY Killzone Focus
@@ -183,7 +185,7 @@ int OnInit()
    cfg.enableLiquidationSweep= true;
    cfg.spikeMinWickPct       = InpMinWickRejection;
    cfg.enableJudasFlush      = true;
-   cfg.enableVolumeClimaxFade= true;
+   cfg.enableVolumeClimaxFade= InpEnableVolumeClimaxFade;
    cfg.volumeSpikeMultiplier = InpVolumeSurgeMult;
    cfg.enableFlipMilestone   = false;
    cfg.targetEquity          = 10000.0;
@@ -628,11 +630,13 @@ bool CheckDanialQuasimodo(const MqlRates &rates[], int total, double ema_val, in
    signal_dir = 0;
    if(total < 35) return false;
    double point = SymbolInfoDouble(_Symbol, SYMBOL_POINT);
+   int head_limit = 28;
+   int ls_limit   = 34;
 
    // Bearish QM: Left Shoulder High -> Interim Low -> Head (Higher High) -> BOS (Lower Low)
    int idx_head = -1;
    double max_high = 0.0;
-   for(int i = 4; i < 28; i++)
+   for(int i = 4; i < head_limit; i++)
    {
       if(rates[i].high > max_high)
       {
@@ -643,7 +647,7 @@ bool CheckDanialQuasimodo(const MqlRates &rates[], int total, double ema_val, in
 
    int idx_ls = -1;
    double ls_high = 0.0;
-   for(int i = idx_head + 2; i < 34; i++)
+   for(int i = idx_head + 2; i < ls_limit; i++)
    {
       if(rates[i].high > ls_high && rates[i].high < max_high - (80 * point))
       {
@@ -689,7 +693,7 @@ bool CheckDanialQuasimodo(const MqlRates &rates[], int total, double ema_val, in
    // Bullish QM: Left Shoulder Low -> Interim High -> Head (Lower Low) -> BOS (Higher High)
    int idx_head_l = -1;
    double min_low = 999999.0;
-   for(int i = 4; i < 28; i++)
+   for(int i = 4; i < head_limit; i++)
    {
       if(rates[i].low < min_low)
       {
@@ -700,7 +704,7 @@ bool CheckDanialQuasimodo(const MqlRates &rates[], int total, double ema_val, in
 
    int idx_ls_l = -1;
    double ls_low = 999999.0;
-   for(int i = idx_head_l + 2; i < 34; i++)
+   for(int i = idx_head_l + 2; i < ls_limit; i++)
    {
       if(rates[i].low < ls_low && rates[i].low > min_low + (80 * point))
       {
@@ -851,7 +855,9 @@ bool CheckMatteoBankORB(const MqlRates &rates[], int total, double ema_val, int 
 
 //+------------------------------------------------------------------+
 //| MODEL 8: Master Confluence Daily Sniper (Multi-Signal Fusion)    |
-//| Requires >= 2 aligned signals for maximum win rate & PF          |
+//| Requires >= 3 weighted aligned signals for elite win rate & PF   |
+//| Champion models (Quasimodo, Inducement) carry 3 votes;          |
+//| Weak models carry 1 vote and can never trigger trades alone.     |
 //+------------------------------------------------------------------+
 bool CheckMasterAllConfluence(const MqlRates &rates[], int total, double ema_val, int &signal_dir)
 {
@@ -861,45 +867,51 @@ bool CheckMasterAllConfluence(const MqlRates &rates[], int total, double ema_val
 
    int d0 = 0, d1 = 0, d2 = 0, d3 = 0, d4 = 0, d5 = 0, d6 = 0, d7 = 0;
 
-   if(CheckTrendlineLiquidityTrap(rates, total, ema_val, d0))
-   {
-      if(d0 > 0) buy_votes += 2; else if(d0 < 0) sell_votes += 2;
-   }
-   if(CheckSMCInducementOrderBlock(rates, total, ema_val, d1))
-   {
-      if(d1 > 0) buy_votes++; else if(d1 < 0) sell_votes++;
-   }
-   if(CheckFreshSDBaseFlip(rates, total, ema_val, d2))
-   {
-      if(d2 > 0) buy_votes++; else if(d2 < 0) sell_votes++;
-   }
-   if(CheckAsianSweepContinuation(rates, total, ema_val, d3))
-   {
-      if(d3 > 0) buy_votes++; else if(d3 < 0) sell_votes++;
-   }
-   if(CheckICTOptimalTradeEntry(rates, total, ema_val, d4))
-   {
-      if(d4 > 0) buy_votes += 2; else if(d4 < 0) sell_votes += 2;
-   }
+   // 1. Champion Model: Ahmad Danial Quasimodo (3 votes - High-conviction structural reversal)
    if(CheckDanialQuasimodo(rates, total, ema_val, d5))
    {
-      if(d5 > 0) buy_votes += 2; else if(d5 < 0) sell_votes += 2;
+      if(d5 > 0) buy_votes += 3; else if(d5 < 0) sell_votes += 3;
    }
-   if(CheckTraderYushValueArea(rates, total, ema_val, d6))
+   // 2. Champion Model: SMC Inducement & Order Block (3 votes - Proven high PF in RW2 & RW3)
+   if(CheckSMCInducementOrderBlock(rates, total, ema_val, d1))
    {
-      if(d6 > 0) buy_votes += 2; else if(d6 < 0) sell_votes += 2;
+      if(d1 > 0) buy_votes += 3; else if(d1 < 0) sell_votes += 3;
    }
+   // 3. Momentum Model: Matteo Bank ORB (2 votes - Dominates London open expansion)
    if(CheckMatteoBankORB(rates, total, ema_val, d7))
    {
       if(d7 > 0) buy_votes += 2; else if(d7 < 0) sell_votes += 2;
    }
+   // 4. Volume Profile Model: Trader Yush Value Area (2 votes - High PF in RW1 & RW2)
+   if(CheckTraderYushValueArea(rates, total, ema_val, d6))
+   {
+      if(d6 > 0) buy_votes += 2; else if(d6 < 0) sell_votes += 2;
+   }
+   // 5. Confluence Filters: Asian Sweep, S&D Base, Trendline, OTE (1 vote each - cannot fire alone)
+   if(CheckAsianSweepContinuation(rates, total, ema_val, d3))
+   {
+      if(d3 > 0) buy_votes += 1; else if(d3 < 0) sell_votes += 1;
+   }
+   if(CheckFreshSDBaseFlip(rates, total, ema_val, d2))
+   {
+      if(d2 > 0) buy_votes += 1; else if(d2 < 0) sell_votes += 1;
+   }
+   if(CheckTrendlineLiquidityTrap(rates, total, ema_val, d0))
+   {
+      if(d0 > 0) buy_votes += 1; else if(d0 < 0) sell_votes += 1;
+   }
+   if(CheckICTOptimalTradeEntry(rates, total, ema_val, d4))
+   {
+      if(d4 > 0) buy_votes += 1; else if(d4 < 0) sell_votes += 1;
+   }
 
-   if(buy_votes >= 2 && buy_votes > sell_votes)
+   // Minimum 3 votes required (prevents toxic standalone signals)
+   if(buy_votes >= 3 && buy_votes > sell_votes)
    {
       signal_dir = 1;
       return true;
    }
-   if(sell_votes >= 2 && sell_votes > buy_votes)
+   if(sell_votes >= 3 && sell_votes > buy_votes)
    {
       signal_dir = -1;
       return true;
@@ -940,6 +952,11 @@ bool EvaluateDailySignal(const MqlRates &rates[], int total, double ema_val, int
 
       case MODEL_MATTEO_BANK_ORB:
          return CheckMatteoBankORB(rates, total, ema_val, signal_dir);
+
+      case MODEL_HYBRID_QUASIMODO_ORB:
+         if(CheckDanialQuasimodo(rates, total, ema_val, signal_dir)) return true;
+         if(CheckMatteoBankORB(rates, total, ema_val, signal_dir))   return true;
+         return false;
 
       case MODEL_MASTER_ALL_CONFLUENCE:
       default:
@@ -1064,8 +1081,8 @@ void OnTick()
    // 6. Retrieve Market Rates & Indicators
    MqlRates rates[];
    ArraySetAsSeries(rates, true);
-   int copied = CopyRates(_Symbol, _Period, 0, 50, rates);
-   if(copied < 40) return;
+   int copied = CopyRates(_Symbol, _Period, 0, 65, rates);
+   if(copied < 45) return;
 
    double ema_buf[];
    ArraySetAsSeries(ema_buf, true);
@@ -1073,10 +1090,19 @@ void OnTick()
    double ema_val = ema_buf[1];
 
    // 7. Check Opposing Dump & Flip
-   ExtEngine.CheckOpposingDumpAndFlip(rates);
+   if(InpEnableDumpAndFlip) ExtEngine.CheckOpposingDumpAndFlip(rates);
 
-   // 8. Check Volume Climax Absorption
-   ExtEngine.CheckVolumeClimaxFade(rates, copied);
+   // 8. Check Volume Climax Absorption (Guarded by Session, Daily Limits & Cooldown)
+   if(InpEnableVolumeClimaxFade && IsInActiveSession() && g_daily_trades_count < InpMaxDailyTrades && (TimeCurrent() - g_last_trade_time >= InpMinTradeCooldownMin * 60))
+   {
+      int before_count = PositionsTotal();
+      ExtEngine.CheckVolumeClimaxFade(rates, copied);
+      if(PositionsTotal() > before_count)
+      {
+         g_last_trade_time = TimeCurrent();
+         g_daily_trades_count++;
+      }
+   }
 
    // 9. If basket already open, let the behavioral manager run
    int primary_open = 0;
