@@ -83,6 +83,10 @@ struct SFlipperBehavioralConfig
    // Pattern 10: Visual Roadmap HUD
    bool   enableVisuals;
    bool   applyDraculaTheme;
+   
+   // In-Trade Setup Expiration & Invalidation Guards
+   int    maxHoldingBars;
+   bool   enableStructuralExit;
 };
 
 //+------------------------------------------------------------------+
@@ -150,6 +154,9 @@ public:
       m_max_tp_level      = 0;
       m_hist_box_count    = 0;
       ArrayInitialize(m_hist_box_times, 0);
+
+      m_cfg.maxHoldingBars       = 8;
+      m_cfg.enableStructuralExit = true;
    }
 
    void Init(const SFlipperBehavioralConfig &cfg)
@@ -267,6 +274,55 @@ public:
       if(m_cfg.enableVisuals)
       {
          UpdateActiveLinesTime();
+      }
+
+      // --- Setup Expiration & Adverse Invalidation Guards ---
+      MqlRates check_rates[];
+      ArraySetAsSeries(check_rates, true);
+      if(CopyRates(_Symbol, _Period, 0, 5, check_rates) >= 2)
+      {
+         // 1. Stale Setup Expiration (Close lingering positions after maxHoldingBars if TP1 not reached)
+         if(m_cfg.maxHoldingBars > 0 && !m_tp1_hit && m_basket_entry_time > 0)
+         {
+            int bars_held = iBarShift(_Symbol, _Period, m_basket_entry_time, false);
+            if(bars_held >= m_cfg.maxHoldingBars)
+            {
+               Print("⏱️ STALE SETUP EXPIRED: Basket held for ", bars_held, " bars without reaching TP1. Closing lingering position to protect capital!");
+               CloseAllPositions();
+               return;
+            }
+         }
+
+         // 2. Adverse Structural Invalidation (Early exit before full SL hit)
+         if(m_cfg.enableStructuralExit && !m_be_active)
+         {
+            double tot_r = check_rates[1].high - check_rates[1].low;
+            if(tot_r > 0)
+            {
+               // In a BUY trade, but price is in drawdown and a bearish rejection wick forms
+               if(ptype == POSITION_TYPE_BUY && cur_price < entry_price)
+               {
+                  double upper_w = check_rates[1].high - MathMax(check_rates[1].open, check_rates[1].close);
+                  if((upper_w / tot_r) >= 0.35 && check_rates[1].close < check_rates[1].open)
+                  {
+                     Print("🚨 ADVERSE STRUCTURAL REJECTION: Opposing upper wick on BUY. Closing basket early to prevent full SL hit!");
+                     CloseAllPositions();
+                     return;
+                  }
+               }
+               // In a SELL trade, but price is in drawdown and a bullish rejection wick forms
+               else if(ptype == POSITION_TYPE_SELL && cur_price > entry_price)
+               {
+                  double lower_w = MathMin(check_rates[1].open, check_rates[1].close) - check_rates[1].low;
+                  if((lower_w / tot_r) >= 0.35 && check_rates[1].close > check_rates[1].open)
+                  {
+                     Print("🚨 ADVERSE STRUCTURAL REJECTION: Opposing lower wick on SELL. Closing basket early to prevent full SL hit!");
+                     CloseAllPositions();
+                     return;
+                  }
+               }
+            }
+         }
       }
 
       // Stage 1: TP1 Hit (+20 pips) -> Harvest Ticket 1

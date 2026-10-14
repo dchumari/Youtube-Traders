@@ -96,10 +96,14 @@ input double    InpDailyTargetPct       = 100.0;     // Daily Target Return % to
 input double    InpMinATRPoints         = 0.0;       // Minimum ATR points to trade (filters out low-vol chop)
 
 sinput string   sep6c = "================ WEEKLY CAPITAL RETENTION SHIELD ====";
-input bool      InpEnableWeeklyTargetLockout  = true; // Halt trading for week once target is banked (+50% to +100%)
-input double    InpWeeklyTargetPct            = 50.0; // Weekly Profit Target % to lock in (+50.0%)
-input bool      InpEnableWeeklyTrailingShield = true; // Trailing Weekly Equity Shield (protects 70% of peak weekly gains)
-input double    InpWeeklyMaxGivebackPct       = 30.0; // Max giveback allowed from weekly peak profit (30%)
+input bool      InpEnableWeeklyTargetLockout  = false; // Halt trading for week once target is banked (Default false per user request)
+input double    InpWeeklyTargetPct            = 100.0; // Weekly Profit Target % (+100.0%)
+input bool      InpEnableWeeklyTrailingShield = true;  // Trailing Weekly Equity Shield (protects 70% of peak weekly gains)
+input double    InpWeeklyMaxGivebackPct       = 35.0;  // Max giveback allowed from weekly peak profit (35%)
+
+sinput string   sep6d = "================ SETUP EXPIRATION & INVALIDATION ====";
+input int       InpMaxHoldingBars             = 8;     // Max M15 Bars to Hold Trade if TP1 Not Hit (Stale Setup Timeout)
+input bool      InpEnableStructuralExit       = true;  // Close Position Early on Opposing Rejection Wick
 
 sinput string   sep7 = "================ VISUAL TRADE SUITE & HUD ==============";
 input bool      InpEnableVisuals        = true;      // Enable On-Chart Visual Roadmap & Boxes
@@ -185,6 +189,8 @@ int OnInit()
    cfg.targetEquity          = 10000.0;
    cfg.enableVisuals         = InpEnableVisuals;
    cfg.applyDraculaTheme     = InpApplyDraculaTheme;
+   cfg.maxHoldingBars        = InpMaxHoldingBars;
+   cfg.enableStructuralExit  = InpEnableStructuralExit;
 
    ExtEngine.Init(cfg);
 
@@ -648,6 +654,14 @@ bool CheckDanialQuasimodo(const MqlRates &rates[], int total, double ema_val, in
 
    if(idx_head > 0 && idx_ls > idx_head)
    {
+      // Pre-Trade Setup Invalidation Check:
+      // If ANY bar between the Head (idx_head) and Bar 1 traded above max_high, the Head (SL) was violated!
+      // This proves the setup was NEVER respected and is completely INVALID!
+      for(int i = 1; i < idx_head; i++)
+      {
+         if(rates[i].high > max_high) return false;
+      }
+
       double interim_low = 999999.0;
       for(int i = idx_head; i <= idx_ls; i++)
          if(rates[i].low < interim_low) interim_low = rates[i].low;
@@ -697,6 +711,14 @@ bool CheckDanialQuasimodo(const MqlRates &rates[], int total, double ema_val, in
 
    if(idx_head_l > 0 && idx_ls_l > idx_head_l)
    {
+      // Pre-Trade Setup Invalidation Check:
+      // If ANY bar between the Head (idx_head_l) and Bar 1 traded below min_low, the Head (SL) was violated!
+      // This proves the setup was NEVER respected and is completely INVALID!
+      for(int i = 1; i < idx_head_l; i++)
+      {
+         if(rates[i].low < min_low) return false;
+      }
+
       double interim_high = 0.0;
       for(int i = idx_head_l; i <= idx_ls_l; i++)
          if(rates[i].high > interim_high) interim_high = rates[i].high;

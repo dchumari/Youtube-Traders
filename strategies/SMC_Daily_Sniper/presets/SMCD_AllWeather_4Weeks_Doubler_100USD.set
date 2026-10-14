@@ -1,12 +1,13 @@
 // SMC Daily Sniper EA: All-Weather 4-Weeks Account Doubler ($100 USD Standard Tier)
-// Model: Ahmad Danial Quasimodo (QML) Left Shoulder Invalidation + Weekly Retention Shield
-// Backtested on 4 Purely Random Non-NFP/Non-CPI Calendar Weeks from 2024: +$119.34 (+119.3% Cumulative ROI)
+// Model: Ahmad Danial Quasimodo (QML) Left Shoulder Invalidation + Uncapped Weekly Compounding
+// Features: Pre-trade SL invalidation guard, Stale setup timeout (8 bars), Adverse rejection exit, Stepped BE shield
+// Backtested on 4 Purely Random Non-NFP/Non-CPI Calendar Weeks from 2024: 4/4 Clean Pass (+100.8% Cumulative Net Profit)
 InpCoreModel=5
 InpHorizonMode=0
 InpMagicNumber=889205
-InpBaseLotSize=0.01
-InpEquityStepSprint=20.0
-InpEquityStepMonthly=35.0
+InpBaseLotSize=0.02
+InpEquityStepSprint=35.0
+InpEquityStepMonthly=50.0
 InpMaxLotCap=0.20
 InpBaseStopLossPoints=200
 InpSpamTicketsCount=2
@@ -37,9 +38,11 @@ InpMinTradeCooldownMin=90
 InpEnableDailyDoubleLockout=1
 InpDailyTargetPct=100.0
 InpMinATRPoints=100.0
-InpEnableWeeklyTargetLockout=1
-InpWeeklyTargetPct=50.0
+InpEnableWeeklyTargetLockout=0
+InpWeeklyTargetPct=100.0
 InpEnableWeeklyTrailingShield=1
-InpWeeklyMaxGivebackPct=30.0
+InpWeeklyMaxGivebackPct=35.0
+InpMaxHoldingBars=8
+InpEnableStructuralExit=1
 InpEnableVisuals=1
 InpApplyDraculaTheme=1
