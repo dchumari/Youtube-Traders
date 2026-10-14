@@ -27,7 +27,10 @@ enum ENUM_SMC_DAILY_MODEL
    MODEL_FRESH_SD_BASE_FLIP         = 2, // 2: Fresh Drop-Base-Rally / Rally-Base-Drop S&D Flip
    MODEL_ASIAN_SWEEP_CONTINUATION   = 3, // 3: Daily Asian High/Low Sweep + Killzone Momentum
    MODEL_ICT_OTE_SD_GOLDEN_ZONE     = 4, // 4: 24/5 ICT OTE 70.5% Golden Pocket nested in S&D Base
-   MODEL_MASTER_ALL_CONFLUENCE      = 5  // 5: Master Confluence Sniper (Multi-Signal Fusion)
+   MODEL_DANIAL_QUASIMODO           = 5, // 5: Ahmad Danial Quasimodo (QML) Left Shoulder Invalidation
+   MODEL_TRADER_YUSH_VALUE_AREA     = 6, // 6: Trader Yush 70% Value Area & Delta Absorption
+   MODEL_MATTEO_BANK_ORB            = 7, // 7: Matteo Conti Bank Opening Range Breakout (ORB 30m)
+   MODEL_MASTER_ALL_CONFLUENCE      = 8  // 8: Master Institutional Confluence Suite (Autonomous Fusion)
 };
 
 enum ENUM_DAILY_TARGET_HORIZON
@@ -92,6 +95,12 @@ input bool      InpEnableDailyDoubleLockout = false; // Halt trading for the day
 input double    InpDailyTargetPct       = 100.0;     // Daily Target Return % to lock in (+100% = doubling)
 input double    InpMinATRPoints         = 0.0;       // Minimum ATR points to trade (filters out low-vol chop)
 
+sinput string   sep6c = "================ WEEKLY CAPITAL RETENTION SHIELD ====";
+input bool      InpEnableWeeklyTargetLockout  = true; // Halt trading for week once target is banked (+50% to +100%)
+input double    InpWeeklyTargetPct            = 50.0; // Weekly Profit Target % to lock in (+50.0%)
+input bool      InpEnableWeeklyTrailingShield = true; // Trailing Weekly Equity Shield (protects 70% of peak weekly gains)
+input double    InpWeeklyMaxGivebackPct       = 30.0; // Max giveback allowed from weekly peak profit (30%)
+
 sinput string   sep7 = "================ VISUAL TRADE SUITE & HUD ==============";
 input bool      InpEnableVisuals        = true;      // Enable On-Chart Visual Roadmap & Boxes
 input bool      InpApplyDraculaTheme    = true;      // Auto-Apply Dracula Dark Palette (#282A36)
@@ -108,9 +117,13 @@ int      hATR                 = INVALID_HANDLE;
 datetime g_last_bar_time      = 0;
 datetime g_last_trade_time    = 0;
 int      g_last_day           = -1;
+int      g_last_dow           = -1;
 int      g_daily_trades_count = 0;
 double   g_day_start_equity   = 0.0;
 bool     g_day_locked_out     = false;
+double   g_week_start_equity  = 0.0;
+double   g_week_peak_equity   = 0.0;
+bool     g_week_locked_out    = false;
 
 // Internal Swing Structure
 struct SMarketSwing
@@ -602,7 +615,220 @@ bool CheckICTOptimalTradeEntry(const MqlRates &rates[], int total, double ema_va
 }
 
 //+------------------------------------------------------------------+
-//| MODEL 5: Master Confluence Daily Sniper (Multi-Signal Fusion)    |
+//| MODEL 5: Ahmad Danial Quasimodo (QML) Left Shoulder Invalidation |
+//+------------------------------------------------------------------+
+bool CheckDanialQuasimodo(const MqlRates &rates[], int total, double ema_val, int &signal_dir)
+{
+   signal_dir = 0;
+   if(total < 35) return false;
+   double point = SymbolInfoDouble(_Symbol, SYMBOL_POINT);
+
+   // Bearish QM: Left Shoulder High -> Interim Low -> Head (Higher High) -> BOS (Lower Low)
+   int idx_head = -1;
+   double max_high = 0.0;
+   for(int i = 4; i < 28; i++)
+   {
+      if(rates[i].high > max_high)
+      {
+         max_high = rates[i].high;
+         idx_head = i;
+      }
+   }
+
+   int idx_ls = -1;
+   double ls_high = 0.0;
+   for(int i = idx_head + 2; i < 34; i++)
+   {
+      if(rates[i].high > ls_high && rates[i].high < max_high - (80 * point))
+      {
+         ls_high = rates[i].high;
+         idx_ls = i;
+      }
+   }
+
+   if(idx_head > 0 && idx_ls > idx_head)
+   {
+      double interim_low = 999999.0;
+      for(int i = idx_head; i <= idx_ls; i++)
+         if(rates[i].low < interim_low) interim_low = rates[i].low;
+
+      double lowest_after_head = 999999.0;
+      for(int i = 1; i < idx_head; i++)
+         if(rates[i].low < lowest_after_head) lowest_after_head = rates[i].low;
+
+      if(lowest_after_head < interim_low - (50 * point))
+      {
+         double diff = MathAbs(rates[1].close - ls_high) / point;
+         if(diff <= 150 && rates[1].close <= max_high)
+         {
+            double tot_range = rates[1].high - rates[1].low;
+            double upper_wick = rates[1].high - MathMax(rates[1].open, rates[1].close);
+            if(tot_range > 0 && (upper_wick / tot_range) >= InpMinWickRejection)
+            {
+               signal_dir = -1;
+               return true;
+            }
+         }
+      }
+   }
+
+   // Bullish QM: Left Shoulder Low -> Interim High -> Head (Lower Low) -> BOS (Higher High)
+   int idx_head_l = -1;
+   double min_low = 999999.0;
+   for(int i = 4; i < 28; i++)
+   {
+      if(rates[i].low < min_low)
+      {
+         min_low = rates[i].low;
+         idx_head_l = i;
+      }
+   }
+
+   int idx_ls_l = -1;
+   double ls_low = 999999.0;
+   for(int i = idx_head_l + 2; i < 34; i++)
+   {
+      if(rates[i].low < ls_low && rates[i].low > min_low + (80 * point))
+      {
+         ls_low = rates[i].low;
+         idx_ls_l = i;
+      }
+   }
+
+   if(idx_head_l > 0 && idx_ls_l > idx_head_l)
+   {
+      double interim_high = 0.0;
+      for(int i = idx_head_l; i <= idx_ls_l; i++)
+         if(rates[i].high > interim_high) interim_high = rates[i].high;
+
+      double highest_after_head = 0.0;
+      for(int i = 1; i < idx_head_l; i++)
+         if(rates[i].high > highest_after_head) highest_after_head = rates[i].high;
+
+      if(highest_after_head > interim_high + (50 * point))
+      {
+         double diff = MathAbs(rates[1].close - ls_low) / point;
+         if(diff <= 150 && rates[1].close >= min_low)
+         {
+            double tot_range = rates[1].high - rates[1].low;
+            double lower_wick = MathMin(rates[1].open, rates[1].close) - rates[1].low;
+            if(tot_range > 0 && (lower_wick / tot_range) >= InpMinWickRejection)
+            {
+               signal_dir = 1;
+               return true;
+            }
+         }
+      }
+   }
+
+   return false;
+}
+
+//+------------------------------------------------------------------+
+//| MODEL 6: Trader Yush 70% Value Area & Delta Absorption Scalper   |
+//+------------------------------------------------------------------+
+bool CheckTraderYushValueArea(const MqlRates &rates[], int total, double ema_val, int &signal_dir)
+{
+   signal_dir = 0;
+   if(total < 48) return false;
+
+   double highest = rates[1].high;
+   double lowest  = rates[1].low;
+   for(int i = 2; i <= 48; i++)
+   {
+      if(rates[i].high > highest) highest = rates[i].high;
+      if(rates[i].low < lowest)   lowest  = rates[i].low;
+   }
+
+   double range = highest - lowest;
+   double point = SymbolInfoDouble(_Symbol, SYMBOL_POINT);
+   if(range < 60 * point) return false;
+
+   double vah = lowest + (range * 0.85);
+   double val = lowest + (range * 0.15);
+
+   long cur_vol = rates[1].tick_volume;
+   long sum_vol = 0;
+   for(int i = 2; i <= 21; i++) sum_vol += rates[i].tick_volume;
+   double avg_vol = (double)sum_vol / 20.0;
+   bool vol_surge = (avg_vol > 0 && cur_vol >= (avg_vol * InpVolumeSurgeMult));
+
+   double tot_range = rates[1].high - rates[1].low;
+   if(tot_range <= 0) return false;
+
+   if(rates[1].high >= vah && vol_surge)
+   {
+      double upper_wick = rates[1].high - MathMax(rates[1].open, rates[1].close);
+      if((upper_wick / tot_range) >= InpMinWickRejection && rates[1].close < rates[1].open)
+      {
+         signal_dir = -1;
+         return true;
+      }
+   }
+
+   if(rates[1].low <= val && vol_surge)
+   {
+      double lower_wick = MathMin(rates[1].open, rates[1].close) - rates[1].low;
+      if((lower_wick / tot_range) >= InpMinWickRejection && rates[1].close > rates[1].open)
+      {
+         signal_dir = 1;
+         return true;
+      }
+   }
+
+   return false;
+}
+
+//+------------------------------------------------------------------+
+//| MODEL 7: Matteo Conti Bank Opening Range Breakout (ORB 30m)      |
+//+------------------------------------------------------------------+
+bool CheckMatteoBankORB(const MqlRates &rates[], int total, double ema_val, int &signal_dir)
+{
+   signal_dir = 0;
+   MqlDateTime dt;
+   TimeToStruct(TimeCurrent(), dt);
+
+   if(dt.hour < InpLondonStartHour || dt.hour > 17) return false;
+
+   datetime day_start = StringToTime(StringFormat("%04d.%02d.%02d 00:00", dt.year, dt.mon, dt.day));
+   datetime orb_start = day_start + (InpLondonStartHour + InpGMTOffset) * 3600;
+   datetime orb_end   = orb_start + 1800; // 30 mins
+
+   double orb_high = 0.0, orb_low = 999999.0;
+   int bars_orb = 0;
+   for(int i = 0; i < total; i++)
+   {
+      if(rates[i].time >= orb_start && rates[i].time < orb_end)
+      {
+         if(rates[i].high > orb_high) orb_high = rates[i].high;
+         if(rates[i].low < orb_low)   orb_low  = rates[i].low;
+         bars_orb++;
+      }
+   }
+
+   if(bars_orb < 2 || orb_high <= 0.0 || orb_low >= 999999.0) return false;
+
+   double point = SymbolInfoDouble(_Symbol, SYMBOL_POINT);
+   double orb_range = orb_high - orb_low;
+   if(orb_range < 50 * point) return false;
+
+   if(rates[1].close > orb_high && rates[2].close <= orb_high && rates[1].close > ema_val)
+   {
+      signal_dir = 1;
+      return true;
+   }
+
+   if(rates[1].close < orb_low && rates[2].close >= orb_low && rates[1].close < ema_val)
+   {
+      signal_dir = -1;
+      return true;
+   }
+
+   return false;
+}
+
+//+------------------------------------------------------------------+
+//| MODEL 8: Master Confluence Daily Sniper (Multi-Signal Fusion)    |
 //| Requires >= 2 aligned signals for maximum win rate & PF          |
 //+------------------------------------------------------------------+
 bool CheckMasterAllConfluence(const MqlRates &rates[], int total, double ema_val, int &signal_dir)
@@ -611,7 +837,7 @@ bool CheckMasterAllConfluence(const MqlRates &rates[], int total, double ema_val
    int buy_votes = 0;
    int sell_votes = 0;
 
-   int d0 = 0, d1 = 0, d2 = 0, d3 = 0, d4 = 0;
+   int d0 = 0, d1 = 0, d2 = 0, d3 = 0, d4 = 0, d5 = 0, d6 = 0, d7 = 0;
 
    if(CheckTrendlineLiquidityTrap(rates, total, ema_val, d0))
    {
@@ -632,6 +858,18 @@ bool CheckMasterAllConfluence(const MqlRates &rates[], int total, double ema_val
    if(CheckICTOptimalTradeEntry(rates, total, ema_val, d4))
    {
       if(d4 > 0) buy_votes += 2; else if(d4 < 0) sell_votes += 2;
+   }
+   if(CheckDanialQuasimodo(rates, total, ema_val, d5))
+   {
+      if(d5 > 0) buy_votes += 2; else if(d5 < 0) sell_votes += 2;
+   }
+   if(CheckTraderYushValueArea(rates, total, ema_val, d6))
+   {
+      if(d6 > 0) buy_votes += 2; else if(d6 < 0) sell_votes += 2;
+   }
+   if(CheckMatteoBankORB(rates, total, ema_val, d7))
+   {
+      if(d7 > 0) buy_votes += 2; else if(d7 < 0) sell_votes += 2;
    }
 
    if(buy_votes >= 2 && buy_votes > sell_votes)
@@ -672,6 +910,15 @@ bool EvaluateDailySignal(const MqlRates &rates[], int total, double ema_val, int
       case MODEL_ICT_OTE_SD_GOLDEN_ZONE:
          return CheckICTOptimalTradeEntry(rates, total, ema_val, signal_dir);
 
+      case MODEL_DANIAL_QUASIMODO:
+         return CheckDanialQuasimodo(rates, total, ema_val, signal_dir);
+
+      case MODEL_TRADER_YUSH_VALUE_AREA:
+         return CheckTraderYushValueArea(rates, total, ema_val, signal_dir);
+
+      case MODEL_MATTEO_BANK_ORB:
+         return CheckMatteoBankORB(rates, total, ema_val, signal_dir);
+
       case MODEL_MASTER_ALL_CONFLUENCE:
       default:
          return CheckMasterAllConfluence(rates, total, ema_val, signal_dir);
@@ -688,14 +935,64 @@ void OnTick()
    ExtEngine.CheckPyramiding();
    ExtEngine.UpdateHUD();
 
-   // 2. Check for New Bar
-   datetime cur_bar = iTime(_Symbol, _Period, 0);
-   if(cur_bar == g_last_bar_time) return;
-   g_last_bar_time = cur_bar;
-
-   // 3. Daily Trade Reset & Limit (Strict 1 to 2 setups/day target)
+   // 2. Weekly & Daily Capital Retention Shield (Checked on every tick!)
    MqlDateTime dt;
    TimeToStruct(TimeCurrent(), dt);
+
+   if(g_week_start_equity <= 0.0)
+   {
+      g_week_start_equity = AccountInfoDouble(ACCOUNT_EQUITY);
+      g_week_peak_equity  = g_week_start_equity;
+   }
+   if(g_day_start_equity <= 0.0)
+   {
+      g_day_start_equity = AccountInfoDouble(ACCOUNT_EQUITY);
+   }
+
+   // Monday Weekly Reset
+   if(dt.day_of_week == 1 && g_last_dow != 1)
+   {
+      g_week_start_equity = AccountInfoDouble(ACCOUNT_EQUITY);
+      g_week_peak_equity  = g_week_start_equity;
+      g_week_locked_out   = false;
+   }
+   g_last_dow = dt.day_of_week;
+
+   double cur_equity = AccountInfoDouble(ACCOUNT_EQUITY);
+   if(cur_equity > g_week_peak_equity) g_week_peak_equity = cur_equity;
+
+   // 3a. Weekly Target Lockout (+50% or +100%)
+   if(InpEnableWeeklyTargetLockout && !g_week_locked_out)
+   {
+      if(g_week_start_equity > 0 && cur_equity >= g_week_start_equity * (1.0 + (InpWeeklyTargetPct / 100.0)))
+      {
+         Print("🏆 WEEKLY PROFIT TARGET ACHIEVED (+", InpWeeklyTargetPct, "%)! Net Equity: $", cur_equity, ". Locking weekly win!");
+         ExtEngine.CloseAllPositions();
+         g_week_locked_out = true;
+         return;
+      }
+   }
+
+   // 3b. Weekly Trailing Equity Shield (protects 70% of peak weekly gains once up >= +35%)
+   if(InpEnableWeeklyTrailingShield && !g_week_locked_out)
+   {
+      double max_profit = g_week_peak_equity - g_week_start_equity;
+      if(max_profit >= (g_week_start_equity * 0.35))
+      {
+         double min_allowed_equity = g_week_start_equity + (max_profit * (1.0 - (InpWeeklyMaxGivebackPct / 100.0)));
+         if(cur_equity <= min_allowed_equity)
+         {
+            Print("🛡️ WEEKLY TRAILING SHIELD TRIGGERED! Preserving locked profit at $", cur_equity, ". Halting for rest of week!");
+            ExtEngine.CloseAllPositions();
+            g_week_locked_out = true;
+            return;
+         }
+      }
+   }
+
+   if(g_week_locked_out) return;
+
+   // 3c. Daily Reset & Limit
    if(dt.day != g_last_day)
    {
       g_last_day = dt.day;
@@ -704,10 +1001,9 @@ void OnTick()
       g_day_locked_out = false;
    }
 
-   // 3b. Daily Doubling Milestone Check (+100% in 1 day / 1 trade)
+   // 3d. Daily Doubling Milestone Check (+100% in 1 day / 1 trade)
    if(InpEnableDailyDoubleLockout && !g_day_locked_out)
    {
-      double cur_equity = AccountInfoDouble(ACCOUNT_EQUITY);
       if(g_day_start_equity > 0 && cur_equity >= g_day_start_equity * (1.0 + (InpDailyTargetPct / 100.0)))
       {
          Print("🎯 DAILY DOUBLING TARGET ACHIEVED (+", InpDailyTargetPct, "%)! Closing basket & locking profits for today!");
@@ -718,12 +1014,17 @@ void OnTick()
    }
    if(g_day_locked_out) return;
 
+   // 4. Check for New Bar for new entry evaluation
+   datetime cur_bar = iTime(_Symbol, _Period, 0);
+   if(cur_bar == g_last_bar_time) return;
+   g_last_bar_time = cur_bar;
+
    if(g_daily_trades_count >= InpMaxDailyTrades) return;
 
-   // 4. Time between consecutive entries (cooldown in minutes)
+   // 5. Time between consecutive entries (cooldown in minutes)
    if(TimeCurrent() - g_last_trade_time < InpMinTradeCooldownMin * 60) return;
 
-   // 4b. Low Volatility Chop Filter (Skip dead consolidation)
+   // 5b. Low Volatility Chop Filter (Skip dead consolidation)
    if(InpMinATRPoints > 0)
    {
       double atr_buf[];

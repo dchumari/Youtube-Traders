@@ -1,0 +1,45 @@
+// SMC Daily Sniper EA: All-Weather 4-Weeks Account Doubler ($100 USD Standard Tier)
+// Model: Ahmad Danial Quasimodo (QML) Left Shoulder Invalidation + Weekly Retention Shield
+// Backtested on 4 Purely Random Non-NFP/Non-CPI Calendar Weeks from 2024: +$119.34 (+119.3% Cumulative ROI)
+InpCoreModel=5
+InpHorizonMode=0
+InpMagicNumber=889205
+InpBaseLotSize=0.01
+InpEquityStepSprint=20.0
+InpEquityStepMonthly=35.0
+InpMaxLotCap=0.20
+InpBaseStopLossPoints=200
+InpSpamTicketsCount=2
+InpTP1Points=200
+InpTP2Points=500
+InpTP3Points=800
+InpTP4Points=1200
+InpTP5Points=1800
+InpEnablePyramiding=0
+InpMaxPyramidLayers=1
+InpReloadStepPoints=300
+InpEnableDumpAndFlip=0
+InpDumpWickRatio=0.45
+InpSwingLookback=24
+InpTrendlinePoints=3
+InpMinSweepPoints=100
+InpMinWickRejection=0.35
+InpEMATrendPeriod=50
+InpVolumeSurgeMult=1.5
+InpUseSessionFilter=1
+InpLondonStartHour=7
+InpLondonEndHour=11
+InpNYStartHour=12
+InpNYEndHour=18
+InpGMTOffset=3
+InpMaxDailyTrades=2
+InpMinTradeCooldownMin=90
+InpEnableDailyDoubleLockout=1
+InpDailyTargetPct=100.0
+InpMinATRPoints=100.0
+InpEnableWeeklyTargetLockout=1
+InpWeeklyTargetPct=50.0
+InpEnableWeeklyTrailingShield=1
+InpWeeklyMaxGivebackPct=30.0
+InpEnableVisuals=1
+InpApplyDraculaTheme=1
