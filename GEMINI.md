@@ -405,6 +405,17 @@ This document synthesizes and preserves all project learnings, mathematical form
   - **H1**: Frequency too slow (1 setup every 1.5-2 weeks; violates 1-2 setups/day requirement).
   - **M15 (The Institutional Sweet Spot)**: Generates 1-2 clean institutional setups daily during London/NY killzones, enables a safe 20-pip SL, and allows 2-stage TP laddering (+20p BE shield, +50p runner).
 
+### 17. Dedicated Inverted Momentum Suite (`SMC_Inverted_Momentum_EA.mq5`) & Comparative Analysis
+- **Core Principle & Architecture**:
+  - Built standalone [`strategies/SMC_Daily_Sniper/ea_code/SMC_Inverted_Momentum_EA.mq5`](file:///d:/Projects/AUTOMATIONS/TRADING/Youtube-Traders/strategies/SMC_Daily_Sniper/ea_code/SMC_Inverted_Momentum_EA.mq5) to test the hypothesis of fading failed retail SMC reversals into momentum breakouts (short squeezes and long liquidations) without altering the normal strategy.
+  - Implemented 3-stage profit laddering (TP1 +15p, TP2 +35p, TP3 +70p runner), Stepped Breakeven Shield, and dynamic equity tier compounding (`GetDynamicLotPerTicket()`).
+- **Empirical 4 Random 2024 Weeks Results**:
+  - **Inverted EA ($100 Tier)**: Passed 3/4 random windows (RW1: +$13.86 [WR 75%, PF 5.62], RW2: +$4.84 to +$33.16, RW3: -$4.46, RW4: +$2.32 [WR 75%, PF 1.77]). Cumulative Net: **+$16.56 (+16.6% ROI)**.
+  - **Inverted EA ($20 Cent Tier / 2,000 USC)**: Passed 3/4 random windows (RW1: +13.74 USC [WR 100%], RW2: +6.08 USC, RW3: -5.96 USC, RW4: +0.82 USC). Cumulative Net: **+14.68 USC**.
+- **Quantitative Comparison (Normal vs Inverted)**:
+  - The Normal Strategy (`SMC_Daily_Sniper_EA.mq5`) achieved a clean **4/4 weekly pass rate (100%)** with **+$110.91 net profit (+110.9% doubling)** because institutional mean-reversion at the Left Shoulder provides an asymmetric 2.5:1 to 5:1 reward-to-risk ratio across all market regimes.
+  - The Inverted Strategy acts as a high-velocity momentum breakout system: it produces exceptional returns during runaway trend weeks (RW2: up to +$33.16 in 1 week), but experiences minor whipsaws during tight consolidation ranges (RW3).
+
 ---
 
 ## 5. UI, Visualization & Operational Preferences

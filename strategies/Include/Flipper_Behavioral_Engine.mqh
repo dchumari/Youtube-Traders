@@ -182,7 +182,7 @@ public:
    }
 
    // --- Pattern 1: Execute Multi-Ticket Spam Basket ---
-   bool ExecuteSpamBasket(ENUM_ORDER_TYPE order_type, double base_entry, int sl_points)
+   bool ExecuteSpamBasket(ENUM_ORDER_TYPE order_type, double base_entry, int sl_points, double custom_lot = 0.0)
    {
       double point = SymbolInfoDouble(_Symbol, SYMBOL_POINT);
       double ask = SymbolInfoDouble(_Symbol, SYMBOL_ASK);
@@ -190,7 +190,7 @@ public:
       double entry_price = (order_type == ORDER_TYPE_BUY) ? ask : bid;
       double sl_price = (order_type == ORDER_TYPE_BUY) ? entry_price - (sl_points * point) : entry_price + (sl_points * point);
 
-      double lot_per_ticket = CalculateLotPerTicket();
+      double lot_per_ticket = (custom_lot > 0.0) ? custom_lot : CalculateLotPerTicket();
       m_current_layer = 1;
       m_last_layer_entry = entry_price;
       m_be_active = false;
