@@ -359,8 +359,8 @@ bool CheckTrendlineTrapFade(const MqlRates &rates[], int total, double ema_val, 
       if(b1 > b2 && p2 >= p1 && (b1 - b2) > 0)
       {
          double projected_tl = p2 + ((p2 - p1) / (double)(b2 - b1)) * (1.0 - (double)b2);
-         // Decisive breakdown below trendline: Bar 1 closes BELOW trendline!
-         if(rates[1].close < projected_tl && rates[1].open >= projected_tl)
+         // Decisive breakdown below trendline: Bar 1 closes BELOW trendline AND below EMA!
+         if(rates[1].close < projected_tl && rates[1].open >= projected_tl && rates[1].close < ema_val)
          {
             signal_dir = -1; // Inverted SELL
             return true;
@@ -390,8 +390,8 @@ bool CheckTrendlineTrapFade(const MqlRates &rates[], int total, double ema_val, 
       if(b1 > b2 && p2 <= p1 && (b1 - b2) > 0)
       {
          double projected_tl = p2 + ((p2 - p1) / (double)(b2 - b1)) * (1.0 - (double)b2);
-         // Decisive breakout above trendline: Bar 1 closes ABOVE trendline!
-         if(rates[1].close > projected_tl && rates[1].open <= projected_tl)
+         // Decisive breakout above trendline: Bar 1 closes ABOVE trendline AND above EMA!
+         if(rates[1].close > projected_tl && rates[1].open <= projected_tl && rates[1].close > ema_val)
          {
             signal_dir = 1; // Inverted BUY
             return true;
@@ -425,7 +425,7 @@ bool CheckSMCInducementViolation(const MqlRates &rates[], int total, double ema_
 
          if(ob_bar >= 4 && ob_bar <= 25)
          {
-            if(rates[1].close > ob_high && rates[2].close <= ob_high)
+            if(rates[1].close > ob_high && rates[2].close <= ob_high && rates[1].close > ema_val)
             {
                signal_dir = 1; // Inverted BUY
                return true;
@@ -440,7 +440,7 @@ bool CheckSMCInducementViolation(const MqlRates &rates[], int total, double ema_
 
          if(ob_bar >= 4 && ob_bar <= 25)
          {
-            if(rates[1].close < ob_low && rates[2].close >= ob_low)
+            if(rates[1].close < ob_low && rates[2].close >= ob_low && rates[1].close < ema_val)
             {
                signal_dir = -1; // Inverted SELL
                return true;
@@ -617,8 +617,9 @@ bool EvaluateInvertedSignal(const MqlRates &rates[], int total, double ema_val, 
          return CheckMatteoBankORB(rates, total, ema_val, signal_dir);
 
       case INV_MODEL_HYBRID_QUASIMODO_ORB:
-         if(CheckDanialQuasimodoSqueeze(rates, total, ema_val, signal_dir)) return true;
-         if(CheckMatteoBankORB(rates, total, ema_val, signal_dir))         return true;
+         // Fuses the two highest-alpha models: Trendline Breakout (high win rate) + Inducement Breach (explosive expansion)
+         if(CheckTrendlineTrapFade(rates, total, ema_val, signal_dir)) return true;
+         if(CheckSMCInducementViolation(rates, total, ema_val, signal_dir)) return true;
          return false;
 
       case INV_MODEL_MASTER_ALL_CONFLUENCE:
