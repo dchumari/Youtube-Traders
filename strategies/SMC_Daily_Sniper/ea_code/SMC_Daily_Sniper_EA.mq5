@@ -47,6 +47,7 @@ enum ENUM_DAILY_TARGET_HORIZON
 sinput string   sep0 = "================ STRATEGY & HORIZON MODE ================";
 input ENUM_SMC_DAILY_MODEL       InpCoreModel         = MODEL_MASTER_ALL_CONFLUENCE;  // Core Execution Model
 input ENUM_DAILY_TARGET_HORIZON  InpHorizonMode       = HORIZON_DAILY_SPRINT_DOUBLER; // Target Horizon Tier
+input bool                       InpInvertExecution   = false;                        // Invert Direction (Fade: Buy->Sell, Sell->Buy)
 input ulong                      InpMagicNumber       = 889100;                       // EA Magic Number
 
 sinput string   sep1 = "================ CAPITAL & COMPOUNDING SIZING ==========";
@@ -1119,10 +1120,11 @@ void OnTick()
    int signal_dir = 0;
    if(EvaluateDailySignal(rates, copied, ema_val, signal_dir))
    {
+      if(InpInvertExecution) signal_dir = -signal_dir;
       ENUM_ORDER_TYPE otype = (signal_dir > 0) ? ORDER_TYPE_BUY : ORDER_TYPE_SELL;
       double entryPrice = (otype == ORDER_TYPE_BUY) ? SymbolInfoDouble(_Symbol, SYMBOL_ASK) : SymbolInfoDouble(_Symbol, SYMBOL_BID);
 
-      Print("🎯 SMC DAILY SNIPER SIGNAL DETECTED: ", (signal_dir > 0 ? "BUY" : "SELL"), " @ ", entryPrice, " [Daily Trade: ", g_daily_trades_count + 1, "/", InpMaxDailyTrades, "]");
+      Print("🎯 SMC DAILY SNIPER SIGNAL DETECTED", (InpInvertExecution ? " [INVERTED FADE]" : ""), ": ", (signal_dir > 0 ? "BUY" : "SELL"), " @ ", entryPrice, " [Daily Trade: ", g_daily_trades_count + 1, "/", InpMaxDailyTrades, "]");
       if(ExtEngine.ExecuteSpamBasket(otype, entryPrice, InpBaseStopLossPoints))
       {
          g_last_trade_time = TimeCurrent();

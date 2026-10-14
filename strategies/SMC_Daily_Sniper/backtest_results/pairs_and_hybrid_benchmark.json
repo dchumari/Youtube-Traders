@@ -1,0 +1,80 @@
+{
+  "XAUUSD": {
+    "total": 0.0,
+    "pass_rate": "0/4",
+    "weeks": {
+      "RW1 (Late Jan)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      },
+      "RW2 (Late Apr)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      },
+      "RW3 (Late Aug)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      },
+      "RW4 (Late Oct)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      }
+    }
+  },
+  "EURUSD": {
+    "total": 0.0,
+    "pass_rate": "0/4",
+    "weeks": {
+      "RW1 (Late Jan)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      },
+      "RW2 (Late Apr)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      },
+      "RW3 (Late Aug)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      },
+      "RW4 (Late Oct)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      }
+    }
+  },
+  "GBPUSD": {
+    "total": 0.0,
+    "pass_rate": "0/4",
+    "weeks": {
+      "RW1 (Late Jan)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      },
+      "RW2 (Late Apr)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      },
+      "RW3 (Late Aug)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      },
+      "RW4 (Late Oct)": {
+        "profit": 0.0,
+        "trades": 0,
+        "pf": 0.0
+      }
+    }
+  }
+}
